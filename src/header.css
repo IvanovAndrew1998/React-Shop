@@ -115,8 +115,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: var(  --black-1);
     font-size: 16px;
     font-weight: 600;
-    /* Добавленный маргин */
+    /* Добавленный */
     margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .flexdown-right{
     max-width: 730px;

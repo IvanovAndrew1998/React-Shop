@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import { useMap } from 'react-leaflet';
+import axios from 'axios';
 
 const GeoTag = () => {
     const [city, setSity] = useState('Москва');
@@ -11,10 +12,11 @@ const GeoTag = () => {
     function getCurrentPosition() {
         navigator.geolocation.getCurrentPosition(
             async (pos) => {
-                console.log(pos);
-                const cityData = await provider.search({query: `${pos.coords.latitude} ${pos.coords.longitude}`});
-                console.log(cityData);
-                setSity(cityData[0].label.split(',')[3])
+                const locationData = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json&accept-language=ruRU`)
+                // console.log(locationData.data.address.city);
+                // const cityData = await provider.search({query: `${pos.coords.latitude} ${pos.coords.longitude}`});
+                // console.log(cityData);
+                setSity(locationData.data.address.city)
             }
         );
     }

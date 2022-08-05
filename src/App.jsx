@@ -1,4 +1,5 @@
 import Header from "./Components/Header/Header";
+import Sizes from "./Components/Pages/ProductPage/Sizes";
 
 function App() {
     return (
@@ -57,8 +58,9 @@ function App() {
                                                                     <h2>Серебряное ожерелье</h2>
                                                                     <div className="feedback">
                                                                         <a href="#"><img src="src/stars.svg" alt=""/></a>
-                                                                        <a href="#">14 500 отзывов</a>
-                                                                        <img src="src/arrow-down.svg" alt=""/>
+                                                                        <a href="#feedbackLink">14 500 отзывов</a>
+                                                                        <a href="#feedbackLink"><img src="src/arrow-down.svg" alt="" /></a>
+                                                                        
                                                                     </div>
                                                                     <p className="percantage">-40%</p>
                                                                     <div className="discount">
@@ -81,14 +83,7 @@ function App() {
                                                                     <p className="choose-size">
                                                                         Выберите размер
                                                                     </p>
-                                                                    <div className="sizes">
-                                                                        <button>40</button>
-                                                                        <button>45</button>
-                                                                        <button>50</button>
-                                                                        <button>55</button>
-                                                                        <button>60</button>
-                                                                        <button>70</button>
-                                                                    </div>
+                                                                    <Sizes/>
                                                                     <div className="learn-size">
                                                                         <a href="#">Как узнать размер</a>
                                                                         <img src="src/arrow-side.svg" alt=""/>
@@ -217,7 +212,7 @@ function App() {
                                                                                                     <div className="sec2-flexbox">
                                                                                                         <div className="flexbox2-left">
                                                                                                             <div className="feedback-2">
-                                                                                                                <h2 className="feedback-h2">Отзывы</h2>
+                                                                                                                <h2 className="feedback-h2" id="feedbackLink">Отзывы</h2>
                                                                                                                 <img src="src/threeF.svg" alt=""/>
                                                                                                             </div>
                                                                                                             <div className="feedback-container">
