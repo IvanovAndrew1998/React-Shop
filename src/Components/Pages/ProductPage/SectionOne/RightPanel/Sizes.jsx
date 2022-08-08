@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getSizeList } from '../../../Api';
+import { getSizeList } from '../../../../../Api';
 
 
 const Sizes = (
