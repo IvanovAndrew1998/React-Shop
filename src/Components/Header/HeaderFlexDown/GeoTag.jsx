@@ -15,8 +15,9 @@ const GeoTag = () => {
                 const locationData = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json&accept-language=ruRU`)
                 // console.log(locationData.data.address.city);
                 // const cityData = await provider.search({query: `${pos.coords.latitude} ${pos.coords.longitude}`});
-                // console.log(cityData);
-                setSity(locationData.data.address.city)
+                // console.log('городской округ Йошкар-Ола');
+
+                setSity(locationData.data.address.city.match(/[A-ZА-Я].+/)[0])
             }
         );
     }
