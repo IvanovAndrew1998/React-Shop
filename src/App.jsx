@@ -4,7 +4,7 @@ import ArticleTwoProductCards from "./Components/Pages/ProductPage/ArticleTwo/Ar
 import AtricleTwo from "./Components/Pages/ProductPage/ArticleTwo/AtricleTwo";
 import SectionOne from "./Components/Pages/ProductPage/SectionOne/SectionOne";
 import SectionTwo from "./Components/Pages/ProductPage/SectionTwo/SectionTwo";
-
+import Footer from "./Components/Footer/Footer";
 
 function App() {
     return (
@@ -15,6 +15,7 @@ function App() {
             <AtricleTwo/>
             <ArticleTwoProductCards/>
             <SectionTwo/>
+            <Footer/>
 
         </div >
     );
