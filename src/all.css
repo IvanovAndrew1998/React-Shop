@@ -1118,3 +1118,11 @@ a{
     color: white !important;
 
 }
+.widget-ratings {
+    display: flex !important;
+    flex-direction: row !important;
+}
+.article-3 {
+
+    margin-block: 58px;
+}

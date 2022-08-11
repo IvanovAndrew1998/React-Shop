@@ -43,7 +43,7 @@ const RatingScore = () => {
                     </svg>
                 </div>
             </div>
-            <button className="write-feedback">
+            <button className="btn-orange">
                 Написать свой отзыв
             </button>
             <div className="feedback-rules">

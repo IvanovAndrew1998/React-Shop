@@ -5,6 +5,7 @@ import AtricleTwo from "./Components/Pages/ProductPage/ArticleTwo/AtricleTwo";
 import SectionOne from "./Components/Pages/ProductPage/SectionOne/SectionOne";
 import SectionTwo from "./Components/Pages/ProductPage/SectionTwo/SectionTwo";
 import Footer from "./Components/Footer/Footer";
+import ArticleThree from "./Components/Pages/ProductPage/ArticleThree/ArticleThree";
 
 function App() {
     return (
@@ -12,10 +13,13 @@ function App() {
             <Header />
             <Article/>
             <SectionOne/>
+            <ArticleThree/>
             <AtricleTwo/>
             <ArticleTwoProductCards/>
             <SectionTwo/>
+            
             <Footer/>
+            
 
         </div >
     );

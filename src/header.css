@@ -16,7 +16,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .flexup-middle{
     display: flex;
     width: 100%;
-    max-width: 552px;
+    max-width: 480px;
     align-items: center;
     position: relative;
 }
@@ -106,7 +106,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 .flexdown-left{
     display: flex;
-    /* justify-content:space-between; */
+    justify-content:start;
     align-items: center;
     max-width: 184px;
     width: 100%;
@@ -118,15 +118,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     /* Добавленный */
     margin-left: 10px;
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
 }
 .flexdown-right{
-    max-width: 730px;
+    max-width: 650px;
     width: 100%;
 }
 .flexdown-right nav ul {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 20px;
     
 }
 .flexdown-right a{
@@ -140,4 +141,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .arrow{
     cursor: pointer;
     width: 24px;
+}
+/* .flexdownright-arrow{
+    display: flex;
+    justify-content: space-between;
+    max-width: 790px;
+    width: 100%;
+} */
+.flexdown-right{
+    display: flex;
+    justify-content: space-between;
+    max-width: 790px;
+    width: 100%;
 }

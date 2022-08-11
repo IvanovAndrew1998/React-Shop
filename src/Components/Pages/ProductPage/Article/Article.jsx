@@ -3,8 +3,8 @@ import ArticleRight from './ArticleRight'
 
 const Article = () => {
   return (
-    <article className="article">
-                <div className="inner">
+    <article className="article" id='navbar'>
+                <div className="inner" >
                     <div className="article-left">
                         <nav>
                             <ul>
