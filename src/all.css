@@ -1123,6 +1123,13 @@ a{
     flex-direction: row !important;
 }
 .article-3 {
-
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: white;
     margin-block: 58px;
+}
+
+html {
+    scroll-behavior: smooth;
 }

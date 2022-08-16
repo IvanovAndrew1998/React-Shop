@@ -1,0 +1,19 @@
+.slider {
+    position: relative;
+    transition: 0.5s;
+
+}
+.slided{
+    transform: translateX(-200px);
+
+}
+.navSlider {
+    overflow: hidden;
+}
+.rotated {
+    transform: rotate(-180deg);
+    
+}
+.animation {
+    transition: 0.5s;  
+}
