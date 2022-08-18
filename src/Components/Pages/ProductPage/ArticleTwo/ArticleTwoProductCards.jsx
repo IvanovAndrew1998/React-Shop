@@ -23,6 +23,7 @@ const ArticleTwoProductCards = () => {
                             <a href="#"><img src="src/arrow-right.svg" alt="" /></a>
                         </div>
                     </div>
+                    
                     <div className="productsim-card">
                         <img className="dis-per" src="src/-15%.svg" alt="" />
                         <img className="heart-card" src="src/heart1.svg" alt="" />

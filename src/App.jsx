@@ -1,22 +1,37 @@
-import Header from "./Components/Header/Header";
-import Article from "./Components/Pages/ProductPage/Article/Article";
-import ArticleTwoProductCards from "./Components/Pages/ProductPage/ArticleTwo/ArticleTwoProductCards";
-import AtricleTwo from "./Components/Pages/ProductPage/ArticleTwo/AtricleTwo";
-import SectionOne from "./Components/Pages/ProductPage/SectionOne/SectionOne";
-import SectionTwo from "./Components/Pages/ProductPage/SectionTwo/SectionTwo";
+import React, { useEffect, useState } from 'react';
+import { getProductData } from './Api';
 import Footer from "./Components/Footer/Footer";
-import ArticleThree from "./Components/Pages/ProductPage/ArticleThree/ArticleThree";
+import Header from "./Components/Header/Header";
+import ProductPage from "./Components/Pages/ProductPage";
 
 function App() {
+    const [images, setImages] = useState();
+    const [productInfo, setProductInfo]= useState();
+    const [similarProducts, setSimilarProducts] = useState();
+    const [recommendation, setRecomendation]= useState();
+
+    function fetchProduct() {
+        getProductData(1).then( res => {
+            const {images, similarProducts, recommendation, ...productInfo} = res;
+            setProductInfo(productInfo);
+            setSimilarProducts(similarProducts);
+            setRecomendation(recommendation);
+            setImages(images);
+        });
+    }
+
+    useEffect(
+    fetchProduct
+    , 
+    []);
+
     return (
         <div className="App">
             <Header />
-            <Article/>
-            <SectionOne/>
-            <ArticleThree/>
-            <AtricleTwo/>
-            <ArticleTwoProductCards/>
-            <SectionTwo/>
+            {images
+            ? <ProductPage images={images} productInfo={productInfo} recommendation={recommendation} similarProducts={similarProducts}/>
+            : <p>LOADER</p>}
+            
             
             <Footer/>
             
