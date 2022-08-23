@@ -34,9 +34,9 @@ const ProductPage = ({images, productInfo, similarProducts, recommendation}) => 
     <div> 
     <Article/>
     <SectionOne productInfo={productInfo} images={images}/>
-    <ArticleThree/>
+    <ArticleThree recommendation={recommendation}/>
     <AtricleTwo/>
-    <ArticleTwoProductCards/>
+    <ArticleTwoProductCards similar={similarProducts}/>
     <SectionTwo/>
     </div>
   )

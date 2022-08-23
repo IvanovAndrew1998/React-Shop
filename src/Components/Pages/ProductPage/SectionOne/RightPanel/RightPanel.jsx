@@ -6,6 +6,29 @@ import RatingStar from '../../../../RatingStar';
 
 const RightPanel = ({productInfo}) => {
 const [rating, setRating] = useState(3);
+const sizeArr = sizeConverter(productInfo.price.sizesWeightsPrices);
+const [currentSize, setCurrentSize] = useState(sizeArr[0]);
+
+function materialConvert (material){
+    if (material === "AG")
+        return "Серебро"
+    else if (material === "AU")
+        return "Золото"
+    else return "Material"
+}
+
+function sizeConverter(sizesObj) {
+    let sizeArr = [];
+    for (const key in sizesObj) {
+        sizeArr = sizeArr.concat([[
+            key,
+            ...sizesObj[key]
+        ]]);
+    }
+    return sizeArr;
+}
+
+
     return (
         <div className="sec1-right">
             <p className="article-num">Артикул: {productInfo.vendorCode}</p>
@@ -33,8 +56,8 @@ const [rating, setRating] = useState(3);
             </div>
             <p className="percantage">-{productInfo.price.discount}%</p>
             <div className="discount">
-                <p className="price-now">74 419 р</p>
-                <p className="price-then">114 419 р</p>
+                <p className="price-now">{currentSize[3]} р</p>
+                <p className="price-then">{currentSize[2]} р</p>
             </div>
             <div className="partial-payment">
                 <a href="#">14 583 р / мес на 6 месяцев</a>
@@ -52,7 +75,7 @@ const [rating, setRating] = useState(3);
             <p className="choose-size">
                 Выберите размер
             </p>
-            <Sizes />
+            <Sizes sizeArr={sizeArr} setSize={setCurrentSize}/>
             <div className="learn-size">
                 <a href="#">Как узнать размер</a>
                 <img src="src/arrow-side.svg" alt="" />
@@ -60,25 +83,25 @@ const [rating, setRating] = useState(3);
             <p className="description">Описание</p>
             <div className="description-det">
                 <p>
-                    Материал ............................ <span>Серебро</span>
+                    Материал ............................ <span>{materialConvert(productInfo.characteristics.material.split("_")[0])}</span>
                 </p>
                 <p>
-                    Проба .................................... <span>925 пробы</span>
+                    Проба .................................... <span>{productInfo.characteristics.material.split("_")[1]} пробы</span>
                 </p>
                 <p>
-                    Бренд .................................... <span>Sokolov</span>
+                    Бренд .................................... <span>{productInfo.characteristics.manufacturer}</span>
                 </p>
                 <p>
-                    Страна ................................... <span>Россия</span>
+                    Окаймление ..................... <span>{productInfo.characteristics.coating}</span>
                 </p>
                 <p>
-                    Вид цепи ............................. <span>Полновесная</span>
+                    Вид цепи ............................. <span>{productInfo.characteristics.wireType}</span>
                 </p>
                 <p>
-                    Замок ..................................... <span>FS074-F9W-02 </span>
+                    Замок ..................................... <span>{productInfo.characteristics.gemType}</span>
                 </p>
                 <p>
-                    Вес изделия: ..................... <span>2.36 г</span>
+                    Вес изделия: ..................... <span>{currentSize[1]} г</span>
                 </p>
             </div>
             <h2 className="sokolov">SOKOLOV</h2>

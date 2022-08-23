@@ -1,32 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { getSizeList } from '../../../../../Api';
 
 
-const Sizes = (
-    // Отправка данных о выбранном размере
-    setSize
-    ) => {
-    const [sizeList, setSizeList] = useState([]);
-    const [selectedSize, setSelectedSize] = useState ();
-
-
-    useEffect(
-        () => setSizeList(getSizeList)
-        ,
-        []
-    );
+const Sizes = ({sizeArr, setSize}) => {
+    const [selectedSize, setSelectedSize] = useState(sizeArr[0][0]);
 
     return (
         <div className="sizes">
-            {sizeList.map(size =>  
-            <button onClick={e=> setSelectedSize(e.target.innerText)}
+            {sizeArr.map(sizeEl =>  
+            <button onClick={e=> {setSelectedSize(e.target.innerText);
+            setSize(sizeEl)}}
             className = {
-                selectedSize == size
+                selectedSize == sizeEl[0]
                 ? "sizeButtonSelected"
                 : ""
             }
             >
-                {size}
+                {sizeEl[0]}
             </button>
             )
             }

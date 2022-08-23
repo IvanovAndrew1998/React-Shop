@@ -59,7 +59,7 @@ const Footer = () => {
                     <p className='from-to'>c 10:00 до 22:00</p>
                 </div>
                 <div className='mapsec-right'>
-                    <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2194.693347978216!2d47.92791531538009!3d56.62794413162351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415994d8fdd527e3%3A0xe091a6186f0667d7!2sKirova%20St%2C%206%2C%20Yoshkar-Ola%2C%20Respublika%20Mariy%20El%2C%20Russia%2C%20424038!5e0!3m2!1sen!2slt!4v1659334406927!5m2!1sen!2slt" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe className='map' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2194.693347978216!2d47.92791531538009!3d56.62794413162351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415994d8fdd527e3%3A0xe091a6186f0667d7!2sKirova%20St%2C%206%2C%20Yoshkar-Ola%2C%20Respublika%20Mariy%20El%2C%20Russia%2C%20424038!5e0!3m2!1sen!2slt!4v1659334406927!5m2!1sen!2slt" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div className='footer-bottom'>
