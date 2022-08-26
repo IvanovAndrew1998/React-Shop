@@ -16,9 +16,9 @@ const ArticleThree = ({recommendation}) => {
                 </div>
                 <div className="art3flex-right">
                     <div>
-                        <p className="dis">{recommendation.discount}%</p>
-                        <p className="black-price">{recommendation.originalPrice} р</p>
-                        <p className="gray-price">{recommendation.discounted_price}р</p>
+                        <p className="dis">-{recommendation.discount}%</p>
+                        <p className="black-price">{recommendation.discountedPrice} р</p>
+                        <p className="gray-price">{recommendation.originalPrice} р</p>
                     </div>
                     <div className="btn-heart">
                         <button className="backet-btn">

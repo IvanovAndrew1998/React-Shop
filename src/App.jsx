@@ -19,6 +19,7 @@ function App() {
             setImages(images);
         });
     }
+    console.log(productInfo);
 
     useEffect(
     fetchProduct

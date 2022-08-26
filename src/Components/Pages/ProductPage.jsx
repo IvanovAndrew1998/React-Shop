@@ -9,25 +9,6 @@ import { getProductData } from '../../Api';
 
 
 const ProductPage = ({images, productInfo, similarProducts, recommendation}) => {
-    // const [images, setImages] = useState();
-    // const [productInfo, setProductInfo]= useState();
-    // const [similarProducts, setSimilarProducts] = useState();
-    // const [recommendation, setRecomendation]= useState();
-
-    // function fetchProduct() {
-    //     getProductData(1).then( res => {
-    //         const {images, similarProducts, recommendation, ...productInfo} = res;
-    //         setProductInfo(productInfo);
-    //         setSimilarProducts(similarProducts);
-    //         setRecomendation(recommendation);
-    //         setImages(images);
-    //     });
-    // }
-
-    // useEffect(
-    // fetchProduct
-    // , 
-    // []);
 
 
   return (
@@ -37,7 +18,7 @@ const ProductPage = ({images, productInfo, similarProducts, recommendation}) => 
     <ArticleThree recommendation={recommendation}/>
     <AtricleTwo/>
     <ArticleTwoProductCards similar={similarProducts}/>
-    <SectionTwo/>
+    <SectionTwo rating={productInfo.rating}/>
     </div>
   )
 }

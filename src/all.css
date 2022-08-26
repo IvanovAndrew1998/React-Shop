@@ -1331,3 +1331,6 @@ html {
     font-family: 'PT Serif Caption';
     font-style: italic;
 }
+.noData {
+    display: none;
+}

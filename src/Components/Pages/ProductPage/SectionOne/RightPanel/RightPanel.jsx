@@ -17,6 +17,12 @@ function materialConvert (material){
     else return "Material"
 }
 
+function characteristicsRender (characteristic){
+    if (characteristic.slice(0,3) === "NO_")
+        return "noData"
+    else return ""
+}
+
 function sizeConverter(sizesObj) {
     let sizeArr = [];
     for (const key in sizesObj) {
@@ -59,10 +65,10 @@ function sizeConverter(sizesObj) {
                 <p className="price-now">{currentSize[3]} р</p>
                 <p className="price-then">{currentSize[2]} р</p>
             </div>
-            <div className="partial-payment">
+            {/* <div className="partial-payment">
                 <a href="#">14 583 р / мес на 6 месяцев</a>
                 <img src="src/arrow-down2.svg" alt="" />
-            </div>
+            </div> */}
             <div className="add-buy">
                 <button className="add">Добавить в корзину</button>
                 <button className="buy">Купить</button>
@@ -89,16 +95,16 @@ function sizeConverter(sizesObj) {
                     Проба .................................... <span>{productInfo.characteristics.material.split("_")[1]} пробы</span>
                 </p>
                 <p>
-                    Бренд .................................... <span>{productInfo.characteristics.manufacturer}</span>
+                    Бренд .................................... <span>{productInfo.characteristics.manufacturer.name}</span>
                 </p>
-                <p>
-                    Окаймление ..................... <span>{productInfo.characteristics.coating}</span>
+                <p className={characteristicsRender(productInfo.characteristics.coating)}>
+                    Покрытие ........................... <span>{productInfo.characteristics.coating}</span>
                 </p>
-                <p>
+                <p className={characteristicsRender(productInfo.characteristics.wireType)}>
                     Вид цепи ............................. <span>{productInfo.characteristics.wireType}</span>
                 </p>
-                <p>
-                    Замок ..................................... <span>{productInfo.characteristics.gemType}</span>
+                <p className={characteristicsRender(productInfo.characteristics.gemType)}>
+                    Вставка ................................. <span>{productInfo.characteristics.gemType}</span>
                 </p>
                 <p>
                     Вес изделия: ..................... <span>{currentSize[1]} г</span>
