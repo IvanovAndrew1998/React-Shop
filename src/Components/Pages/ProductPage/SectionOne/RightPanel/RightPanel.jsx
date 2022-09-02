@@ -9,13 +9,13 @@ const [rating, setRating] = useState(3);
 const sizeArr = sizeConverter(productInfo.price.sizesWeightsPrices);
 const [currentSize, setCurrentSize] = useState(sizeArr[0]);
 
-function materialConvert (material){
-    if (material === "AG")
-        return "Серебро"
-    else if (material === "AU")
-        return "Золото"
-    else return "Material"
-}
+// function materialConvert (material){
+//     if (material === "AG")
+//         return "Серебро"
+//     else if (material === "AU")
+//         return "Золото"
+//     else return "Material"
+// }
 
 function characteristicsRender (characteristic){
     if (characteristic.slice(0,3) === "NO_")
@@ -89,10 +89,7 @@ function sizeConverter(sizesObj) {
             <p className="description">Описание</p>
             <div className="description-det">
                 <p>
-                    Материал ............................ <span>{materialConvert(productInfo.characteristics.material.split("_")[0])}</span>
-                </p>
-                <p>
-                    Проба .................................... <span>{productInfo.characteristics.material.split("_")[1]} пробы</span>
+                    Материал ............................ <span>{productInfo.characteristics.material}</span>
                 </p>
                 <p>
                     Бренд .................................... <span>{productInfo.characteristics.manufacturer.name}</span>

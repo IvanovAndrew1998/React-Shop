@@ -18,7 +18,7 @@ const ArticleThree = ({recommendation}) => {
                     <div>
                         <p className="dis">-{recommendation.discount}%</p>
                         <p className="black-price">{recommendation.discountedPrice} р</p>
-                        <p className="gray-price">{recommendation.originalPrice} р</p>
+                        <p className="gray-price price-then">{recommendation.originalPrice} р</p>
                     </div>
                     <div className="btn-heart">
                         <button className="backet-btn">

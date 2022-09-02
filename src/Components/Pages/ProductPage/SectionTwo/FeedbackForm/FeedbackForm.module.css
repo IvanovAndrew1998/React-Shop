@@ -1,0 +1,26 @@
+/* Что написать? всплывающая подсказка */
+.element {
+    position: relative;
+  }
+  
+  .tooltip {
+opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 3px;
+    border: 1px solid black;
+    width: 400px;
+    z-index: -5;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: small;
+    background-color: white;
+    
+  }
+  
+  .element:hover .tooltip {
+   opacity: 1;
+   transition: 4s;
+   z-index: auto;
+  }

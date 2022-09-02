@@ -1,0 +1,69 @@
+/* Для скриптов */
+.sizeButtonSelected {
+    background-color: red !important;
+    color: white !important;
+
+}
+
+.widget-ratings {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.article-3 {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: white;
+    margin-block: 58px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.discount-card {
+    max-width: 180px;
+}
+
+.percantageSimilar {
+    font-family: 'PT Serif Caption';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--red-1)  ;
+}
+.percantage {
+    font-family: 'PT Serif Caption';
+    font-style: italic;
+}
+.noData {
+    display: none;
+}
+.heightMax {
+    height: 100%;
+}   
+.RatingSticky {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: white;
+    top: 130px;
+
+}
+.productImage:hover {
+    transform: scale(1.45) ;
+    z-index: 5;
+    transition: 0.20s;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+  }
+  
+  .widget-container {
+    position: static !important;
+  } 
+  .widget-ratings {
+    position: static !important;
+  } 

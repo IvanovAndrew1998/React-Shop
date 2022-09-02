@@ -1,6 +1,7 @@
 import React from 'react'
 
 const SimilarProductCard = ({productData}) => {
+
   return (
     <div className="productsim-card">
                         <p className="dis-per percantageSimilar">-{productData.discount}% </p> 

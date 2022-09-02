@@ -3,6 +3,7 @@ import { getProductData } from './Api';
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import ProductPage from "./Components/Pages/ProductPage";
+import Loader from './Components/Pages/ProductPage/Loader/Loader';
 
 function App() {
     const [images, setImages] = useState();
@@ -31,7 +32,7 @@ function App() {
             <Header />
             {images
             ? <ProductPage images={images} productInfo={productInfo} recommendation={recommendation} similarProducts={similarProducts}/>
-            : <p>LOADER</p>}
+            : <Loader/>}
             
             
             <Footer/>
