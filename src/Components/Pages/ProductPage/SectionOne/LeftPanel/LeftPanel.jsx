@@ -15,7 +15,7 @@ const LeftPanel = ({images}) => {
     <div className="sec1-left">
       <div className="product-small">
           {images.map( (image, i) => 
-            <img  src={image} alt="" onClick={() => setCurrentImage(images[i])}/>
+            <img  key={image} src={image} alt="" onClick={() => setCurrentImage(images[i])}/>
           )}
         {/* <img src="src/feed-photo.png" alt="" />
         <img src="src/feed-photo.png" alt="" /> */}

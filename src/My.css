@@ -67,3 +67,6 @@ html {
   .widget-ratings {
     position: static !important;
   } 
+  .feedback-up {
+    height: auto;
+  }

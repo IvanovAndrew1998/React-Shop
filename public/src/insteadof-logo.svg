@@ -3,8 +3,8 @@
 <rect x="69" y="69" width="46" height="46" rx="23" transform="rotate(180 69 69)" fill="white"/>
 <rect x="69.5" y="69.5" width="47" height="47" rx="23.5" transform="rotate(180 69.5 69.5)" stroke="#F4F4F4"/>
 </g>
-<path d="M55 42L37 42" stroke="#FF8B66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M55 50L37 50" stroke="#FF8B66" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 42L37 42" stroke="#FF8B66" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
+<path d="M55 50L37 50" stroke="#FF8B66" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round"/>
 <circle cx="64" cy="32" r="4" fill="#DC2E07"/>
 <defs>
 <filter id="filter0_d_383_11526" x="0" y="0" width="92" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">

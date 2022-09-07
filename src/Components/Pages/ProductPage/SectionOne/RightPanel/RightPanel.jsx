@@ -9,13 +9,6 @@ const [rating, setRating] = useState(3);
 const sizeArr = sizeConverter(productInfo.price.sizesWeightsPrices);
 const [currentSize, setCurrentSize] = useState(sizeArr[0]);
 
-// function materialConvert (material){
-//     if (material === "AG")
-//         return "Серебро"
-//     else if (material === "AU")
-//         return "Золото"
-//     else return "Material"
-// }
 
 function characteristicsRender (characteristic){
     if (characteristic.slice(0,3) === "NO_")
@@ -65,10 +58,7 @@ function sizeConverter(sizesObj) {
                 <p className="price-now">{currentSize[3]} р</p>
                 <p className="price-then">{currentSize[2]} р</p>
             </div>
-            {/* <div className="partial-payment">
-                <a href="#">14 583 р / мес на 6 месяцев</a>
-                <img src="src/arrow-down2.svg" alt="" />
-            </div> */}
+          
             <div className="add-buy">
                 <button className="add">Добавить в корзину</button>
                 <button className="buy">Купить</button>

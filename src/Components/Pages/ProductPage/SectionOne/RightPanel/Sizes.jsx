@@ -7,7 +7,7 @@ const Sizes = ({sizeArr, setSize}) => {
     return (
         <div className="sizes">
             {sizeArr.map(sizeEl =>  
-            <button onClick={e=> {setSelectedSize(e.target.innerText);
+            <button key={sizeEl[0]} onClick={e=> {setSelectedSize(e.target.innerText);
             setSize(sizeEl)}}
             className = {
                 selectedSize == sizeEl[0]
