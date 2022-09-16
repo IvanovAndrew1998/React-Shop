@@ -3,7 +3,7 @@ import Ratings from 'react-ratings-declarative/build/ratings'
 import style from './FeedbackForm.module.css'
 
 const FeedbackForm = () => {
-    const [rated, setRated] = useState();
+    const [rated, setRated] = useState(5);
     return (
         <section className="section-3">
             <div className="inner">
@@ -22,7 +22,7 @@ const FeedbackForm = () => {
                 <div className="feedback-less">
                     <p className="keep-feed">Поставьте оценку</p>
                     <div className="rating-line">
-                        <p className="rating-num">4.0</p>
+                        <p className="rating-num">{rated + ".0"}</p>
                         <Ratings
                             changeRating={setRated}
                             rating={rated}

@@ -1,0 +1,18 @@
+/* .accordionClosure {
+    overflow: hidden;
+    transition: 30s;
+    max-height: 100px;
+}
+.opened {
+
+    transition: 5s;
+    min-height: 0;
+} */
+.theAccordion {
+    cursor: pointer;
+    transition: 0.4s;
+}
+.theAccordionClosed {
+    display: none;
+    overflow: hidden;
+  }

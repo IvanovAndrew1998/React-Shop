@@ -70,3 +70,6 @@ html {
   .feedback-up {
     height: auto;
   }
+  .ratingRates {
+    flex-direction: column-reverse;
+  }

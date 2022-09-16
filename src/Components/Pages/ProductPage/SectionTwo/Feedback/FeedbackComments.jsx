@@ -28,7 +28,7 @@ const FeedbackComments = () => {
             </div>
             <div className="feedback-container">
                {reviews.results.map( review => 
-               <AReview key={review.creation_date} review={review}/>
+               <AReview key={review.date} review={review}/>
                )}
             
             </div>
