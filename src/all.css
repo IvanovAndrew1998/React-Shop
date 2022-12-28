@@ -56,6 +56,7 @@ a{
     border: none;
     border-radius: 15px;
     cursor: pointer;
+    font-size: 16px;
 }
 .article .inner  {
     display: flex;
@@ -411,7 +412,7 @@ a{
 .discount-card p{
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 27px;
 }
 .pricecard-now{
@@ -438,7 +439,7 @@ a{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 250px;
+    /* max-width: 250px; */
     align-items: center;
 }
 .dis-per{
@@ -1198,12 +1199,13 @@ a{
 }
 /* -----------------------------main--------------------------- */
 .section-1-main .inner{
-    background-image:url(src/sales.png) ;
-    height: 280px;
-    background-repeat: no-repeat;
-    background-position: center;
     position: relative;
     margin-bottom: 24px;
+}
+.sales-img{
+    width: 100%;
+    max-width: fit-content;
+    position: relative;
 }
 .mainarrow-left{
     position: absolute;
@@ -1225,7 +1227,16 @@ a{
 .main-element{
     width: 100%;
     max-width: 262px;
-    height: 70px;
+    /* height: 70px; */
+    min-width: 140px;
+}
+.main-element{
+    padding-top: 15px;
+}
+.main-el-mobile div{
+    background-size:260px 70px;
+    padding-top: 15px;
+    margin: auto;
 }
 .main-element.first{
     background-image: url(src/rings.png);
@@ -1257,7 +1268,7 @@ a{
 }
 
 .main-element h2{
-    padding-top: 19px;
+    /* padding-top: 19px; */
     text-align: center;
     color: white;
     font-weight: 600;
@@ -1334,9 +1345,10 @@ a{
     align-items: center;
     padding-right: 20px;
     padding-left: 20px;
-    margin-bottom: 5px;
+
 }
 .discount-prc{
+    font-style: italic;
     font-size: 20px;
     line-height: 26px;
     color: var(--red-1);
@@ -1573,4 +1585,117 @@ a{
     max-width: 262px;
     height: 123px;
     margin: 0 auto;
+}
+.mobile-footer{
+    background:  #FFFFFF;
+    border: 2px solid #F4F4F4;
+    width: 100%;
+    padding-top: 16px;
+    max-width: 1000px;
+    height: 78px;
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+    align-items: center;
+    display: none;
+    max-width:900px ;
+    z-index: 9999;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px 15px 0px 0px;
+}
+.mobile-footer .inner{
+    justify-content: center;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+}
+.mobile-footer button{
+    width: 165px;
+    height: 46px;
+    color: white;
+    background-color: #DC2E07;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.input-footer{
+    height: 46px;
+    width: 165px;
+    border-radius: 15px;
+    border: 1px solid var(--main-1);
+    /* position: relative; */
+    text-align:center ;
+    font-size: 16px;
+    color: #302827;
+    font-weight: 600px;
+}
+.input-footer::-ms-value{
+    margin: 0 auto;
+}
+.inputmobile-footer{
+    position: relative;
+}
+.minus{
+    background-image: url(src/minus.svg);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: var(--main-1);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.plus{
+    background-image: url(src/plus.svg);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: var(--main-1);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+.mobile-footer input::-webkit-outer-spin-button,
+.mobile-footer input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+.main-el-mobile{
+    display: none;
+}
+.main-hiddenarticle{
+    display: none;
+}
+.mainhidden-catalogue{
+    display: none;
+}
+.partners-hidden{
+    display: none;
+}
+.hidden{
+    display: none;
+}
+.small-banner{
+    display: none;
+}
+.gridsection-hidden{
+    display: none;
+    margin-bottom: 20px;
+}
+.section-2-main.hidden{
+    display: none;
+}
+.ringsection-hidden{
+    display: none;
+}
+.mainimg-hidden{
+    display: none;
+}
+.twoimg-flex{
+    overflow: hidden;
 }

@@ -1,22 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const TagList = () => {
+const TagList = ({tags, setTags}) => {    
+
   return (
         <article class="suggestions">
                 <div class="inner">
-                    <div class="sugg">
-                        <a href="#">Женщинам</a>
-                        <img src="src/out.svg" alt="" />
-                    </div>
-                    <div class="sugg">
-                        <a href="#">Кольца</a>
-                        <img src="src/out.svg" alt="" />
-                    </div>
-                    <div class="sugg pop-out">
-                        <a href="#">От 3 460 р</a>
-                        <img src="src/out.svg" alt="" />
-                    </div>
-                    <img class="out-orange" src="src/out-orange.svg" alt="" />
+                    {tags.map( (value, id) => 
+                                        <div class="sugg" >
+                                        <a>{value}</a>
+                                        <img src="src/out.svg" alt="" onClick={() => setTags(tags.filter(value => value != tags[id]))}/>
+                                    </div>
+                    )}
+
                 </div>
             </article>
   )

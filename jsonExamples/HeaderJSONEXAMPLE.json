@@ -1,0 +1,49 @@
+{
+    "profile": {
+        "avatar": [image],
+        "profileLink": [link],
+
+        "notifications": {
+            "count": 3,
+            "orders": [
+            {
+                "link": [link],
+                "orderSingle": {
+                    "link": [link],
+                    "vendorCode": "325875",
+                    "productImage": [image],
+                    "status": "Можно забрать"
+                }  
+            }
+        ],
+            "discounts": [{
+                "discountSingle": {
+                    "link": [link],
+                    "image": [image],
+                    "discount": "-15%",
+                    "actualPrice": "1123",
+                    "discountedPrice": "567"
+                }
+            }
+        ]
+        },  
+        "bucket": {
+            "count": 2,
+            "link": [link]
+        }
+    },
+    "tags": [
+        {
+            "name": "Кольца",
+            "link": [link]
+        },
+        {
+            "name": "Крестики",
+            "link": [link]
+        },
+        {
+            "name": "Серьги",
+            "link": [link]
+        }
+    ]
+}

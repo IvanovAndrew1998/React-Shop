@@ -1,0 +1,57 @@
+.brandname {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FF8B66;
+    padding-inline: 20px;
+    margin-bottom: 6px;
+}
+.ratingBlock {
+    padding-inline: 18px;
+
+}
+.article2-dis {
+    overflow:hidden;
+
+    height: 40px;
+    padding-right: 18px;
+}
+.cardPosition {
+    position: relative;
+    left: 0;
+    margin-left: 2px ;
+    transition: 0.4s;
+    
+}
+.backet-btn {
+    transition: 0.5s;
+}
+.jew {
+    transition: 0.5s;
+}
+/* .jew:hover {
+    transform: scale(1.07);
+    transition: 0.5s;
+    z-index: 2;
+} */
+.jew:hover+.backet-btn.main {
+    color: white;
+    background-color: var(--red-1);
+}
+
+.heart-card {
+    z-index: 3;
+}
+.productsim-card {
+    overflow: hidden;   
+}
+.productsim-card:hover .jew {
+    transform: scale(1.07);
+    transition: 0.5s;
+    z-index: 2;
+}
+.productsim-card:hover .backet-btn.main {
+    color: white;
+    background-color: var(--red-1);
+}

@@ -1,0 +1,10 @@
+.main-element {
+    transition: 0.2s;
+
+}
+.main-element:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+
+   
+}

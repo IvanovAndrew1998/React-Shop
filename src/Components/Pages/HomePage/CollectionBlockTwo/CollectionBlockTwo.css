@@ -1,0 +1,10 @@
+ 
+.sec3main-elements a {
+    transition: 0.2s;
+}
+
+.sec3main-elements a:hover{
+    transition: 0.2s;
+    color: white;
+    background-color: var(--red-1);
+}

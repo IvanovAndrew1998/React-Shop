@@ -1,20 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styles from './Accordion.module.css'
 
 const Accordion = ({ children, title }) => {
     const [opened, setOpened] = useState(false)
+    
 
-
-    const display = opened ? " " + styles.opened : "";
+    const rotated = opened ? "" : " " + styles.rotated;
+    const panel = useRef(0);
+    let height = opened ? 0 : panel.current.scrollHeight + 'px';
 
     return (
-        <div className='theAccordion'>
-            <div class="h2-arrow" onClick={() => setOpened(!opened)}>
-                <h2 class="card-h2">{title}</h2>
-                <img src="src/arrow-gray.png" alt="" />
+        <div className="">
+            <div className={"h2-arrow" +  " " + styles.accordionName} onClick={() => setOpened(!opened)}>
+                <h2 className="card-h2">{title}</h2>
+                <img className={styles.animation + rotated} src="src/arrow-gray.png" alt="" />
             </div>
-            <div className={styles.theAccordion} >
-                {children}
+            <div 
+                ref = {panel}
+                className={styles.theAccordion} 
+                style={{maxHeight: height}}>
+                    {children}
             </div>
 
         </div>

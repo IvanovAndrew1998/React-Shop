@@ -32,6 +32,8 @@ const ProductPage = () => {
     []);
 
   if (images && similarProducts && recommendation && productInfo)
+
+
     return <div>
       <Article />
       <SectionOne productInfo={productInfo} images={images} />

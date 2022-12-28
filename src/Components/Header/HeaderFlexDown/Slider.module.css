@@ -17,3 +17,6 @@
 .animation {
     transition: 0.5s;  
 }
+.navSlider a:hover {
+    color: black;
+}

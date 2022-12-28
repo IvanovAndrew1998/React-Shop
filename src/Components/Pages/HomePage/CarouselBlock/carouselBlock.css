@@ -1,0 +1,57 @@
+.prevButtonSM {
+    background-image: url(/src/src/mainarrow-left.svg);
+    height: 50px;
+    width: 50px;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 50%;
+    background-position: center;
+    position: absolute;
+    z-index: 3;
+    bottom: 40%;
+    left: -2%;
+    overflow: hidden;
+
+    transition: 0.5s;
+}
+
+.prevButtonSM:active {
+    border: 3px solid var(--red-1);
+
+}
+
+.prevButtonSM:hover {
+    transform: scale(1.3);
+}
+
+.nextButtonSM {
+    background-image: url(/src/src/mainarrow-right.svg);
+    height: 50px;
+    width: 50px;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 50%;
+    background-position: center;
+    position: absolute;
+    z-index: 3;
+    bottom: 40%;
+    right: -2%;
+    overflow: hidden;
+
+    transition: 0.5s;
+}
+
+.nextButtonSM:active {
+    border: 3px solid var(--red-1);
+}
+
+.nextButtonSM:hover {
+    transform: scale(1.2);
+}
+
+.carousel.carousel-slider {
+    overflow: visible !important;
+}
+.legend {
+    display: none;
+}

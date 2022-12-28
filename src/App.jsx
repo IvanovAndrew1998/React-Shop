@@ -5,8 +5,10 @@ import {
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Catalogue from './Components/Pages/CataloguePage/Catalogue';
+import HomePage from './Components/Pages/HomePage/HomePage';
 import ProductPage from "./Components/Pages/ProductPage";
 import Loader from './Components/Pages/ProductPage/Loader/Loader';
+
 
 function App() {
 
@@ -19,7 +21,7 @@ function App() {
                     <Route path="product/" element={<ProductPage />}
                     />
                     <Route index path='catalogue/' element={<Catalogue/>}/>
-                    <Route path='*' element={<Catalogue/>}/>
+                    <Route path='*' element={<HomePage/>}/>
                 </Routes>
             </BrowserRouter>
 

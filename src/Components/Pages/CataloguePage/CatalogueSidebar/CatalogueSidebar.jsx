@@ -16,24 +16,28 @@ const MuySlider = styled(Slider)({
 });
 
 
-const CatalogueSidebar = () => {
+const CatalogueSidebar = ({ tags, setTags }) => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
+    const adresats = ['Женщинамм', 'Мужчинам', 'Детям']
+
+    function toggleChange(tagValue) {
+        console.log(tagValue)
+        if (tags.includes(tagValue))
+            setTags(tags.filter(val => val != tagValue))
+        else
+            setTags([...tags, tagValue])
+    }
+
 
     return (
         <div class="cardflex-left">
             <Accordion title='Кому'>
-                <label class="container">Женщинам
-                    <input type="checkbox" />
-                    <span class="mark"></span>
-                </label>
-                <label class="container">Мужчинам
-                    <input type="checkbox" />
-                    <span class="mark"></span>
-                </label>
-                <label class="container">Детям
-                    <input type="checkbox" />
-                    <span class="mark"></span>
-                </label>
+                {adresats.map(value =>
+                    <label class="container">{value}
+                        <input type="checkbox" onClick={e => toggleChange(value)} />
+                        <span class="mark"></span>
+                    </label>
+                )}
 
             </Accordion>
             <div class="product-type">
@@ -71,10 +75,7 @@ const CatalogueSidebar = () => {
                         <span class="mark"></span>
                     </label>
                 </Accordion>
-                {/* <div class="h2-arrow">
-                    <h2 class="card-h2">Тип изделия</h2>
-                    <img src="src/arrow-gray.png" alt="" />
-                </div> */}
+
 
             </div>
             <div class="show-more">
@@ -102,34 +103,35 @@ const CatalogueSidebar = () => {
                 color="secondary"
                 disableSwap
             />
-            <div class="h2-arrow">
-                <h2 class="material">Материал</h2>
-                <img src="src/arrow-gray.png" alt="" />
-            </div>
-            <label class="container">Золото
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
-            <label class="container">Серебро
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
-            <label class="container">Ювелирная сталь
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
-            <label class="container">Розовое золото
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
-            <label class="container">Белое золото
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
-            <label class="container">Желтое золото
-                <input type="checkbox" />
-                <span class="mark"></span>
-            </label>
+            <Accordion title={'Материал'}>
+
+                <label class="container">Золото
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+                <label class="container">Серебро
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+                <label class="container">Ювелирная сталь
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+                <label class="container">Розовое золото
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+                <label class="container">Белое золото
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+                <label class="container">Желтое золото
+                    <input type="checkbox" />
+                    <span class="mark"></span>
+                </label>
+            </Accordion>
+
+
             <div class="adding">
                 <div class="h2-arrow">
                     <h2 >Вставка</h2>
