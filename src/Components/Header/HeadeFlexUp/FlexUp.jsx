@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import RegistrationWindow from '../modalWindows/RegistrationWindow/RegistrationWindow';
+import './FlexUp.css'
+import SuccessWindow  from '../modalWindows/SuccesfulWindow/SuccessWindow';
 
 const FlexUp = () => {
+
+    const [modalActive, setModalActive] = useState(true)
+    const [modalSuccessActive, setModalSuccessActive] = useState(true)
+
     return (
         <div className="header-flexup">
             <img class="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
@@ -28,6 +35,9 @@ const FlexUp = () => {
                     <img className="backet-number" src="src/12.svg" alt="" />
                 </div>
             </div>
+            {/* <RegistrationWindow active={modalActive} setActive={setModalActive}/> 
+            <SuccessWindow active={modalSuccessActive} setModalActive={setModalSuccessActive}/>*/}
+
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductCard from '../../PRODUCTCARD/ProductCard'
 
 const ProductList = () => {
     return (
@@ -22,78 +23,11 @@ const ProductList = () => {
             </div>
             <article class="article-2 gap">
                 <div class="article2-flexbox">
-                    <div class="productsim-card">
-                        <img class="dis-per" src="src/-15%.svg" alt="" />
-                        <img class="heart-card" src="src/heart1.svg" alt="" />
-                        <img class="jew" src="src/product-card.png" alt="" />
-                        <div class="discount-card">
-                            <p class="pricecard-now">3 419 р</p>
-                            <p class="pricecard-then">6 120 р</p>
-                        </div>
-                        <p class="article2-dis">
-                            Серебряная цепь с бриллиантом
-                        </p>
-                        <div class="down-card">
-                            <button class="backet-btn">
-                                В корзину
-                            </button>
-                            <a class="arrow-right" href="#"><img src="src/arrow-right.svg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="productsim-card">
-                        <img class="dis-per" src="src/-15%.svg" alt="" />
-                        <img class="heart-card" src="src/heart1.svg" alt="" />
-                        <img class="jew" src="src/product-card.png" alt="" />
-                        <div class="discount-card">
-                            <p class="pricecard-now">3 419 р</p>
-                            <p class="pricecard-then">6 120 р</p>
-                        </div>
-                        <p class="article2-dis">
-                            Серебряная цепь с бриллиантом
-                        </p>
-                        <div class="down-card">
-                            <button class="backet-btn">
-                                В корзину
-                            </button>
-                            <a class="arrow-right" href="#"><img src="src/arrow-right.svg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="productsim-card">
-                        <img class="dis-per" src="src/-15%.svg" alt="" />
-                        <img class="heart-card" src="src/heart1.svg" alt="" />
-                        <img class="jew" src="src/product-card.png" alt="" />
-                        <div class="discount-card">
-                            <p class="pricecard-now">3 419 р</p>
-                            <p class="pricecard-then">6 120 р</p>
-                        </div>
-                        <p class="article2-dis">
-                            Серебряная цепь с бриллиантом
-                        </p>
-                        <div class="down-card">
-                            <button class="backet-btn">
-                                В корзину
-                            </button>
-                            <a class="arrow-right" href="#"><img src="src/arrow-right.svg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="productsim-card">
-                        <img class="dis-per" src="src/-15%.svg" alt="" />
-                        <img class="heart-card" src="src/heart1.svg" alt="" />
-                        <img class="jew" src="src/product-card.png" alt="" />
-                        <div class="discount-card">
-                            <p class="pricecard-now">3 419 р</p>
-                            <p class="pricecard-then">6 120 р</p>
-                        </div>
-                        <p class="article2-dis">
-                            Серебряная цепь с бриллиантом
-                        </p>
-                        <div class="down-card">
-                            <button class="backet-btn">
-                                В корзину
-                            </button>
-                            <a class="arrow-right" href="#"><img src="src/arrow-right.svg" alt="" /></a>
-                        </div>
-                    </div>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
+                    <ProductCard/>
                 </div>
             </article>
         </div>

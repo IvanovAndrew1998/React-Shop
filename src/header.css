@@ -93,6 +93,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
     position: absolute;
     right: 0px;
+
+    cursor: pointer;
 }
 
 .inside-input {

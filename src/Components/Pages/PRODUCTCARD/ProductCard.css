@@ -55,3 +55,6 @@
     color: white;
     background-color: var(--red-1);
 }
+.ratingBlock {
+    padding-inline: 18px !important;
+}

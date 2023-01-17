@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import CatalogueSidebar from './CatalogueSidebar/CatalogueSidebar'
 import ProductList from './ProductList/ProductList'
 import TagList from './Tags/TagList'
+import './Catalogue.css'
+
 
 const Catalogue = () => {
     const [tags, setTags] = useState([])

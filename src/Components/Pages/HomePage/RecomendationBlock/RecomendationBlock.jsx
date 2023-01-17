@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import RegisterCard from '../../PRODUCTCARD/RegisterCard';
-import ProductCard from '../../PRODUCTCARD/ProductCard';
+import React, { useRef } from 'react'
+
 import "./RecomendationBlock.css";
 
 
@@ -53,11 +52,46 @@ import "./RecomendationBlock.css";
 
 const RecomendationBlock = ({ id, children }) => {
 
-  // let currentCard = 0;
-  // const shiftLengthInc = 270;
-  // let shiftLength = 0;
+  const ref = useRef();
 
-  const [moved, setMoved] = useState(0)
+
+  const shiftLengthInc = 270;
+
+  let current = 0;
+
+  const cardAmount = children.length;
+
+  function shiftBy(shiftLength) {
+    const chld = Array.from(ref.current.children)
+
+    chld.forEach(card => {
+      card.style.left = shiftLength + 'px'
+      
+    });
+  }
+
+  function getShiftLength() {
+    return current*shiftLengthInc
+  }
+
+  function inc() {
+
+    if (current < 0) {
+      current++;
+      shiftBy(getShiftLength());
+      console.log (current);
+    }
+    
+  }
+
+  function dec() {
+
+    if (current > -cardAmount+4) {
+      current--;
+      shiftBy(getShiftLength());
+      console.log (current)
+    }
+  }
 
 
 
@@ -77,18 +111,13 @@ const RecomendationBlock = ({ id, children }) => {
       <article className="article-2 main-version">
         <div className="inner relativePosition">
           <img className="left-arrow" src="src/mainarrow-left.svg" alt=""
-          // onClick={() => inc(id, currentCard, shiftLengthInc, shiftLength)} 
+          onClick={inc} 
           />
-          <div className="article2-flexbox profile" id={id}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <RegisterCard />
+          <div className="article2-flexbox profile" id={id} ref={ref}>
+            {children}
           </div>
           <img className="right-arrow" src="src/mainarrow-right.svg" alt=""
-          // onClick={() => dec(id, currentCard, shiftLengthInc, shiftLength)} 
+          onClick={dec} 
           />
         </div>
       </article>

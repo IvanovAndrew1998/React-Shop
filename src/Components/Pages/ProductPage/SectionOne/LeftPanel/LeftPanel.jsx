@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import './leftPanel.css'
 
 const LeftPanel = ({images}) => {
   images = [
@@ -19,7 +20,7 @@ const LeftPanel = ({images}) => {
           )}
         {/* <img src="src/feed-photo.png" alt="" />
         <img src="src/feed-photo.png" alt="" /> */}
-        <a className="else" href="#">Еще 0</a>
+        <a className="else" href="#">Еще {images.length-3}</a>
       </div>
       <div className="product-big">
         <img className='productImage' src={currentImage} alt="" />

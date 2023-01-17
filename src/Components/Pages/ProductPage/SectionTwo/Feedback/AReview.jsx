@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './AReview.css'
 import Ratings from 'react-ratings-declarative';
 
 
@@ -53,12 +53,14 @@ const AReview = ({ review }) => {
                 </div>
             </div>
             <div className="date-like">
-                <p className="date">{date}</p>
-                <div className="like-dislike">
-                    <div className="dislike">
-                        <img src="src/dislike.svg" alt="" />
-                        <p className="dislikes">0</p>
+                <div className="date-report">
+                    <p className="date">{date}</p>
+                    <div className="report">
+                        <img src="src/reportIcon.svg" alt="" />
+                        <p className='date'>Пожаловаться</p>
                     </div>
+                </div>
+                <div className="like-dislike">
                     <div className="like">
                         <img src="src/like.svg" alt="" />
                         <p className="likes">{review.likes}</p>

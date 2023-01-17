@@ -19,7 +19,7 @@ const RegisterCard = () => {
         <form>
           <div className="maincard-input">
 
-          <InputMask mask="+7 (999) 999 99 99" maskChar=" " />
+          <InputMask mask="+7 (999) 999 99 99" maskChar=" "  placeholder='Номер телефона'/>
 
 
 

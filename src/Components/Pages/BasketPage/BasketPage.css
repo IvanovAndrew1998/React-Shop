@@ -1,0 +1,25 @@
+.container-flexbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    
+    margin-bottom: 150px;
+}
+
+.leftSection {
+    flex: 2;
+}
+
+.rightSection {
+    flex: 1;
+}
+
+.orangeHeader {
+    width: 100%;
+    min-width: 155px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FF8B66;
+}

@@ -1,0 +1,283 @@
+/* Kartochka */
+.basketCard {
+    width: 100%;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px;
+}
+
+.top {
+    display: flex;
+
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    max-width: 420px;
+}
+
+.titleBlock img {
+    object-fit: none;
+    height: 88px;
+    width: 88px;
+    filter: drop-shadow(0px 0px 22px rgba(20, 0, 52, 0.06));
+    border-radius: 15px;
+
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brandName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-1);
+
+    cursor: pointer;
+}
+
+.productName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--black-1);
+
+    cursor: pointer;
+}
+
+.ratingBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-inline: 0;
+}
+
+.ratingBlock a {
+    padding-bottom: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-1);
+
+    cursor: pointer;
+}
+
+.priceBlock {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.discountValue {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+
+    color: var(--red-1);
+}
+
+.currentPrice {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 32px;
+
+    color: var(--black-1);
+}
+
+.originalPrice {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: line-through;
+
+    color: #808080;
+}
+
+.container {
+
+    position: absolute;
+    padding-left: 0;
+    cursor: pointer;
+
+
+    padding-top: 0;
+
+    right: -140px;
+}
+
+
+.bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.delete-buy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.delete-buy img {
+    cursor: pointer;
+}
+
+.deleteButton {
+    width: 46px;
+    height: 46px;
+    object-fit: none;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 56px;
+}
+
+.favourite {
+    width: 24px;
+    height: 24px;
+    object-fit: none;
+}
+
+.buy {
+    min-width: 120px;
+    margin-left: 20px;
+    margin-right: 16px;
+}
+
+.size-quantity {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.sizeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 12px;
+
+    width: 173px;
+    height: 46px;
+
+    background: #FFFFFF;
+    border: 1px solid var(--main-1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.sizeButton p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-1);
+
+}
+
+.quantityButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 14px;
+    gap: 14px;
+
+    background: #FFFFFF;
+    border: 1px solid #FF8B66;
+    border-radius: 15px;
+
+
+}
+
+.quantityButton img {
+    cursor: pointer;
+}
+
+.wholesalePanel {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 8px;
+    grid-row-gap: 16px;
+    
+}
+
+.singleSizeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+/* hovers */
+
+.singleSizeContainer:hover  .size{
+    background: var(--red-1);
+    border-color: var(--red-1);
+    color: #FFFFFF;
+}
+.singleSizeContainer:hover .quantityWholesale p{
+    color: var(--black-1);
+}
+
+
+.size {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 5px;
+
+    width: 54px;
+    height: 40px;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--main-1);
+    border-radius: 15px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-1);
+
+    cursor: pointer;
+}
+
+.quantityWholesale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.quantityWholesale p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #C8C8C8;
+}
+
+.number {
+    font-size: 16px !important;
+    line-height: 20px !important;
+}

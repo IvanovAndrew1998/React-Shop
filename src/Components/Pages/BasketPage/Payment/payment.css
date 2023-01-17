@@ -1,0 +1,212 @@
+.panelHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.left {
+    position: relative;
+
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+
+
+    color: #302827;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.paymentSelection {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.paymentCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    width: 170px;
+    padding: 16px;
+
+    background: #ffffff;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.paymentCard:hover {
+    background: var(--red-1);
+}
+
+.paymentCard:hover p {
+    color: #ffffff;
+}
+
+.paymentName {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    width: 90%;
+
+    color: var(--black-1);
+}
+
+.paymentComment {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #808080;
+}
+
+.paymentAddImg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
+
+.panelSelection {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.panelSelection p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #808080;
+}
+
+.selectedWay {
+    color: var(--black-1) !important;
+}
+
+.signSection {
+    max-width: 550px;
+}
+
+.panelRegistration {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 550px;
+    gap: 12px;
+}
+
+.panelRegistration input {
+    height: 46px;
+    border-radius: 15px;
+    border: 1px solid #C8C8C8;
+    padding: 14px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.panelRegistration button {
+    height: 46px;
+    border-radius: 15px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.resendCode {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    width: 266px;
+    height: 46px;
+
+    border: 1px solid var(--main-1);
+    border-radius: 15px;
+    background: #ffffff;
+    color: var(--main-1);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    cursor: pointer;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--red-1);
+    border: none;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.agreement {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+
+
+}
+
+.agreement p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: var(--black-1);
+
+}
+
+.agreement a {
+    color: var(--main-1);
+}
+
+.agreement label {
+    padding-left: 15px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.modalDescription {
+
+    padding-top: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #808080;
+
+}
+
+.container {
+    position: relative;
+    right: 0;
+    bottom: 4px;
+}
