@@ -107,7 +107,9 @@
     color: #808080;
 }
 
-.container {
+/* Checkbox */
+.containerCard {
+    display: block;
 
     position: absolute;
     padding-left: 0;
@@ -119,7 +121,100 @@
     right: -140px;
 }
 
+.containerCard:not(last-child) {
+    margin-bottom: 10px;
+}
 
+.containerCard input {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.markCard {
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.markCard-main {
+    border: 1px solid #FF8B66;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 3px;
+
+}
+
+.containerCard:hover input~.markPayment-main {
+    background-color: white;
+}
+
+.containerCard input:checked~.markPayment-main {
+    background-color: red;
+}
+
+.markCard-main:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerCard input:checked~.markCard-main:after {
+    display: block;
+}
+
+.containerCard .markCard-main:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.containerCard.mainCard-container a {
+    color: #FF8B66;
+}
+
+.containerCard:hover input~.markCard {
+    background-color: white;
+}
+
+.containerCard input:checked~.markCard {
+    background-color: red;
+}
+
+.markCard:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerCard input:checked~.markCard:after {
+    display: block;
+}
+
+.containerCard .markCard:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+/*  */
 .bottom {
     margin-top: 20px;
     display: flex;
@@ -214,7 +309,7 @@
     grid-template-columns: auto auto auto auto auto auto auto;
     grid-column-gap: 8px;
     grid-row-gap: 16px;
-    
+
 }
 
 .singleSizeContainer {
@@ -224,14 +319,16 @@
     align-items: center;
     gap: 10px;
 }
+
 /* hovers */
 
-.singleSizeContainer:hover  .size{
+.singleSizeContainer:hover .size {
     background: var(--red-1);
     border-color: var(--red-1);
     color: #FFFFFF;
 }
-.singleSizeContainer:hover .quantityWholesale p{
+
+.singleSizeContainer:hover .quantityWholesale p {
     color: var(--black-1);
 }
 

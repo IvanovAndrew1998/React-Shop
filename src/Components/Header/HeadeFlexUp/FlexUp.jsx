@@ -10,7 +10,7 @@ const FlexUp = () => {
 
     return (
         <div className="header-flexup">
-            <img class="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
+            <img className="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
             <img src="src/LogoHeader.svg" className="logo" alt="#" />
             <div className="flexup-middle">
                 <button className='catalogue-button'>

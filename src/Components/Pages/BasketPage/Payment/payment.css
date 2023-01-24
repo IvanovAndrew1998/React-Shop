@@ -205,8 +205,106 @@
 
 }
 
-.container {
+/* Checkbox */
+.containerPayment {
+    display: block;
     position: relative;
-    right: 0;
-    bottom: 4px;
+    padding-left: 35px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 3px;
+
+}
+
+.containerPayment:not(last-child) {
+    margin-bottom: 10px;
+}
+
+.containerPayment input {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.markPayment {
+    border: 1px solid red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.markPayment-main {
+    border: 1px solid #FF8B66;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 3px;
+
+}
+
+.containerPayment:hover input~.markPayment-main {
+    background-color: white;
+}
+
+.containerPayment input:checked~.markPayment-main {
+    background-color: red;
+}
+
+.markPayment-mainPayment:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerPayment input:checked~.markPayment-main:after {
+    display: block;
+}
+
+.containerPayment .markPayment-main:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.containerPayment.mainPayment-container a {
+    color: #FF8B66;
+}
+.containerPayment:hover input~.markPayment {
+    background-color: white;
+}
+
+.containerPayment input:checked~.markPayment {
+    background-color: red;
+}
+
+.markPayment:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.containerPayment input:checked~.markPayment:after {
+    display: block;
+}
+
+.containerPayment .markPayment:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }

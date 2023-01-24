@@ -1,0 +1,145 @@
+/* MAIN CONTAINER */
+.profileInfoForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 16px
+}
+
+.profileInfoForm input {
+    width: 100%;
+    height: 46px;
+    padding: 14px;
+
+    border: 1px solid #C8C8C8;
+    border-radius: 15px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+
+.profileInfoForm button {
+    width: 100%;
+    height: 46px;
+    padding: 14px;
+
+    border: 1px solid #C8C8C8;
+    border-radius: 15px;
+    background: #ffffff;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #C8C8C8;
+
+}
+
+.profileInfoForm p {
+    margin-bottom: 8px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #808080;
+}
+
+.formGridItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.birthDate {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+}
+
+.birthDate select {
+    height: 46px;
+    width: 100%;
+    padding: 14px 8px 14px 12px;
+    appearance: none;
+
+    border: 1px solid #C8C8C8;
+    border-radius: 15px;
+    background: #FFFFFF;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #302827;
+
+
+}
+
+.selectorContainer {
+    width: 100%;
+    position: relative;
+}
+
+.birthDate img {
+    position: absolute;
+    right: 4px;
+    top: 12px;
+    pointer-events: none;
+}
+
+
+.genderSelection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.selectGender {
+    border: 1px solid #808080 !important;
+    color: #808080 !important;
+}
+
+.selectedGender {
+    background: #302827 !important;
+    color: #FFFFFF !important;
+}
+
+/* FORM */
+/* Under Form panel */
+.personalDisclaimer {
+    margin-top: 36px;
+    display: flex;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #808080;
+}
+
+.profileStatePanel {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.profileStateButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+    width: 100%;
+    max-width: 262px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: var(--main-1)
+}

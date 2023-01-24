@@ -1,0 +1,39 @@
+/* Order REVIEWS */
+.profileReviewsQuantity {
+    position: absolute;
+    top: 0;
+    left: 120px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: var(--main-1);
+}
+
+.reviewsCategoriesPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviewsCategories {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #808080;
+}
+
+.profileReviewsContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 24px;
+    align-items: center;
+}

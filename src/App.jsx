@@ -28,7 +28,7 @@ function App() {
                     <Route index path='catalogue/' element={<Catalogue/>}/>
                     <Route path='*' element={<HomePage/>}/>
                     <Route path='basket/' element={<BasketPage/>}/>
-                    <Route path='account/' element={<AccountPage/>} />
+                    <Route path='profile' element={<AccountPage/>} />
                 </Routes>
             </BrowserRouter>
 

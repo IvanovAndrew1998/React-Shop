@@ -1,0 +1,82 @@
+.ODupperPanel {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.littleProductCarousel {
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.littleProductCarouselTrack {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow: hidden;
+
+}
+
+.littleProductCarouselImage {
+    position: relative;
+}
+
+.littleProductCarouselImage img {
+
+    height: 95px;
+    width: 95px;
+    border: 1px solid #F4F4F4;
+
+    border-radius: 15px;
+
+    object-fit: none;
+}
+
+.littleProductCarouselRight {
+    position: absolute;
+    right: -50px;
+    top: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.littleProductCarouselLeft {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.ODUbutton {
+    padding: 14px 30px;
+    border: 1px solid var(--main-1);
+    background: #ffffff;
+    border-radius: 15px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-1);
+}
+.ODupperPanelRightButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ODupperPanelRepeatCancel {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.ODupperPanelRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 28px;
+}

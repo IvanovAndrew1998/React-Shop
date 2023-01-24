@@ -1,0 +1,81 @@
+/* MY CARDS */
+
+.profileMyCards {
+    margin-top: 36px;
+}
+
+.profileMyCardsHeader {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+
+    color: var(--black-1)
+}
+
+.profileMyCardsContainer {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileSingleCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    max-width: 240px;
+
+    background: #FFFFFF;
+
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px;
+
+}
+
+.profileSingleCardBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.profileSingleCard {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #808080;
+}
+
+.profileSingleCardBankName {
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: var(--black-1);
+
+}
+
+.profileSingleCardButton {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.disclaimerLessWidth {
+    max-width: 70%;
+}
+
+/* MY CARDS */

@@ -1,0 +1,61 @@
+.ODinfoPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px;
+}
+
+.ODinfoPanelText {
+    display: flex;
+    flex-direction: column;    
+}
+.ODinfoPanelHeaderP {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #808080;
+
+    margin-bottom: 4px;
+}
+
+.ODInfoPanelP {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #302827;
+
+}
+.ODinfoPanelRight {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.ODinfoPanelLeft {
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.ODIitem {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+.alignStart {
+    align-items: flex-start;
+}
+.workingHours {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}

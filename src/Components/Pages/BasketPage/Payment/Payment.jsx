@@ -75,9 +75,9 @@ const Payment = () => {
                         <button className="submitButton">Готово</button>
                     </form>
                     <div className="agreement agreementMarginBotton">
-                        <label class="container">
+                        <label class="containerPayment">
                             <input type="checkbox" />
-                            <span class="mark"></span>
+                            <span class="markPayment"></span>
                         </label>
                         <p>Даю согласие на обработку персонадльных данных, и принимаю  <a href=''>пользовательское соглашение</a></p>
                     </div>
