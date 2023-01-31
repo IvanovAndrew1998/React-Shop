@@ -1,12 +1,64 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import RegistrationWindow from '../modalWindows/RegistrationWindow/RegistrationWindow';
 import './FlexUp.css'
-import SuccessWindow  from '../modalWindows/SuccesfulWindow/SuccessWindow';
+import SuccessWindow from '../modalWindows/SuccesfulWindow/SuccessWindow';
+import DDorder from './DDItems/DDorder';
+import DDdiscount from './DDItems/DDdiscount';
+import { listClasses } from '@mui/material';
+import headerDiscounts from './DDdiscountsBackPlaceholder';
+
 
 const FlexUp = () => {
+    
 
-    const [modalActive, setModalActive] = useState(true)
+    const [listHeaderDiscounts, setListHeaderDiscounts] = useState(headerDiscounts);
+    function removeItem(id) {
+        setListHeaderDiscounts(listHeaderDiscounts.filter( data => data.id != id))
+        
+    }
+
+    const [modalActive, setModalActive] = useState(false)
     const [modalSuccessActive, setModalSuccessActive] = useState(true)
+    const [DDopen, setDDopen] = useState(false)
+    const [DDOrdersOpen, setDDOrdersOpen] = useState(false)
+    const [tabToggle, setTabToggle] = useState(1);
+
+    let menuRef = useRef();
+    let ordersRef = useRef()
+
+    useEffect(() => {
+        let handler = (e) => {
+            if (!menuRef.current.contains(e.target)) {
+                setDDopen(false);
+            }
+
+        }
+
+        document.addEventListener('mousedown', handler);
+
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    });
+    useEffect(() => {
+        let handler = (e) => {
+            if (!ordersRef.current.contains(e.target)) {
+                setDDOrdersOpen(false);
+            }
+
+        }
+
+        document.addEventListener('mousedown', handler);
+
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    });
+
+    const toggleFunc = (index) => {
+        setTabToggle(index)
+    }
+
 
     return (
         <div className="header-flexup">
@@ -16,7 +68,7 @@ const FlexUp = () => {
                 <button className='catalogue-button'>
                     <a className="catalogue-link" href="#">Каталог</a>
                 </button>
-               
+
                 <div className="inside-input">
                     <input className="site-search" type="search" id="site-search" placeholder="Поиск" />
                     <span className="x"></span>
@@ -27,16 +79,80 @@ const FlexUp = () => {
                 </div>
             </div>
             <div className="flexup-right">
-                <img src="src/guy.svg" alt="" />
-                <img src="src/clock.svg" alt="" />
+                <div className="dropdownContainer" ref={menuRef}>
+                    <img src="src/guy.svg" alt="" onClick={() => { setDDopen(!DDopen) }} />
+                    <div className={`dropdownMenu ${DDopen ? 'active' : 'inactive'}`}>
+                        <ul>
+                            <li>
+                                <img src="src/guideSection/Profile.svg" alt="" />
+                                <a href="">Профиль</a>
+                            </li>
+                            <li>
+                                <img src="src/guideSection/Orders.svg" alt="" />
+                                <a href="">Заказы</a>
+                            </li>
+                            <li>
+                                <img src="src/guideSection/heartGray.svg" alt="" />
+                                <a href="">Избранное</a>
+                                <div className="notificationQuantity">
+                                    <p>13</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="src/guideSection/Basket.svg" alt="" />
+                                <a href="">Корзина</a>
+                                <div className="notificationQuantity">
+                                    <p>6</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="src/guideSection/Discounts.svg" alt="" />
+                                <a href="">Скидки</a>
+                                <div className="notificationQuantity">
+                                    <p>322</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="src/guideSection/Reviews.svg" alt="" />
+                                <a href="">Комментарии</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="notificationContainer" ref={ordersRef}>
+                    <img src="src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
+                    <div className={`dropdownOrders ${DDOrdersOpen ? 'active' : 'inactive'}`}>
+                        <div className="DDOheaderPanel">
+                            <div className={tabToggle === 1 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(1)}>
+                                Заказы
+                            </div>
+                            <div className={tabToggle === 2 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(2)}>
+                                Скидки
+                            </div>
+                        </div>
+                        <ul className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
+                            <DDorder />
+                            <DDorder />
+                            <button className='clearAllBtn'>Очистить список</button>
+                        </ul>
+                        <ul className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
+                            {listHeaderDiscounts.map(data => {
+                                return (
+                                    <DDdiscount data={data} deleteCallBack={removeItem}/>
+                                )
+                            })}
+                            <button className='clearAllBtn'>Очистить список</button>
+                        </ul>
+                    </div>
+                </div>
                 <img src="src/heart-filled.svg" alt="" />
                 <div className="backet">
-                    <img src="src/basket.svg" alt="" />
+                    <img src="src/basket.svg" alt="" onClick={() => setModalActive(true)} />
                     <img className="backet-number" src="src/12.svg" alt="" />
                 </div>
             </div>
-            {/* <RegistrationWindow active={modalActive} setActive={setModalActive}/> 
-            <SuccessWindow active={modalSuccessActive} setModalActive={setModalSuccessActive}/>*/}
+            <RegistrationWindow active={modalActive} setActive={setModalActive} />
+            {/* <SuccessWindow active={modalSuccessActive} setModalActive={setModalSuccessActive}/> */}
 
         </div>
     )

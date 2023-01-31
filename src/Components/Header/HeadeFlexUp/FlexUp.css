@@ -1,3 +1,266 @@
 .catalogue-button {
     cursor: pointer;
 }
+
+.dropdownContainer {
+    position: relative;
+}
+
+.dropdownMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 12px;
+    top: 56px;
+    right: -104px;
+
+    min-width: 240px;
+
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.08);
+    border-radius: 15px;
+
+    z-index: 3;
+}
+
+.notificationQuantity {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    min-width: 20px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 0px 5px;
+    right: 0px;
+    top: 12px;
+    background: var(--red-1);
+    border-radius: 25px;
+
+    color: #FFFFFF;
+}
+
+.notificationQuantity p {
+    padding-top: 2px;
+}
+
+.dropdownMenu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.dropdownMenu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+
+.dropdownMenu ul {
+    width: 100%;
+}
+
+.dropdownMenu li {
+    padding: 11px 16px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.dropdownMenu li:hover {
+    background: #F5F5F5;
+}
+
+
+.dropdownMenu a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--black-1);
+}
+
+.notificationContainer {
+    position: relative;
+}
+
+.dropdownOrders {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+
+
+    top: 40px;
+    right: -156px;
+
+    background: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 15px;
+
+    z-index: 4;
+}
+
+.dropdownOrders.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.dropdownOrders.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+
+.DDOheaderPanel {
+    display: flex;
+    flex-direction: row;
+    background: #F5F5F5;
+
+    border: 1px solid #F5F5F5;
+    border-radius: 25px;
+
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--black-1);
+
+}
+
+.DDOheaderButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 36px;
+
+    cursor: pointer;
+}
+
+.DDOselected {
+    background: #FFFFFF;
+
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
+    border-radius: 25px;
+}
+
+.dropdownOrders li {
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+
+
+
+}
+
+.DDOimg {
+    width: 88px;
+    height: 88px;
+    border-radius: 15px;
+    object-fit: none;
+}
+
+.DDOsingleOrder {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    padding: 11px 16px 11px 0px;
+
+    position: relative;
+    width: 180px;
+}
+
+.DDOsingleOrder p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #808080;
+}
+
+.DDOsinglePrices {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.DDOsingleOriginal {
+    text-decoration-line: line-through;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.DDOsingleDiscount {
+    color: var(--red-1) !important;
+}
+
+.DDOvendorCode {
+
+    font-size: 20px !important;
+    line-height: 24px !important;
+
+    color: var(--black-1) !important;
+    min-width: 82px;
+}
+
+.x {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.DDContent {
+    display: none;
+}
+
+.DDActiveContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clearAllBtn {
+    border: 1px solid var(--main-1);
+    border-radius: 15px;
+    background: #FFFFFF;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-1);
+    padding: 8px 16px;
+    margin-inline: 16px;
+    margin-top: 11px;
+    cursor: pointer;
+}

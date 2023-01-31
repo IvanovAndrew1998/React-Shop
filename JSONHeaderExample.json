@@ -1,0 +1,71 @@
+{    
+    "Header": [
+        {
+            "userHeader":[
+                {
+                    "avatar": "IMG",
+                    "profile": "LINK",
+                    "orders":
+                        {
+                            "link":"LINK",
+                            "quantity": "13",
+                            "products":
+                                [
+
+                                        {
+                                            "vendorCode": "№123123123",
+                                            "productImage": "IMG"
+                                        }
+                                        
+                                ]
+                            
+                        }
+                    
+                },
+                {
+                    "favourite":
+                        {
+                            "link":"LINK",
+                            "quantity": "13"
+                        }
+                    
+                },
+                {
+                    "basket": 
+                        {
+                            "link":"LINK",
+                            "quantity": "13"
+                        }
+                    
+                },
+                {
+                    "discount": 
+                        {
+                            "link":"LINK",  
+                            "quantity": "13",
+                            "products": [
+                            
+                                
+                                    {   
+                                        "productImage": "IMG",
+                                        "originalPrice": 1934,
+                                        "discountedPrice": 1738,
+                                        "discount": 10
+                                    }
+                                
+                            ]
+                        }
+                }
+            ]
+        },
+        {
+            "sliderHeader": [
+                {
+                    "category": "Кольца",
+                    "link": "googal.ru"
+                }
+            ]
+        }
+
+    ]
+}

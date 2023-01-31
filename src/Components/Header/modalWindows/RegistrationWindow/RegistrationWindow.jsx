@@ -50,9 +50,9 @@ const RegistrationWindow = ({ active, setActive }) => {
   }
 
   return (
-    <div className='modal'>
+    <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
 
-      <div className="modalContent">
+      <div className="modalContent" onClick={e => e.stopPropagation()}>
 
         {/* <div className="modalHeader">
           <p>Вход или регистрация</p>

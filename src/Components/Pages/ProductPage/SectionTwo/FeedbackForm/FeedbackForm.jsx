@@ -51,7 +51,7 @@ const FeedbackForm = () => {
                     </div>
                     <div className="two-buttons">
                         <button className="btn-orange">
-                            Опубликовтаь отзыв
+                            Опубликовать отзыв
                         </button>
                         <button className="btn-orange">
                             Сохранить черновик
