@@ -10,11 +10,14 @@ import ProductPage from "./Components/Pages/ProductPage";
 import Loader from './Components/Pages/ProductPage/Loader/Loader';
 import BasketPage from './Components/Pages/BasketPage/BasketPage';
 import AccountPage from './Components/Pages/AccountPage/AccountPage';
+import { userStore } from './Store/UserStore.ts';
 
 
 
 function App() {
-
+    // useEffect(
+    //     userStore.loadData(),
+    //     [])
 
 
     return (

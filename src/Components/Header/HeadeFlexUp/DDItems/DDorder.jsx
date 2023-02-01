@@ -1,15 +1,15 @@
 import React from 'react'
 
-const DDorder = () => {
+const DDorder = ({dataO, orderDeleteCallBack}) => {
     return (
         <li>
             <img className='DDOimg' src="src/basketImage.svg" alt="" />
 
             <div className="DDOsingleOrder">
                 <p>Заказ</p>
-                <p className="DDOvendorCode">№345677898</p>
+                <p className="DDOvendorCode">№{dataO.vendorCode}</p>
                 <p>Можно забрать</p>
-                <img className='x' src="src/Xicon.svg" alt="" />
+                <img className='x' src="src/Xicon.svg" alt="" onClick={() => orderDeleteCallBack(dataO.id)}/>
             </div>
         </li>
     )

@@ -6,16 +6,24 @@ import DDorder from './DDItems/DDorder';
 import DDdiscount from './DDItems/DDdiscount';
 import { listClasses } from '@mui/material';
 import headerDiscounts from './DDdiscountsBackPlaceholder';
+import headerOrders from './DDordersBackPlaceholder';
+import { userStore } from '../../../Store/UserStore.ts';
+import { observer } from 'mobx-react-lite';
 
 
-const FlexUp = () => {
-    
+const FlexUp = observer(() => {
+
+    const [listHeaderOrders, setListHeaderOrders] = useState(headerOrders);
+    function removeOrderItem(id) {
+        setListHeaderOrders(listHeaderOrders.filter(dataO => dataO.id != id))
+    }
 
     const [listHeaderDiscounts, setListHeaderDiscounts] = useState(headerDiscounts);
     function removeItem(id) {
-        setListHeaderDiscounts(listHeaderDiscounts.filter( data => data.id != id))
-        
+        setListHeaderDiscounts(listHeaderDiscounts.filter(data => data.id != id))
+
     }
+
 
     const [modalActive, setModalActive] = useState(false)
     const [modalSuccessActive, setModalSuccessActive] = useState(true)
@@ -79,83 +87,96 @@ const FlexUp = () => {
                 </div>
             </div>
             <div className="flexup-right">
-                <div className="dropdownContainer" ref={menuRef}>
-                    <img src="src/guy.svg" alt="" onClick={() => { setDDopen(!DDopen) }} />
-                    <div className={`dropdownMenu ${DDopen ? 'active' : 'inactive'}`}>
-                        <ul>
-                            <li>
-                                <img src="src/guideSection/Profile.svg" alt="" />
-                                <a href="">Профиль</a>
-                            </li>
-                            <li>
-                                <img src="src/guideSection/Orders.svg" alt="" />
-                                <a href="">Заказы</a>
-                            </li>
-                            <li>
-                                <img src="src/guideSection/heartGray.svg" alt="" />
-                                <a href="">Избранное</a>
-                                <div className="notificationQuantity">
-                                    <p>13</p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="src/guideSection/Basket.svg" alt="" />
-                                <a href="">Корзина</a>
-                                <div className="notificationQuantity">
-                                    <p>6</p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="src/guideSection/Discounts.svg" alt="" />
-                                <a href="">Скидки</a>
-                                <div className="notificationQuantity">
-                                    <p>322</p>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="src/guideSection/Reviews.svg" alt="" />
-                                <a href="">Комментарии</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="notificationContainer" ref={ordersRef}>
-                    <img src="src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
-                    <div className={`dropdownOrders ${DDOrdersOpen ? 'active' : 'inactive'}`}>
-                        <div className="DDOheaderPanel">
-                            <div className={tabToggle === 1 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(1)}>
-                                Заказы
-                            </div>
-                            <div className={tabToggle === 2 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(2)}>
-                                Скидки
+                {
+                    userStore.logedIn
+                        ?
+
+                        <><div className="dropdownContainer" ref={menuRef}>
+                            <img src="src/guy.svg" alt="" onClick={() => { setDDopen(!DDopen) }} />
+                            <div className={`dropdownMenu ${DDopen ? 'active' : 'inactive'}`}>
+                                <ul>
+                                    <li>
+                                        <img src="src/guideSection/Profile.svg" alt="" />
+                                        <a href="">Профиль</a>
+                                    </li>
+                                    <li>
+                                        <img src="src/guideSection/Orders.svg" alt="" />
+                                        <a href="">Заказы</a>
+                                    </li>
+                                    <li>
+                                        <img src="src/guideSection/heartGray.svg" alt="" />
+                                        <a href="">Избранное</a>
+                                        <div className="notificationQuantity">
+                                            <p>13</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="src/guideSection/Basket.svg" alt="" />
+                                        <a href="">Корзина</a>
+                                        <div className="notificationQuantity">
+                                            <p>6</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="src/guideSection/Discounts.svg" alt="" />
+                                        <a href="">Скидки</a>
+                                        <div className="notificationQuantity">
+                                            <p>322</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="src/guideSection/Reviews.svg" alt="" />
+                                        <a href="">Комментарии</a>
+                                    </li>
+                                    <li onClick={() => userStore.logOut()}>
+                                        <img src="src/guideSection/Logout.svg" alt="" />
+                                        <a href="">Выйти</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <ul className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
-                            <DDorder />
-                            <DDorder />
-                            <button className='clearAllBtn'>Очистить список</button>
-                        </ul>
-                        <ul className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
-                            {listHeaderDiscounts.map(data => {
-                                return (
-                                    <DDdiscount data={data} deleteCallBack={removeItem}/>
-                                )
-                            })}
-                            <button className='clearAllBtn'>Очистить список</button>
-                        </ul>
-                    </div>
-                </div>
-                <img src="src/heart-filled.svg" alt="" />
-                <div className="backet">
-                    <img src="src/basket.svg" alt="" onClick={() => setModalActive(true)} />
-                    <img className="backet-number" src="src/12.svg" alt="" />
-                </div>
+                            <div className="notificationContainer" ref={ordersRef}>
+                                <img src="src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
+                                <div className={`dropdownOrders ${DDOrdersOpen ? 'active' : 'inactive'}`}>
+                                    <div className="DDOheaderPanel">
+                                        <div className={tabToggle === 1 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(1)}>
+                                            Заказы
+                                        </div>
+                                        <div className={tabToggle === 2 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(2)}>
+                                            Скидки
+                                        </div>
+                                    </div>
+                                    <ul className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
+                                        {listHeaderOrders.map(dataO => {
+                                            return (
+                                                <DDorder dataO={dataO} orderDeleteCallBack= {removeOrderItem} />
+                                            )
+                                        })}
+                                        <button className='clearAllBtn'>Очистить список</button>
+                                    </ul>
+                                    <ul className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
+                                        {listHeaderDiscounts.map(data => {
+                                            return (
+                                                <DDdiscount data={data} deleteCallBack= {removeItem} />
+                                            )
+                                        })}
+                                        <button className='clearAllBtn'>Очистить список</button>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="src/heart-filled.svg" alt="" />
+                            <div className="backet">
+                                <img src="src/basket.svg" alt="" />
+                                <img className="backet-number" src="src/12.svg" alt="" />
+                            </div></>
+                        : <button className='signIn' onClick={() => setModalActive(true)} >Войти</button>
+                }
             </div>
             <RegistrationWindow active={modalActive} setActive={setModalActive} />
             {/* <SuccessWindow active={modalSuccessActive} setModalActive={setModalSuccessActive}/> */}
 
         </div>
     )
-}
+})
 
 export default FlexUp
