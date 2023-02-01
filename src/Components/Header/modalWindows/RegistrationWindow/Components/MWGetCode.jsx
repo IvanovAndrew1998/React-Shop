@@ -1,5 +1,5 @@
 import React from 'react';
-import { userStore } from '../../../../../Store/UserStore.ts';
+import { userStore } from '../../../../../Store/UserStore.js';
 
 const MWGetCode = ({setContentType, setActive}) => {
     return (

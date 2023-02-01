@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import InputMask from 'react-input-mask';
 import { useForm } from "react-hook-form";
-import { userStore } from '../../../../../Store/UserStore.ts';
+import { userStore } from '../../../../../Store/UserStore.js';
 
 const MWRegistration = ({setContentType}) => {
 

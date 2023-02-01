@@ -1,7 +1,10 @@
 import { makeAutoObservable } from "mobx"
+import Cookies from 'js-cookie'
+
 
 class UserData {
-    logedIn: boolean;
+    logedIn;
+
 
     constructor() {
         this.logedIn = false;
@@ -19,15 +22,11 @@ class UserData {
     }
 
     saveData() {
-        localStorage.setItem("logedIn", JSON.stringify(this.logIn));
+        Cookies.set('UM:LOGGEDIN', String(this.logedIn) , { expires: 7 })
+    
     }
-
     loadData() {
-        // localStorage.getItem('logedIn')
-        // // @ts-ignore
-        // ? this.logedIn = JSON.parse(localStorage.getItem('logedIn'))
-        // : this.logedIn = false
-        this.logIn()
+        this.logedIn = Boolean(Cookies.get( 'UM:LOGGEDIN' ))
     }
 
 

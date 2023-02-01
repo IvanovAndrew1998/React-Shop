@@ -7,7 +7,7 @@ import DDdiscount from './DDItems/DDdiscount';
 import { listClasses } from '@mui/material';
 import headerDiscounts from './DDdiscountsBackPlaceholder';
 import headerOrders from './DDordersBackPlaceholder';
-import { userStore } from '../../../Store/UserStore.ts';
+import { userStore } from '../../../Store/UserStore.js';
 import { observer } from 'mobx-react-lite';
 
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './registrationWindow.css'
 import InputMask from 'react-input-mask';
 
-import { userStore } from '../../../../Store/UserStore.ts';
+import { userStore } from '../../../../Store/UserStore.js';
 import MWLogin from './Components/MWLogin';
 import MWGetCode from './Components/MWGetCode';
 import MWCorporateClients from './Components/MWCorporateClients';
