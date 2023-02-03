@@ -31,6 +31,7 @@ const FlexUp = observer(() => {
     const [DDOrdersOpen, setDDOrdersOpen] = useState(false)
     const [tabToggle, setTabToggle] = useState(1);
 
+
     let menuRef = useRef();
     let ordersRef = useRef()
 
@@ -147,20 +148,49 @@ const FlexUp = observer(() => {
                                         </div>
                                     </div>
                                     <ul className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
-                                        {listHeaderOrders.map(dataO => {
-                                            return (
-                                                <DDorder dataO={dataO} orderDeleteCallBack= {removeOrderItem} />
-                                            )
-                                        })}
-                                        <button className='clearAllBtn'>Очистить список</button>
+                                        {
+                                            listHeaderOrders.length !== 0
+                                                ?
+                                                <>
+                                                    {listHeaderOrders.map(dataO => {
+                                                        return (
+                                                            <DDorder dataO={dataO} orderDeleteCallBack={removeOrderItem} />
+                                                        )
+                                                    })}
+                                                    <button className='clearAllBtn' onClick={() => setListHeaderOrders([])} >Очистить список</button>
+                                                </>
+                                                :
+                                                <div className='EmptyList'>
+                                                    <div className="EmptyListIcon">
+                                                        <img src="src/guideSection/DiscountsBlue.svg" alt="" />
+                                                    </div>
+                                                    <h2>У вас пока нет заказов</h2>
+                                                    <p>Найдите то, что вам нравится в каталоге или вопользуйтесь поиском</p>
+                                                </div>
+                                        }
                                     </ul>
                                     <ul className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
-                                        {listHeaderDiscounts.map(data => {
-                                            return (
-                                                <DDdiscount data={data} deleteCallBack= {removeItem} />
-                                            )
-                                        })}
-                                        <button className='clearAllBtn'>Очистить список</button>
+                                        {
+                                            listHeaderDiscounts.length !== 0
+                                                ?
+                                                <>
+                                                    {listHeaderDiscounts.map(data => {
+                                                        return (
+                                                            <DDdiscount data={data} deleteCallBack={removeItem} />
+
+                                                        )
+                                                    })}
+                                                    <button className='clearAllBtn' onClick={() => setListHeaderDiscounts([])} >Очистить список</button>
+                                                </>
+                                                :
+                                                <div className='EmptyList'>
+                                                    <div className="EmptyListIcon">
+                                                        <img src="src/guideSection/DiscountsBlue.svg" alt="" />
+                                                    </div>
+                                                    <h2>Узнать о снижении цены</h2>
+                                                    <p className='EmptyListMargin'>Эту функцию можно найти на странице товара</p>
+                                                </div>
+                                        }
                                     </ul>
                                 </div>
                             </div>

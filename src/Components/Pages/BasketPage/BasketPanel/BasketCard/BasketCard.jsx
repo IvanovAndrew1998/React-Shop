@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './BasketCard.css'
 import Ratings from 'react-ratings-declarative';
+import CorpSpinPanel from './Components/CorpSpin/CorpSpinPanel';
+import RegSpin from './Components/RegSpin/RegSpin';
+
 
 const BasketCard = () => {
+
+  const [corporatePanel, setCorporatePanel] = useState(false)
 
   return (
     <div className="basketCard">
@@ -12,7 +17,7 @@ const BasketCard = () => {
           <div className="infoBlock">
             <p className='brandName'>Sokolov</p>
             <p className='productName'>Золотое кольцо обручальное с изумрудом</p>
-            <div className="ratingBlock">
+            <div className="ratingBlockBasket">
               <Ratings
                 rating={2}
                 widgetRatedColors="#FBB03B"
@@ -49,123 +54,15 @@ const BasketCard = () => {
           <button className="buy">Купить</button>
           <img className='favourite' src="src/heart1.svg" alt="" />
         </div>
-        {/* <div className="size-quantity">
-          <div className="sizeButton">
+        {
+          corporatePanel === false
+            ?
+            <RegSpin/>
+            :
+            <CorpSpinPanel/>
+        }
 
-            <img src="src/Pencil.svg" alt="" />
-            <p>75.5 Размер</p>
 
-          </div>
-          <div className="quantityButton">
-
-            <img src="src/Minus.svg" alt="" />
-            <p>1</p>
-            <img src="src/Plus.svg" alt="" />
-
-          </div>
-        </div> */}
-        <div className='wholesalePanel'>
-
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-          <div className="singleSizeContainer">
-            <div className="quantityWholesale">
-              <p className='number'>0</p>
-              <p>шт</p>
-            </div>
-            <div className="size">40</div>
-          </div>
-
-        </div>
       </div>
     </div>
   )

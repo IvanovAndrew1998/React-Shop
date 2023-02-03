@@ -15,8 +15,8 @@ const AccountPage = () => {
 
           <div className="profileMainContainer">
           
-            {/* <AccountSettings/> */}
-            <OrderDetails/>
+            <AccountSettings/>
+            {/* <OrderDetails/> */}
 
           </div>
 

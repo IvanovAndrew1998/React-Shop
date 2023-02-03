@@ -1,0 +1,46 @@
+.sizeCounter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    gap: 11px;
+
+    background: var(--red-1);
+    border-radius: 15px;
+
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    z-index: 2;
+    position: absolute;
+    top: -10px;
+}
+
+.sizeCounter.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.3s;
+}
+
+.sizeCounter.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
+.sizeCounter img {
+    cursor: pointer;
+}
+
+.sizeCounter p {
+    text-align: center;
+    min-width: 24px;
+}
+.quantityColored {
+    color: var(--black-1) !important;
+}

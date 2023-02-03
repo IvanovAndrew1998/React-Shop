@@ -27,6 +27,7 @@ class UserData {
     }
     loadData() {
         this.logedIn = Boolean(Cookies.get( 'UM:LOGGEDIN' ))
+        this.logedIn = Cookies.get( 'UM:LOGGEDIN' ) === 'true' ? true : false
     }
 
 

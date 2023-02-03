@@ -11,6 +11,5 @@ export async function getProductData(id) {
 }
 export async function getProductReviews(id, offset = 0) { 
     const reviews = await axios.get(`http://localhost:8000/reviews/product?id=${id}&limit=5&offset=${offset}`);
-    return reviews.data;
-    
+    return reviews.data;  
 }

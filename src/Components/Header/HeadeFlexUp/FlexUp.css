@@ -284,3 +284,39 @@
 
     cursor: pointer;
 }
+.EmptyListIcon {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.EmptyList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.EmptyList h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: var(--black-1);
+
+    width: 279px;
+    margin-bottom: 4px;
+
+}
+
+.EmptyList p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #808080;
+}
+.EmptyListMargin {
+    margin-bottom: 20px;
+}

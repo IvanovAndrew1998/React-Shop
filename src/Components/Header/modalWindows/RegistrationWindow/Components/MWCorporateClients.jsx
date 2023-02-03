@@ -1,23 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { userStore } from '../../../../../Store/UserStore.js';
 
-const MWCorporateClients = ({setContentType, setActive}) => {
+const MWCorporateClients = ({ setContentType, setActive }) => {
+
+    const [typeToggled, setTypeToggled] = useState(true);
+    const [shown, setShown] = useState('');
+    function showPassword() {
+        if (shown === '') {
+
+            setTypeToggled(!typeToggled)
+            setShown("shown");
+        }
+        else {
+
+            setTypeToggled(!typeToggled)
+            setShown('');
+        }
+    }
+
     return (
         <div>
-            <div className="corporativeClient">
-                <div className="modalHeaderWide">
-                    <p>Регистрация корпоративных клиентов</p>
+            <div className="modalHeader">
+                <p>Вход или регистрация</p>
+            </div>
+            <div className="selectionPanel">
+                <p>Почта</p>
+            </div>
+            <div className="inputForm">
+                <input type="text" className='emailInput' placeholder='Email' />
+                <div className="passwordDiv">
+                    <input type={typeToggled ? 'password' : 'text'} className="password" placeholder='Пароль'
+                        onPaste={(e) => {
+                            e.preventDefault()
+                            return false;
+                        }} />
+                    <i className={"passwordIcon" + " " + shown} onClick={showPassword} />
                 </div>
-                <div className="selectionPanel">
-                    <img src="src/greyArrowLeft.svg" alt="" onClick={() => setContentType("login")}/>
-                    <p>Оставьте номер телефона или почту, мы с вами свяжемся</p>
-                </div>
-                <div className="inputPanel">
-                    <input type="text" placeholder='Email' className='emailInput' />
-                </div>
-                <button className='readyButton' onClick={() => { userStore.logIn(); setActive(false) }}>Готово</button>
+
+            </div>
+            <button className='readyButton' type='submit' value='Submit' onClick={() => { userStore.logIn(); }}>Войти</button>
+            <div className="bottomPanel">
+                <a onClick={() => setContentType("login")}>Не корпоративный клиент</a>
+                <a onClick={() => setContentType("registration")}>Регистрация</a>
             </div>
         </div>
+
     )
 }
 

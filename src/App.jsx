@@ -16,7 +16,7 @@ import { userStore } from './Store/UserStore.js';
 
 function App() {
     useEffect(
-        userStore.loadData(),
+        () => userStore.loadData(),
         []);
 
 
