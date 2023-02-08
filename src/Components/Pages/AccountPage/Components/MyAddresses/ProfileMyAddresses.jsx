@@ -4,7 +4,7 @@ import './ProfileMyAddresses.css'
 const ProfileMyAddresses = () => {
     return (
         <div>
-            <div className="profileMyAddresses">
+            <div className="profileMyAddresses" id='MyAddressesSection'>
                 <div className="profileHeader">Мои адреса</div>
                 <div className="profileMyAddressesContainer">
 

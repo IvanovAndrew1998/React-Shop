@@ -247,7 +247,7 @@
     object-fit: none;
 }
 
-.buy {
+.buy-margin {
     min-width: 120px;
     margin-left: 20px;
     margin-right: 16px;
@@ -274,6 +274,7 @@
     border: 1px solid var(--main-1);
     border-radius: 15px;
     cursor: pointer;
+    color: var(--main-1);
 }
 
 .sizeButton p {
@@ -281,8 +282,13 @@
     font-size: 16px;
     line-height: 20px;
 
-    color: var(--main-1);
 
+
+}
+
+.sizeButton:hover {
+    background: var(--red-1);
+    color: #FFFFFF;
 }
 
 .quantityButton {
@@ -327,7 +333,8 @@
     align-items: center;
     gap: 10px;
 
-    position: relative;;
+    position: relative;
+    ;
 }
 
 
@@ -338,6 +345,8 @@
     border-color: var(--red-1);
     color: #FFFFFF;
 }
+
+
 
 .singleSizeContainer:hover .quantityWholesale p {
     color: var(--black-1);

@@ -44,3 +44,8 @@
 .quantityColored {
     color: var(--black-1) !important;
 }
+.sizeColored {
+    background: var(--red-1);
+    border-color: var(--red-1);
+    color: #FFFFFF;
+}

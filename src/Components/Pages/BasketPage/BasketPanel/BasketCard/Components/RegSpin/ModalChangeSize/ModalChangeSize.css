@@ -1,0 +1,156 @@
+.sizeModal {
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modalSizeChange {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sizeModal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.MCSdiscount {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+
+    color: var(--red-1);
+}
+
+.MCSprices {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.MCSprices {
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.MCSdiscounted {
+    font-weight: 500;
+    color: var(--black-1);
+}
+
+.MCSoriginal {
+    font-weight: 400;
+    text-decoration-line: line-through;
+    color: #808080;
+}
+
+.MCSsingleSize {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #FF8B66;
+    border-radius: 15px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-1);
+
+    cursor: pointer;
+}
+
+.MCSsingleSize:hover {
+    background: var(--red-1);
+    border-color: var(--red-1);
+    color: #FFFFFF;
+}
+
+.MCSChoose {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chooseHeader {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: var(--black-1);
+}
+
+.chooseHowTo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.chooseHowTo p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--main-1);
+}
+
+.MCSquantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 11px 14px;
+
+    border: 1px solid var(--main-1);
+    border-radius: 15px;
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black-1);
+}
+
+.MCSquantity img{
+    cursor: pointer;
+}
+
+.MCSBottom {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+}
+
+.MCSready {
+    width: 100%;
+    text-align: center;
+    padding: 14px 30px;
+    background: var(--red-1);
+    border-radius: 15px;
+    border: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}

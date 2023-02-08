@@ -4,7 +4,7 @@ import './ProfileInfoForm.css'
 const ProfileInfoForm = () => {
     return (
         <div>
-            <div className="profileInfoForm">
+            <div className="profileInfoForm" id='ProfileSection'>
                 <div className="formItemTopOne">
                     <p>Имя</p>
                     <input type="text" />

@@ -14,6 +14,7 @@ import { userStore } from './Store/UserStore.js';
 
 
 
+
 function App() {
     useEffect(
         () => userStore.loadData(),
@@ -28,15 +29,15 @@ function App() {
                 <Routes>
                     <Route path="product/" element={<ProductPage />}
                     />
-                    <Route index path='catalogue/' element={<Catalogue/>}/>
-                    <Route path='*' element={<HomePage/>}/>
-                    <Route path='basket/' element={<BasketPage/>}/>
-                    <Route path='profile' element={<AccountPage/>} />
+                    <Route index path='catalogue/' element={<Catalogue />} />
+                    <Route path='*' element={<HomePage />} />
+                    <Route path='basket/' element={<BasketPage />} />
+                    <Route path='profile' element={<AccountPage />} />
                 </Routes>
             </BrowserRouter>
 
             <Footer />
-          
+
         </div >
     );
 }

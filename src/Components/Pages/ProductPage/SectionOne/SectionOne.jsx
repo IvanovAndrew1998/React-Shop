@@ -3,7 +3,7 @@ import LeftPanel from './LeftPanel/LeftPanel'
 import RightPanel from './RightPanel/RightPanel'
 
 
-const SectionOne = ({productInfo, images}) => {
+const SectionOne = ({productInfo, images, rating}) => {
 
   return (
 
@@ -11,7 +11,7 @@ const SectionOne = ({productInfo, images}) => {
       <div className="inner">
         <div className="sec1-container">
           <LeftPanel images={images}/>
-          <RightPanel productInfo={productInfo}/>
+          <RightPanel productInfo={productInfo} rating={rating}/>
         </div>
       </div>
     </section>

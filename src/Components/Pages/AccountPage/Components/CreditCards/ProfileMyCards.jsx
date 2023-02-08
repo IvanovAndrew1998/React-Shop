@@ -4,7 +4,7 @@ import './profileMyCards.css'
 const ProfileMyCards = () => {
     return (
         <div>
-            <div className="profileMyCards">
+            <div className="profileMyCards" id='MyCardsSection'>
                 <div className="profileMyCardsHeader">
                     Мои карты
                 </div>

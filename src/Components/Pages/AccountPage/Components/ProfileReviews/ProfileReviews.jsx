@@ -4,7 +4,7 @@ import ProfileSingleReview from './profileSingleReview/ProfileSingleReview';
 
 const ProfileReviews = () => {
     return (
-        <div className="profileReviews">
+        <div className="profileReviews" id='ReviewsSection'>
             <div className="profileHeader">
                 <p>Отзывы</p>
                 <div className="profileReviewsQuantity">3</div>

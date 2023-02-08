@@ -5,7 +5,10 @@ import CorpSpinPanel from './Components/CorpSpin/CorpSpinPanel';
 import RegSpin from './Components/RegSpin/RegSpin';
 
 
+
 const BasketCard = () => {
+
+  
 
   const [corporatePanel, setCorporatePanel] = useState(false)
 
@@ -51,7 +54,7 @@ const BasketCard = () => {
       <div className="bottom">
         <div className="delete-buy">
           <img className='deleteButton' src="src/DeleteButton.svg" alt="" />
-          <button className="buy">Купить</button>
+          <button className="buy buy-margin">Купить</button>
           <img className='favourite' src="src/heart1.svg" alt="" />
         </div>
         {
@@ -64,6 +67,7 @@ const BasketCard = () => {
 
 
       </div>
+
     </div>
   )
 }

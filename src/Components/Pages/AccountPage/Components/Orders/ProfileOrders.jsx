@@ -3,7 +3,7 @@ import './ProfileOrders.css'
 
 const ProfileOrders = () => {
     return (
-        <div className="profileOrders">
+        <div className="profileOrders" id='OrdersSection'>
             <div className="profileHeader">Заказы</div>
             <div className="orderCategories">
                 <p>Все</p>

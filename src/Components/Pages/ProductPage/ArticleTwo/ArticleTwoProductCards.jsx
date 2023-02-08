@@ -1,13 +1,13 @@
 import React from 'react'
 import SimilarProductCard from './SimilarProductCard/SimilarProductCard'
 
-const ArticleTwoProductCards = ({similar}) => {
+const ArticleTwoProductCards = ({recommendations}) => {
     return (
         <article className="article-2">
             <div className="inner">
                 <div className="article2-flexbox profile">
-                    {similar.map( similarData =>
-                        <SimilarProductCard key={similarData.originalPrice} productData={similarData}/>
+                    {recommendations.map( recommendations =>
+                        <SimilarProductCard key={recommendations.originalPrice} recommendations={recommendations}/>
                     )}
                     
                 </div>

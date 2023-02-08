@@ -1,34 +1,78 @@
-import React from 'react'
+import React, { useState } from 'react'
 import InputMask from 'react-input-mask';
+import { userStore } from '../../../../../Store/UserStore.js';
+import { useForm } from "react-hook-form";
 
-const MWLogin = ({setContentType}) => {
+const MWLogin = ({ setContentType }) => {
+
+  // form event
+  const { register, handleSubmit, watch, formState: { errors } } = useForm({
+    mode: 'onSubmit'
+  });
+
+  //  check password 
+  const password = watch('password');
+
+  // submit
+  const onSubmit = data => {userStore.logIn(data.phone.replace("+7", "8"), data.password);
+  // console.log(data);
+  };
+
+  const [typeToggled, setTypeToggled] = useState(true);
+  const [shown, setShown] = useState('');
+  function showPassword() {
+    if (shown === '') {
+
+      setTypeToggled(!typeToggled)
+      setShown("shown");
+    }
+    else {
+
+      setTypeToggled(!typeToggled)
+      setShown('');
+    }
+  }
+
   return (
-    <div>
-              <div className="modalHeader">
-                <p>Вход или регистрация</p>
-              </div>
-              <div className="selectionPanel">
-                <p>Телефон</p>
-              </div>
-              <div className="inputPanel">
-                <InputMask mask="+7 (999) 999 99 99" maskChar=" " />
-                <button className="getCode" onClick={() => setContentType("getCode")}>
-                  Получить код
-                </button>
-              </div>
-              <div className="agreement">
-                <label class="container">
-                  <input type="checkbox" />
-                  <span class="mark"></span>
-                </label>
-                <p>Даю согласие на обработку персонадльных данных, и принимаю  <a href=''>пользовательское соглашение</a></p>
-              </div>
-              <p className='modalDescription'>Нажимая «Получить код», я соглашаюсь с условиями участия в Клубе SUNLIGHT, политикой конфиденциальности и подтверждаю согласие на получение сообщений рекламного характера. Отказаться от рассылки можно в личном кабинете.</p>
-              <div className="bottomPanel">
-                <a onClick={() => setContentType("corporative")}>Я корпоративный клиент</a>
-                <a onClick={() => setContentType("registration")}>Регистрация</a>
-              </div>
-            </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <div className="modalHeader">
+          <p>Вход или регистрация</p>
+        </div>
+        <div className="selectionPanel">
+          <p>Телефон</p>
+        </div>
+        <div className="inputForm">
+          <InputMask mask="+7 (999) 999-99-99" maskChar=" " placeholder='Телефон' className={`${errors.phone && "redBorder"}`}
+            {...register("phone", { required: 'Введите номер телефона' })}
+          />
+          {errors.phone && <span>
+            {errors.phone.message}
+          </span>}
+
+          <div className="passwordDiv">
+            <input type={typeToggled ? 'password' : 'text'} className={`password ${errors.password && "redBorder"}`} placeholder='Пароль'
+              onPaste={(e) => {
+                e.preventDefault()
+                return false;
+              }}
+              {...register("password", {
+                required: 'Введите пароль'
+              })}
+            />
+            <i className={"passwordIcon" + " " + shown} onClick={showPassword} />
+          </div>
+          {errors.password && <span>
+            {errors.password.message}
+          </span>}
+        </div>
+        <button className='readyButton' type='submit' value='Submit'>Войти</button>
+        <div className="bottomPanel">
+          <a onClick={() => setContentType("corporative")}>Я корпоративный клиент</a>
+          <a onClick={() => setContentType("registration")}>Регистрация</a>
+        </div>
+      </div>
+    </form>
   )
 }
 

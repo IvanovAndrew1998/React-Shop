@@ -77,7 +77,6 @@ const FlexUp = observer(() => {
                 <button className='catalogue-button'>
                     <a className="catalogue-link" href="#">Каталог</a>
                 </button>
-
                 <div className="inside-input">
                     <input className="site-search" type="search" id="site-search" placeholder="Поиск" />
                     <span className="x"></span>

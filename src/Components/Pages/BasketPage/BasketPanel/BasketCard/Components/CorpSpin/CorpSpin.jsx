@@ -27,7 +27,7 @@ const CorpSpin = () => {
         <p className={`number ${count > 0 ? 'quantityColored' : ''}`}>{count}</p>
         <p className={`${count > 0 ? 'quantityColored' : ''}`}>шт</p>
       </div>
-      <div className="size" onClick={() => setOpenCounter(!openCounter)}>40</div>
+      <div className={`size ${count > 0 ? 'sizeColored' : ''}`} onClick={() => setOpenCounter(!openCounter)}>40</div>
 
       <div className={`sizeCounter ${openCounter ? 'active' : 'inactive'}`} >
 

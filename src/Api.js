@@ -13,3 +13,12 @@ export async function getProductReviews(id, offset = 0) {
     const reviews = await axios.get(`http://localhost:8000/reviews/product?id=${id}&limit=5&offset=${offset}`);
     return reviews.data;  
 }
+export async function getLoginTokens(phone_number, password) {
+    const tokens = await axios.post("http://localhost:8000/api/token/",  {
+        phone_number: phone_number,
+        password: password
+      });
+      return tokens;
+    //   обработать случай неправильного инпута (не правильный логин ИЛИ пароль и  бан по причине многораз) => капча или отказ от сервера
+    //  обработать случаи для неответа сервера
+}

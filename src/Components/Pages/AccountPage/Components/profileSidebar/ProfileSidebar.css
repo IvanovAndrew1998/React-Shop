@@ -1,9 +1,12 @@
 /* SIDEBAR */
 .profileSidebar {
+    max-height: 500px;
     min-width: 175px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: sticky;
+    top: 40px;
 }
 
 .profileSidebarTop {
@@ -16,6 +19,12 @@
 .profileSidebarTop img {
     width: 76px;
     height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profileSidebarAvatar {
+   
+    cursor: pointer;
 }
 
 .mainInfo {

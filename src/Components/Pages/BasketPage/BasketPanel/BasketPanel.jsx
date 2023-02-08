@@ -18,7 +18,7 @@ const BasketPanel = () => {
       </div>
       <div className="basket-flexbox">
         <BasketCard/>
-        <BasketCard/>
+        {/* <BasketCard/> */}
       </div>
     </div>
   )

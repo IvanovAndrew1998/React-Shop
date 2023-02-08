@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
+import ModalChangeSize from './ModalChangeSize/ModalChangeSize';
+
 
 const RegSpin = () => {
+    const [modalSizeActive, setModalSizeActive] = useState(true);
+    const [currentSize, setCurrentSize] = useState();
+
 
     const [count, setCount] = useState(0)
     function decr() {
@@ -13,7 +18,7 @@ const RegSpin = () => {
 
     return (
         <div className="size-quantity">
-            <div className="sizeButton">
+            <div className="sizeButton" onClick={() => setModalSizeActive(true)}>
 
                 <img src="src/Pencil.svg" alt="" />
                 <p>75.5 Размер</p>
@@ -23,9 +28,10 @@ const RegSpin = () => {
 
                 <img src="src/Minus.svg" alt="" onClick={() => decr()}/>
                 <p>{count}</p>
-                <img src="src/Plus.svg" alt="" onClick={() => setCount(count + 1)}/>
+                <img src="src/Plus.svg" alt="" c/>
 
             </div>
+            <ModalChangeSize modalSizeActive={modalSizeActive} setModalSizeActive={setModalSizeActive} count={count} setCount={setCount} decr={decr}/>
         </div>
     )
 }

@@ -14,33 +14,38 @@ const ProductPage = () => {
   const [images, setImages] = useState();
   const [productInfo, setProductInfo] = useState();
   const [similarProducts, setSimilarProducts] = useState();
-  const [recommendation, setRecomendation] = useState();
+  const [recommendations, setRecomendations] = useState();
+  const [rating, setRating] = useState();
 
   function fetchProduct() {
     getProductData(1).then(res => {
-      const { images, similarProducts, recommendation, ...productInfo } = res;
+      const { images, similarProducts, recommendations, rating, ...productInfo } = res;
+      setRating(rating)
       setProductInfo(productInfo);
       setSimilarProducts(similarProducts);
-      setRecomendation(recommendation);
+      setRecomendations(recommendations);
       setImages(images);
+      console.log(recommendations);
+      
     });
   }
-
+ 
   useEffect(
     fetchProduct
     ,
     []);
+    
 
-  if (images && similarProducts && recommendation && productInfo)
+  if (images && productInfo && rating )
 
 
     return <div>
       <Article />
-      <SectionOne productInfo={productInfo} images={images} />
+      <SectionOne productInfo={productInfo} images={images} rating={rating} />
       {/* <ArticleThree recommendation={recommendation[0]} /> */}
       <AtricleTwo />
-      <ArticleTwoProductCards similar={similarProducts} />
-      <SectionTwo rating={productInfo.rating} />
+      <ArticleTwoProductCards recommendations={recommendations} />
+      <SectionTwo rating={rating} />
     </div>
   else return <Loader />
 }
