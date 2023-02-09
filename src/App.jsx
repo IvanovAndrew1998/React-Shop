@@ -12,13 +12,19 @@ import BasketPage from './Components/Pages/BasketPage/BasketPage';
 import AccountPage from './Components/Pages/AccountPage/AccountPage';
 import { userStore } from './Store/UserStore.js';
 
+const accessTokenRefreshTime = 1000*60*3;
 
 
 
 function App() {
     useEffect(
-        () => userStore.loadData(),
+        () => {userStore.loadData();  setInterval(() => {
+            userStore.loadData()
+    
+        }, accessTokenRefreshTime)},
         []);
+
+   
 
 
     return (

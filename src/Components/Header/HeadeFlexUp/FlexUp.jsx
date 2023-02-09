@@ -70,6 +70,7 @@ const FlexUp = observer(() => {
 
 
     return (
+        
         <div className="header-flexup">
             <img className="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
             <img src="src/LogoHeader.svg" className="logo" alt="#" />
@@ -77,6 +78,7 @@ const FlexUp = observer(() => {
                 <button className='catalogue-button'>
                     <a className="catalogue-link" href="#">Каталог</a>
                 </button>
+                
                 <div className="inside-input">
                     <input className="site-search" type="search" id="site-search" placeholder="Поиск" />
                     <span className="x"></span>
@@ -88,7 +90,7 @@ const FlexUp = observer(() => {
             </div>
             <div className="flexup-right">
                 {
-                    userStore.logedIn
+                    userStore.loggedIn
                         ?
 
                         <><div className="dropdownContainer" ref={menuRef}>

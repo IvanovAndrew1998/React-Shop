@@ -1,44 +1,53 @@
-import { makeAutoObservable } from "mobx"
+import {makeAutoObservable} from "mobx"
 import Cookies from 'js-cookie'
-import { getLoginTokens } from '../Api';
+import {getAccessToken, getLoginTokens} from '../Api';
 
 
 class UserData {
-    logedIn;
+    loggedIn;
     accessToken;
 
-    
-// вся инфа приходит отделными запросами
+
+    // вся инфа приходит отделными запросами
 
     constructor() {
-        this.logedIn = false;
+        this.loggedIn = false;
         makeAutoObservable(this);
     }
 
     logIn(phone_number, password) {
-        this.saveData();
-
-
         getLoginTokens(phone_number, password).then(res => {
-           
-            this.accessToken = res.data.access; 
+
+            this.accessToken = res.data.access;
+            this.loggedIn = true;
             Cookies.set('UM:REFRESHTOKEN', res.data.refresh);
         });
     }
 
-
     logOut() {
-        this.logedIn = false;
-        Cookies.remove( 'UM:REFRESHTOKEN' );
+        this.loggedIn = false;
+        Cookies.remove('UM:REFRESHTOKEN');
+
     }
 
     loadData() {
-        this.logedIn = Boolean(Cookies.get( 'UM:LOGGEDIN' ))
-        this.logedIn = Cookies.get( 'UM:LOGGEDIN' ) === 'true' ? true : false
-    
+        const refresh_token = Cookies.get('UM:REFRESHTOKEN');
+
+        if (refresh_token !== undefined) {
+      
+            getAccessToken(refresh_token).then( accessToken => {
+                this.accessToken = accessToken.data.access;
+                this.loggedIn = true;
+                
+
+            }).catch(() => {alert('Сервер временно не доступен')});
+            
+        }
+        else {
+            this.logOut();
+        }
+
     }
-  
-    
 
 
 }
