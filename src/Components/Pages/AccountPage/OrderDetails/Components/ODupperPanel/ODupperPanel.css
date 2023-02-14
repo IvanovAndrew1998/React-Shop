@@ -13,15 +13,19 @@
 }
 
 .littleProductCarouselTrack {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 12px;
     overflow: hidden;
+    transition: 0.3s;
 
 }
 
 .littleProductCarouselImage {
     position: relative;
+    transition: 0.3s;
+    left: 0px;
 }
 
 .littleProductCarouselImage img {
@@ -36,20 +40,42 @@
 }
 
 .littleProductCarouselRight {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
     position: absolute;
+    background-image: url(../../../../../../../public/src/mainarrow-right.svg);
     right: -50px;
-    top: 0;
+    top: 26px;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.13);
+
+    background-position: center;
+    transition: 0.3s;
 }
 
 .littleProductCarouselLeft {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
     position: absolute;
+    background-image: url(../../../../../../../public/src/mainarrow-left.svg);
     left: -60px;
-    top: 0;
+    top: 26px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 2;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.13);
+
+    background-position: center;
+    transition: 0.3s;
+}
+
+.littleProductCarouselLeft:hover {
+    background-image: url(../../../../../../../public/src/RedArrowLeft.svg);
+}
+.littleProductCarouselRight:hover {
+    background-image: url(../../../../../../../public/src/RedArrowRight.svg);
 }
 
 .ODUbutton {
@@ -62,7 +88,15 @@
     font-size: 16px;
     line-height: 20px;
     color: var(--main-1);
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.ODUbutton:hover{
+    background: var(--red-1);
+    color: #ffffff;
+}
+
 .ODupperPanelRightButtons {
     display: flex;
     flex-direction: row;

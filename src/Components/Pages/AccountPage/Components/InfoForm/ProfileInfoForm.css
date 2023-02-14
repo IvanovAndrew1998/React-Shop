@@ -96,16 +96,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
+   
 }
 
 .selectGender {
     border: 1px solid #808080 !important;
     color: #808080 !important;
+
+    cursor: pointer;
 }
 
 .selectedGender {
     background: #302827 !important;
     color: #FFFFFF !important;
+
+    cursor: auto;
 }
 
 /* FORM */
@@ -141,5 +146,14 @@
     font-size: 14px;
     line-height: 17px;
 
-    color: var(--main-1)
+    color: var(--main-1);
+    
+   
+}
+
+.inputChangedButton {
+    background: var(--black-1) !important;
+    color: #FFFFFF !important;
+
+    cursor: pointer;
 }

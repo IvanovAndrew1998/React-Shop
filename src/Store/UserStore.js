@@ -31,7 +31,7 @@ class UserData {
     }
 
     loadData() {
-        const refresh_token = Cookies.get('UM:REFRESHTOKEN');
+        const refresh_token = Cookies.get('UM:REFRESHTOKEN');  
 
         if (refresh_token !== undefined) {
       

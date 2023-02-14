@@ -1,95 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProfileInfoForm.css'
+import BirthDateSelector from './BirthDateSelector/BirthDateSelector'
 
 const ProfileInfoForm = () => {
+
+    const [name, setName] = useState("");
+    const [secondName, setSecondName] = useState("");
+    const [birthDate, setBirthDate] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [gender, setGender] = useState();
+    const [inputsDisabled, setInputsDisabled] = useState(false);
+    const [inputChanged, setInputChanged] = useState();
+
+    const handleSave = () => {
+        // Submit your data here (e.g. make an API call to save the data to a database)
+        setInputsDisabled(true);
+    };
+    const handleChange = () => {
+
+        setInputsDisabled(false)
+    };
+
     return (
         <div>
             <div className="profileInfoForm" id='ProfileSection'>
                 <div className="formItemTopOne">
                     <p>Имя</p>
-                    <input type="text" />
+                    <input type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={inputsDisabled} />
                 </div>
                 <div className="formItemTopTwo">
                     <p>Фамилия</p>
-                    <input type="text" />
+                    <input type="text"
+                        value={secondName}
+                        onChange={(e) => setSecondName(e.target.value)}
+                        disabled={inputsDisabled} />
                 </div>
-                <div className="formItemTopThree">
-                    <p>Дата рождения</p>
-                    <div className="birthDate">
-                        <div className="selectorContainer">
-
-                            <select name="" id="">
-                                <option value="0">01</option>
-                                <option value="1">02</option>
-                                <option value="2">03</option>
-                                <option value="3">04</option>
-                                <option value="4">05</option>
-                                <option value="5">06</option>
-                                <option value="6">07</option>
-                                <option value="7">08</option>
-                                <option value="8">09</option>
-                                <option value="9">10</option>
-                                <option value="10">11</option>
-                                <option value="11">12</option>
-                                <option value="12">13</option>
-                                <option value="13">14</option>
-                                <option value="14">15</option>
-                                <option value="15">16</option>
-                                <option value="16">17</option>
-                                <option value="17">18</option>
-                                <option value="18">19</option>
-                                <option value="19">20</option>
-                                <option value="20">21</option>
-                                <option value="21">22</option>
-                                <option value="22">23</option>
-                                <option value="23">24</option>
-                                <option value="24">25</option>
-                                <option value="25">26</option>
-                                <option value="26">27</option>
-                                <option value="27">28</option>
-                                <option value="28">29</option>
-                                <option value="29">30</option>
-                                <option value="30">31</option>
-                            </select>
-                            <img src="src/selectorIcon.svg" alt="" />
-                        </div>
-                        <div className="selectorContainer">
-
-                            <select name="" id="">
-                                <option value="0">Янв</option>
-                                <option value="1">Фев</option>
-                                <option value="2">Мар</option>
-                                <option value="3">Апр</option>
-                                <option value="4">Май</option>
-                                <option value="5">Июн</option>
-                                <option value="6">Июл</option>
-                                <option value="7">Авг</option>
-                                <option value="8">Сен</option>
-                                <option value="9">Окт</option>
-                                <option value="10">Ноя</option>
-                                <option value="11">Дек</option>
-                            </select>
-                            <img src="src/selectorIcon.svg" alt="" />
-
-                        </div>
-
-                        <div className="selectorContainer">
-
-                            <select>
-
-                                <option value="0">2015</option>
-                                <option value="1">2007</option>
-
-                            </select>
-                            <img src="src/selectorIcon.svg" alt="" />
-                        </div>
-                    </div>
-                </div>
+                <BirthDateSelector/>
                 <div className="formItemBottomOne">
                     <p>Телефон</p>
                     <div className="formGridItem">
 
-                        <input type="text" />
+                        <input type="text" 
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                disabled={inputsDisabled}
+                        />
                         <button>Получить код</button>
 
                     </div>
@@ -98,18 +57,21 @@ const ProfileInfoForm = () => {
                     <p>Почта</p>
                     <div className="formGridItem">
 
-                        <input type="text" />
-                        <button>Подтвердить</button>
+                        <input type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            disabled={inputsDisabled} />
+                        <button >Подтвердить</button>
 
                     </div>
                 </div>
                 <div className="formItemBottomThree">
                     <p>Пол</p>
                     <div className="genderSelection">
-                        <button className='selectGender'>Женский</button>
-                        <button className='selectGender selectedGender'>Мужской</button>
-                        <button>Сохранить</button>
-                        <button>Отмена</button>
+                        <button className={gender === 2 ? 'selectGender' : 'selectGender selectedGender'} onClick={() => setGender(1)}>Женский</button>
+                        <button className={gender === 2 ? 'selectGender selectedGender' : 'selectGender'} onClick={() => setGender(2)}>Мужской</button>
+                        <button onClick={handleSave} className={inputsDisabled ? '' : 'inputChangedButton'}>Сохранить</button>
+                        <button onClick={handleChange} className={inputsDisabled ? 'inputChangedButton' : ''}>Изменить</button>
                     </div>
                 </div>
             </div>

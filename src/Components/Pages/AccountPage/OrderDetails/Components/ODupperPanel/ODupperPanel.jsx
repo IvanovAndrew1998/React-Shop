@@ -1,7 +1,54 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './ODupperPanel.css'
 
-const ODupperPanel = () => {
+
+
+const ODupperPanel = ({id, children}) => {
+
+    const ref = useRef();
+
+
+    const shiftLengthInc = 107;
+  
+    let current = 0;
+  
+    const cardAmount = children.length;
+  
+    function shiftBy(shiftLength) {
+      const chld = Array.from(ref.current.children)
+  
+      chld.forEach(card => {
+        card.style.left = shiftLength + 'px'
+        
+      });
+    }
+  
+    function getShiftLength() {
+      return current*shiftLengthInc
+    }
+  
+    function inc() {
+  
+      if (current < 0) {
+        current++;
+        shiftBy(getShiftLength());
+        console.log (current);
+      }
+      
+    }
+  
+    function dec() {
+  
+      if (current > -cardAmount+4) {
+        current--;
+        shiftBy(getShiftLength());
+        console.log (current)
+      }
+    }
+
+
+
+
     return (
         <div className='ODupperPanel'>
             <div className="ODupperPanelLeft">
@@ -36,47 +83,11 @@ const ODupperPanel = () => {
             </div>
             <div className="ODupperPanelRight">
                 <div className="littleProductCarousel">
-                    <img className='littleProductCarouselLeft' src="src/mainarrow-left.svg" alt="" />
-                    <div className="littleProductCarouselTrack">
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage1.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>13</p>
-                            </div>
-                        </div>
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage2.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>7</p>
-                            </div>
-                        </div>
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage3.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>1</p>
-                            </div>
-                        </div>
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage3.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>1</p>
-                            </div>
-                        </div>
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage3.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>1</p>
-                            </div>
-                        </div>
-                        <div className="littleProductCarouselImage">
-                            <img src="src/orderProductImage3.svg" alt="" />
-                            <div className="orderProductQuantity">
-                                <p>1</p>
-                            </div>
-                        </div>
-
+                    <span className='littleProductCarouselLeft' src="src/mainarrow-left.svg" alt="" onClick={inc} />
+                    <div className="littleProductCarouselTrack" id={id} ref={ref}>
+                        {children}
                     </div>
-                    <img className='littleProductCarouselRight' src="src/mainarrow-right.svg" alt="" />
+                    <span className='littleProductCarouselRight' src="src/mainarrow-right.svg" alt="" onClick={dec} />
                 </div>
                 <div className="ODupperPanelRightButtons">
                     <div className="ODupperPanelRepeatCancel">

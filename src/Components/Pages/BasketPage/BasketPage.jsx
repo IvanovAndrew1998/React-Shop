@@ -11,8 +11,8 @@ const BasketPage = () => {
           <div className="container-flexbox">
 
             <div className="leftSection">
-                <BasketPanel/>
-                {/* <Payment/> */}
+                {/* <BasketPanel/> */}
+                <Payment/>
             </div>
             <div className="rightSection">
                 <BasketSidebar/>
