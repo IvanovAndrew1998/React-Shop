@@ -6,7 +6,9 @@ import './Catalogue.css'
 
 
 const Catalogue = () => {
-    const [tags, setTags] = useState([])
+    const [tags, setTags] = useState(["Цепи","Оргия"])
+
+    
 
     return (
         
@@ -15,7 +17,7 @@ const Catalogue = () => {
             <div class="inner">
                 <div class="card-flexbox">
                     <CatalogueSidebar  tag={tags} setTags={setTags}/>
-                    <ProductList/>
+                    <ProductList tags={tags}/>
                 </div>
             </div>
         </div >

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AReview.css'
 import Ratings from 'react-ratings-declarative';
 
@@ -9,7 +9,25 @@ function imageRender(images) {
     else return ""
 }
 
+
 const AReview = ({ review }) => {
+
+
+
+    const [like, setLike] = useState(review.likes);
+    const [likeActive, setLikeActive] = useState(false)
+
+    function likePressed() {
+        if (likeActive) {
+            setLikeActive(false)
+            setLike(like - 1)
+        } else {
+            setLikeActive(true)
+            setLike(like + 1)
+            
+        }
+    }
+
     const date = review.date.split('-').reverse().join('.')
 
     return (
@@ -62,8 +80,8 @@ const AReview = ({ review }) => {
                 </div>
                 <div className="like-dislike">
                     <div className="like">
-                        <img src="src/like.svg" alt="" />
-                        <p className="likes">{review.likes}</p>
+                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={() => likePressed()}/>
+                        <p className="likes">{like}</p>
                     </div>
                 </div>
             </div>

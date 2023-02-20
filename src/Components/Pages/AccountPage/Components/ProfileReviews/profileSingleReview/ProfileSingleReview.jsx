@@ -1,22 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProfileSingleReview.css'
 import Ratings from 'react-ratings-declarative';
 
-const ProfileSingleReview = () => {
+const ProfileSingleReview = ({ review }) => {
+
+    const [like, setLike] = useState(review.likes);
+    const [likeActive, setLikeActive] = useState(false)
+
+    function likePressed() {
+        if (likeActive) {
+            setLikeActive(false)
+            setLike(like - 1)
+        } else {
+            setLikeActive(true)
+            setLike(like + 1)
+
+        }
+    }
+
     return (
         <div className="profileSingleReviewCard">
             <div className="profileSingleReviewCardTop">
                 <div className="singleReviewCardHeader">
                     <img src="src/guy.svg" alt="" />
                     <div className="name-num">
-                        <p className="feedback-name">Алексей</p>
-                        <p className="singleReviewQuantity ">2 отзыва</p>
+                        <p className="feedback-name">{review.user.name}</p>
+                        <p className="singleReviewQuantity ">{review.user.reviewCount}</p>
                     </div>
                 </div>
                 <div className="singleReviewRatingPanel">
                     <p className="rating-num">2.0</p>
                     <Ratings
-                        rating={2}
+                        rating={review.rating}
                         widgetRatedColors="#FBB03B"
                         svgIconPaths='M6.84996 6.05112L9 1.69466L11.15 6.05112C11.3321 6.42005 11.6841 6.67576 12.0912 6.73492L16.8988 7.43351L13.42 10.8245C13.1254 11.1117 12.991 11.5255 13.0605 11.931L13.8818 16.7192L9.58168 14.4585C9.21752 14.267 8.78248 14.267 8.41832 14.4585L4.11825 16.7192L4.93949 11.931C5.00904 11.5255 4.8746 11.1117 4.57999 10.8245L1.10116 7.43351L5.90879 6.73492C6.31593 6.67576 6.66788 6.42005 6.84996 6.05112Z'
                         svgIconViewBoxes='0 0 22 22'
@@ -32,10 +47,10 @@ const ProfileSingleReview = () => {
                     </Ratings>
                 </div>
                 <div className="publicationDate">
-                    Опубликован 22.03.2015
+                    Опубликован {review.date}
                 </div>
                 <div className="singleReviewText">
-                    Мой любимый интернет-магазин украшений! Никогда не оттягивают доставку, всегда привозят вовремя. Покупала там несколько раз, всегда довольна и качеством, и сервисом!
+                    {review.reviewText}
                 </div>
                 <div className="singleReviewClientImages">
 
@@ -83,8 +98,8 @@ const ProfileSingleReview = () => {
 
                 </div>
                 <div className="profileSingleReviewCardBottomRight">
-                    <img src="src/like.svg" alt="" />
-                    <p>1</p>
+                    <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={() => likePressed()} />
+                    <p className="likes">{like}</p>
                 </div>
             </div>
         </div>

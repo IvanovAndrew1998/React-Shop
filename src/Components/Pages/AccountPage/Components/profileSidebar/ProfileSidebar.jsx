@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import './ProfileSidebar.css'
+import { observer } from 'mobx-react-lite';
+import { userStore } from '../../../../../Store/UserStore';
 
-const ProfileSidebar = () => {
+
+const ProfileSidebar = observer(() => {
+    
+
 
     const [avatar, setAvatar] = useState("")
 
+    if(userStore.profileInfo == undefined) {
+        return <div/>
+    }
 
     return (
         <div className="profileSidebar">
@@ -18,8 +26,8 @@ const ProfileSidebar = () => {
 
                 </label>
                 <div className="mainInfo">
-                    <p className='profileName'>Алексей</p>
-                    <p className='profilePhone'>+7 (892) 654 78 90</p>
+                    <p className='profileName'>{userStore.profileInfo.data.userData.first_name}</p>
+                    <p className='profilePhone'>{userStore.profileInfo.data.userData.phone_number}</p>
                 </div>
             </div>
             <div className="profileSidebarBottom">
@@ -64,6 +72,6 @@ const ProfileSidebar = () => {
         </div>
 
     )
-}
+})
 
 export default ProfileSidebar

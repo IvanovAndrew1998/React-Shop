@@ -1,26 +1,42 @@
 import React, { useState } from 'react'
 import './ProfileInfoForm.css'
 import BirthDateSelector from './BirthDateSelector/BirthDateSelector'
+import { observer } from 'mobx-react-lite';
+import { userStore} from '../../../../../Store/UserStore'
+import Loader from '../../../ProductPage/Loader/Loader';
 
-const ProfileInfoForm = () => {
 
-    const [name, setName] = useState("");
+const ProfileInfoForm = observer(() => {
+    
+    
+    console.log( "LALALALA"+userStore.profileInfo);
+    
+    
+    const [name, setName] = useState();
+
     const [secondName, setSecondName] = useState("");
     const [birthDate, setBirthDate] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [gender, setGender] = useState();
-    const [inputsDisabled, setInputsDisabled] = useState(false);
+    const [inputsDisabled, setInputsDisabled] = useState(true);
     const [inputChanged, setInputChanged] = useState();
-
+    
     const handleSave = () => {
         // Submit your data here (e.g. make an API call to save the data to a database)
         setInputsDisabled(true);
     };
     const handleChange = () => {
-
+        
         setInputsDisabled(false)
+        
     };
+    
+    
+    if(userStore.profileInfo == undefined) {
+        return <Loader/>
+    }
+ 
 
     return (
         <div>
@@ -28,24 +44,24 @@ const ProfileInfoForm = () => {
                 <div className="formItemTopOne">
                     <p>Имя</p>
                     <input type="text"
-                        value={name}
+                        value={userStore.profileInfo.data.userData.first_name}
                         onChange={(e) => setName(e.target.value)}
                         disabled={inputsDisabled} />
                 </div>
                 <div className="formItemTopTwo">
                     <p>Фамилия</p>
                     <input type="text"
-                        value={secondName}
+                        value={userStore.profileInfo.data.userData.lastName}
                         onChange={(e) => setSecondName(e.target.value)}
                         disabled={inputsDisabled} />
                 </div>
-                <BirthDateSelector/>
+                <BirthDateSelector date_of_birth={userStore.profileInfo.data.userData.date_of_birth}/>
                 <div className="formItemBottomOne">
                     <p>Телефон</p>
                     <div className="formGridItem">
 
                         <input type="text" 
-                                value={phone}
+                                value={userStore.profileInfo.data.userData.phone_number}
                                 onChange={(e) => setPhone(e.target.value)}
                                 disabled={inputsDisabled}
                         />
@@ -58,7 +74,7 @@ const ProfileInfoForm = () => {
                     <div className="formGridItem">
 
                         <input type="text"
-                            value={email}
+                            value={userStore.profileInfo.data.userData.email}
                             onChange={(e) => setEmail(e.target.value)}
                             disabled={inputsDisabled} />
                         <button >Подтвердить</button>
@@ -81,6 +97,6 @@ const ProfileInfoForm = () => {
             </div>
         </div>
     )
-}
+})
 
 export default ProfileInfoForm

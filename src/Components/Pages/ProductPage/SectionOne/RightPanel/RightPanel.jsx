@@ -3,6 +3,7 @@ import Sizes from './Sizes'
 import Ratings from 'react-ratings-declarative';
 import RatingStar from '../../../../RatingStar';
 import './rightPanel.css'
+import HeartButton from '../../../../HeartButton/HeartButton';
 
 
 
@@ -66,7 +67,7 @@ const RightPanel = ({ productInfo, rating }) => {
             <div className="add-buy">
                 <button className="buy">Купить</button>
                 <button className="add">Добавить в корзину</button>
-                <img src="src/heart1.svg" alt="" />
+                <HeartButton/>
             </div>
             <div className="clock-click">
                 <img src="src/clock-click.svg" alt="" />

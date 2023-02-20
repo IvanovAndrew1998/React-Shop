@@ -30,17 +30,15 @@
 .jew {
     transition: 0.5s;
 }
-/* .jew:hover {
-    transform: scale(1.07);
-    transition: 0.5s;
-    z-index: 2;
-} */
+
 .jew:hover+.backet-btn.main {
     color: white;
     background-color: var(--red-1);
 }
 
 .heart-card {
+    width: 25px;
+    height: 25px;
     z-index: 3;
 }
 .productsim-card {

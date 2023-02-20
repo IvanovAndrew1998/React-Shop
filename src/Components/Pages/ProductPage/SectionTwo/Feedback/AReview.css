@@ -12,3 +12,18 @@
 
     cursor: pointer;
 }
+.like{
+    gap: 6px;
+}
+.likeButton {
+    width: 24px;
+    height: 24px;
+   
+
+    background-image: url(../../../../../../public/src/LikeEmpty.svg);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.liked {
+    background-image: url(../../../../../../public/src/like.svg) !important;
+}

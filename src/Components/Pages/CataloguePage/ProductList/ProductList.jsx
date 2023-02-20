@@ -1,7 +1,20 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
+import { getCatalogue } from '../../../../Api';
 import ProductCard from '../../PRODUCTCARD/ProductCard'
 
-const ProductList = () => {
+const ProductList = ({tags}) => {
+
+    const [products, setProducts] = useState();
+
+    useEffect(
+    () => {getCatalogue(tags).then(res => setProducts(res.data)) }
+    ,[]
+    )
+        console.log(products);
+
+
+
     return (
         <div class="cardflex-right">
             <div class="product-quantity">

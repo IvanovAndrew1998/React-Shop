@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const BirthDateSelector = () => {
+const BirthDateSelector = (date_of_birth) => {
 
     const [year, setYear] = useState(null);
     const [month, setMonth] = useState(null);

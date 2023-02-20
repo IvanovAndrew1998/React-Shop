@@ -1,12 +1,16 @@
 import React from 'react'
 import './ProductCard.css'
 import Ratings from 'react-ratings-declarative';
+import HeartButton from '../../HeartButton/HeartButton';
 
 const ProductCard = () => {
   return (
     <div className='cardPosition'>
       <div className="productsim-card">
-        <img className="heart-card" src="src/heart1.svg" alt="" />
+        <div className="heart-card">
+          <HeartButton/>
+        </div>
+        
         <img className="jew" src="src/main-ring.png" alt="" />
         <div className="discount-number">
           <p className="discount-prc">

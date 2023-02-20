@@ -20,6 +20,8 @@ const CatalogueSidebar = ({ tags, setTags }) => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
 
+    
+
     function toggleChange(tagValue) {
         console.log(tagValue)
         if (tags.includes(tagValue))

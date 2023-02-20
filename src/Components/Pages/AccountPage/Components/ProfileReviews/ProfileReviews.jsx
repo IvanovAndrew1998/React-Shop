@@ -1,8 +1,19 @@
 import React from 'react'
 import './ProfileReviews.css'
 import ProfileSingleReview from './profileSingleReview/ProfileSingleReview';
+import { observer } from 'mobx-react-lite';
+import { userStore} from '../../../../../Store/UserStore'
+import Loader from '../../../../../Components/Pages/ProductPage/Loader/Loader'
 
-const ProfileReviews = () => {
+const ProfileReviews = observer(() => {
+
+
+
+    if(userStore.profileInfo == undefined) {
+        return <Loader/>
+    }
+
+
     return (
         <div className="profileReviews" id='ReviewsSection'>
             <div className="profileHeader">
@@ -21,13 +32,15 @@ const ProfileReviews = () => {
 
             </div>
             <div className="profileReviewsContainer">
-                <ProfileSingleReview/>
+            {userStore.profileInfo.data.reviews.map( review => 
+                <ProfileSingleReview key={review.date} review={review}/>
+               )}
                 <button className="buttonDownloadMore">
                     Загрузить ещё
                 </button>
             </div>
         </div>
     )
-}
+})
 
 export default ProfileReviews
