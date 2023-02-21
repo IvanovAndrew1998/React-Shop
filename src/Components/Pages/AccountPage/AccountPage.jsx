@@ -4,8 +4,7 @@ import './AccountPage.css'
 import ProfileSidebar from './Components/profileSidebar/ProfileSidebar';
 import AccountSettings from './AccountSettings/AccountSettings';
 import OrderDetails from './OrderDetails/OrderDetails';
-import { userStore } from '../../../Store/UserStore';
-import { getProfileInfo } from '../../../Api';
+
 
 const AccountPage = () => {
 

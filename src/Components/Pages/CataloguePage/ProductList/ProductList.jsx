@@ -2,24 +2,24 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import { getCatalogue } from '../../../../Api';
 import ProductCard from '../../PRODUCTCARD/ProductCard'
+import Loader from '../../ProductPage/Loader/Loader';
 
-const ProductList = ({tags}) => {
-
-    const [products, setProducts] = useState();
-
-    useEffect(
-    () => {getCatalogue(tags).then(res => setProducts(res.data)) }
-    ,[]
-    )
-        console.log(products);
+const ProductList = ({count, results}) => {
 
 
+    
+    
+    
+    if (!count && !results)
+    return <Loader/>
 
+    
     return (
+    
         <div class="cardflex-right">
             <div class="product-quantity">
-                <h1>Браслеты</h1>
-                <a href="#">4 560 товаров</a>
+                <h1>"имя категории?"</h1>
+                <a href="#">{count} товаров</a>
             </div>
             <div class="popular">
                 <div class="popular-left">
@@ -36,11 +36,17 @@ const ProductList = ({tags}) => {
             </div>
             <article class="article-2 gap">
                 <div class="article2-flexbox">
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
+                    { results.map(result => 
+                    <ProductCard 
+                    key={result.id}
+                    name={result.name} 
+                    discount={result.price.discount}
+                    rating={result.rating.value}
+                    brand={result.manufacturer.name}
+                    
+                    />
+                    )}
+                    
                 </div>
             </article>
         </div>

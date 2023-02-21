@@ -54,5 +54,5 @@ export async function dropRefreshToken(refresh_token) {
 }
 export async function getCatalogue(tags) {
     const catalogue = await axios.get(`http://localhost:8000/catalogue/?tags=${tags.join(",")}`);
-    return catalogue;
+    return catalogue.data;
 }

@@ -25,7 +25,7 @@ const ProductPage = () => {
       setSimilarProducts(similarProducts);
       setRecomendations(recommendations);
       setImages(images);
-      console.log(recommendations);
+      
       
     });
   }

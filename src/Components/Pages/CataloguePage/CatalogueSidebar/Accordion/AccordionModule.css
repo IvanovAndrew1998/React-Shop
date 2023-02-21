@@ -2,10 +2,17 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-.accordionName {
-    cursor: pointer;
+
+.h2-arrow {
+    position: relative;
 }
+
 .rotated {
     transform: rotate(-180deg);
-    
+
+}
+
+.clearAllTagsButton {
+    position: absolute;
+    right: 0;
 }

@@ -19,7 +19,7 @@ const MuySlider = styled(Slider)({
 const CatalogueSidebar = ({ tags, setTags }) => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
-
+    const [activeTag, setActiveTag] = useState();
     
 
     function toggleChange(tagValue) {
@@ -30,6 +30,7 @@ const CatalogueSidebar = ({ tags, setTags }) => {
             setTags([...tags, tagValue])
     }
 
+    
 
     return (
         <div class="cardflex-left">
@@ -44,7 +45,7 @@ const CatalogueSidebar = ({ tags, setTags }) => {
             </Accordion>
             <div class="product-type">
                 <Accordion title='Тип изделия'>
-                    <label class="container">Серьги
+                    <label class="container" >Серьги
                         <input type="checkbox" />
                         <span class="mark"></span>
                     </label>

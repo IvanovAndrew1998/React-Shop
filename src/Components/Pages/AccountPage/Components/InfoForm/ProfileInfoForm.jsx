@@ -9,7 +9,7 @@ import Loader from '../../../ProductPage/Loader/Loader';
 const ProfileInfoForm = observer(() => {
     
     
-    console.log( "LALALALA"+userStore.profileInfo);
+    console.log("LALALALA"+userStore.profileInfo);
     
     
     const [name, setName] = useState();
