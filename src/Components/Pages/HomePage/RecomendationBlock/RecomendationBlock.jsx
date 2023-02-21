@@ -79,7 +79,6 @@ const RecomendationBlock = ({ id, children }) => {
     if (current < 0) {
       current++;
       shiftBy(getShiftLength());
-      console.log (current);
     }
     
   }
@@ -89,7 +88,6 @@ const RecomendationBlock = ({ id, children }) => {
     if (current > -cardAmount+4) {
       current--;
       shiftBy(getShiftLength());
-      console.log (current)
     }
   }
 

@@ -4,8 +4,6 @@ import '../../../PRODUCTCARD/ProductCard.css'
 
 const SimilarProductCard = ({ recommendations }) => {
 
-    console.log(recommendations.rating)
-
     return (
 
         <div className='cardPosition'>

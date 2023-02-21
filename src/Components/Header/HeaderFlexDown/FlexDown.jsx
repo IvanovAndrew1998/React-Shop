@@ -21,7 +21,7 @@ const FlexDown = () => {
     return (
         <div className="header-flexdown">
 
-            <GeoTag />
+            {/* <GeoTag /> */}
 
             <div className="flexdown-right">
                 <nav className={styles.navSlider}>

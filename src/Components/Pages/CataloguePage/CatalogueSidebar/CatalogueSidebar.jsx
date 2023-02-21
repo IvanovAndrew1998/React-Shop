@@ -1,5 +1,7 @@
-import { Slider, styled } from '@mui/material'
+import { Checkbox, FormControlLabel, Slider, styled } from '@mui/material'
+import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react'
+import CatalogueStore from '../../../../Store/CatalogueStore';
 import Accordion from './Accordion/Accordion';
 
 const MuySlider = styled(Slider)({
@@ -16,85 +18,100 @@ const MuySlider = styled(Slider)({
 });
 
 
-const CatalogueSidebar = ({ tags, setTags }) => {
+const CatalogueSidebar = () => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
     const [activeTag, setActiveTag] = useState();
     
 
     function toggleChange(tagValue) {
-        console.log(tagValue)
-        if (tags.includes(tagValue))
-            setTags(tags.filter(val => val != tagValue))
-        else
-            setTags([...tags, tagValue])
+        CatalogueStore.toggleTag(tagValue)
     }
 
     
 
     return (
-        <div class="cardflex-left">
+        <div className="cardflex-left">
             <Accordion title='Кому'>
                 {adresats.map(value =>
-                    <label class="container">{value}
-                        <input type="checkbox" onClick={e => toggleChange(value)} />
-                        <span class="mark"></span>
-                    </label>
+                    // <label className="container" key={value}>{value}
+                    //     <input type="checkbox" onClick={e => toggleChange(value)} />
+                    //     <span className="mark"></span>
+                    // </label>
+
+                    <FormControlLabel
+                        control={
+                            <Checkbox label={value}
+                                sx={{
+                                    color: "red",
+                                    borderRadius: 1,
+                                    '&.Mui-checked': {
+                                    color: "red",
+                                    }
+                                }}
+                                onChange={e => toggleChange(value)}
+                                checked={CatalogueStore.tags.includes(value)}
+                            />
+                        }
+                        label={value}
+                    />
+                    
+                    
                 )}
 
             </Accordion>
-            <div class="product-type">
+            <div className="product-type">
                 <Accordion title='Тип изделия'>
-                    <label class="container" >Серьги
+                    <label className="container" >Серьги
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Кольца
+                    <label className="container">Кольца
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Браслеты
+                    <label className="container">Браслеты
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Подвески
+                    <label className="container">Подвески
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Цепи
+                    <label className="container">Цепи
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Колье
+                    <label className="container">Колье
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Часы
+                    <label className="container">Часы
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Брошь
+                    <label className="container">Брошь
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
                 </Accordion>
 
 
             </div>
-            <div class="show-more">
+            <div className="show-more">
                 <a href="#">Показать еще</a>
                 <img src="src/arrow-orange.svg" alt="" />
             </div>
-            <div class="h2-arrow">
-                <h2 class="card-h2">Цена</h2>
+            <div className="h2-arrow">
+                <h2 className="card-h2">Цена</h2>
                 <img src="src/arrow-gray.png" alt="" />
             </div>
-            <div class="two-inputs">
-                <div class="from">
+            <div className="two-inputs">
+                <div className="from">
                     <p>от</p>
                     <input type="text" value={priceRange[0]} />
                 </div>
-                <div class="to">
+                <div className="to">
                     <p>от</p>
                     <input type="text" value={priceRange[1]} />
                 </div>
@@ -106,88 +123,88 @@ const CatalogueSidebar = ({ tags, setTags }) => {
                 color="secondary"
                 disableSwap
             />
-            <div class="product-type">
+            <div className="product-type">
 
                 <Accordion title={'Материал'}>
-                    <label class="container">Золото
+                    <label className="container">Золото
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Серебро
+                    <label className="container">Серебро
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Ювелирная сталь
+                    <label className="container">Ювелирная сталь
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Розовое золото
+                    <label className="container">Розовое золото
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Белое золото
+                    <label className="container">Белое золото
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Желтое золото
+                    <label className="container">Желтое золото
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
                 </Accordion>
 
             </div>
-            <div class="product-type">
+            <div className="product-type">
 
                 <Accordion title={'Вставка'}>
 
-                    <label class="container">Без вставки
+                    <label className="container">Без вставки
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Бриллиант
+                    <label className="container">Бриллиант
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Фианит
+                    <label className="container">Фианит
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Гранат
+                    <label className="container">Гранат
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Топаз
+                    <label className="container">Топаз
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
-                    <label class="container">Сапфир
+                    <label className="container">Сапфир
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
                 </Accordion>
             </div>
-            <div class="show-more">
+            <div className="show-more">
                 <a href="#">Показать еще</a>
                 <img src="src/arrow-orange.svg" alt="" />
             </div>
-            <div class="h2-arrow">
-                <h2 class="material">Количество
+            <div className="h2-arrow">
+                <h2 className="material">Количество
                     камней</h2>
                 <img src="src/arrow-d.svg" alt="" />
             </div>
-            <div class="h2-arrow">
+            <div className="h2-arrow">
                 <h2 >Бренд</h2>
                 <img src="src/arrow-d.svg" alt="" />
             </div>
-            <div class="h2-arrow">
+            <div className="h2-arrow">
                 <h2 >Бренд</h2>
                 <img src="src/arrow-d.svg" alt="" />
             </div>
-            <div class="h2-arrow">
+            <div className="h2-arrow">
                 <h2 >Тип огранки</h2>
                 <img src="src/arrow-d.svg" alt="" />
             </div>
-            <div class="h2-arrow">
+            <div className="h2-arrow">
                 <h2 >Проба</h2>
                 <img src="src/arrow-d.svg" alt="" />
             </div>
@@ -195,4 +212,4 @@ const CatalogueSidebar = ({ tags, setTags }) => {
     )
 }
 
-export default CatalogueSidebar
+export default observer(CatalogueSidebar)

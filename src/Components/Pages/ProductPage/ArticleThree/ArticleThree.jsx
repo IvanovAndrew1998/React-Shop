@@ -2,7 +2,6 @@ import React from 'react';
 import Ratings from 'react-ratings-declarative';
 
 const ArticleThree = ({ recommendation }) => {
-    console.log(recommendation)
     return (
         <div className="article-3">
             <a href="#navbar"><img className="arrow-up" src="src/arrow-up.svg" alt="" /></a>

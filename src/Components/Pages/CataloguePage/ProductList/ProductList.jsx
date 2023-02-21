@@ -1,42 +1,33 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react'
-import { useEffect, useState } from 'react'
-import { getCatalogue } from '../../../../Api';
+import CatalogueStore from '../../../../Store/CatalogueStore';
 import ProductCard from '../../PRODUCTCARD/ProductCard'
-import Loader from '../../ProductPage/Loader/Loader';
 
-const ProductList = ({count, results}) => {
-
-
-    
-    
-    
-    if (!count && !results)
-    return <Loader/>
-
+const ProductList = () => {
     
     return (
     
-        <div class="cardflex-right">
-            <div class="product-quantity">
+        <div className="cardflex-right">
+            <div className="product-quantity">
                 <h1>"имя категории?"</h1>
-                <a href="#">{count} товаров</a>
+                <a href="#">{CatalogueStore.catalogueCashe.length} товаров</a>
             </div>
-            <div class="popular">
-                <div class="popular-left">
+            <div className="popular">
+                <div className="popular-left">
                     <h2>Популярные</h2>
                     <a href="#">Новые</a>
                     <a href="#">Рейтинг</a>
                     <a href="#">Цена</a>
                     <a href="#">Скидки</a>
                 </div>
-                <div class="popular-right">
+                <div className="popular-right">
                     <img src="src/up-orange.svg" alt="" />
                     <img src="src/down-orange.svg" alt="" />
                 </div>
             </div>
-            <article class="article-2 gap">
-                <div class="article2-flexbox">
-                    { results.map(result => 
+            <article className="article-2 gap">
+                <div className="article2-flexbox">
+                    { CatalogueStore.catalogueCashe.map(result => 
                     <ProductCard 
                     key={result.id}
                     name={result.name} 
@@ -53,4 +44,4 @@ const ProductList = ({count, results}) => {
     )
 }
 
-export default ProductList
+export default observer(ProductList)

@@ -45,9 +45,9 @@ const BasketCard = () => {
           <p className='discountValue'>-15%</p>
           <p className='currentPrice'>4 450 р</p>
           <p className='originalPrice'>6 420 р</p>
-          <label class="containerCard">
+          <label className="containerCard">
             <input type="checkbox" />
-            <span class="markCard"></span>
+            <span className="markCard"></span>
           </label>
         </div>
       </div>

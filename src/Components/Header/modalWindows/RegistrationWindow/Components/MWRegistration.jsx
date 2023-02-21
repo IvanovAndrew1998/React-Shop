@@ -128,9 +128,9 @@ const MWRegistration = ({setContentType}) => {
 
                 </div>
                 <div className="agreement agreementMarginBottom">
-                    <label class="container">
+                    <label className="container">
                         <input type="checkbox" />
-                        <span class="mark"></span>
+                        <span className="mark"></span>
                     </label>
                     <p>Даю согласие на обработку персонадльных данных, и принимаю  <a href=''>пользовательское соглашение</a></p>
                 </div>

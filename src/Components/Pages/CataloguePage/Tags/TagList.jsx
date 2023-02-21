@@ -1,14 +1,18 @@
+import { observer } from 'mobx-react-lite'
 import React, { useState } from 'react'
+import CatalogueStore from '../../../../Store/CatalogueStore'
 
-const TagList = ({tags, setTags}) => {    
+const TagList = () => {    
+
+
 
   return (
-        <article class="suggestions">
-                <div class="inner">
-                    {tags.map( (value, id) => 
-                                        <div class="sugg" >
+        <article className="suggestions">
+                <div className="inner">
+                    {CatalogueStore.tags.map( (value, id) => 
+                                    <div className="sugg" key={value}>
                                         <a>{value}</a>
-                                        <img src="src/out.svg" alt="" onClick={() => setTags(tags.filter(value => value != tags[id]))}/>
+                                        <img src="src/out.svg" alt="" onClick={() => CatalogueStore.toggleTag(value)}/>
                                     </div>
                     )}
 
@@ -17,4 +21,4 @@ const TagList = ({tags, setTags}) => {
   )
 }
 
-export default TagList
+export default observer(TagList)
