@@ -33,7 +33,7 @@ const ProductList = () => {
                     name={result.name} 
                     discount={result.price.discount}
                     rating={result.rating.value}
-                    brand={result.manufacturer.name}
+                    brand={result.brand.name}
                     
                     />
                     )}

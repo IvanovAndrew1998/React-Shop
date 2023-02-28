@@ -4,12 +4,21 @@ import ODinfoPanel from './Components/ODinfoPanel/ODinfoPanel'
 import ODupperPanel from './Components/ODupperPanel/ODupperPanel'
 import ProductCard from '../../PRODUCTCARD/ProductCard';
 import LittleProductCarouselImage from './Components/ODupperPanel/littleProductCarouselImage/LittleProductCarouselImage';
+import { userStore } from '../../../../Store/UserStore';
+import Loader from '../../ProductPage/Loader/Loader';
+import { observer } from 'mobx-react-lite';
 
-const OrderDetails = () => {
+const OrderDetails = observer(() => {
 
+  if(userStore.ordersInfo === undefined) {
+    return <Loader/>
+}
 
   return (
     <div className='OrderDetails'>
+      {
+        
+      }
       <ODupperPanel id='orderedProducts'>
         <LittleProductCarouselImage />
         <LittleProductCarouselImage />
@@ -29,6 +38,6 @@ const OrderDetails = () => {
       </div>
     </div>
   )
-}
+})
 
 export default OrderDetails

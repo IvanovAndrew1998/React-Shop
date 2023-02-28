@@ -1072,12 +1072,13 @@ a {
 }
 
 .sugg {
-    background-color: #FF8B66;
+    background-color: transparent;
     text-decoration: none;
-    color: white;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid #808080;
     border-radius: 25px;
     height: 40px;
 }
@@ -1086,7 +1087,7 @@ a {
     padding-left: 20px;
     padding-right: 8px;
     text-decoration: none;
-    color: white;
+    color: var(--black-1);
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;

@@ -13,11 +13,13 @@ class CatalogueStore {
 
     toggleTag(name) {
         if (this.tags.includes(name))
-            this.tags = this.tags.filter(tag => tag != name)
+            this.tags = this.tags.filter(tag => tag !== name)
         else
             this.tags.push(name);
         this.updCatalugueCashe()
     }
+    
+
 
     updCatalugueCashe() {
         getCatalogue(this.tags).then(res => {
@@ -28,6 +30,9 @@ class CatalogueStore {
 
     clearCatalogueCashe() {
         this.tags = []
+    }
+    clearCategoryCashe(category) {
+        this.tags = this.tags.filter(tag => !category.includes(tag));
     }
 }
 

@@ -21,32 +21,39 @@ const MuySlider = styled(Slider)({
 const CatalogueSidebar = () => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
-    const [activeTag, setActiveTag] = useState();
-    
+    const productTypes = ["Серьги", "Кольца", "Браслеты", "Цепи", "Подвески", "Колье", "Часы", "Брошь"]
+    const materials = ["Золото", "Серебро", "Ювелирная сталь", "Розовое золото", "Белое золото", "Желтое золото"]
+    const gems = ["Без вставки", "Бриллиант", "Фианит", "Гранат", "Топаз", "Сапфир"]
 
     function toggleChange(tagValue) {
         CatalogueStore.toggleTag(tagValue)
     }
 
-    
+
 
     return (
         <div className="cardflex-left">
-            <Accordion title='Кому'>
+            <Accordion title='Кому' category={adresats}>
                 {adresats.map(value =>
-                    // <label className="container" key={value}>{value}
-                    //     <input type="checkbox" onClick={e => toggleChange(value)} />
-                    //     <span className="mark"></span>
-                    // </label>
 
                     <FormControlLabel
                         control={
                             <Checkbox label={value}
                                 sx={{
+
+                                    marginLeft: 1,
                                     color: "red",
-                                    borderRadius: 1,
+                                    // transform:'scale(1)',
+
                                     '&.Mui-checked': {
-                                    color: "red",
+                                        color: "red",
+                                    },
+                                    '&.MuiButtonBase-root': {
+                                        padding: 0,
+                                    },
+                                    '& .MuiSvgIcon-root': {
+
+
                                     }
                                 }}
                                 onChange={e => toggleChange(value)}
@@ -55,45 +62,43 @@ const CatalogueSidebar = () => {
                         }
                         label={value}
                     />
-                    
-                    
+
+
                 )}
 
             </Accordion>
             <div className="product-type">
                 <Accordion title='Тип изделия'>
-                    <label className="container" >Серьги
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Кольца
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Браслеты
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Подвески
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Цепи
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Колье
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Часы
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Брошь
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
+                    {productTypes.map(productType =>
+
+                        <FormControlLabel
+                            control={
+                                <Checkbox label={productType}
+                                    sx={{
+
+                                        marginLeft: 1,
+                                        color: "red",
+
+
+                                        '&.Mui-checked': {
+                                            color: "red",
+                                        },
+                                        '&.MuiButtonBase-root': {
+                                            padding: 0,
+                                        },
+                                        '& .MuiSvgIcon-root': {
+
+
+                                        }
+                                    }}
+                                    onChange={e => toggleChange(productType)}
+                                    checked={CatalogueStore.tags.includes(productType)}
+                                />
+                            }
+                            label={productType}
+                        />
+
+                    )}
                 </Accordion>
 
 
@@ -126,61 +131,70 @@ const CatalogueSidebar = () => {
             <div className="product-type">
 
                 <Accordion title={'Материал'}>
-                    <label className="container">Золото
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Серебро
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Ювелирная сталь
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Розовое золото
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Белое золото
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Желтое золото
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
+                    {materials.map(material =>
+                        <FormControlLabel
+                            control={
+                                <Checkbox label={material}
+                                    sx={{
+
+                                        marginLeft: 1,
+                                        color: "red",
+
+
+                                        '&.Mui-checked': {
+                                            color: "red",
+                                        },
+                                        '&.MuiButtonBase-root': {
+                                            padding: 0,
+                                        },
+                                        '& .MuiSvgIcon-root': {
+
+
+                                        }
+                                    }}
+                                    onChange={e => toggleChange(material)}
+                                    checked={CatalogueStore.tags.includes(material)}
+                                />
+                            }
+                            label={material}
+                        />
+                    )}
+
                 </Accordion>
 
             </div>
             <div className="product-type">
 
                 <Accordion title={'Вставка'}>
+                    {gems.map(gem => 
+                           <FormControlLabel
+                           control={
+                               <Checkbox label={gem}
+                                   sx={{
+   
+                                       marginLeft: 1,
+                                       color: "red",
+                                      
+   
+                                       '&.Mui-checked': {
+                                           color: "red",
+                                       },
+                                       '&.MuiButtonBase-root': {
+                                           padding: 0,
+                                       },
+                                       '& .MuiSvgIcon-root': {
+   
+   
+                                       }
+                                   }}
+                                   onChange={e => toggleChange(gem)}
+                                   checked={CatalogueStore.tags.includes(gem)}
+                               />
+                           }
+                           label={gem}
+                       /> 
+                            )}
 
-                    <label className="container">Без вставки
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Бриллиант
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Фианит
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Гранат
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Топаз
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
-                    <label className="container">Сапфир
-                        <input type="checkbox" />
-                        <span className="mark"></span>
-                    </label>
                 </Accordion>
             </div>
             <div className="show-more">

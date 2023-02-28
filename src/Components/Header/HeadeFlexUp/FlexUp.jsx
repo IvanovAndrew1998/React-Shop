@@ -21,7 +21,6 @@ const FlexUp = observer(() => {
     const [listHeaderDiscounts, setListHeaderDiscounts] = useState(headerDiscounts);
     function removeItem(id) {
         setListHeaderDiscounts(listHeaderDiscounts.filter(data => data.id != id))
-
     }
 
 
@@ -51,7 +50,8 @@ const FlexUp = observer(() => {
     });
     useEffect(() => {
         let handler = (e) => {
-            if (!ordersRef.current.contains(e.target)) {
+            console.log(ordersRef.current);
+            if (!ordersRef.current.includes(e.target)) {
                 setDDOrdersOpen(false);
             }
 
@@ -153,9 +153,9 @@ const FlexUp = observer(() => {
                                             listHeaderOrders.length !== 0
                                                 ?
                                                 <>
-                                                    {listHeaderOrders.map(dataO => {
+                                                    {listHeaderOrders.map(dataO => { 
                                                         return (
-                                                            <DDorder dataO={dataO} orderDeleteCallBack={removeOrderItem} />
+                                                            <DDorder dataO={dataO} key={dataO.vendorCode} orderDeleteCallBack={removeOrderItem} />
                                                         )
                                                     })}
                                                     <button className='clearAllBtn' onClick={() => setListHeaderOrders([])} >Очистить список</button>

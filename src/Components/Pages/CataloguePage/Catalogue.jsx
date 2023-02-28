@@ -8,27 +8,7 @@ import CatalogueStore from '../../../Store/CatalogueStore'
 
 
 const Catalogue = () => {
-    // const [tags, setTags] = useState(["Цепи","Оргия","Свадьба","Похороны"])
-
-    // const [count, setCount] = useState();
-    // const [next, setNext] = useState();
-    // const [previous, setPrevious] = useState();
-    // const [results, setResults] = useState();
-
-    
-
-    // function fetchCatalogue() {
-    //     getCatalogue(CatalogueStore.tags).then(res => {
-    //         console.log(res)
-    //         const { count, next, previous, results } = res;
-    //         setResults(results)
-    //     })
-    // };
-    // useEffect(
-    //     fetchCatalogue
-    //     ,
-    //     []
-    // );
+  
 
     
     useEffect(

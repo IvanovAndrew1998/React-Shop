@@ -1,14 +1,12 @@
 import React from 'react'
-import './AccountPage.css'
-
-import ProfileSidebar from './Components/profileSidebar/ProfileSidebar';
-import AccountSettings from './AccountSettings/AccountSettings';
-
+import ProfileSidebar from '../AccountPage/Components/profileSidebar/ProfileSidebar';
+import OrderDetails from '../OrdersPage/OrderDetails/OrderDetails';
+import '../AccountPage/AccountPage.css'
 
 
-const AccountPage = () => {
+const OrdersPage = () => {
 
-  
+
 
   return (
     <div className='accountPage'>
@@ -19,8 +17,7 @@ const AccountPage = () => {
 
           <div className="profileMainContainer">
           
-            {/* <AccountSettings/> */}
-
+            <OrderDetails/>
 
           </div>
 
@@ -30,4 +27,4 @@ const AccountPage = () => {
   )
 }
 
-export default AccountPage
+export default OrdersPage

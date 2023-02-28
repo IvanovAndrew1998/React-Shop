@@ -1,7 +1,9 @@
 import React, { useState, useRef } from 'react'
-import styles from  './AccordionModule.css'
+import CatalogueStore from '../../../../../Store/CatalogueStore';
+import './AccordionModule.css'
 
-const Accordion = ({ children, title }) => {
+
+const Accordion = ({ children, title, category }) => {
     const [opened, setOpened] = useState(false)
     
 
@@ -14,7 +16,7 @@ const Accordion = ({ children, title }) => {
             <div className={"h2-arrow"} >
                 <h2 className="card-h2">{title}</h2>
                 <img className={`animation ${opened ? "" : " " + 'rotated'}`} src="src/arrow-gray.png" alt="" onClick={() => setOpened(!opened)}/>
-                <img className='clearAllTagsButton' src="src/X.svg" alt="" />
+                <img className='clearCategoryTagsButton' src="src/X.svg" alt="" onClick={() => CatalogueStore.clearCategoryCashe(category)}/>
             </div>
             <div 
                 ref = {panel}

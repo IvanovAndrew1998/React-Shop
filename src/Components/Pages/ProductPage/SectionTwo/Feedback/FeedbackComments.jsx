@@ -27,7 +27,7 @@ const FeedbackComments = () => {
                 <img src="src/threeF.svg" alt="" />
             </div>
             <div className="feedback-container">
-               {reviews.results.map( review => 
+               {reviews.map( review => 
                <AReview key={review.date} review={review}/>
                )}
             

@@ -1,18 +1,21 @@
 import {makeAutoObservable} from "mobx"
 import Cookies from 'js-cookie'
-import {getAccessToken, getLoginTokens, dropRefreshToken, getProfileInfo} from '../Api';
+import {getAccessToken, getLoginTokens, dropRefreshToken, getProfileInfo, getOrdersInfo} from '../Api';
 
 
 class UserData {
     loggedIn;
     accessToken;
     profileInfo;
+    ordersInfo;  
 
     // вся инфа приходит отделными запросами
 
     constructor() {
         this.loggedIn = false;
         this.profileInfo = undefined;  
+        this.ordersInfo = undefined;
+        
         makeAutoObservable(this);
     }
 
@@ -41,8 +44,8 @@ class UserData {
             getAccessToken(refresh_token).then( accessToken => {
                 this.accessToken = accessToken.data.access;
                 this.loggedIn = true;
-                this.fetchData()
-
+                this.fetchData();
+                this.fetchOrderData();
 
             }).catch(() => {alert('Сервер временно не доступен')});
             
@@ -56,7 +59,9 @@ class UserData {
         getProfileInfo(this.accessToken).then(res => {this.profileInfo = res });
         
     } ;
-
+    fetchOrderData() {
+        getOrdersInfo(this.accessToken).then(OrderRes => {this.ordersInfo = OrderRes});
+    };
 
 
 }

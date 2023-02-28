@@ -7,10 +7,10 @@ import Header from "./Components/Header/Header";
 import Catalogue from './Components/Pages/CataloguePage/Catalogue';
 import HomePage from './Components/Pages/HomePage/HomePage';
 import ProductPage from "./Components/Pages/ProductPage";
-import Loader from './Components/Pages/ProductPage/Loader/Loader';
 import BasketPage from './Components/Pages/BasketPage/BasketPage';
 import AccountPage from './Components/Pages/AccountPage/AccountPage';
 import { userStore } from './Store/UserStore.js';
+import OrdersPage from './Components/Pages/OrdersPage/OrdersPage';
 
 const accessTokenRefreshTime = 1000 * 60 * 3;
 
@@ -41,6 +41,7 @@ function App() {
                     <Route path='*' element={<HomePage />} />
                     <Route path='basket/' element={<BasketPage />} />
                     <Route path='profile' element={<AccountPage />} />
+                    <Route path='orders/' element={<OrdersPage />} />
                 </Routes>
             </BrowserRouter>
 
