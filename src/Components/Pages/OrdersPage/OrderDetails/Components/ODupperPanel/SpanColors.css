@@ -1,0 +1,18 @@
+.awaiting {
+    background: gold !important;
+    border: 3px solid gold !important
+}
+.finished {
+    background: #09BB5D !important;
+    border: 3px solid #09BB5D !important
+}
+
+
+/* button color */
+
+.greenButton {
+    background: #09BB5D !important;
+}
+.yellowButton {
+    background: gold !important;
+}

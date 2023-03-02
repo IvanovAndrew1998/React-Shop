@@ -68,7 +68,7 @@ const CatalogueSidebar = () => {
 
             </Accordion>
             <div className="product-type">
-                <Accordion title='Тип изделия'>
+                <Accordion title='Тип изделия' category={productTypes}>
                     {productTypes.map(productType =>
 
                         <FormControlLabel
@@ -130,7 +130,7 @@ const CatalogueSidebar = () => {
             />
             <div className="product-type">
 
-                <Accordion title={'Материал'}>
+                <Accordion title={'Материал'} category={materials}>
                     {materials.map(material =>
                         <FormControlLabel
                             control={
@@ -165,7 +165,7 @@ const CatalogueSidebar = () => {
             </div>
             <div className="product-type">
 
-                <Accordion title={'Вставка'}>
+                <Accordion title={'Вставка'} category={gems}>
                     {gems.map(gem => 
                            <FormControlLabel
                            control={

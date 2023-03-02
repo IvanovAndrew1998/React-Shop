@@ -19,7 +19,7 @@ const AccountPage = () => {
 
           <div className="profileMainContainer">
           
-            {/* <AccountSettings/> */}
+            <AccountSettings/>
 
 
           </div>

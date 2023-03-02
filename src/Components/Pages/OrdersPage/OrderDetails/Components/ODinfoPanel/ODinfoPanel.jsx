@@ -1,7 +1,11 @@
 import React from 'react'
 import './ODinfoPanel.css'
+import { userStore } from '../../../../../../Store/UserStore'
 
-const ODinfoPanel = () => {
+const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddress}) => {
+
+
+
     return (
         <div className='ODinfoPanel'>
             <div className="ODinfoPanelLeft">
@@ -9,8 +13,8 @@ const ODinfoPanel = () => {
                     <img src="src/guideSection/Profile.svg" alt="" />
                     <div className="ODinfoPanelText">
                         <p className='ODinfoPanelHeaderP'>Получатель</p>
-                        <p className="ODInfoPanelP">Алексей Антышев</p>
-                        <p className='ODInfoPanelP'>+ 7 *** 45 02</p>
+                        <p className="ODInfoPanelP">{recieverName}</p>
+                        <p className='ODInfoPanelP'>{recieverPhone}</p>
                     </div>
                 </div>
                 <div className="ODIitem">
@@ -24,7 +28,7 @@ const ODinfoPanel = () => {
                     <img src="src/guideSection/CubeIcon.svg" alt="" />
                     <div>
                         <p className='ODinfoPanelHeaderP'>Товары</p>
-                        <p className='ODInfoPanelP'>6 шт</p>
+                        <p className='ODInfoPanelP'>{userStore.ordersInfo.data.count} шт</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +39,7 @@ const ODinfoPanel = () => {
 
                     <div className="ODinfoPanelText">
                         <p className='ODinfoPanelHeaderP'>Пункт выдачи</p>
-                        <p className="ODInfoPanelP">Россия, Республика Марий Эл, Йошкар-Ола, Ленинский проспект, 41</p>
+                        <p className="ODInfoPanelP">{shippingAddress}</p>
                     </div>
                 </div>
                 <div className="ODIitem">

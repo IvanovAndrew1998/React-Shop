@@ -40,14 +40,14 @@ export async function getProfileInfo(access_token) {
 
 export async function getOrdersInfo(access_token) {
 
-    console.log(access_token);
+
 
     const ordersInfo = await axios.get('http://localhost:8000/orders/', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
     })
-    console.log(ordersInfo);
+
     return ordersInfo;
 }
 

@@ -2,26 +2,18 @@ import React, { useState, useEffect, useRef } from 'react'
 import RegistrationWindow from '../modalWindows/RegistrationWindow/RegistrationWindow';
 import './FlexUp.css'
 import SuccessWindow from '../modalWindows/SuccesfulWindow/SuccessWindow';
-import DDorder from './DDItems/DDorder';
-import DDdiscount from './DDItems/DDdiscount';
+
 import { listClasses } from '@mui/material';
-import headerDiscounts from './DDdiscountsBackPlaceholder';
-import headerOrders from './DDordersBackPlaceholder';
+
 import { userStore } from '../../../Store/UserStore.js';
 import { observer } from 'mobx-react-lite';
+import DDListOrder from './DDLists/DDListOrder';
+import DDListDiscount from './DDLists/DDListDiscount';
 
 
 const FlexUp = observer(() => {
 
-    const [listHeaderOrders, setListHeaderOrders] = useState(headerOrders);
-    function removeOrderItem(id) {
-        setListHeaderOrders(listHeaderOrders.filter(dataO => dataO.id != id))
-    }
-
-    const [listHeaderDiscounts, setListHeaderDiscounts] = useState(headerDiscounts);
-    function removeItem(id) {
-        setListHeaderDiscounts(listHeaderDiscounts.filter(data => data.id != id))
-    }
+   
 
 
     const [modalActive, setModalActive] = useState(false)
@@ -50,8 +42,7 @@ const FlexUp = observer(() => {
     });
     useEffect(() => {
         let handler = (e) => {
-            console.log(ordersRef.current);
-            if (!ordersRef.current.includes(e.target)) {
+            if (!ordersRef.current.contains(e.target)) {
                 setDDOrdersOpen(false);
             }
 
@@ -70,7 +61,7 @@ const FlexUp = observer(() => {
 
 
     return (
-        
+
         <div className="header-flexup">
             <img className="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
             <img src="src/LogoHeader.svg" className="logo" alt="#" />
@@ -78,7 +69,7 @@ const FlexUp = observer(() => {
                 <button className='catalogue-button'>
                     <a className="catalogue-link" href="#">Каталог</a>
                 </button>
-                
+
                 <div className="inside-input">
                     <input className="site-search" type="search" id="site-search" placeholder="Поиск" />
                     <span className="x"></span>
@@ -148,51 +139,16 @@ const FlexUp = observer(() => {
                                             Скидки
                                         </div>
                                     </div>
-                                    <ul className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
-                                        {
-                                            listHeaderOrders.length !== 0
-                                                ?
-                                                <>
-                                                    {listHeaderOrders.map(dataO => { 
-                                                        return (
-                                                            <DDorder dataO={dataO} key={dataO.vendorCode} orderDeleteCallBack={removeOrderItem} />
-                                                        )
-                                                    })}
-                                                    <button className='clearAllBtn' onClick={() => setListHeaderOrders([])} >Очистить список</button>
-                                                </>
-                                                :
-                                                <div className='EmptyList'>
-                                                    <div className="EmptyListIcon">
-                                                        <img src="src/guideSection/DiscountsBlue.svg" alt="" />
-                                                    </div>
-                                                    <h2>У вас пока нет заказов</h2>
-                                                    <p>Найдите то, что вам нравится в каталоге или вопользуйтесь поиском</p>
-                                                </div>
-                                        }
-                                    </ul>
-                                    <ul className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
-                                        {
-                                            listHeaderDiscounts.length !== 0
-                                                ?
-                                                <>
-                                                    {listHeaderDiscounts.map(data => {
-                                                        return (
-                                                            <DDdiscount data={data} deleteCallBack={removeItem} />
+                                    <div className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
+                                        
+                                        {/* <DDListOrder /> */}
+                                    
+                                    </div>
+                                    <div className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
 
-                                                        )
-                                                    })}
-                                                    <button className='clearAllBtn' onClick={() => setListHeaderDiscounts([])} >Очистить список</button>
-                                                </>
-                                                :
-                                                <div className='EmptyList'>
-                                                    <div className="EmptyListIcon">
-                                                        <img src="src/guideSection/DiscountsBlue.svg" alt="" />
-                                                    </div>
-                                                    <h2>Узнать о снижении цены</h2>
-                                                    <p className='EmptyListMargin'>Эту функцию можно найти на странице товара</p>
-                                                </div>
-                                        }
-                                    </ul>
+                                        <DDListDiscount />
+                                    
+                                    </div>
                                 </div>
                             </div>
                             <img src="src/heart-filled.svg" alt="" />
