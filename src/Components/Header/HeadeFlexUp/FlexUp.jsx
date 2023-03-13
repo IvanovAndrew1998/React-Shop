@@ -9,11 +9,13 @@ import { userStore } from '../../../Store/UserStore.js';
 import { observer } from 'mobx-react-lite';
 import DDListOrder from './DDLists/DDListOrder';
 import DDListDiscount from './DDLists/DDListDiscount';
+import { Link } from 'react-router-dom';
+import Loader from '../../Pages/ProductPage/Loader/Loader';
 
 
 const FlexUp = observer(() => {
 
-   
+
 
 
     const [modalActive, setModalActive] = useState(false)
@@ -64,11 +66,17 @@ const FlexUp = observer(() => {
 
         <div className="header-flexup">
             <img className="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
-            <img src="src/LogoHeader.svg" className="logo" alt="#" />
+            <Link to='/'>
+                <img src="src/LogoHeader.svg" className="logo" alt="#" />
+            </Link>
             <div className="flexup-middle">
-                <button className='catalogue-button'>
-                    <a className="catalogue-link" href="#">Каталог</a>
-                </button>
+                <Link className="catalogue-link" to='/catalogue'>
+                    <button className='catalogue-button'>
+                        <p className="catalogue-link">
+                            Каталог
+                        </p>
+                    </button>
+                </Link>
 
                 <div className="inside-input">
                     <input className="site-search" type="search" id="site-search" placeholder="Поиск" />
@@ -89,41 +97,55 @@ const FlexUp = observer(() => {
                             <div className={`dropdownMenu ${DDopen ? 'active' : 'inactive'}`}>
                                 <ul>
                                     <li>
-                                        <img src="src/guideSection/Profile.svg" alt="" />
-                                        <a href="">Профиль</a>
+                                        <Link to='/profile' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/Profile.svg" alt="" />
+                                            <a href="">Профиль</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <img src="src/guideSection/Orders.svg" alt="" />
-                                        <a href="">Заказы</a>
+                                        <Link to='/orders' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/Orders.svg" alt="" />
+                                            <a href="">Заказы</a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <img src="src/guideSection/heartGray.svg" alt="" />
-                                        <a href="">Избранное</a>
-                                        <div className="notificationQuantity">
-                                            <p>13</p>
-                                        </div>
+                                        <Link to='/basket' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/heartGray.svg" alt="" />
+                                            <a href="">Избранное</a>
+                                            <div className="notificationQuantity">
+                                                <p>13</p>
+                                            </div>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <img src="src/guideSection/Basket.svg" alt="" />
-                                        <a href="">Корзина</a>
-                                        <div className="notificationQuantity">
-                                            <p>6</p>
-                                        </div>
+                                        <Link to='/basket' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/Basket.svg" alt="" />
+                                            <a href="">Корзина</a>
+                                            <div className="notificationQuantity">
+                                                <p>6</p>
+                                            </div>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <img src="src/guideSection/Discounts.svg" alt="" />
-                                        <a href="">Скидки</a>
-                                        <div className="notificationQuantity">
-                                            <p>322</p>
-                                        </div>
+                                        <Link to='/basket' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/Discounts.svg" alt="" />
+                                            <a href="">Скидки</a>
+                                            <div className="notificationQuantity">
+                                                <p>322</p>
+                                            </div>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <img src="src/guideSection/Reviews.svg" alt="" />
-                                        <a href="">Комментарии</a>
+                                        <Link to='/profile' className='dropdownMenuLink'>
+                                            <img src="src/guideSection/Reviews.svg" alt="" />
+                                            <a href="">Комментарии</a>
+                                        </Link>
                                     </li>
                                     <li onClick={() => userStore.logOut()}>
-                                        <img src="src/guideSection/Logout.svg" alt="" />
-                                        <a href="">Выйти</a>
+                                        <div className="dropdownMenuLink">
+                                            <img src="src/guideSection/Logout.svg" alt="" />
+                                            <a href="">Выйти</a>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -140,14 +162,14 @@ const FlexUp = observer(() => {
                                         </div>
                                     </div>
                                     <div className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
-                                        
+
                                         {/* <DDListOrder /> */}
-                                    
+
                                     </div>
                                     <div className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>
 
                                         <DDListDiscount />
-                                    
+
                                     </div>
                                 </div>
                             </div>

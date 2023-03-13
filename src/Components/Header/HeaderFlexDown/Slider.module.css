@@ -3,20 +3,31 @@
     transition: 0.5s;
 
 }
-.slided{
+
+.slided {
     transform: translateX(-200px);
 
 }
+
 .navSlider {
     overflow: hidden;
 }
+
 .rotated {
     transform: rotate(-180deg);
-    
+
 }
+
+.unfilled {
+    display: none;
+   
+}
+
 .animation {
-    transition: 0.5s;  
+    transition: 0.5s;
 }
+
 .navSlider a:hover {
     color: black;
 }
+

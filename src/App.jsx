@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-    BrowserRouter, Route, Routes
+    BrowserRouter, Route, Routes, Link
 } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
@@ -32,20 +32,20 @@ function App() {
     return (
         <div className="App">
 
-            <Header />
             <BrowserRouter>
+            <Header />
                 <Routes>
                     <Route path="product/" element={<ProductPage />}
                     />
-                    <Route index path='catalogue/' element={<Catalogue />} />
+                    <Route path='catalogue/' element={<Catalogue />} />
                     <Route path='*' element={<HomePage />} />
                     <Route path='basket/' element={<BasketPage />} />
                     <Route path='profile' element={<AccountPage />} />
                     <Route path='orders/' element={<OrdersPage />} />
                 </Routes>
+            <Footer />
             </BrowserRouter>
 
-            <Footer />
 
         </div >
     );

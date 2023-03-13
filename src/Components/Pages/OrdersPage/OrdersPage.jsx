@@ -1,7 +1,7 @@
-import React from 'react'
-import ProfileSidebar from '../AccountPage/Components/profileSidebar/ProfileSidebar';
+import React, {  } from 'react'
+
 import OrderDetails from '../OrdersPage/OrderDetails/OrderDetails';
-import '../AccountPage/AccountPage.css'
+import './OrdersPage.css'
 
 
 const OrdersPage = () => {
@@ -11,17 +11,9 @@ const OrdersPage = () => {
   return (
     <div className='accountPage'>
       <div className="inner">
-        <div className="profileContainer">
 
-          <ProfileSidebar />
-
-          <div className="profileMainContainer">
-          
             <OrderDetails/>
 
-          </div>
-
-        </div>
       </div>
     </div>
   )

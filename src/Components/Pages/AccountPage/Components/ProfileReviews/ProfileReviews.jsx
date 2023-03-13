@@ -9,9 +9,7 @@ const ProfileReviews = observer(() => {
 
 
 
-    if(userStore.profileInfo == undefined) {
-        return <Loader/>
-    }
+
 
 
     return (

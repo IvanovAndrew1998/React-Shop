@@ -1,11 +1,41 @@
 .OrderDetails {
     display: flex;
     flex-direction: column;
-    gap: 30px
+    gap: 30px;
+    width: 80%;
 }
+
 .ODgrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 20px;
     column-gap: 30px;
 }
+
+.orderContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.AccordionArrow{
+    margin-left: 10px;
+    width: 70px;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+
+
+.orderRoot {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.OrderAccordionContainer {
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+

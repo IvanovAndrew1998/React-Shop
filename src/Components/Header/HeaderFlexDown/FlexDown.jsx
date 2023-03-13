@@ -1,10 +1,28 @@
-import React, { useState } from 'react'
-import GeoTag from './GeoTag'
-import styles from './Slider.module.css'
+import React, { useState, useRef, useEffect } from 'react'
 
-const FlexDown = () => {
+import styles from './Slider.module.css'
+import { userStore } from '../../../Store/UserStore'
+import { observer } from 'mobx-react-lite';
+
+const FlexDown = observer(() => {
     const [slided, setslided] = useState("")
     const [rotated, setRotated] = useState("")
+    const [filled, setFilled] = useState(false);
+
+    const panel = useRef(null);
+
+    function isFilled() {
+        if (panel.current && panel.current.clientWidth > 700) {
+          setFilled(true);
+        } else {
+          setFilled(false);
+        }
+      }
+      
+      useEffect(() => {
+        isFilled();
+      }, []);
+      
 
     function slide() {
         if (slided === "") {
@@ -18,70 +36,40 @@ const FlexDown = () => {
         }
     }
 
+    if (userStore.headerInfo === undefined) {
+        return <div />
+    }
+
+
     return (
         <div className="header-flexdown">
 
             {/* <GeoTag /> */}
+            <div className=""> Yerevan</div>
 
             <div className="flexdown-right">
                 <nav className={styles.navSlider}>
-                    <ul className={styles.slider + " " + slided}>
-                        <li>
-                            <a href="#">Кольца</a>
-                        </li>
-                        <li>
-                            <a href="#">Подвески</a>
-                        </li>
-                        <li>
-                            <a href="#">Серьги</a>
-                        </li>
-                        <li>
-                            <a href="#">Часы</a>
-                        </li>
-                        <li>
-                            <a href="#">Религия</a>
-                        </li>
-                        <li>
-                            <a href="#">Свадьба</a>
-                        </li>
-                        <li>
-                            <a href="#">Женщинам</a>
-                        </li>
-                        <li>
-                            <a href="#">Мужчинам</a>
-                        </li>
-                        <li>
-                            <a href="#">Кольца</a>
-                        </li>
-                        <li>
-                            <a href="#">Подвески</a>
-                        </li>
-                        <li>
-                            <a href="#">Серьги</a>
-                        </li>
-                        <li>
-                            <a href="#">Часы</a>
-                        </li>
-                        <li>
-                            <a href="#">Религия</a>
-                        </li>
-                        <li>
-                            <a href="#">Свадьба</a>
-                        </li>
-                        <li>
-                            <a href="#">Женщинам</a>
-                        </li>
-                        <li>
-                            <a href="#">Мужчинам</a>
-                        </li>
+                    <ul className={styles.slider + " " + slided}  ref={panel}>
+                        {userStore.headerInfo.data.tags.map(tag =>
+                            <li key={tag.name}>
+                                <a href="#">{tag.name}</a>
+                            </li>
+                        )}
+                       
+                        
+                       
                     </ul>
                 </nav>
-                <img className={"arrow" + " " + rotated + " " + styles.animation} src="src/arrow.svg" alt="" onClick={slide} />
+                <div className={filled ? " " : styles.unfilled}
+                   
+                >
+                    <img className={"arrow" + " " + rotated + " " + styles.animation} src="src/arrow.svg" alt="" onClick={slide} />
+                </div>
             </div>
 
 
         </div>
     )
-}
+})
 
 export default FlexDown

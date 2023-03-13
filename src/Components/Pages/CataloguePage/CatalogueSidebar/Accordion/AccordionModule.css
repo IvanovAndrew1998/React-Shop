@@ -10,7 +10,7 @@
 }
 
 .rotated {
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) !important;
 
 }
 
@@ -29,9 +29,14 @@
     font-family: 'montserrat' !important;
     src: local('montserrat'),
         url('../../../../../fonts/montserrat-500.woff2') format('woff2'); 
+    padding-top: 1px;
     
 }
 
 .css-i4bv87-MuiSvgIcon-root {
     font-size: 2rem !important;
+}
+
+.css-j9cgry-MuiButtonBase-root-MuiCheckbox-root {
+    padding: 5px !important;
 }

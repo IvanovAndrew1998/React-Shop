@@ -21,7 +21,6 @@ const AccountPage = () => {
           
             <AccountSettings/>
 
-
           </div>
 
         </div>

@@ -3,19 +3,20 @@ import './ProfileInfoForm.css'
 import BirthDateSelector from './BirthDateSelector/BirthDateSelector'
 import { observer } from 'mobx-react-lite';
 import { userStore} from '../../../../../Store/UserStore'
-import Loader from '../../../ProductPage/Loader/Loader';
+import CalendarSelector from './BirthDateSelector/CalendarSelector';
+
 
 
 const ProfileInfoForm = observer(() => {
     
     
     
-    const [name, setName] = useState();
+    const [name, setName] = useState(userStore.profileInfo.data.userData.first_name);
 
-    const [secondName, setSecondName] = useState("");
+    const [lastName, setLastName] = useState(userStore.profileInfo.data.userData.lastName);
     const [birthDate, setBirthDate] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState(userStore.profileInfo.data.userData.phone_number);
+    const [email, setEmail] = useState(userStore.profileInfo.data.userData.email);
     const [gender, setGender] = useState();
     const [inputsDisabled, setInputsDisabled] = useState(true);
     const [inputChanged, setInputChanged] = useState();
@@ -31,9 +32,6 @@ const ProfileInfoForm = observer(() => {
     };
     
     
-    if(userStore.profileInfo == undefined) {
-        return <Loader/>
-    }
  
 
     return (
@@ -42,25 +40,25 @@ const ProfileInfoForm = observer(() => {
                 <div className="formItemTopOne">
                     <p>Имя</p>
                     <input type="text"
-                        value={userStore.profileInfo.data.userData.first_name}
+                        value={name}
                         onChange={(e) => setName(e.target.value)}
                         disabled={inputsDisabled} />
                 </div>
                 <div className="formItemTopTwo">
                     <p>Фамилия</p>
                     <input type="text"
-                        value={userStore.profileInfo.data.userData.lastName}
-                        onChange={(e) => setSecondName(e.target.value)}
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
                         disabled={inputsDisabled} />
                 </div>
-                <BirthDateSelector date_of_birth={userStore.profileInfo.data.userData.date_of_birth}/>
+                <CalendarSelector date_of_birth={userStore.profileInfo.data.userData.date_of_birth}/>
                 <div className="formItemBottomOne">
                     <p>Телефон</p>
                     <div className="formGridItem">
 
                         <input type="text" 
-                                value={userStore.profileInfo.data.userData.phone_number}
-                                onChange={(e) => setPhone(e.target.value)}
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
                                 disabled={inputsDisabled}
                         />
                         <button>Получить код</button>
@@ -72,7 +70,7 @@ const ProfileInfoForm = observer(() => {
                     <div className="formGridItem">
 
                         <input type="text"
-                            value={userStore.profileInfo.data.userData.email}
+                            value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             disabled={inputsDisabled} />
                         <button >Подтвердить</button>
@@ -82,8 +80,15 @@ const ProfileInfoForm = observer(() => {
                 <div className="formItemBottomThree">
                     <p>Пол</p>
                     <div className="genderSelection">
-                        <button className={gender === 2 ? 'selectGender' : 'selectGender selectedGender'} onClick={() => setGender(1)}>Женский</button>
-                        <button className={gender === 2 ? 'selectGender selectedGender' : 'selectGender'} onClick={() => setGender(2)}>Мужской</button>
+                        <button className={
+                            gender === 2 ? 'selectGender' 
+                            : gender === 1 ? 'selectGender selectedGender'  
+                            : 'selectGender' }
+                        
+                        onClick={() => setGender(1)}>Женский</button>
+                        <button className={gender === 2 ? 'selectGender selectedGender' : 'selectGender'} 
+                        
+                        onClick={() => setGender(2)}>Мужской</button>
                         <button onClick={handleSave} className={inputsDisabled ? '' : 'inputChangedButton'}>Сохранить</button>
                         <button onClick={handleChange} className={inputsDisabled ? 'inputChangedButton' : ''}>Изменить</button>
                     </div>

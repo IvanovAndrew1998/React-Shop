@@ -69,6 +69,11 @@
 }
 
 .dropdownMenu li {
+    list-style-type: none;
+}
+
+.dropdownMenuLink {
+    width: 100%;
     padding: 11px 16px;
     list-style-type: none;
     display: flex;
@@ -79,13 +84,11 @@
     position: relative;
     cursor: pointer;
     transition: 0.3s;
-
 }
 
 .dropdownMenu li:hover {
     background: #F5F5F5;
 }
-
 
 .dropdownMenu a {
     font-weight: 500;

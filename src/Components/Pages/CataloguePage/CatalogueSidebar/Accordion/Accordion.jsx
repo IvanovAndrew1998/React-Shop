@@ -6,8 +6,7 @@ import './AccordionModule.css'
 const Accordion = ({ children, title, category }) => {
     const [opened, setOpened] = useState(false)
     
-
-    const rotated = opened ? "" : " " + 'rotated';
+;
     const panel = useRef(0);
     let height = opened ? 0 : panel.current.scrollHeight + 'px';
 

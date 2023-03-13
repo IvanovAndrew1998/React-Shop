@@ -29,7 +29,6 @@ export async function getProductReviews(id, offset = 0, limit = 10) {
 }
 
 export async function getProfileInfo(access_token) {
-
     const profileInfo = await axios.get('http://localhost:8000/profile/', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
@@ -39,16 +38,21 @@ export async function getProfileInfo(access_token) {
 }
 
 export async function getOrdersInfo(access_token) {
-
-
-
     const ordersInfo = await axios.get('http://localhost:8000/orders/', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
     })
-
     return ordersInfo;
+}
+
+export async function getHeaderInfo(access_token) {
+    const headerInfo = await axios.get('http://localhost:8000/header', {
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+        }
+    })
+    return headerInfo;
 }
 
 export async function getLoginTokens(phone_number, password) {
@@ -62,13 +66,13 @@ export async function getLoginTokens(phone_number, password) {
 }
 export async function getAccessToken(refresh_token) {
     const access_token = await axios.post("http://localhost:8000/api/token/refresh/", {refresh: refresh_token});
-
     return access_token;
 }
 
 export async function dropRefreshToken(refresh_token) {
     await axios.post("http://localhost:8000/api/token/blacklist/", {refresh: refresh_token});
 }
+
 export async function getCatalogue(tags) {
     const catalogue = await axios.get(`http://localhost:8000/catalogue/?tags=${
         tags.join(",")

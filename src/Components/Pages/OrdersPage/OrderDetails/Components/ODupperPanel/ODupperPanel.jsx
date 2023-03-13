@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import './ODupperPanel.css'
 import './SpanColors.css'
 import LittleProductCarouselImage from './littleProductCarouselImage/LittleProductCarouselImage';
@@ -96,8 +96,8 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
             buttonColor = 'greenButton'
             return <div className="orderStateLines">
                 <span className='finished'></span>
-                <span className='orderStateReady'></span>
-                <span className='orderStateReady'></span>
+                <span className='finished'></span>
+                <span className='finished'></span>
             </div>
         }
     }

@@ -32,6 +32,8 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 108px;
     height: 51px;
     margin-bottom: 6px;
+
+    cursor: pointer;
 }
 
 .instead-logo {
@@ -202,11 +204,6 @@ input[type="search"]::-webkit-search-results-decoration {
     overflow: visible;
 }
 
-.flexdown-right {
-    max-width: 650px;
-    width: 100%;
-}
-
 .flexdown-right nav ul {
     display: flex;
     /* justify-content: space-between; */
@@ -236,8 +233,7 @@ input[type="search"]::-webkit-search-results-decoration {
 } */
 .flexdown-right {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
-    max-width: 790px;
-    width: 100%;
+    max-width: 800px;
 }

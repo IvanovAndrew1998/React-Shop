@@ -3,6 +3,8 @@ import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react'
 import CatalogueStore from '../../../../Store/CatalogueStore';
 import Accordion from './Accordion/Accordion';
+import Checked from './Images/Checked';
+import EmptyCheck from './Images/EmptyCheck';
 
 const MuySlider = styled(Slider)({
     color: '#FF8B66',
@@ -39,6 +41,8 @@ const CatalogueSidebar = () => {
                     <FormControlLabel
                         control={
                             <Checkbox label={value}
+                                icon={<EmptyCheck/>}
+                                checkedIcon={<Checked/>} 
                                 sx={{
 
                                     marginLeft: 1,
@@ -49,11 +53,11 @@ const CatalogueSidebar = () => {
                                         color: "red",
                                     },
                                     '&.MuiButtonBase-root': {
-                                        padding: 0,
+                                        
                                     },
                                     '& .MuiSvgIcon-root': {
-
-
+                                        
+                                        
                                     }
                                 }}
                                 onChange={e => toggleChange(value)}
