@@ -10,10 +10,10 @@ import Loader from '../../ProductPage/Loader/Loader';
 import { observer } from 'mobx-react-lite';
 
 const AccountSettings = observer(() => {
-
     if(userStore.profileInfo == undefined) {
         return <Loader/>
     }
+    console.log(userStore.profileInfo);
 
     return (
         <div>

@@ -52,6 +52,7 @@ export async function getHeaderInfo(access_token) {
             'Authorization': ` Bearer ${access_token}`
         }
     })
+    
     return headerInfo;
 }
 

@@ -1,38 +1,18 @@
-import React, { useState } from 'react'
-import DDdiscount from '../DDItems/DDdiscount';
-import headerDiscounts from '../DDdiscountsBackPlaceholder';
+import React from 'react'
+import { userStore } from '../../../../Store/UserStore';
+import ListDiscount from './ListDiscountContent';
 
 const DDListDiscount = () => {
 
-    const [listHeaderDiscounts, setListHeaderDiscounts] = useState(headerDiscounts);
-    function removeItem(id) {
-        setListHeaderDiscounts(listHeaderDiscounts.filter(data => data.id != id))
+
+    if (userStore.headerNotificationsDiscounts == undefined) {
+        return <div></div>
     }
 
     return (
-        <ul className='DDActiveContent'>
-            {
-                listHeaderDiscounts.length !== 0
-                    ?
-                    <>
-                        {listHeaderDiscounts.map(data => {
-                            return (
-                                <DDdiscount data={data} deleteCallBack={removeItem} />
-
-                            )
-                        })}
-                        <button className='clearAllBtn' onClick={() => setListHeaderDiscounts([])} >Очистить список</button>
-                    </>
-                    :
-                    <div className='EmptyList'>
-                        <div className="EmptyListIcon">
-                            <img src="src/guideSection/DiscountsBlue.svg" alt="" />
-                        </div>
-                        <h2>Узнать о снижении цены</h2>
-                        <p className='EmptyListMargin'>Эту функцию можно найти на странице товара</p>
-                    </div>
-            }
-        </ul>
+        <div className='DDActiveContent'>
+            <ListDiscount/>
+        </div>
     )
 }
 

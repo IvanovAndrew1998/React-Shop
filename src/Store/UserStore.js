@@ -8,14 +8,20 @@ class UserData {
     accessToken;
     profileInfo;
     ordersInfo;
-    headerInfo;  
+    headerNotificationsOrders;
+    headerNotificationsDiscounts;
+    headerTags;
 
 
     constructor() {
         this.loggedIn = false;
         this.profileInfo = undefined;  
         this.ordersInfo = undefined;
-        this.headerInfo = undefined;
+        this.headerNotificationsOrders = undefined;
+        this.headerNotificationsDiscounts = undefined;
+        this.headerTags = undefined;
+
+        
         
         makeAutoObservable(this);
     }
@@ -49,7 +55,7 @@ class UserData {
                 this.fetchData();
                 this.fetchOrderData();
                 this.fetchHeaderData();
-                console.log(this.headerInfo)
+                
 
             }).catch(() => {alert('Сервер временно не доступен')});
             
@@ -66,10 +72,30 @@ class UserData {
         getOrdersInfo(this.accessToken).then(OrderRes => {this.ordersInfo = OrderRes})
     };
     fetchHeaderData() {
-        getHeaderInfo(this.accessToken).then(HeaderRes => {this.headerInfo = HeaderRes})
+        getHeaderInfo(this.accessToken).then(HeaderRes => {
+            this.headerTags = HeaderRes.data.tags
+            this.headerNotificationsOrders = HeaderRes.data.notifications.orders
+            this.headerNotificationsDiscounts = HeaderRes.data.notifications.discounts
+        })
+        
     };
 
+    clearHeaderDiscounts() {
+        this.headerNotificationsDiscounts = [];
+    }
 
+    deleteHeaderDiscount(id) {
+        this.headerNotificationsDiscounts = this.headerNotificationsDiscounts.filter(discount => Number(discount.id) != Number(id))
+    }
+
+    clearHeaderOrders() {
+        this.headerNotificationsOrders = [];
+    }
+
+    deleteHeaderOrder(id) {
+        this.headerNotificationsOrders = this.headerNotificationsOrders.filter(order => Number(order.id) != Number(id))
+
+    }
 }
 
 export const userStore = new UserData()

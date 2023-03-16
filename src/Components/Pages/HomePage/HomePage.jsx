@@ -47,48 +47,28 @@ const HomePage = () => {
       <RecomendationBlockM />
 
       <RecomendationBlock id='newProducts'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+
         <RegisterCard />
       </RecomendationBlock>
       <CollectionBlock />
       <RecomendationBlock id='popularProducts'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+
         <RegisterCard />
       </RecomendationBlock>
       <SubscriptionBlock />
       <RecomendationBlock id='bestPriceProducts'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+
         <RegisterCard />
       </RecomendationBlock>
       <CollectionBlockTwo />
       <CollectionBlockThree />
       <RecomendationBlock id='customProducts'>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+
         <RegisterCard />
       </RecomendationBlock>
       <CollectionBlockFour />
       <RecomendationBlock id='birthdayProducts'>
-      <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        
         <RegisterCard />
       </RecomendationBlock>
       <Partners />

@@ -163,7 +163,7 @@ const FlexUp = observer(() => {
                                     </div>
                                     <div className={tabToggle === 1 ? 'DDContent DDActiveContent' : "DDContent"}>
 
-                                        {/* <DDListOrder /> */}
+                                        <DDListOrder />
 
                                     </div>
                                     <div className={tabToggle === 2 ? 'DDContent DDActiveContent' : "DDContent"}>

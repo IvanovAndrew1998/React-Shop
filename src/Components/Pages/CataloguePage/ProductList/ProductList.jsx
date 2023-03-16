@@ -32,9 +32,10 @@ const ProductList = () => {
                     key={result.id}
                     name={result.name} 
                     discount={result.price.discount}
-                    rating={result.rating.value}
+                    ratingValue={result.rating}
                     brand={result.brand.name}
-                    
+                    discounted={result.price.discounted}
+                    original={result.price.original}
                     />
                     )}
                     

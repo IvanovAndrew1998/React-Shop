@@ -15,7 +15,7 @@ const FeedbackForm = () => {
 
                         // MEM
                         />
-                        <span className={style.tooltip}>Если что меня так заебало, что изменения вносятся на ходу, Леха пошел на хуй. Как же заебло, что код каждый раз устаревает, не успев блять доделаться</span>
+                        <span className={style.tooltip}>что-то</span>
 
                     </div>
                 </div>

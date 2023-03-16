@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
 import DDorder from '../DDItems/DDorder';
+import { userStore } from '../../../../Store/UserStore';
+import { observer } from 'mobx-react-lite';
 
-const ListOrderContent = (ordersCards) => {
-
-    const [listHeaderOrders, setListHeaderOrders] = useState(ordersCards);
-    function removeOrderItem(id) {
-        setListHeaderOrders(ordersCards.filter(result => result.id != id))
-    }
+const ListOrderContent = observer(() => {
+   
 
   return (
-    <div>
+    <div className='DDActiveContent'>
          {
-                listHeaderOrders.length !== 0
+                userStore.headerNotificationsOrders.length !== 0
                     ?
                     <>
-                        {listHeaderOrders.map(result => {
+                        {userStore.headerNotificationsOrders.map(result => {
                             return (
-                                <DDorder result={result} key={result.id} orderDeleteCallBack={removeOrderItem} />
+                                <DDorder result={result} key={result.id}  />
                             )
                         })}
-                        <button className='clearAllBtn' onClick={() => setListHeaderOrders([])} >Очистить список</button>
+                        <button className='clearAllBtn'  onClick={() => userStore.clearHeaderOrders()}>Очистить список</button>
                     </>
                     :
                     <div className='EmptyList'>
@@ -32,6 +30,6 @@ const ListOrderContent = (ordersCards) => {
             }
     </div>
   )
-}
+})
 
 export default ListOrderContent

@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-
-
-import { observer } from 'mobx-react-lite';
+import React from 'react'
 import { userStore } from '../../../../Store/UserStore';
 import ListOrderContent from './ListOrderContent';
 
 
-const DDListOrder = observer(() => {
+const DDListOrder = () => {
 
 
    
-    if (userStore.headerInfo === undefined) {
+    if (userStore.headerNotificationsOrders == undefined) {
         return <div></div>
     }
-    console.log(userStore.headerInfo);
+    
     return (
         <ul className='DDActiveContent'>
-           <ListOrderContent ordersCards={userStore.headerInfo.notifications.orders}/>
+           <ListOrderContent />
         </ul>
     )
-})
+}
 
 export default DDListOrder

@@ -1,6 +1,7 @@
 import React from 'react'
+import { userStore } from '../../../../Store/UserStore';
 
-const DDdiscount = ({data, deleteCallBack}) => {
+const DDdiscount = ({result}) => {
 
     
 
@@ -10,13 +11,13 @@ const DDdiscount = ({data, deleteCallBack}) => {
             <img className='DDOimg' src="src/basketImage.svg" alt="" />
 
             <div className="DDOsingleOrder">
-                <p className='DDOsingleDiscount'>-{data.discount}%</p>
+                <p className='DDOsingleDiscount'>-{result.discount}%</p>
                 <div className='DDOsinglePrices'>
-                    <p className="DDOvendorCode">{data.discountedPrice} р</p>
-                    <p className='DDOsingleOriginal'>{data.originalPrice} р</p>
+                    <p className="DDOvendorCode">{result.discountedPrice} р</p>
+                    <p className='DDOsingleOriginal'>{result.originalPrice} р</p>
                 </div>
                 <p>Можно забрать</p>
-                <img className='x' src="src/Xicon.svg" alt=""  onClick={() => deleteCallBack(data.id)}/>
+                <img className='x' src="src/Xicon.svg" alt=""  onClick={() => userStore.deleteHeaderDiscount(result.id)}/>
             </div>
         </li>
     )

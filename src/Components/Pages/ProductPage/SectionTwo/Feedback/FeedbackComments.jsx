@@ -19,7 +19,7 @@ const FeedbackComments = () => {
     
     if (!reviews)
         return <Loader/>
-
+    console.log(reviews)
     return (
         <div className="flexbox2-left">
             <div className="feedback-2">

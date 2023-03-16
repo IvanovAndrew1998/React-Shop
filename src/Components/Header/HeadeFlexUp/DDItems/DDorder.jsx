@@ -1,13 +1,9 @@
 import React from 'react'
+import { userStore } from '../../../../Store/UserStore';
 import './DDorder.css'
 
-const DDorder = ({result, orderDeleteCallBack}) => {
 
-    function statusColor(result){
-      let status = result.order_status;
-
-      console.log(status)
-    }
+const DDorder = ({result}) => {
 
 
     return (
@@ -16,9 +12,9 @@ const DDorder = ({result, orderDeleteCallBack}) => {
 
             <div className="DDOsingleOrder">
                 <p>Заказ</p>
-                <p className="DDOvendorCode">№{result.id}</p>
+                <p className="DDOvendorCode">№{result.product.vendor_code}</p>
                 <p className={``}>{result.order_status}</p>
-                <img className='x' src="src/Xicon.svg" alt="" onClick={() => orderDeleteCallBack(result.id)}/>
+                <img className='x' src="src/Xicon.svg" alt="" onClick={() => userStore.deleteHeaderOrder(result.id)}/>
             </div>
         </li>
     )

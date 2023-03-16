@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import styles from './Slider.module.css'
 import { userStore } from '../../../Store/UserStore'
 import { observer } from 'mobx-react-lite';
+import CatalogueStore from '../../../Store/CatalogueStore';
 
 const FlexDown = observer(() => {
     const [slided, setslided] = useState("")
@@ -13,16 +14,16 @@ const FlexDown = observer(() => {
 
     function isFilled() {
         if (panel.current && panel.current.clientWidth > 700) {
-          setFilled(true);
+            setFilled(true);
         } else {
-          setFilled(false);
+            setFilled(false);
         }
-      }
-      
-      useEffect(() => {
+    }
+
+    useEffect(() => {
         isFilled();
-      }, []);
-      
+    }, []);
+
 
     function slide() {
         if (slided === "") {
@@ -36,7 +37,7 @@ const FlexDown = observer(() => {
         }
     }
 
-    if (userStore.headerInfo === undefined) {
+    if (userStore.headerTags === undefined) {
         return <div />
     }
 
@@ -45,23 +46,26 @@ const FlexDown = observer(() => {
         <div className="header-flexdown">
 
             {/* <GeoTag /> */}
-            <div className=""> Yerevan</div>
+            <div className="">Yerevan</div>
 
             <div className="flexdown-right">
                 <nav className={styles.navSlider}>
-                    <ul className={styles.slider + " " + slided}  ref={panel}>
-                        {userStore.headerInfo.data.tags.map(tag =>
-                            <li key={tag.name}>
+                    <ul className={styles.slider + " " + slided} ref={panel}>
+                        {userStore.headerTags.map(tag =>
+                            <li key={tag.name} onClick={() => {
+                                CatalogueStore.clearCatalogueCashe();
+                                CatalogueStore.toggleTag(tag.name)
+                            }}>
                                 <a href="#">{tag.name}</a>
                             </li>
                         )}
-                       
-                        
-                       
+
+
+
                     </ul>
                 </nav>
                 <div className={filled ? " " : styles.unfilled}
-                   
+
                 >
                     <img className={"arrow" + " " + rotated + " " + styles.animation} src="src/arrow.svg" alt="" onClick={slide} />
                 </div>
