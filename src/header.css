@@ -169,7 +169,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .backet-number {
-    width: 16px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     left: 30px;
     top: -10px;

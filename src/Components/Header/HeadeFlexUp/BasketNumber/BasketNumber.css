@@ -1,0 +1,7 @@
+.basketP {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--red-1);
+}

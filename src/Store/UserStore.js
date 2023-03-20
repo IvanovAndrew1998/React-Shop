@@ -11,6 +11,7 @@ class UserData {
     headerNotificationsOrders;
     headerNotificationsDiscounts;
     headerTags;
+    headerBasket;
 
 
     constructor() {
@@ -20,6 +21,7 @@ class UserData {
         this.headerNotificationsOrders = undefined;
         this.headerNotificationsDiscounts = undefined;
         this.headerTags = undefined;
+        this.headerBasket = undefined;
 
         
         
@@ -76,6 +78,7 @@ class UserData {
             this.headerTags = HeaderRes.data.tags
             this.headerNotificationsOrders = HeaderRes.data.notifications.orders
             this.headerNotificationsDiscounts = HeaderRes.data.notifications.discounts
+            this.headerBasket = HeaderRes.data.basket
         })
         
     };

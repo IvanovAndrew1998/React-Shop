@@ -4,6 +4,8 @@ import styles from './Slider.module.css'
 import { userStore } from '../../../Store/UserStore'
 import { observer } from 'mobx-react-lite';
 import CatalogueStore from '../../../Store/CatalogueStore';
+import { Link } from 'react-router-dom';
+
 
 const FlexDown = observer(() => {
     const [slided, setslided] = useState("")
@@ -46,18 +48,22 @@ const FlexDown = observer(() => {
         <div className="header-flexdown">
 
             {/* <GeoTag /> */}
-            <div className="">Yerevan</div>
+            <div className="">
+            Yerevan
+            </div>
 
             <div className="flexdown-right">
                 <nav className={styles.navSlider}>
                     <ul className={styles.slider + " " + slided} ref={panel}>
                         {userStore.headerTags.map(tag =>
-                            <li key={tag.name} onClick={() => {
-                                CatalogueStore.clearCatalogueCashe();
-                                CatalogueStore.toggleTag(tag.name)
-                            }}>
-                                <a href="#">{tag.name}</a>
-                            </li>
+                            <Link to='/catalogue'>
+                                <li key={tag.name} onClick={() => {
+                                    CatalogueStore.clearCatalogueCashe();
+                                    CatalogueStore.toggleTag(tag.name)
+                                }}>
+                                    <a href="#">{tag.name}</a>
+                                </li>
+                            </Link>
                         )}
 
 

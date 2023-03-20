@@ -11,6 +11,7 @@ import DDListOrder from './DDLists/DDListOrder';
 import DDListDiscount from './DDLists/DDListDiscount';
 import { Link } from 'react-router-dom';
 import Loader from '../../Pages/ProductPage/Loader/Loader';
+import BasketNumber from './BasketNumber/BasketNumber';
 
 
 const FlexUp = observer(() => {
@@ -175,8 +176,10 @@ const FlexUp = observer(() => {
                             </div>
                             <img src="src/heart-filled.svg" alt="" />
                             <div className="backet">
-                                <img src="src/basket.svg" alt="" />
-                                <img className="backet-number" src="src/12.svg" alt="" />
+                                <Link to='/basket'>
+                                    <img src="src/basket.svg" alt="" />
+                                </Link>
+                                <BasketNumber />
                             </div></>
                         : <button className='signIn' onClick={() => setModalActive(true)} >Войти</button>
                 }

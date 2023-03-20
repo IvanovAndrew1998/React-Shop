@@ -579,10 +579,23 @@ a {
 
 }
 
-.feedback-2 img {
+.feedback-quantity {
     position: absolute;
     top: -5px;
     right: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--main-1);
+}
+
+.sortingBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
 }
 
 .feedback-up {

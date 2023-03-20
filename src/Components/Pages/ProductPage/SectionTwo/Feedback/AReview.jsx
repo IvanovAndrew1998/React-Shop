@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './AReview.css'
 import Ratings from 'react-ratings-declarative';
+import ReportModal from './ReportModal/ReportModal';
 
 
 function imageRender(images) {
@@ -12,10 +13,10 @@ function imageRender(images) {
 
 const AReview = ({ review }) => {
 
-
+    const [modalActive, setModalActive] = useState(false)
 
     const [like, setLike] = useState(review.likes);
-    const [likeActive, setLikeActive] = useState(false)
+    const [likeActive, setLikeActive] = useState(review.is_liked)
 
     function likePressed() {
         if (likeActive) {
@@ -28,8 +29,7 @@ const AReview = ({ review }) => {
         }
     }
 
-    const date = review.date.split('-').reverse().join('.')
-
+ 
     return (
         <div className="feedback-up">
             <div className="feedback-num">
@@ -60,7 +60,7 @@ const AReview = ({ review }) => {
             <p className="conmment" >
                 {review.reviewText}
             </p>
-            <div className={"feedback-flexbox" + " " + imageRender(review.images)}>
+            {/* <div className={"feedback-flexbox" + " " + imageRender(review.images)}>
                 <div className="feedbackphoto-left ">
                     {review.images}
                 </div>
@@ -69,13 +69,13 @@ const AReview = ({ review }) => {
                     <img src="src/feedphoto-up.png" alt="" />
                     <p className="else">Еще 1</p>
                 </div>
-            </div>
+            </div> */}
             <div className="date-like">
                 <div className="date-report">
-                    <p className="date">{date}</p>
+                    <p className="date">{review.last_updated}</p>
                     <div className="report">
                         <img src="src/reportIcon.svg" alt="" />
-                        <p className='date'>Пожаловаться</p>
+                        <p className='date' onClick={() => setModalActive(true)}>Пожаловаться</p>
                     </div>
                 </div>
                 <div className="like-dislike">
@@ -85,6 +85,7 @@ const AReview = ({ review }) => {
                     </div>
                 </div>
             </div>
+            <ReportModal active={modalActive} setActive={setModalActive}/>
         </div>
     )
 }

@@ -23,8 +23,8 @@ export async function getProductData(id) {
 }
 
 
-export async function getProductReviews(id, offset = 0, limit = 10) {
-    const reviews = await axios.get(`http://localhost:8000/reviews/product?id=${id}&limit=${limit}&offset=${offset}`);
+export async function getProductReviews(id) {
+    const reviews = await axios.get(`http://localhost:8000/reviews/?product_id=` + id);
     return reviews.data;
 }
 
@@ -75,7 +75,7 @@ export async function dropRefreshToken(refresh_token) {
 }
 
 export async function getCatalogue(tags) {
-    const catalogue = await axios.get(`http://localhost:8000/catalogue/?tags=${
+    const catalogue = await axios.get(`http://uv-mir.ru/catalogue/?tags=${
         tags.join(",")
     }`);
     return catalogue.data;
