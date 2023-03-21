@@ -13,7 +13,7 @@ const OrderDetails = observer(() => {
 
   return (
     <div className='orderRoot'>
-      {userStore.ordersInfo.data.results.map(result =>
+      {userStore.ordersInfo.results.map(result =>
         <OrderSingle result={result}/>
       )}
 

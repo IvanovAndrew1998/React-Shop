@@ -24,7 +24,7 @@ const FeedbackComments = () => {
         <div className="flexbox2-left">
             <div className="feedback-2">
                 <h2 className="feedback-h2" id="feedbackLink">Отзывы</h2>
-                <p className='feedback-quantity' alt="">2</p>
+                <p className='feedback-quantity' alt="">{reviews.count}</p>
             </div>
             <div className="sortingBar">
                 <div className="reviewsCategories">

@@ -3,7 +3,7 @@ import './miniLoader.css'
 
 const MiniLoader = () => {
   return (
-    <span class="loader"></span>
+    <span className="miniLoader"></span>
   )
 }
 

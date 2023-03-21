@@ -12,6 +12,7 @@ import DDListDiscount from './DDLists/DDListDiscount';
 import { Link } from 'react-router-dom';
 import Loader from '../../Pages/ProductPage/Loader/Loader';
 import BasketNumber from './BasketNumber/BasketNumber';
+import NotificationNumber from './NotificationNumber/NotificationNumber';
 
 
 const FlexUp = observer(() => {
@@ -153,6 +154,7 @@ const FlexUp = observer(() => {
                         </div>
                             <div className="notificationContainer" ref={ordersRef}>
                                 <img src="src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
+                                <NotificationNumber />
                                 <div className={`dropdownOrders ${DDOrdersOpen ? 'active' : 'inactive'}`}>
                                     <div className="DDOheaderPanel">
                                         <div className={tabToggle === 1 ? "DDOheaderButton DDOselected" : "DDOheaderButton"} onClick={() => toggleFunc(1)}>

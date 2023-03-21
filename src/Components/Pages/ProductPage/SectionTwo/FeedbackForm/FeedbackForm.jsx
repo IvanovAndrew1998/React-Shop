@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 import Ratings from 'react-ratings-declarative/build/ratings'
 import style from './FeedbackForm.module.css'
+import { userStore } from '../../../../../Store/UserStore';
+import { postReview } from '../../../../../Api';
 
 const FeedbackForm = () => {
     const [rated, setRated] = useState(5);
+    const [reviewText, setReviewText] = useState('');
+
+    const productID = 1;
+// id можно взять из ссылки
+
+
     return (
         <section className="section-3">
             <div className="inner">
@@ -13,7 +21,6 @@ const FeedbackForm = () => {
                         <a href="#">Что написать</a>
                         <img src="src/question.svg" alt=""
 
-                        // MEM
                         />
                         <span className={style.tooltip}>что-то</span>
 
@@ -43,14 +50,23 @@ const FeedbackForm = () => {
                         Напишите комментарий
                     </p>
                     <div className="text-area">
-                        <textarea className="share" name="" placeholder="Поделитесь своим мнением о товаре" id="" cols="30" rows="10"></textarea>
+                        <textarea
+                            className="share"
+                            name="" placeholder="Поделитесь своим мнением о товаре"
+                            cols="30"
+                            rows="10"
+                            value={reviewText}
+                            onChange={e => setReviewText(e.target.value)}
+                        >
+                            
+                        </textarea>
                         <div className="figure">
                             <a href="">Изображение</a>
                             <img src="src/figure.svg" alt="" />
                         </div>
                     </div>
                     <div className="two-buttons">
-                        <button className="btn-orange">
+                        <button className="btn-orange" onClick={() => postReview(userStore.accessToken, productID, reviewText, rated )}>
                             Опубликовать отзыв
                         </button>
                         <button className="btn-orange">

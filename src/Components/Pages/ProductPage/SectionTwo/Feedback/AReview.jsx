@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './AReview.css'
 import Ratings from 'react-ratings-declarative';
 import ReportModal from './ReportModal/ReportModal';
+import { userStore } from '../../../../../Store/UserStore';
+import { set } from 'react-hook-form';
 
 
 function imageRender(images) {
@@ -18,7 +20,7 @@ const AReview = ({ review }) => {
     const [like, setLike] = useState(review.likes);
     const [likeActive, setLikeActive] = useState(review.is_liked)
 
-    function likePressed() {
+    function likePressed(e) {
         if (likeActive) {
             setLikeActive(false)
             setLike(like - 1)
@@ -26,17 +28,20 @@ const AReview = ({ review }) => {
             setLikeActive(true)
             setLike(like + 1)
             
-        }
+        };
+        e.target.style.pointerEvents = "none";
+        setTimeout(() => e.target.style.pointerEvents =  "initial" , 1000)
+        // вставить пост запрос когда будут айдишники ревьюшек
     }
 
  
     return (
         <div className="feedback-up">
-            <div className="feedback-num">
+            <div className="reviewHeader">
                 <img src="src/guy.svg" alt="" />
-                <div className="name-num">
+                <div className="reviewHeaderRight">
                     <p className="feedback-name">{review.user.name}</p>
-                    <p className="feedback-nub">{review.user.reviewCount}</p>
+                    <p className="reviewerPostQuantity">{review.user.reviewCount}</p>
                 </div>
             </div>
             <div className="rating-line">
@@ -79,8 +84,8 @@ const AReview = ({ review }) => {
                     </div>
                 </div>
                 <div className="like-dislike">
-                    <div className="like">
-                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={() => likePressed()}/>
+                    <div className="like" >
+                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={e => likePressed(e)}/>
                         <p className="likes">{like}</p>
                     </div>
                 </div>

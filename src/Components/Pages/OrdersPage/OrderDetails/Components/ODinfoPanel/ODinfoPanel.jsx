@@ -28,7 +28,7 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
                     <img src="src/guideSection/CubeIcon.svg" alt="" />
                     <div>
                         <p className='ODinfoPanelHeaderP'>Товары</p>
-                        <p className='ODInfoPanelP'>{userStore.ordersInfo.data.count} шт</p>
+                        <p className='ODInfoPanelP'>{userStore.ordersInfo.count} шт</p>
                     </div>
                 </div>
             </div>

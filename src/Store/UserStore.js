@@ -10,6 +10,7 @@ class UserData {
     ordersInfo;
     headerNotificationsOrders;
     headerNotificationsDiscounts;
+    headerNotificationsCount;
     headerTags;
     headerBasket;
 
@@ -20,6 +21,7 @@ class UserData {
         this.ordersInfo = undefined;
         this.headerNotificationsOrders = undefined;
         this.headerNotificationsDiscounts = undefined;
+        this.headerNotificationsCount = undefined;
         this.headerTags = undefined;
         this.headerBasket = undefined;
 
@@ -71,13 +73,14 @@ class UserData {
         getProfileInfo(this.accessToken).then(res => {this.profileInfo = res })  
     } ;
     fetchOrderData() {
-        getOrdersInfo(this.accessToken).then(OrderRes => {this.ordersInfo = OrderRes})
+        getOrdersInfo(this.accessToken).then(OrderRes => {this.ordersInfo = OrderRes.data})
     };
     fetchHeaderData() {
         getHeaderInfo(this.accessToken).then(HeaderRes => {
             this.headerTags = HeaderRes.data.tags
             this.headerNotificationsOrders = HeaderRes.data.notifications.orders
             this.headerNotificationsDiscounts = HeaderRes.data.notifications.discounts
+            this.headerNotificationsCount = HeaderRes.data.notifications.count
             this.headerBasket = HeaderRes.data.basket
         })
         

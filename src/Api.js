@@ -52,7 +52,7 @@ export async function getHeaderInfo(access_token) {
             'Authorization': ` Bearer ${access_token}`
         }
     })
-    
+
     return headerInfo;
 }
 
@@ -79,4 +79,28 @@ export async function getCatalogue(tags) {
         tags.join(",")
     }`);
     return catalogue.data;
+}
+
+export async function postLike(access_token, id) {
+
+    await axios.post(`http://localhost:8000/reviews/feedback/?reviews=${id}`, {
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+        }
+    })
+}
+// добавить имаги
+export async function postReview(access_token, productID, text, rating) {
+    console.log(productID, text, rating)
+    await axios.post(`http://localhost:8000/reviews/`, {
+        product: productID,
+        text: text,
+        rating: rating
+    }, {
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+
+        }
+    })
+
 }

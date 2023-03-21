@@ -3,6 +3,7 @@ import ProductCard from '../PRODUCTCARD/ProductCard';
 import ODinfoPanel from './OrderDetails/Components/ODinfoPanel/ODinfoPanel';
 import ODupperPanel from './OrderDetails/Components/ODupperPanel/ODupperPanel'
 
+
 const OrderSingle = ({result}) => {
 
     const [opened, setOpened] = useState(false);
@@ -40,12 +41,7 @@ const OrderSingle = ({result}) => {
                         shippingAddress={result.shipping_address}
                     />
                     <div className="ODgrid">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                       {/* Смапить карточки */}
                     </div>
                 </div>
             </div>
