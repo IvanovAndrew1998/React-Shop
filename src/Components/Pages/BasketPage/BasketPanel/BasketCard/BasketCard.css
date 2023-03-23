@@ -228,17 +228,38 @@
     align-items: center;
 }
 
-.delete-buy img {
-    cursor: pointer;
-}
+
 
 .deleteButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 46px;
     height: 46px;
     object-fit: none;
     border: 1px solid #F5F5F5;
     box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
-    border-radius: 56px;
+    border-radius: 50%;
+    
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.deleteButton span {
+    width: 46px;
+    height: 46px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../../../../../public/src/deleteProfile.svg');
+}
+
+.deleteButton:hover {
+    background: var(--red-1);
+}
+
+.deleteButton span:hover {
+    background-image: url('../../../../../../public/src/deleteProfileWhite.svg');
 }
 
 .favourite {

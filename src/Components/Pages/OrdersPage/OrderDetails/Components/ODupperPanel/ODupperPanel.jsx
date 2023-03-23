@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import './ODupperPanel.css'
 import './SpanColors.css'
 import LittleProductCarouselImage from './littleProductCarouselImage/LittleProductCarouselImage';
@@ -7,44 +7,7 @@ import LittleProductCarouselImage from './littleProductCarouselImage/LittleProdu
 
 const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderSum, created }) => {
 
-    const ref = useRef();
-
-
-    const shiftLengthInc = 107;
-
-    let current = 0;
-
-    const cardAmount = products.length;
-
-    function shiftBy(shiftLength) {
-        const chld = Array.from(ref.current.products)
-
-        chld.forEach(card => {
-            card.style.left = shiftLength + 'px'
-
-        });
-    }
-
-    function getShiftLength() {
-        return current * shiftLengthInc
-    }
-
-    function inc() {
-
-        if (current < 0) {
-            current++;
-            shiftBy(getShiftLength());
-        }
-
-    }
-
-    function dec() {
-
-        if (current > -cardAmount + 4) {
-            current--;
-            shiftBy(getShiftLength());
-        }
-    }
+    
 
     function createdPretty(created) {
         const months = ['Янв', "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]
@@ -71,18 +34,18 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
         else if (orderStatus === 'В обработке') {
             buttonColor = ''
             return <div className="orderStateLines">
-            <span className='orderStateReady'></span>
-            <span className=''></span>
-            <span className=''></span>
-        </div>
+                <span className='orderStateReady'></span>
+                <span className=''></span>
+                <span className=''></span>
+            </div>
         }
         else if (orderStatus === 'Доставляется') {
             buttonColor = ''
             return <div className="orderStateLines">
-            <span className='orderStateReady'></span>
-            <span className='orderStateReady'></span>
-            <span className=''></span>
-        </div>
+                <span className='orderStateReady'></span>
+                <span className='orderStateReady'></span>
+                <span className=''></span>
+            </div>
         }
         else if (orderStatus === 'Готов к выдаче') {
             buttonColor = ''
@@ -92,7 +55,7 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
                 <span className='orderStateReady'></span>
             </div>
         }
-         else if (orderStatus === 'Завершен') {
+        else if (orderStatus === 'Завершен') {
             buttonColor = 'greenButton'
             return <div className="orderStateLines">
                 <span className='finished'></span>
@@ -136,13 +99,7 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
                 </div>
             </div>
             <div className="ODupperPanelRight">
-                <div className="littleProductCarousel">
-                    <span className='littleProductCarouselLeft' src="src/mainarrow-left.svg" alt="" onClick={inc} />
-                    <div className="littleProductCarouselTrack" id={id} ref={ref}>
-                        <LittleProductCarouselImage />
-                    </div>
-                    <span className='littleProductCarouselRight' src="src/mainarrow-right.svg" alt="" onClick={dec} />
-                </div>
+                <LittleProductCarouselImage products={products}/>
                 <div className="ODupperPanelRightButtons">
                     <div className="ODupperPanelRepeatCancel">
                         <button className='ODUbutton'>Повторить</button>

@@ -6,7 +6,7 @@ import { useMap } from 'react-leaflet';
 import axios from 'axios';
 
 const GeoTag = () => {
-    const [city, setSity] = useState('Москва');
+    const [city, setSity] = useState('Витебск');
     const provider = new OpenStreetMapProvider();
 
     function getCurrentPosition() {

@@ -36,6 +36,9 @@ class UserData {
             this.accessToken = res.data.access;
             this.loggedIn = true;
             Cookies.set('UM:REFRESHTOKEN', res.data.refresh);
+            this.fetchData();
+            this.fetchOrderData();
+            this.fetchHeaderData();
         });
     }
 
@@ -52,14 +55,14 @@ class UserData {
 
         if (refresh_token !== undefined) {
       
-            getAccessToken(refresh_token).then( accessToken => {
-
-                this.accessToken = accessToken.data.access;
+            getAccessToken(refresh_token).then( tokens => {
+                console.log('poop')
+                this.accessToken = tokens.data.access;
                 this.loggedIn = true;
                 this.fetchData();
                 this.fetchOrderData();
                 this.fetchHeaderData();
-                
+                Cookies.set('UM:REFRESHTOKEN' , tokens.data.refresh)
 
             }).catch(() => {alert('Сервер временно не доступен')});
             

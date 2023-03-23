@@ -1,7 +1,8 @@
 import React from 'react'
-import './BasketSidebar.css'
+import '../../BasketPage/BasketSidebar/BasketSidebar.css'
 
-const BasketSidebar = () => {
+
+const COSidebar = () => {
   return (
     <div>
       <div className="sidebarHeader">
@@ -28,17 +29,14 @@ const BasketSidebar = () => {
             <p className='parametersTotal'> Применен</p>
           </div>
           <div className="checkOutButton">
-            Перейти к оформлению
+            Подать заявку
           </div>
           <p className='disclaimer'>Окончательная стоимость может отличаться и будет подтверждена после рассмотрения заявки</p>
         </div>
       </div>
-      <div className="promoCodeBlock">
-        <input type="text"  className='promoCodeInput'/>
-        <button className="promoSend">Промокод применен</button>
-      </div>
+      
     </div>
   )
 }
 
-export default BasketSidebar
+export default COSidebar

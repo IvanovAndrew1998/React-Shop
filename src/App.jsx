@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import {
-    BrowserRouter, Route, Routes, Link
-} from "react-router-dom";
+import 
+{
+    BrowserRouter, Route, Routes
+} 
+from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Catalogue from './Components/Pages/CataloguePage/Catalogue';
@@ -11,12 +13,14 @@ import BasketPage from './Components/Pages/BasketPage/BasketPage';
 import AccountPage from './Components/Pages/AccountPage/AccountPage';
 import { userStore } from './Store/UserStore.js';
 import OrdersPage from './Components/Pages/OrdersPage/OrdersPage';
+import CorpOrder from './Components/Pages/CorpAplication/CorpOrder';
 
-const accessTokenRefreshTime = 1000 * 60 * 3;
+const accessTokenRefreshTime = 1000 * 60 * 5;
 
 
 
 function App() {
+    console.log('Da')
     useEffect(
         () => {
             userStore.loadData(); setInterval(() => {
@@ -25,9 +29,10 @@ function App() {
             }, accessTokenRefreshTime)
         },
         []);
-
-
-
+    // userStore.loadData();
+    // setInterval(() => {
+    //                 userStore.loadData()
+    //             }, accessTokenRefreshTime);
 
     return (
         <div className="App">
@@ -35,8 +40,8 @@ function App() {
             <BrowserRouter>
             <Header />
                 <Routes>
-                    <Route path="product/" element={<ProductPage />}
-                    />
+                    <Route path="product/" element={<ProductPage />}/>
+                    <Route path='corpOrder/' element={<CorpOrder/>}/>
                     <Route path='catalogue/' element={<Catalogue />} />
                     <Route path='*' element={<HomePage />} />
                     <Route path='basket/' element={<BasketPage />} />

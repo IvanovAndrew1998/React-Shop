@@ -6,6 +6,8 @@ import { observer } from 'mobx-react-lite';
 import CatalogueStore from '../../../Store/CatalogueStore';
 import { Link } from 'react-router-dom';
 
+import GeoTag from './GeoTag';
+
 
 const FlexDown = observer(() => {
     const [slided, setslided] = useState("")
@@ -47,10 +49,10 @@ const FlexDown = observer(() => {
     return (
         <div className="header-flexdown">
 
-            {/* <GeoTag /> */}
-            <div className="">
+            <GeoTag />
+            {/* <div className="">
             Yerevan
-            </div>
+            </div> */}
 
             <div className="flexdown-right">
                 <nav className={styles.navSlider}>

@@ -18,18 +18,18 @@ export function getSizeList( /*  Product ID */
 }
 
 export async function getProductData(id) {
-    const product = await axios.get("http://127.0.0.1:8000/catalogue/product?id=" + id);
+    const product = await axios.get("http://uv-mir.ru/catalogue/product?id=" + id);
     return product.data;
 }
 
 
 export async function getProductReviews(id) {
-    const reviews = await axios.get(`http://localhost:8000/reviews/?product_id=` + id);
+    const reviews = await axios.get(`http://uv-mir.ru/reviews/?product_id=` + id);
     return reviews.data;
 }
 
 export async function getProfileInfo(access_token) {
-    const profileInfo = await axios.get('http://localhost:8000/profile/', {
+    const profileInfo = await axios.get('http://uv-mir.ru/profile/', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
@@ -38,7 +38,7 @@ export async function getProfileInfo(access_token) {
 }
 
 export async function getOrdersInfo(access_token) {
-    const ordersInfo = await axios.get('http://localhost:8000/orders/', {
+    const ordersInfo = await axios.get('http://uv-mir.ru/orders/', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
@@ -47,7 +47,7 @@ export async function getOrdersInfo(access_token) {
 }
 
 export async function getHeaderInfo(access_token) {
-    const headerInfo = await axios.get('http://localhost:8000/header', {
+    const headerInfo = await axios.get('http://uv-mir.ru/header', {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
@@ -57,7 +57,7 @@ export async function getHeaderInfo(access_token) {
 }
 
 export async function getLoginTokens(phone_number, password) {
-    const tokens = await axios.post("http://localhost:8000/api/token/", {
+    const tokens = await axios.post("http://uv-mir.ru/api/token/", {
         phone_number: phone_number,
         password: password
     });
@@ -66,12 +66,12 @@ export async function getLoginTokens(phone_number, password) {
     // обработать случаи для неответа сервера
 }
 export async function getAccessToken(refresh_token) {
-    const access_token = await axios.post("http://localhost:8000/api/token/refresh/", {refresh: refresh_token});
-    return access_token;
+    const tokens = await axios.post("http://uv-mir.ru/api/token/refresh/", {refresh: refresh_token});
+    return tokens;
 }
 
 export async function dropRefreshToken(refresh_token) {
-    await axios.post("http://localhost:8000/api/token/blacklist/", {refresh: refresh_token});
+    await axios.post("http://uv-mir.ru/api/token/blacklist/", {refresh: refresh_token});
 }
 
 export async function getCatalogue(tags) {
@@ -83,7 +83,7 @@ export async function getCatalogue(tags) {
 
 export async function postLike(access_token, id) {
 
-    await axios.post(`http://localhost:8000/reviews/feedback/?reviews=${id}`, {
+    await axios.post(`http://uv-mir.ru/reviews/feedback/?reviews=${id}`, {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         }
@@ -92,7 +92,7 @@ export async function postLike(access_token, id) {
 // добавить имаги
 export async function postReview(access_token, productID, text, rating) {
     console.log(productID, text, rating)
-    await axios.post(`http://localhost:8000/reviews/`, {
+    await axios.post(`http://uv-mir.ru/reviews/`, {
         product: productID,
         text: text,
         rating: rating

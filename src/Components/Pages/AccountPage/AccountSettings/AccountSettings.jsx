@@ -13,7 +13,7 @@ const AccountSettings = observer(() => {
     if(userStore.profileInfo == undefined) {
         return <Loader/>
     }
-    console.log(userStore.profileInfo);
+
 
     return (
         <div>

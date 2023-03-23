@@ -1,17 +1,12 @@
-import React, { useState } from 'react'
-import './BasketCard.css'
+import React from 'react'
 import Ratings from 'react-ratings-declarative';
-import CorpSpinPanel from './Components/CorpSpin/CorpSpinPanel';
-import RegSpin from './Components/RegSpin/RegSpin';
-import HeartButton from '../../../../HeartButton/HeartButton';
+import '../../../BasketPage/BasketPanel/BasketCard/BasketCard.css'
+import COCardQuantityPanel from './COCardQuantityPanel/COCardQuantityPanel';
 
 
 
-const BasketCard = () => {
+const COCard = () => {
 
-  
-
-  const [corporatePanel, setCorporatePanel] = useState(false)
 
   return (
     <div className="basketCard">
@@ -53,20 +48,9 @@ const BasketCard = () => {
         </div>
       </div>
       <div className="bottom">
-        {/* <div className="delete-buy">
-          <button className='deleteButton '>
-           <span></span>
-          </button>
-          <button className="buy buy-margin">Купить</button>
-          <HeartButton/>
-        </div> */}
-        {
-          corporatePanel === true
-            ?
-            <RegSpin/>
-            :
-            <CorpSpinPanel/>
-        }
+       
+        <COCardQuantityPanel/>
+       
 
 
       </div>
@@ -75,4 +59,4 @@ const BasketCard = () => {
   )
 }
 
-export default BasketCard
+export default COCard
