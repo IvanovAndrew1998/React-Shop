@@ -3,11 +3,11 @@ import {useState} from 'react'
 import './leftPanel.css'
 
 const LeftPanel = ({images}) => {
-  images = [
-    "src/feed-photoBUKVAODIN.png",
-    "src/feed-photoBUKVADVA.png",
-    "src/feed-photoBUKVATRI.png"
-  ];
+  // images = [
+  //   "src/feed-photoBUKVAODIN.png",
+  //   "src/feed-photoBUKVADVA.png",
+  //   "src/feed-photoBUKVATRI.png"
+  // ];
   const [currentImage, setCurrentImage] = useState(images[0])
 
   //const otherImages = images.filter(el => el != currentImage);

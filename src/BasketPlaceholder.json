@@ -1,0 +1,122 @@
+{
+    "BasketCards": [
+        {
+            "id": "1",
+            "brandName": "Sokolov",
+            "productName": "Цепь один",
+            "image": "image",
+            "rating": {
+                "rating": 4,
+                "reviewQuantity": "125 отзывов"
+            },
+            "price": {
+                "basketSizesWeightsPrices": [
+                    {
+                        "size": "45",
+                        "weight": 1.04,
+                        "originalPrice": 402,
+                        "discountedPrice": 293
+                    },
+                    {
+                        "size": "50",
+                        "weight": 3.22,
+                        "originalPrice": 1246,
+                        "discountedPrice": 908
+                    },
+                    {
+                        "size": "55",
+                        "weight": 4.32,
+                        "originalPrice": 1671,
+                        "discountedPrice": 1218
+                    },
+                    {
+                        "size": "60",
+                        "weight": 4.9,
+                        "originalPrice": 1896,
+                        "discountedPrice": 1381
+                    }, 
+                    {
+                        "size": "65",
+                        "weight": 2.14,
+                        "originalPrice": 828,
+                        "discountedPrice": 603
+                    }, 
+                    {
+                        "size": "70",
+                        "weight": 2.14,
+                        "originalPrice": 828,
+                        "discountedPrice": 603
+                    }, 
+                    {
+                        "size": "75",
+                        "weight": 4.84,
+                        "originalPrice": 1873,
+                        "discountedPrice": 1364
+                    }
+
+                ],
+                "discount": 27
+            }
+
+        }, 
+        {
+            "id": "2",
+            "brandName": "El Dorado",
+            "productName": "Цепь Зеленый",
+            "image": "image",
+            "rating": {
+                "rating": 4,
+                "reviewQuantity": "123 отзыва"
+            },
+            "price": {
+                "basketSizesWeightsPrices": [
+                    {
+                        "size": "45",
+                        "weight": 1.04,
+                        "originalPrice": 402,
+                        "discountedPrice": 293
+                    },
+                    {
+                        "size": "50",
+                        "weight": 3.22,
+                        "originalPrice": 1246,
+                        "discountedPrice": 908
+                    },
+                    {
+                        "size": "55",
+                        "weight": 4.32,
+                        "originalPrice": 1671,
+                        "discountedPrice": 1218
+                    },
+                    {
+                        "size": "60",
+                        "weight": 4.9,
+                        "originalPrice": 1896,
+                        "discountedPrice": 1381
+                    }, 
+                    {
+                        "size": "65",
+                        "weight": 2.14,
+                        "originalPrice": 828,
+                        "discountedPrice": 603
+                    }, 
+                    {
+                        "size": "70",
+                        "weight": 2.14,
+                        "originalPrice": 828,
+                        "discountedPrice": 603
+                    }, 
+                    {
+                        "size": "75",
+                        "weight": 4.84,
+                        "originalPrice": 1873,
+                        "discountedPrice": 1364
+                    }
+
+                ],
+                "discount": 27
+            }
+
+        }
+    ]
+}

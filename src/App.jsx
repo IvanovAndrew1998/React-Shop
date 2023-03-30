@@ -13,14 +13,13 @@ import BasketPage from './Components/Pages/BasketPage/BasketPage';
 import AccountPage from './Components/Pages/AccountPage/AccountPage';
 import { userStore } from './Store/UserStore.js';
 import OrdersPage from './Components/Pages/OrdersPage/OrdersPage';
-import CorpOrder from './Components/Pages/CorpAplication/CorpOrder';
+import CorpOrder from './Components/Pages/CorpOrder/CorpOrder';
 
 const accessTokenRefreshTime = 1000 * 60 * 5;
 
 
 
 function App() {
-    console.log('Da')
     useEffect(
         () => {
             userStore.loadData(); setInterval(() => {

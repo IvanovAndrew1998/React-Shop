@@ -30,8 +30,8 @@ class UserData {
         makeAutoObservable(this);
     }
 
-    logIn(phone_number, password) {
-        getLoginTokens(phone_number, password).then(res => {
+    logIn(username, password) {
+        getLoginTokens(username, password).then(res => {
 
             this.accessToken = res.data.access;
             this.loggedIn = true;
