@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CarouselBlock from './CarouselBlock/CarouselBlock';
 import MainCategories from './MainCategories/MainCategories';
 import RecomendationBlock from './RecomendationBlock/RecomendationBlock';
@@ -17,6 +17,11 @@ import ProductCard from '../PRODUCTCARD/ProductCard';
 import RegisterCard from '../PRODUCTCARD/RegisterCard';
 
 const HomePage = () => {
+
+  useEffect(() => {
+    document.title = 'Ювелирный Мир';
+  }, []);
+
   return (
     <div>
       <MainCategoriesM />

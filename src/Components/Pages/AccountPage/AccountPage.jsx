@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './AccountPage.css'
 
 import ProfileSidebar from './Components/profileSidebar/ProfileSidebar';
@@ -8,7 +8,9 @@ import AccountSettings from './AccountSettings/AccountSettings';
 
 const AccountPage = () => {
 
-  
+  useEffect(() => {
+    document.title = 'Профиль';
+  }, []);
 
   return (
     <div className='accountPage'>

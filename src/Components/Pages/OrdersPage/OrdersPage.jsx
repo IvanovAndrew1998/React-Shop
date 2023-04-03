@@ -1,4 +1,4 @@
-import React, {  } from 'react'
+import React, { useEffect } from 'react'
 
 import OrderDetails from '../OrdersPage/OrderDetails/OrderDetails';
 import './OrdersPage.css'
@@ -6,7 +6,9 @@ import './OrdersPage.css'
 
 const OrdersPage = () => {
 
-
+  useEffect(() => {
+    document.title = 'Заказы';
+  }, []);
 
   return (
     <div className='accountPage'>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Sizes from './Sizes'
 import Ratings from 'react-ratings-declarative';
 import RatingStar from '../../../../RatingStar';
@@ -31,6 +31,9 @@ const RightPanel = ({ productInfo, rating }) => {
         return sizeArr;
     }
 
+    useEffect(() => {
+        document.title = `${productInfo.name}`;
+      }, []);
 
     return (
         <div className="sec1-right">

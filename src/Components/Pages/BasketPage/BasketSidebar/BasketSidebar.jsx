@@ -1,7 +1,12 @@
-import React from 'react'
+import { observer } from 'mobx-react-lite'
+import React, { useState, useEffect } from 'react'
 import './BasketSidebar.css'
 
-const BasketSidebar = () => {
+
+const BasketSidebar = observer(({basket}) => {
+
+
+
   return (
     <div>
       <div className="sidebarHeader">
@@ -11,17 +16,17 @@ const BasketSidebar = () => {
       <div className="summaryBlock">
         <div className="total">
           <p > Итого</p>
-          <p className='totalPrice'>12 300 р</p>
+          <p className='totalPrice'>{basket.overAllPrice[1]} р</p>
         </div>
         <div className="parameters">
 
           <div className="quantity">
             <p>Товары.....................................................</p>
-            <p className='parametersTotal'> 2 шт</p>
+            <p className='parametersTotal'> {basket.overAllPrice[2]} шт</p>
           </div>
           <div className="quantity">
             <p>Скидка..................................................</p>
-            <p className='parametersTotal'> 5 140 р</p>
+            <p className='parametersTotal'>{basket.overAllPrice[0] - basket.overAllPrice[1]} р</p>
           </div>
           <div className="quantity">
             <p>Промокод................................................</p>
@@ -39,6 +44,6 @@ const BasketSidebar = () => {
       </div>
     </div>
   )
-}
+})
 
 export default BasketSidebar

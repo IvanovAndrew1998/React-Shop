@@ -16,6 +16,9 @@ const Catalogue = () => {
         ,
         []
     );
+    useEffect(() => {
+        document.title = 'Каталог';
+      }, []);
 
 
     return (

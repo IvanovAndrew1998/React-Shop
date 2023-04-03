@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import COSidebar from './COSidebar/COSidebar'
 import COPanel from './COPanel/COPanel';
 import '../BasketPage/BasketPage.css'
 
 const CorpOrder = () => {
+
+  useEffect(() => {
+    document.title = 'Заявка';
+  }, []);
+
   return (
     <div>
         <div className="inner">

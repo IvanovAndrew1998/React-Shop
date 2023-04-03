@@ -1,10 +1,10 @@
 import React from 'react'
 import BasketCard from './BasketCard/BasketCard'
 import './BasketPanel.css'
-import data from '../../../../BasketPlaceholder.json'
 
 
-const BasketPanel = () => {
+
+const BasketPanel = ({basket}) => {
   return (
     <div className='BasketPanel'>
       <div className="panelHeader">
@@ -17,15 +17,17 @@ const BasketPanel = () => {
         </div>
       </div>
       <div className="basket-flexbox">
-        {data.BasketCards.map(basketCard => (
+        {basket.basket.map(basketCard => (
           <BasketCard 
           key = {basketCard.id}
           brandName = {basketCard.brandName}
           productName = {basketCard.productName} 
-          rating = {basketCard.rating.rating}
-          reviewQuantity = {basketCard.rating.reviewQuantity}
-          basketSizesWeightsPrices = {basketCard.price.basketSizesWeightsPrices}
-          discount = {basketCard.price.discount} 
+          rating = {basketCard.rating}
+          reviewQuantity = {basketCard.reviewQuantity}
+          basketSizesWeightsPrices = {basketCard.sizes}
+          discount = {basketCard.discount} 
+          basket = {basket}
+          id = {basketCard.id}
           />
 
         ))}

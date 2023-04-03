@@ -3,13 +3,14 @@ import './BasketCard.css'
 import Ratings from 'react-ratings-declarative';
 import CorpSpinPanel from './Components/CorpSpin/CorpSpinPanel';
 import RegSpin from './Components/RegSpin/RegSpin';
+import { observer } from 'mobx-react-lite';
 
 
 
 
-const BasketCard = ({brandName, productName, rating, reviewQuantity, basketSizesWeightsPrices, discount}) => {
+const BasketCard = observer(({brandName, productName, rating, reviewQuantity, basketSizesWeightsPrices, discount, basket, id}) => {
 
-  
+  const [fullSepPrice, fullSepDiscounted] = basket.sepPrice(id)
 
   const [corporatePanel, setCorporatePanel] = useState(false);
 
@@ -44,8 +45,8 @@ const BasketCard = ({brandName, productName, rating, reviewQuantity, basketSizes
 
         <div className="priceBlock">
           <p className='discountValue'>-{discount}%</p>
-          <p className='currentPrice'>4 450 р</p>
-          <p className='originalPrice'>6 420 р</p>
+          <p className='currentPrice'>{fullSepDiscounted} р</p>
+          <p className='originalPrice'>{fullSepPrice} р</p>
         </div>
           <label className="containerCard">
             <input type="checkbox" />
@@ -67,12 +68,12 @@ const BasketCard = ({brandName, productName, rating, reviewQuantity, basketSizes
             :
           } */}
 
-          <CorpSpinPanel basketSizesWeightsPrices={basketSizesWeightsPrices}/>
+          <CorpSpinPanel basketSizesWeightsPrices={basketSizesWeightsPrices} basket={basket} id={id}/>
 
       </div>
 
     </div>
   )
-}
+})
 
 export default BasketCard

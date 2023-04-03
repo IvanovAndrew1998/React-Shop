@@ -56,7 +56,6 @@ class UserData {
         if (refresh_token !== undefined) {
       
             getAccessToken(refresh_token).then( tokens => {
-                console.log('poop')
                 this.accessToken = tokens.data.access;
                 this.loggedIn = true;
                 this.fetchData();

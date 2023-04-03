@@ -3,7 +3,7 @@ import './CorpSpin.css'
 import { Navigate } from "react-router-dom";
 import { userStore } from '../../../../../../../Store/UserStore';
 
-const CorpSpin = ({size, weight, originalPrice, discountedPrice}) => {
+const CorpSpin = ({size, weight, originalPrice, discountedPrice, basket, id}) => {
 
   const [count, setCount] = useState(0);
 
@@ -11,9 +11,11 @@ const CorpSpin = ({size, weight, originalPrice, discountedPrice}) => {
     const value = e.target.value;
     if (value === '' || isNaN(value)) {
       setCount(0)
+      basket.setSizeCount(id, size, 0) 
     }
     else {
-      setCount(value);
+      setCount(Number(value));
+      basket.setSizeCount(id, size, Number(value)) 
     }
   }
 
@@ -21,22 +23,27 @@ const CorpSpin = ({size, weight, originalPrice, discountedPrice}) => {
 
   const handleIncrement = () => {
     setCount((prevValue) => prevValue + 1);
+    basket.setSizeCount(id, size, count + 1) 
+
+    
   }
 
   const handleDecrement = () => {
     if (count > 0) {
 
       setCount((prevValue) => prevValue - 1);
-
+      basket.setSizeCount(id, size, count - 1) 
     }
     else {
       count = 0;
+      basket.setSizeCount(id, size, 0) 
     }
+
   }
 
   const [openCounter, setOpenCounter] = useState(false)
 
-  // if (userStore.loggedIn = false) {
+  // if (userStore.loggedIn == false) {
   //   return <Navigate to="/" replace />;
   // }
   
