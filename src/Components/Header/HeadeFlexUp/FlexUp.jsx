@@ -95,7 +95,10 @@ const FlexUp = observer(() => {
                         ?
 
                         <><div className="dropdownContainer" ref={menuRef}>
-                            <img src="src/guy.svg" alt="" onClick={() => { setDDopen(!DDopen) }} />
+                            <img className='headerAvatar'
+                                src={userStore.headerAvatar}
+                                alt=""
+                                onClick={() => { setDDopen(!DDopen) }} />
                             <div className={`dropdownMenu ${DDopen ? 'active' : 'inactive'}`}>
                                 <ul>
                                     <li>

@@ -2,8 +2,14 @@ import React, { useEffect } from 'react'
 import COSidebar from './COSidebar/COSidebar'
 import COPanel from './COPanel/COPanel';
 import '../BasketPage/BasketPage.css'
+import { useLocation } from 'react-router-dom';
+
 
 const CorpOrder = () => {
+
+  const location = useLocation();
+  const data = location.state?.data;
+  console.log(data)
 
   useEffect(() => {
     document.title = 'Заявка';
@@ -19,7 +25,7 @@ const CorpOrder = () => {
 
             </div>
             <div className="rightSection">
-                <COSidebar/>
+                <COSidebar overAllPrice={data}/>
             </div>
 
           </div>

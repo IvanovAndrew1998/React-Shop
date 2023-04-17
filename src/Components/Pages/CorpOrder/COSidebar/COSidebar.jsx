@@ -2,7 +2,7 @@ import React from 'react'
 import '../../BasketPage/BasketSidebar/BasketSidebar.css'
 
 
-const COSidebar = () => {
+const COSidebar = ({overAllPrice}) => {
   return (
     <div>
       <div className="sidebarHeader">
@@ -12,17 +12,17 @@ const COSidebar = () => {
       <div className="summaryBlock">
         <div className="total">
           <p > Итого</p>
-          <p className='totalPrice'>12 300 р</p>
+          <p className='totalPrice'>{overAllPrice[1]} р</p>
         </div>
         <div className="parameters">
 
           <div className="quantity">
             <p>Товары.....................................................</p>
-            <p className='parametersTotal'> 2 шт</p>
+            <p className='parametersTotal'> {overAllPrice[2]} шт</p>
           </div>
           <div className="quantity">
             <p>Скидка..................................................</p>
-            <p className='parametersTotal'> 5 140 р</p>
+            <p className='parametersTotal'> {overAllPrice[0] - overAllPrice[1]} р</p>
           </div>
           <div className="quantity">
             <p>Промокод................................................</p>

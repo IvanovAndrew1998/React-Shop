@@ -1,11 +1,18 @@
 import { observer } from 'mobx-react-lite'
 import React, { useState, useEffect } from 'react'
 import './BasketSidebar.css'
+import { useNavigate } from 'react-router-dom';
+import PromoCode from '../BasketPanel/BasketCard/Components/PromoCode/PromoCode';
 
 
-const BasketSidebar = observer(({basket}) => {
+const BasketSidebar = observer(({basket, corpClient}) => {
 
+  const navigate = useNavigate();
 
+  const handleOrder = () => {
+    navigate('/corpOrder', { state: { data: basket.overAllPrice } });
+ 
+  }
 
   return (
     <div>
@@ -32,16 +39,17 @@ const BasketSidebar = observer(({basket}) => {
             <p>Промокод................................................</p>
             <p className='parametersTotal'> Применен</p>
           </div>
-          <div className="checkOutButton">
+          <div className="checkOutButton" onClick={handleOrder}>
             Перейти к оформлению
           </div>
           <p className='disclaimer'>Окончательная стоимость может отличаться и будет подтверждена после рассмотрения заявки</p>
         </div>
       </div>
-      <div className="promoCodeBlock">
-        <input type="text"  className='promoCodeInput'/>
-        <button className="promoSend">Промокод применен</button>
-      </div>
+     {corpClient === true
+     ?
+     <div></div>
+     :
+     <PromoCode/>}
     </div>
   )
 })

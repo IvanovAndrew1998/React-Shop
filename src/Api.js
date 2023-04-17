@@ -56,11 +56,12 @@ export async function getHeaderInfo(access_token) {
     return headerInfo;
 }
 
-export async function getLoginTokens(phone_number, password) {
+export async function getLoginTokens(username, password) {
     const tokens = await axios.post("http://uv-mir.ru/api/token/", {
-        phone_number: phone_number,
+        username: username,
         password: password
     });
+    
     return tokens;
     // обработать случай неправильного инпута (не правильный логин ИЛИ пароль и  бан по причине многораз) => капча или отказ от сервера
     // обработать случаи для неответа сервера
@@ -79,6 +80,15 @@ export async function getCatalogue(tags) {
         tags.join(",")
     }`);
     return catalogue.data;
+}
+
+export async function getBasket(access_token) {
+    const basketInfo = await axios.get('http://uv-mir.ru/profile/basket/', {
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+        }
+    })
+    return basketInfo;
 }
 
 export async function postLike(access_token, id) {

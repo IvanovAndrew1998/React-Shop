@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-const LittleProductCarouselImage = ({id, products}) => {
+const LittleProductCarouselImage = ({ id, products }) => {
 
     const ref = useRef();
 
@@ -46,12 +46,14 @@ const LittleProductCarouselImage = ({id, products}) => {
         <div className="littleProductCarousel">
             <span className='littleProductCarouselLeft' src="src/mainarrow-left.svg" alt="" onClick={inc} />
             <div className="littleProductCarouselTrack" id={id} ref={ref}>
-                <div className="littleProductCarouselImage">
-                    <img src="src/orderProductImage1.svg" alt="" />
-                    <div className="orderProductQuantity">
-                        <p>13</p>
+                {products.map(product =>
+                    <div className="littleProductCarouselImage">
+                        <img src={product.product.image} alt="" />
+                        <div className="orderProductQuantity">
+                            <p>{product.quantity}</p>
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
             <span className='littleProductCarouselRight' src="src/mainarrow-right.svg" alt="" onClick={dec} />
         </div>

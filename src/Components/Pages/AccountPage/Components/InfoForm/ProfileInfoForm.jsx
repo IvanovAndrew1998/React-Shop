@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ProfileInfoForm.css'
 import BirthDateSelector from './BirthDateSelector/BirthDateSelector'
 import { observer } from 'mobx-react-lite';
-import { userStore} from '../../../../../Store/UserStore'
+import { userStore } from '../../../../../Store/UserStore'
 import CalendarSelector from './BirthDateSelector/CalendarSelector';
 
 
@@ -15,7 +15,7 @@ const ProfileInfoForm = observer(() => {
 
     const [lastName, setLastName] = useState(userStore.profileInfo.data.userData.lastName);
     const [birthDate, setBirthDate] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState(userStore.profileInfo.data.userData.phone_number);
+    const [phoneNumber, setPhoneNumber] = useState(userStore.profileInfo.data.userData.username);
     const [email, setEmail] = useState(userStore.profileInfo.data.userData.email);
     const [gender, setGender] = useState();
     const [inputsDisabled, setInputsDisabled] = useState(true);

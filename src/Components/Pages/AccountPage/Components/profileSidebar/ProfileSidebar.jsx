@@ -8,7 +8,7 @@ const ProfileSidebar = observer(() => {
     
 
 
-    const [avatar, setAvatar] = useState("")
+    const [avatar, setAvatar] = useState()
 
     if(userStore.profileInfo == undefined) {
         return <div/>
@@ -19,9 +19,7 @@ const ProfileSidebar = observer(() => {
             <div className="profileSidebarTop">
                 <label className='profileSidebarAvatar'>
 
-                    <img src={avatar
-                        ? URL.createObjectURL(avatar)
-                        : "src/NoAvatar.svg"} alt="" />
+                    <img src={userStore.profileInfo.data.userData.image} />
                     <input type="file" id='file' onChange={e => setAvatar(e.target.files[0])} style={{ display: "none" }} />
 
                 </label>

@@ -36,6 +36,7 @@ const ProductList = () => {
                     brand={result.brand.name}
                     discounted={result.price.discounted}
                     original={result.price.original}
+                    image={result.image}
                     />
                     )}
                     

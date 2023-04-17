@@ -13,6 +13,7 @@ class UserData {
     headerNotificationsCount;
     headerTags;
     headerBasket;
+    headerAvatar;
 
 
     constructor() {
@@ -24,6 +25,7 @@ class UserData {
         this.headerNotificationsCount = undefined;
         this.headerTags = undefined;
         this.headerBasket = undefined;
+        this.headerAvatar = undefined;
 
         
         
@@ -84,6 +86,7 @@ class UserData {
             this.headerNotificationsDiscounts = HeaderRes.data.notifications.discounts
             this.headerNotificationsCount = HeaderRes.data.notifications.count
             this.headerBasket = HeaderRes.data.basket
+            this.headerAvatar = HeaderRes.data.user.avatar
         })
         
     };
@@ -103,6 +106,13 @@ class UserData {
     deleteHeaderOrder(id) {
         this.headerNotificationsOrders = this.headerNotificationsOrders.filter(order => Number(order.id) != Number(id))
 
+    }
+
+    deleteAddress(id) {
+        this.profileInfo.data.addresses = this.profileInfo.data.addresses.filter(address => Number(address.id) != Number(id))
+    }
+    deleteCreditCard(id) {
+        this.profileInfo.data.plasticCards = this.profileInfo.data.plasticCards.filter(creditCard => Number(creditCard.id) != Number(id))
     }
 }
 

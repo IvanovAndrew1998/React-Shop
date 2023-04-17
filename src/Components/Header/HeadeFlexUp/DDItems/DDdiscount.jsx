@@ -8,7 +8,7 @@ const DDdiscount = ({result}) => {
 
     return (
         <li>
-            <img className='DDOimg' src="src/basketImage.svg" alt="" />
+            <img className='DDOimg' src={result.image} alt="" />
 
             <div className="DDOsingleOrder">
                 <p className='DDOsingleDiscount'>-{result.discount}%</p>

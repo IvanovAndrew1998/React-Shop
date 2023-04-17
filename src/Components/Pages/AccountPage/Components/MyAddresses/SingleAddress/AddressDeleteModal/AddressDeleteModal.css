@@ -1,0 +1,39 @@
+.addressDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addressDeleteHeader {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.addressDeletePanel {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;   
+}
+
+.addressDeletePanel button {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 15px;
+    background: var(--red-1);
+    margin-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+    font-weight: 500;
+}

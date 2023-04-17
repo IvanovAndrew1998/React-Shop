@@ -4,10 +4,10 @@ import ODinfoPanel from './OrderDetails/Components/ODinfoPanel/ODinfoPanel';
 import ODupperPanel from './OrderDetails/Components/ODupperPanel/ODupperPanel'
 
 
-const OrderSingle = ({result}) => {
+const OrderSingle = ({ result }) => {
 
     const [opened, setOpened] = useState(false);
-    
+
     const panel = useRef(0);
     let height = opened ? 0 : panel.current.scrollHeight + 'px';
 
@@ -41,7 +41,17 @@ const OrderSingle = ({result}) => {
                         shippingAddress={result.shipping_address}
                     />
                     <div className="ODgrid">
-                       {/* Смапить карточки */}
+                        {result.products.map(product => 
+                            <ProductCard  
+                            name={product.product.name}
+                            discount={product.product.price.discount}
+                            ratingValue={product.product.rating}
+                            brand={product.product.brand.name}
+                            discounted={product.product.price.discounted}
+                            original={product.product.price.original}
+                            image={product.product.image}
+                            />
+                        )}
                     </div>
                 </div>
             </div>

@@ -6,6 +6,13 @@
     position: relative;
 }
 
+.headerAvatar {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 .dropdownMenu {
     display: flex;
     flex-direction: column;
@@ -185,7 +192,7 @@
     width: 88px;
     height: 88px;
     border-radius: 15px;
-    object-fit: none;
+    
 }
 
 .DDOsingleOrder {

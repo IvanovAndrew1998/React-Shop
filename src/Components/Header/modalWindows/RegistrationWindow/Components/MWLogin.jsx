@@ -14,8 +14,7 @@ const MWLogin = ({ setContentType }) => {
   const password = watch('password');
 
   // submit
-  const onSubmit = data => {userStore.logIn(data.phone.replace("+7", "8"), data.password);
-  // console.log(data);
+  const onSubmit = data => {userStore.logIn(data.username.replace("+7", "8"), data.password);
   };
 
   const [typeToggled, setTypeToggled] = useState(true);
@@ -43,11 +42,11 @@ const MWLogin = ({ setContentType }) => {
           <p>Телефон</p>
         </div>
         <div className="inputForm">
-          <InputMask mask="+7 (999) 999-99-99" maskChar=" " placeholder='Телефон' className={`${errors.phone && "redBorder"}`}
-            {...register("phone", { required: 'Введите номер телефона' })}
+          <InputMask mask="+7 (999) 999-99-99" maskChar=" " placeholder='Телефон' className={`${errors.username && "redBorder"}`}
+            {...register("username", { required: 'Введите номер телефона' })}
           />
-          {errors.phone && <span>
-            {errors.phone.message}
+          {errors.username && <span>
+            {errors.username.message}
           </span>}
 
           <div className="passwordDiv">

@@ -1,7 +1,9 @@
 /* Kartochka */
 .basketCard {
     width: 100%;
+    max-width: 530px;;
     padding: 20px;
+    margin-right: 20px;
     background: #FFFFFF;
     border: 1px solid #F5F5F5;
 

@@ -3,11 +3,12 @@ import './CorpSpin.css'
 import { Navigate } from "react-router-dom";
 import { userStore } from '../../../../../../../Store/UserStore';
 
-const CorpSpin = ({size, weight, originalPrice, discountedPrice, basket, id}) => {
+const CorpSpin = ({size, initCount, originalPrice, discountedPrice, basket, id}) => {
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(initCount);
 
   const handleInputChange = (e) => {
+    
     const value = e.target.value;
     if (value === '' || isNaN(value)) {
       setCount(0)
@@ -47,6 +48,7 @@ const CorpSpin = ({size, weight, originalPrice, discountedPrice, basket, id}) =>
   //   return <Navigate to="/" replace />;
   // }
   
+
   return (
     
     <div className="singleSizeContainer">

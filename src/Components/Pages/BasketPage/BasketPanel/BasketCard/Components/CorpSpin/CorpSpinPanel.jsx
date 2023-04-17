@@ -1,19 +1,22 @@
 import React from 'react'
 import CorpSpin from './CorpSpin';
 
-const CorpSpinPanel = ({basketSizesWeightsPrices, basket , id}) => {
+const CorpSpinPanel = ({sizes, basket , id}) => {
 
+  if(sizes === undefined) {
+    return <></>
+}
 
   return (
     <div className='wholesalePanel'>
-      {basketSizesWeightsPrices.map((singleSize) => (
+      {sizes.map((singleSize) => (
         <CorpSpin 
         key={singleSize.size}
         size = {singleSize.size}
-        weight = {singleSize.weight}
-        originalPrice = {singleSize.originalPrice}
-        discountedPrice = {singleSize.discountedPrice}
+        originalPrice = {singleSize.original_price}
+        discountedPrice = {singleSize.discounted_price}
         basket = {basket}
+        initCount = {singleSize.count}
         id = {id}
         />
       ))}

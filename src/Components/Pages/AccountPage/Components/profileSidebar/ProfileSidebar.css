@@ -20,7 +20,7 @@
     width: 76px;
     height: 76px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .profileSidebarAvatar {
    

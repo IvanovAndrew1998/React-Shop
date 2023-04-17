@@ -1,13 +1,17 @@
-import {makeAutoObservable} from "mobx"
+import {makeAutoObservable, autorun} from "mobx"
 import placeholder from '../BasketPlaceholder.json'
 import {deepObserve} from 'mobx-utils'
+import { getBasket } from "../Api";
+import { userStore } from './UserStore';
+import { access } from "fs";
+
 
 
 interface ISizeCount {
     size: string;
     count: number;
-    originalPrice: number;
-    discountedPrice: number;
+    original_price: number;
+    discounted_price: number;
 }
 
 
@@ -29,12 +33,12 @@ class BasketStore {
 
     constructor() {
         this.basket = [];
-        this.loadData();
+        
 
 
         makeAutoObservable(this);
         const disposer = deepObserve(this.basket, (change, path) => {
-            console.dir(change)
+           
         })
     }
 
@@ -43,12 +47,12 @@ class BasketStore {
         let fullPrice = 0;
         let fullDiscountedPrice = 0
         let count = 0;
-        console.log('huy')
+     
         this.basket.forEach(product => {
             product.sizes.forEach(size => {
                 count += size.count
-                fullPrice += size.originalPrice * size.count
-                fullDiscountedPrice += size.discountedPrice * size.count
+                fullPrice += size.original_price * size.count
+                fullDiscountedPrice += size.discounted_price * size.count
             })
         })
         return [fullPrice, fullDiscountedPrice, count]
@@ -58,7 +62,7 @@ class BasketStore {
         let fullPrice = 0;
         let fullDiscountedPrice = 0
 
-        console.log('huy')
+
         const product = this.basket.find(product => 
              product.id == id
         )
@@ -66,27 +70,32 @@ class BasketStore {
         if (product) {
 
             product.sizes.forEach(size => {
-                fullPrice += size.originalPrice * size.count
-                fullDiscountedPrice += size.discountedPrice * size.count
+                fullPrice += size.original_price * size.count
+                fullDiscountedPrice += size.discounted_price * size.count
             })
         }
         return [fullPrice, fullDiscountedPrice]
     }
 
 
-    loadData() {
-        placeholder.BasketCards.forEach(basketCard => {
-            this.basket.push({
-                id: basketCard.id,
-                sizes: basketCard.basketSizesWeightsPrices,
-                brandName: basketCard.brandName,
-                productName: basketCard.productName,
-                image: basketCard.image,
-                rating: basketCard.rating,
-                reviewQuantity: basketCard.reviewQuantity,
-                discount: basketCard.discount
+    loadData(accessToken) {
+  
+        getBasket(accessToken).then(basket => 
+           
+            basket.data.products.forEach(basketCard => {
+                
+                this.basket.push({
+                    id: basketCard.id,
+                    sizes: basketCard.sizes,
+                    brandName: basketCard.brand,
+                    productName: basketCard.name,
+                    image: basketCard.image,
+                    rating: basketCard.rating,
+                    reviewQuantity: basketCard.reviews_quantity,
+                    discount: basketCard.discount
+                })
             })
-        })
+        )
     }
     setSizeCount(id, size, count) {
         const product = this.basket.find(product => product.id == id)
@@ -99,5 +108,8 @@ class BasketStore {
 
 
     }
+  
 }
+
+
 export default BasketStore

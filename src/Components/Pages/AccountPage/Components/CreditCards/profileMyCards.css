@@ -15,8 +15,13 @@
 .profileMyCardsContainer {
     width: 100%;
     margin-top: 24px;
+    gap: 8px;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+    padding-block: 20px;
+    padding-inline: 14px;
+    transition: 0.3s;
 }
 
 .profileSingleCard {
@@ -27,14 +32,15 @@
     align-items: flex-start;
     padding: 20px;
     gap: 20px;
-    width: 100%;
-    max-width: 240px;
+    width: 250px;
 
     background: #FFFFFF;
 
     box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.06);
     border-radius: 15px;
 
+    transition: 0.3s;
+    left: 0px;
 }
 
 .profileSingleCardBottom {
@@ -49,6 +55,7 @@
     font-size: 16px;
     line-height: 20px;
     color: #808080;
+    min-width: 250px;
 }
 
 .profileSingleCardBankName {
@@ -76,6 +83,32 @@
 
 .disclaimerLessWidth {
     max-width: 70%;
+}
+
+.outerContainer {
+    position: relative;
+}
+
+.outerContainerLeft-arrow {
+    position: absolute;
+    left: -42px;
+    top: 36px;
+    z-index: 2;
+}
+
+.outerContainerRight-arrow {
+    position: absolute;
+    right: -42px;
+    top: 36px;
+    z-index: 2;
+}
+
+.unScrollable {
+    display: none;
+}
+
+.profileMyCardsBlock {
+    max-width: 808px;
 }
 
 /* MY CARDS */

@@ -22,16 +22,24 @@
     left: 0;
     margin-left: 2px ;
     transition: 0.4s;
-    
 }
+
 .backet-btn {
     transition: 0.5s;
 }
-.jew {
-    transition: 0.5s;
+
+.productCardNumbers {
+    width: 100%;
 }
 
-.jew:hover+.backet-btn.main {
+.productCardImage {
+    padding: 10px;
+    transition: 0.5s;
+    height: 258px;
+    width: 258px;
+}
+
+.productCardImage:hover+.backet-btn.main {
     color: white;
     background-color: var(--red-1);
 }
@@ -44,7 +52,15 @@
 .productsim-card {
     overflow: hidden;   
 }
-.productsim-card:hover .jew {
+
+.productCardCentered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productsim-card:hover .productCardImage {
     transform: scale(1.07);
     transition: 0.5s;
     z-index: 2;

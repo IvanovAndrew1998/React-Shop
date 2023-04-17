@@ -8,7 +8,7 @@ const DDorder = ({result}) => {
 
     return (
         <li>
-            <img className='DDOimg' src="src/basketImage.svg" alt="" />
+            <img className='DDOimg' src={result.product.image} alt="" />
 
             <div className="DDOsingleOrder">
                 <p>Заказ</p>
