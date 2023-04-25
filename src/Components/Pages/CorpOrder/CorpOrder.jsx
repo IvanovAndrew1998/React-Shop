@@ -5,11 +5,13 @@ import '../BasketPage/BasketPage.css'
 import { useLocation } from 'react-router-dom';
 
 
+
 const CorpOrder = () => {
 
   const location = useLocation();
   const data = location.state?.data;
-  console.log(data)
+
+  
 
   useEffect(() => {
     document.title = 'Заявка';
@@ -21,11 +23,11 @@ const CorpOrder = () => {
           <div className="container-flexbox">
 
             <div className="leftSection">
-                <COPanel/>
+                <COPanel basketCards={data.basketCard}/>
 
             </div>
             <div className="rightSection">
-                <COSidebar overAllPrice={data}/>
+                <COSidebar overAllPrice={data.overAllPrice}/>
             </div>
 
           </div>

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductCard.css'
 import Ratings from 'react-ratings-declarative';
 import HeartButton from '../../HeartButton/HeartButton';
 
-const ProductCard = ({ name, discount, ratingValue, brand, discounted, original, image }) => {
+const ProductCard = ({ name, discount, ratingValue, brand, discounted, original, image, inBasket }) => {
+
+  const [basketed, setBasketed] = useState(inBasket);
 
   function isDiscount(discount) {
     if (discount === 0) {
@@ -11,7 +13,6 @@ const ProductCard = ({ name, discount, ratingValue, brand, discounted, original,
     }
     else {
       return <p className="discount-prc">
-
         -{discount}%
       </p>
     }
@@ -63,9 +64,15 @@ const ProductCard = ({ name, discount, ratingValue, brand, discounted, original,
           </p>
         </div>
         <div className="down-card">
-          <button className="backet-btn main">
-            В корзину
-          </button>
+          {basketed ?
+            <div className="isInBasket">
+              Добавлено
+            </div>
+            :
+            <button className="backet-btn main">
+              В корзину
+            </button>
+          }
         </div>
       </div>
     </div>

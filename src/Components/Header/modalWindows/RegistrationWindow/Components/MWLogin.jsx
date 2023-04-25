@@ -3,7 +3,7 @@ import InputMask from 'react-input-mask';
 import { userStore } from '../../../../../Store/UserStore.js';
 import { useForm } from "react-hook-form";
 
-const MWLogin = ({ setContentType }) => {
+const MWLogin = ({ setContentType, setActive }) => {
 
   // form event
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
@@ -31,6 +31,9 @@ const MWLogin = ({ setContentType }) => {
       setShown('');
     }
   }
+
+
+
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -65,7 +68,7 @@ const MWLogin = ({ setContentType }) => {
             {errors.password.message}
           </span>}
         </div>
-        <button className='readyButton' type='submit' value='Submit'>Войти</button>
+        <button className='readyButton' type='submit' value='Submit' >Войти</button>
         <div className="bottomPanel">
           <a onClick={() => setContentType("corporative")}>Я корпоративный клиент</a>
           <a onClick={() => setContentType("registration")}>Регистрация</a>

@@ -18,7 +18,6 @@ const BasketPage = () => {
   const basket = new BasketStore();
   
   autorun(() => {
-    console.log(userStore.loggedIn)
     basket.loadData(userStore.accessToken)
 })
   const [corpClient, setCorpClient] = useState(true);

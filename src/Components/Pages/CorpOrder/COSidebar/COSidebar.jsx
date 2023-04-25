@@ -3,6 +3,8 @@ import '../../BasketPage/BasketSidebar/BasketSidebar.css'
 
 
 const COSidebar = ({overAllPrice}) => {
+
+  
   return (
     <div>
       <div className="sidebarHeader">

@@ -4,6 +4,7 @@ import BirthDateSelector from './BirthDateSelector/BirthDateSelector'
 import { observer } from 'mobx-react-lite';
 import { userStore } from '../../../../../Store/UserStore'
 import CalendarSelector from './BirthDateSelector/CalendarSelector';
+import { patchProfileInfo } from '../../../../../Api';
 
 
 
@@ -22,7 +23,7 @@ const ProfileInfoForm = observer(() => {
     const [inputChanged, setInputChanged] = useState();
     
     const handleSave = () => {
-        // Submit your data here (e.g. make an API call to save the data to a database)
+        patchProfileInfo(name, lastName, birthDate, email, gender, userStore.accessToken);
         setInputsDisabled(true);
     };
     const handleChange = () => {

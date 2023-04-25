@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './BasketSidebar.css'
 import { useNavigate } from 'react-router-dom';
 import PromoCode from '../BasketPanel/BasketCard/Components/PromoCode/PromoCode';
@@ -10,7 +10,8 @@ const BasketSidebar = observer(({basket, corpClient}) => {
   const navigate = useNavigate();
 
   const handleOrder = () => {
-    navigate('/corpOrder', { state: { data: basket.overAllPrice } });
+    console.log(basket)
+    navigate('/corpOrder', { state: { data: {overAllPrice: basket.overAllPrice, basketCard: JSON.parse(JSON.stringify(basket.basket)) } }});
  
   }
 

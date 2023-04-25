@@ -62,7 +62,14 @@ const FlexUp = observer(() => {
     const toggleFunc = (index) => {
         setTabToggle(index)
     }
-
+// 
+    // function successfulEntry() {
+        // if (userStore.loggedIn == true) {
+            // setModalActive(false);
+        // }
+    // }
+// 
+    // successfulEntry();
 
     return (
 
@@ -93,7 +100,7 @@ const FlexUp = observer(() => {
                 {
                     userStore.loggedIn
                         ?
-
+                        
                         <><div className="dropdownContainer" ref={menuRef}>
                             <img className='headerAvatar'
                                 src={userStore.headerAvatar}
@@ -186,6 +193,7 @@ const FlexUp = observer(() => {
                                 </Link>
                                 <BasketNumber />
                             </div></>
+                            
                         : <button className='signIn' onClick={() => setModalActive(true)} >Войти</button>
                 }
             </div>

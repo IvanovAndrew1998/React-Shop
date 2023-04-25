@@ -4,9 +4,11 @@ import CatalogueStore from '../../../../Store/CatalogueStore';
 import ProductCard from '../../PRODUCTCARD/ProductCard'
 
 const ProductList = () => {
-    
+
+ 
+
     return (
-    
+
         <div className="cardflex-right">
             <div className="product-quantity">
                 <h1>"имя категории?"</h1>
@@ -27,19 +29,20 @@ const ProductList = () => {
             </div>
             <article className="article-2 gap">
                 <div className="article2-flexbox">
-                    { CatalogueStore.catalogueCashe.map(result => 
-                    <ProductCard 
-                    key={result.id}
-                    name={result.name} 
-                    discount={result.price.discount}
-                    ratingValue={result.rating}
-                    brand={result.brand.name}
-                    discounted={result.price.discounted}
-                    original={result.price.original}
-                    image={result.image}
-                    />
+                    {CatalogueStore.catalogueCashe.map(result =>
+                        <ProductCard
+                            key={result.id}
+                            name={result.name}
+                            discount={result.price.discount}
+                            ratingValue={result.rating}
+                            brand={result.brand.name}
+                            discounted={result.price.discounted}
+                            original={result.price.original}
+                            image={result.image}
+                            inBasket={result.in_basket}
+                        />
                     )}
-                    
+
                 </div>
             </article>
         </div>

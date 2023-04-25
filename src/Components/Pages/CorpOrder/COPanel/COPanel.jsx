@@ -3,7 +3,10 @@ import './COPanel.css'
 import COCard from './COCard/COCard';
 
 
-const COPanel = () => {
+const COPanel = ({ basketCards }) => {
+
+  console.log(basketCards)
+
   return (
     <div className='BasketPanel'>
       <div className="panelHeader">
@@ -16,7 +19,19 @@ const COPanel = () => {
         </div>
       </div>
       <div className="basket-flexbox">
-        <COCard/>
+        {basketCards.map(corpCard =>
+          <COCard 
+          key = {corpCard.id}
+          brandName = {corpCard.brandName}
+          productName = {corpCard.productName} 
+          rating = {corpCard.rating}
+          reviewQuantity = {corpCard.reviewQuantity}
+          sizes = {corpCard.sizes}
+          discount = {corpCard.discount} 
+          id = {corpCard.id}
+          />
+        )}
+
       </div>
     </div>
   )

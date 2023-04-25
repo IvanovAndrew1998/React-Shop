@@ -1,6 +1,7 @@
 import axios from "axios"
 
 
+
 export function getSizeList( /*  Product ID */
 )
 
@@ -114,3 +115,20 @@ export async function postReview(access_token, productID, text, rating) {
     })
 
 }
+
+export async function patchProfileInfo(first_name, last_name, date_of_birth, email, gender, access_token) {
+    await axios.patch('http://uv-mir.ru/profile/', {
+        FirstName: first_name,
+        LastName: last_name,
+        DateOfBirth: date_of_birth,
+        Email: email,
+        Gender: gender
+    },{
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+
+        }
+    })
+}
+
+

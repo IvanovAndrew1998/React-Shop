@@ -26,7 +26,7 @@ const RegistrationWindow = ({ active, setActive }) => {
         {
           (contentType === "login")
             ?
-            <MWLogin setContentType={setContentType}/>
+            <MWLogin setContentType={setContentType} setActive={setActive}/>
             : null
         }
         {

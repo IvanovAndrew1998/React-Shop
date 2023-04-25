@@ -12,6 +12,7 @@ import SingleAddress from '../Components/MyAddresses/SingleAddress/SingleAddress
 import SingleCreditCard from '../Components/CreditCards/SingleCreditCard';
 import AddressDeleteModal from '../Components/MyAddresses/SingleAddress/AddressDeleteModal/AddressDeleteModal';
 import CreditCardsModalDelete from '../Components/CreditCards/CreditCardsModal/CreditCardsModalDelete';
+import Modal from '../../../Modal/Modal';
 
 
 const AccountSettings = observer(() => {
@@ -90,6 +91,7 @@ const AccountSettings = observer(() => {
                 setModalDeleteActive={setModalDeleteActive} 
                 currentId={addressId}
             />
+            {/* <Modal/> */}
 
 
             <ProfileOrders orders={userStore.profileInfo.data.orders} />
