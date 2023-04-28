@@ -1,3 +1,10 @@
 .modalContentType {
     width: 100%;
 }
+.modalContentVar {
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+}

@@ -1,22 +1,56 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { YMaps, Map, Placemark } from 'react-yandex-map'
+import { getLocationByAddress } from '../../../Api'
+import { userStore } from '../../../Store/UserStore';
+import Loader from '../../Pages/ProductPage/Loader/Loader';
+import './AddressMap.css'
+import MapSidebar from './MapSidebar/MapSidebar';
 
 const AddressMap = () => {
+
+  const [coords, setCoords] = useState()
+
+  useEffect(() => {
+    Promise.all(userStore.getAddressesLocation).then((values) => {
+      const parsedValues = values.map(value =>
+        value.data.response.GeoObjectCollection.featureMember[0].GeoObject.Point.pos.split(' ').reverse()
+      );
+      setCoords(parsedValues)
+    }
+
+    );
+  }, [])
+
+
+
+
+  if (coords === undefined) {
+    return <Loader />
+  }
+
   return (
     <div className='modalContentType'>
+      <div className="MapContent">
+        <MapSidebar/>
+        <YMaps className='mapContainer'>
+          <Map className='mapInner' defaultState={{
 
-      <YMaps>
-        <Map defaultState={{
-          center: [55.75, 37.57],
-          zoom: 9,
-          controls: ['zoomControl']
-        }} modules={['control.ZoomControl']}>
-          <Placemark modules={['geoObject.addon.balloon']} defaultGeometry={[55.75, 37.57]} properties={{
-            balloonContentBody: 'This is balloon loaded by the Yandex.Maps API module system'
-          }} />
-        </Map>
-      </YMaps>
+            center: [55.75, 37.57],
+            zoom: 9,
+            controls: ['zoomControl']
+          }} modules={['control.ZoomControl']}>
+            {
+              coords.map(coord =>
+                <Placemark modules={['geoObject.addon.balloon']} defaultGeometry={coord} properties={{
 
+                }} />
+              )
+            }
+
+          </Map>
+        </YMaps>
+
+      </div>
     </div>
   )
 }

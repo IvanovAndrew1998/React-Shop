@@ -6,9 +6,11 @@ const Modal = () => {
   return (
     <div className="modal active" onClick={() => console.log("closed")}>
 
-            <div className="modalContent" onClick={e => e.stopPropagation()}>
-
+            <div className="modalContentVar" onClick={e => e.stopPropagation()}>
+              
+                
                 <AddressMap/>
+              
 
             </div>
 

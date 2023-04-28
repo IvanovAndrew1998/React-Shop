@@ -1,6 +1,6 @@
 import {makeAutoObservable} from "mobx"
 import Cookies from 'js-cookie'
-import {getAccessToken, getLoginTokens, dropRefreshToken, getProfileInfo, getOrdersInfo, getHeaderInfo} from '../Api';
+import {getAccessToken, getLoginTokens, dropRefreshToken, getProfileInfo, getOrdersInfo, getHeaderInfo, getLocationByAddress} from '../Api';
 
 
 class UserData {
@@ -113,6 +113,15 @@ class UserData {
     }
     deleteCreditCard(id) {
         this.profileInfo.data.plasticCards = this.profileInfo.data.plasticCards.filter(creditCard => Number(creditCard.id) != Number(id))
+    }
+
+
+    get getAddressesLocation() {
+        const LocationArr = []
+        this.profileInfo.data.addresses.forEach( address => 
+            LocationArr.push( getLocationByAddress(address.settlement, address.street, address.building) ) 
+            )
+        return LocationArr
     }
 }
 

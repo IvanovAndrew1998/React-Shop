@@ -1,14 +1,22 @@
-import React, { useState, useRef } from 'react'
+import { observer } from 'mobx-react-lite';
+import React, { useState, useRef, useEffect } from 'react'
 import CatalogueStore from '../../../../../Store/CatalogueStore';
 import './AccordionModule.css'
 
 
-const Accordion = ({ children, title, category }) => {
-    const [opened, setOpened] = useState(false)
+const Accordion = observer(({ children, title, category }) => {
+    const [opened, setOpened] = useState()
     
-;
+    useEffect(() => {
+        setTimeout(() => setOpened(false), 500)
+        console.log('ya pidor')
+      }
+   , [children])
+
     const panel = useRef(0);
     let height = opened ? 0 : panel.current.scrollHeight + 'px';
+
+
 
     return (
         <div className="">
@@ -18,6 +26,7 @@ const Accordion = ({ children, title, category }) => {
                 <img className='clearCategoryTagsButton' src="src/X.svg" alt="" onClick={() => CatalogueStore.clearCategoryCashe(category)}/>
             </div>
             <div 
+                
                 ref = {panel}
                 className='theAccordion'
                 style={{maxHeight: height}}>
@@ -26,6 +35,6 @@ const Accordion = ({ children, title, category }) => {
 
         </div>
     )
-}
+})
 
 export default Accordion

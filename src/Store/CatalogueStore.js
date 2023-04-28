@@ -16,12 +16,12 @@ class CatalogueStore {
             this.tags = this.tags.filter(tag => tag !== name)
         else
             this.tags.push(name);
-        this.updCatalugueCashe()
+        this.updCatalogueCashe()
     }
     
 
 
-    updCatalugueCashe() {
+    updCatalogueCashe() {
         getCatalogue(this.tags).then(res => {
             const { count, next, previous, results } = res;
             this.catalogueCashe = results

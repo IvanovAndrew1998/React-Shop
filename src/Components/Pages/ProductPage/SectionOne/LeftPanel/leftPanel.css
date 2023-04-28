@@ -1,0 +1,22 @@
+.product-big {
+    position: relative;
+}
+
+.productImgZoomed {
+    position: absolute;
+    display: none;
+    width: 400px;
+    height: 400px;
+    background: rgb(150, 88, 88);
+    z-index: 3;
+    left:75px;
+    top: 150px;
+    opacity: 0;
+}
+
+.product-big:hover .productImgZoomed{
+    transition: 1s;
+    opacity: 1;
+    transition-delay: 1s;
+    display: block;
+}

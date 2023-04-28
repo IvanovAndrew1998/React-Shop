@@ -1,10 +1,11 @@
 import { Checkbox, FormControlLabel, Slider, styled } from '@mui/material'
-import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react'
 import CatalogueStore from '../../../../Store/CatalogueStore';
 import Accordion from './Accordion/Accordion';
 import Checked from './Images/Checked';
 import EmptyCheck from './Images/EmptyCheck';
+import { observer } from 'mobx-react-lite';
+import Loader from '../../ProductPage/Loader/Loader';
 
 const MuySlider = styled(Slider)({
     color: '#FF8B66',
@@ -20,12 +21,12 @@ const MuySlider = styled(Slider)({
 });
 
 
-const CatalogueSidebar = () => {
+const CatalogueSidebar = observer(() => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
-    // const productTypes = ["Серьги", "Кольца", "Браслеты", "Цепи", "Подвески", "Колье", "Часы", "Брошь"]
-    // const materials = ["Золото", "Серебро", "Ювелирная сталь", "Розовое золото", "Белое золото", "Желтое золото"]
-    // const gems = ["Без вставки", "Бриллиант", "Фианит", "Гранат", "Топаз", "Сапфир"]
+
+    
+    
 
     function toggleChange(tagValue) {
         CatalogueStore.toggleTag(tagValue)
@@ -46,7 +47,7 @@ const CatalogueSidebar = () => {
     });
     const materialsArray = Array.from(materials);
     // 
-
+    
     // Вставка
     const gemTypes = new Set();
     CatalogueStore.catalogueCashe.forEach(result => {
@@ -71,14 +72,26 @@ const CatalogueSidebar = () => {
     const wireTypesArray = Array.from(wireTypes);
     // 
 
+    // Камень
+    const gems = new Set();
+    CatalogueStore.catalogueCashe.forEach(result => {
+        gems.add(result.characteristics.gem);
+    });
+    const gemsArray = Array.from(gems);
+    // 
+
+    if (CatalogueStore.catalogueCashe === undefined) {
+        return <Loader/>
+    }
+
     return (
         <div className="cardflex-left">
             <Accordion title='Кому' category={adresats}>
-                {adresats.map(value =>
+                {adresats.map(adresat =>
 
                     <FormControlLabel
                         control={
-                            <Checkbox label={value}
+                            <Checkbox label={adresat}
                                 icon={<EmptyCheck />}
                                 checkedIcon={<Checked />}
                                 sx={{
@@ -97,58 +110,17 @@ const CatalogueSidebar = () => {
 
                                     }
                                 }}
-                                onChange={e => toggleChange(value)}
-                                checked={CatalogueStore.tags.includes(value)}
+                                onChange={e => toggleChange(adresat)}
+                                checked={CatalogueStore.tags.includes(adresat)}
                             />
                         }
-                        label={value}
+                        label={adresat}
                     />
 
 
                 )}
 
             </Accordion>
-            <div className="product-type">
-                <Accordion title='Тип изделия' category={productTypes}>
-                    {productTypeArray.map(productType =>
-
-                        <FormControlLabel
-                            control={
-                                <Checkbox label={productType}
-                                    icon={<EmptyCheck />}
-                                    checkedIcon={<Checked />}
-                                    sx={{
-
-                                        marginLeft: 1,
-                                        color: "red",
-
-                                        '&.Mui-checked': {
-                                            color: "red",
-                                        },
-                                        '&.MuiButtonBase-root': {
-
-                                        },
-                                        '& .MuiSvgIcon-root': {
-
-
-                                        }
-                                    }}
-                                    onChange={e => toggleChange(productType)}
-                                    checked={CatalogueStore.tags.includes(productType)}
-                                />
-                            }
-                            label={productType}
-                        />
-
-                    )}
-                </Accordion>
-
-
-            </div>
-            <div className="show-more">
-                <a href="#">Показать еще</a>
-                <img src="src/arrow-orange.svg" alt="" />
-            </div>
             <div className="product-type">
                 <Accordion title='Тип изделия' category={productTypes}>
                     {productTypeArray.map(productType =>
@@ -241,8 +213,117 @@ const CatalogueSidebar = () => {
             </div>
             <div className="product-type">
 
-                <Accordion title={'Вставка'} category={coatings}>
-                    {coatingArray.map(gem =>
+                <Accordion title={'Покрытие'} category={coatings}>
+                    {coatingArray.map(coating =>
+                        <FormControlLabel
+                            control={
+                                <Checkbox label={coating}
+                                    icon={<EmptyCheck />}
+                                    checkedIcon={<Checked />}
+                                    sx={{
+
+                                        marginLeft: 1,
+                                        color: "red",
+
+                                        '&.Mui-checked': {
+                                            color: "red",
+                                        },
+                                        '&.MuiButtonBase-root': {
+
+                                        },
+                                        '& .MuiSvgIcon-root': {
+
+
+                                        }
+                                    }}
+                                    onChange={e => toggleChange(coating)}
+                                    checked={CatalogueStore.tags.includes(coating)}
+                                />
+                            }
+                            label={coating}
+                        />
+                    )}
+
+                </Accordion>
+            </div>
+            <div className="product-type">
+
+                <Accordion title={'Вставка'} category={gemTypes}>
+                    {gemTypesArray.map(gemType =>
+                        <FormControlLabel
+                            control={
+                                <Checkbox label={gemType}
+                                    icon={<EmptyCheck />}
+                                    checkedIcon={<Checked />}
+                                    sx={{
+
+                                        marginLeft: 1,
+                                        color: "red",
+
+                                        '&.Mui-checked': {
+                                            color: "red",
+                                        },
+                                        '&.MuiButtonBase-root': {
+
+                                        },
+                                        '& .MuiSvgIcon-root': {
+
+
+                                        }
+                                    }}
+                                    onChange={e => toggleChange(gemType)}
+                                    checked={CatalogueStore.tags.includes(gemType)}
+                                />
+                            }
+                            label={gemType}
+                        />
+                    )}
+
+                </Accordion>
+            </div>
+            <div className="product-type">
+
+                <Accordion title={'Проволока'} category={wireTypes}>
+                    {wireTypesArray.map(wireType =>
+                        <FormControlLabel
+                            control={
+                                <Checkbox label={wireType}
+                                    icon={<EmptyCheck />}
+                                    checkedIcon={<Checked />}
+                                    sx={{
+
+                                        marginLeft: 1,
+                                        color: "red",
+
+                                        '&.Mui-checked': {
+                                            color: "red",
+                                        },
+                                        '&.MuiButtonBase-root': {
+
+                                        },
+                                        '& .MuiSvgIcon-root': {
+
+
+                                        }
+                                    }}
+                                    onChange={e => toggleChange(wireType)}
+                                    checked={CatalogueStore.tags.includes(wireType)}
+                                />
+                            }
+                            label={wireType}
+                        />
+                    )}
+
+                </Accordion>
+            </div>
+            <div className="product-type">
+
+                <Accordion title={'Камень'} category={gems}>
+                    {gemsArray.map(gem => {
+                        gem == null
+                        ?
+                        <></>
+                        :
                         <FormControlLabel
                             control={
                                 <Checkbox label={gem}
@@ -270,6 +351,7 @@ const CatalogueSidebar = () => {
                             }
                             label={gem}
                         />
+                    }
                     )}
 
                 </Accordion>
@@ -301,6 +383,6 @@ const CatalogueSidebar = () => {
             </div>
         </div>
     )
-}
+})
 
-export default observer(CatalogueSidebar)
+export default CatalogueSidebar

@@ -1,6 +1,6 @@
 import axios from "axios"
 
-
+const YANDEX_API_KEY = 'c5c2b2fc-35f1-4beb-970d-41b78b512f00';
 
 export function getSizeList( /*  Product ID */
 )
@@ -76,12 +76,15 @@ export async function dropRefreshToken(refresh_token) {
     await axios.post("http://uv-mir.ru/api/token/blacklist/", {refresh: refresh_token});
 }
 
+
+
 export async function getCatalogue(tags) {
     const catalogue = await axios.get(`http://uv-mir.ru/catalogue/?tags=${
         tags.join(",")
     }`);
     return catalogue.data;
 }
+
 
 export async function getBasket(access_token) {
     const basketInfo = await axios.get('http://uv-mir.ru/profile/basket/', {
@@ -131,4 +134,15 @@ export async function patchProfileInfo(first_name, last_name, date_of_birth, ema
     })
 }
 
+
+// GEo
+
+export async function getAddressByLocation(latitude, longitude) {
+   return await axios.get(`https://geocode-maps.yandex.ru/1.x/?format=json&kind=locality&apikey=${YANDEX_API_KEY}&geocode=${longitude},${latitude}`)
+    
+}
+
+export async function getLocationByAddress(settlement, street, builiding){
+    return await axios.get(`https://geocode-maps.yandex.ru/1.x/?apikey=${YANDEX_API_KEY}&kind=house&geocode=${settlement}+${street}+${builiding}&format=json`)
+}
 

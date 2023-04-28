@@ -4,20 +4,22 @@ import { useEffect, useState } from 'react'
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import { useMap } from 'react-leaflet';
 import axios from 'axios';
+import { getAddressByLocation } from '../../../Api';
 
 const GeoTag = () => {
     const [city, setSity] = useState('Витебск');
-    const provider = new OpenStreetMapProvider();
+ 
 
     function getCurrentPosition() {
         navigator.geolocation.getCurrentPosition(
             async (pos) => {
-                const locationData = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json&accept-language=ruRU`)
+                // const locationData = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${pos.coords.latitude}&lon=${pos.coords.longitude}&format=json&accept-language=ruRU`)
                 // console.log(locationData.data.address.city);
                 // const cityData = await provider.search({query: `${pos.coords.latitude} ${pos.coords.longitude}`});
                 // console.log('городской округ Йошкар-Ола');
-
-                setSity(locationData.data.address.city.match(/[A-ZА-Я].+/)[0])
+                const locationData = (await getAddressByLocation(pos.coords.latitude, pos.coords.longitude)).data
+                // console.log(locationData.response.GeoObjectCollection.featureMember[0].GeoObject.metaDataProperty.GeocoderMetaData.AddressDetails)
+                setSity(locationData.response.GeoObjectCollection.featureMember[0].GeoObject.name)
             }
         );
     }

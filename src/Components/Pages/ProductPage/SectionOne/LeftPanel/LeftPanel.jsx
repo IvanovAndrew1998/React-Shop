@@ -24,6 +24,7 @@ const LeftPanel = ({images}) => {
       </div>
       <div className="product-big">
         <img className='productImage' src={currentImage} alt="" />
+        <div className="productImgZoomed"></div>
       </div>
     </div>
   )

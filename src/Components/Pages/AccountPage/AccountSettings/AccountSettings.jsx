@@ -91,7 +91,7 @@ const AccountSettings = observer(() => {
                 setModalDeleteActive={setModalDeleteActive} 
                 currentId={addressId}
             />
-            {/* <Modal/> */}
+            <Modal/>
 
 
             <ProfileOrders orders={userStore.profileInfo.data.orders} />

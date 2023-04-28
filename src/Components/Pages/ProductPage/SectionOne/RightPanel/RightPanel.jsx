@@ -4,11 +4,13 @@ import Ratings from 'react-ratings-declarative';
 import RatingStar from '../../../../RatingStar';
 import './rightPanel.css'
 import HeartButton from '../../../../HeartButton/HeartButton';
+import { userStore } from '../../../../../Store/UserStore';
+import CorpSpinPanel from '../../../BasketPage/BasketPanel/BasketCard/Components/CorpSpin/CorpSpinPanel';
 
 
 
 
-const RightPanel = ({ productInfo, rating }) => {
+const RightPanel = ({ productInfo, rating, userInfo }) => {
     const [productRating, setProductRating] = useState(3);
     const sizeArr = sizeConverter(productInfo.price.sizesWeightsPrices);
     const [currentSize, setCurrentSize] = useState(sizeArr[0]);
@@ -29,11 +31,12 @@ const RightPanel = ({ productInfo, rating }) => {
             ]]);
         }
         return sizeArr;
+        console.log(sizeArr)
     }
 
     useEffect(() => {
         document.title = `${productInfo.name}`;
-      }, []);
+    }, []);
 
     return (
         <div className="sec1-right">
@@ -70,14 +73,23 @@ const RightPanel = ({ productInfo, rating }) => {
             <div className="add-buy">
                 <button className="buy">Купить</button>
                 <button className="add">Добавить в корзину</button>
-                <HeartButton/>
+                <HeartButton />
             </div>
             <div className="clock-click">
                 <img src="src/clock-click.svg" alt="" />
                 <a className="drop-price" href="#">Узнать о снижении цены</a>
             </div>
+            <div className="">
+                {/* {
+                    userInfo.data.userData.is_corporate == true
+                    ?
+                    <CorpSpinPanel/>
+                    :
+                    <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
+                } */}
+                    <CorpSpinPanel sizes={sizeArr}/>
+            </div>
 
-            <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
             <p className="choose-size">
                 Выберите размер изделия
             </p>

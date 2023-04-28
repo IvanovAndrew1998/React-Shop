@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import CatalogueSidebar from './CatalogueSidebar/CatalogueSidebar'
 import ProductList from './ProductList/ProductList'
 import TagList from './Tags/TagList'
@@ -10,12 +10,12 @@ import CatalogueStore from '../../../Store/CatalogueStore'
 const Catalogue = () => {
   
 
-    
     useEffect(
-        () => CatalogueStore.updCatalugueCashe()
+        () => CatalogueStore.updCatalogueCashe()
         ,
         []
     );
+
     useEffect(() => {
         document.title = 'Каталог';
       }, []);
