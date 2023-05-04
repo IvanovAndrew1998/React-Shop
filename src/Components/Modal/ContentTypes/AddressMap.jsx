@@ -5,6 +5,7 @@ import { userStore } from '../../../Store/UserStore';
 import Loader from '../../Pages/ProductPage/Loader/Loader';
 import './AddressMap.css'
 import MapSidebar from './MapSidebar/MapSidebar';
+import MapSearchbar from './MapSearchbar/MapSearchbar';
 
 const AddressMap = () => {
 
@@ -32,6 +33,7 @@ const AddressMap = () => {
     <div className='modalContentType'>
       <div className="MapContent">
         <MapSidebar/>
+        <MapSearchbar/>
         <YMaps className='mapContainer'>
           <Map className='mapInner' defaultState={{
 

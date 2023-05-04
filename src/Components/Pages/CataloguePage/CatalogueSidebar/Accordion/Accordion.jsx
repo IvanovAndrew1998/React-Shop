@@ -9,7 +9,6 @@ const Accordion = observer(({ children, title, category }) => {
     
     useEffect(() => {
         setTimeout(() => setOpened(false), 500)
-        console.log('ya pidor')
       }
    , [children])
 

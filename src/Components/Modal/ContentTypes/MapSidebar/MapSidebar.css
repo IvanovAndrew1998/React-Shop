@@ -1,4 +1,143 @@
 .MapSidebar {
-    display: flex;  
-    width: 25%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 30px;
+    gap: 18px;
+    height: 700px;
+}
+
+.MapSidebarHeader {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 32px;
+    color: var(--black-1);
+
+    margin-bottom: 20px;
+
+}
+
+.MapSidebarContent {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    height: 100%;
+}
+
+.MSPointName {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.MSPointName p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--black-1);
+}
+
+.MSPriceBlock {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.MSPriceDate {
+    color: #808080;
+}
+
+.MSAddressBlock {
+    margin-bottom: 18px;
+}
+
+.MSAddressHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #808080;
+    gap: 8px;
+    margin-bottom: 8px;
+
+}
+
+.MSAddressBlock p {
+    max-width: 270px;
+    font-size: 16px;
+}
+
+.MSHoursBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.MSHours {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.MSdays {
+    width: 50%;
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.MSInterval {
+    color: #808080;
+}
+
+.MSStoragePeriod {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.StoragePeriodTop {
+    color: #808080;
+}
+
+.MSFlexBlock {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MSDisclaimer {
+    font-size: 14px;
+    line-height: 17px;
+    color: #808080;
+    max-width: 270px
+}
+
+.MSFBbottom {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.MSButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 30px;
+
+    background: var(--red-1);
+    border-radius: 15px;
+    border: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #FFFFFF;
 }

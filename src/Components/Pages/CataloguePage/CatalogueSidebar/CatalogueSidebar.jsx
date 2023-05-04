@@ -25,8 +25,8 @@ const CatalogueSidebar = observer(() => {
     const [priceRange, setPriceRange] = useState([0, 300000]);
     const adresats = ['Женщинам', 'Мужчинам', 'Детям']
 
-    
-    
+
+
 
     function toggleChange(tagValue) {
         CatalogueStore.toggleTag(tagValue)
@@ -47,7 +47,7 @@ const CatalogueSidebar = observer(() => {
     });
     const materialsArray = Array.from(materials);
     // 
-    
+
     // Вставка
     const gemTypes = new Set();
     CatalogueStore.catalogueCashe.forEach(result => {
@@ -80,8 +80,17 @@ const CatalogueSidebar = observer(() => {
     const gemsArray = Array.from(gems);
     // 
 
+    let maxOriginal = -Infinity;
+
+    CatalogueStore.catalogueCashe.forEach(result => {
+        if (result.price.original > maxOriginal) {
+            maxOriginal = result.price.original;
+        }
+    });
+    console.log(maxOriginal);
+
     if (CatalogueStore.catalogueCashe === undefined) {
-        return <Loader/>
+        return <Loader />
     }
 
     return (
@@ -321,36 +330,36 @@ const CatalogueSidebar = observer(() => {
                 <Accordion title={'Камень'} category={gems}>
                     {gemsArray.map(gem => {
                         gem == null
-                        ?
-                        <></>
-                        :
-                        <FormControlLabel
-                            control={
-                                <Checkbox label={gem}
-                                    icon={<EmptyCheck />}
-                                    checkedIcon={<Checked />}
-                                    sx={{
+                            ?
+                            <></>
+                            :
+                            <FormControlLabel
+                                control={
+                                    <Checkbox label={gem}
+                                        icon={<EmptyCheck />}
+                                        checkedIcon={<Checked />}
+                                        sx={{
 
-                                        marginLeft: 1,
-                                        color: "red",
-
-                                        '&.Mui-checked': {
+                                            marginLeft: 1,
                                             color: "red",
-                                        },
-                                        '&.MuiButtonBase-root': {
 
-                                        },
-                                        '& .MuiSvgIcon-root': {
+                                            '&.Mui-checked': {
+                                                color: "red",
+                                            },
+                                            '&.MuiButtonBase-root': {
+
+                                            },
+                                            '& .MuiSvgIcon-root': {
 
 
-                                        }
-                                    }}
-                                    onChange={e => toggleChange(gem)}
-                                    checked={CatalogueStore.tags.includes(gem)}
-                                />
-                            }
-                            label={gem}
-                        />
+                                            }
+                                        }}
+                                        onChange={e => toggleChange(gem)}
+                                        checked={CatalogueStore.tags.includes(gem)}
+                                    />
+                                }
+                                label={gem}
+                            />
                     }
                     )}
 
