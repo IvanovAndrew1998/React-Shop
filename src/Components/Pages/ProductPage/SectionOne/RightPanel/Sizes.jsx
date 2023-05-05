@@ -7,15 +7,15 @@ const Sizes = ({sizeArr, setSize}) => {
     return (
         <div className="sizes">
             {sizeArr.map(sizeEl =>  
-            <button key={sizeEl[0]} onClick={e=> {setSelectedSize(e.target.innerText);
-            setSize(sizeEl)}}
+            <button key={sizeEl.size} onClick={e=> {setSelectedSize(e.target.innerText);
+            setSize(sizeEl.size)}}
             className = {
-                selectedSize == sizeEl[0]
+                selectedSize == sizeEl.size
                 ? "sizeButtonSelected"
                 : ""
             }
             >
-                {sizeEl[0]}
+                {sizeEl.size}
             </button>
             )
             }

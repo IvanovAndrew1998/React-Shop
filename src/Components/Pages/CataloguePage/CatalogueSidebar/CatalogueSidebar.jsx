@@ -1,5 +1,5 @@
 import { Checkbox, FormControlLabel, Slider, styled } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CatalogueStore from '../../../../Store/CatalogueStore';
 import Accordion from './Accordion/Accordion';
 import Checked from './Images/Checked';
@@ -21,73 +21,63 @@ const MuySlider = styled(Slider)({
 });
 
 
+
+
 const CatalogueSidebar = observer(() => {
-    const [priceRange, setPriceRange] = useState([0, 300000]);
-    const adresats = ['Женщинам', 'Мужчинам', 'Детям']
+    const [priceRange, setPriceRange] = useState([0, 0]);
+    const adresats = ['Женщинам', 'Мужчинам', 'Детям'];
+
+    const [minPriceRange, setMinPriceRange] = useState()
+    const [maxPriceRange, setMaxPriceRange] = useState()
+
+    const [minPrice, setMinPrice] = useState(0);
+    const [maxPrice, setMaxPrice] = useState(0);
+
+    useEffect(() => {
+        let maxOriginal = 0;
+
+        CatalogueStore.catalogueCashe.forEach(result => {
+            if (result.price.original > maxOriginal) {
+                maxOriginal = result.price.original;
+            }
+        });
+        setMaxPrice(maxOriginal);
+
+        setMaxPriceRange(maxOriginal)
 
 
+    }, [CatalogueStore.catalogueCashe])
 
 
     function toggleChange(tagValue) {
         CatalogueStore.toggleTag(tagValue)
     }
 
-    // Тип изделия
     const productTypes = new Set();
+    const materials = new Set();
+    const gemTypes = new Set();
+    const coatings = new Set();
+    const wireTypes = new Set();
+    const gems = new Set();
+
     CatalogueStore.catalogueCashe.forEach(result => {
         productTypes.add(result.characteristics.product_type);
-    });
-    const productTypeArray = Array.from(productTypes);
-    // 
-
-    // Материал
-    const materials = new Set();
-    CatalogueStore.catalogueCashe.forEach(result => {
         materials.add(result.characteristics.material);
-    });
-    const materialsArray = Array.from(materials);
-    // 
-
-    // Вставка
-    const gemTypes = new Set();
-    CatalogueStore.catalogueCashe.forEach(result => {
         gemTypes.add(result.characteristics.gem_type);
-    });
-    const gemTypesArray = Array.from(gemTypes);
-    // 
-
-    // Покрытие
-    const coatings = new Set();
-    CatalogueStore.catalogueCashe.forEach(result => {
         coatings.add(result.characteristics.coating);
-    });
-    const coatingArray = Array.from(coatings);
-    // 
-
-    // Тип проволоки
-    const wireTypes = new Set();
-    CatalogueStore.catalogueCashe.forEach(result => {
         wireTypes.add(result.characteristics.wire_type);
-    });
-    const wireTypesArray = Array.from(wireTypes);
-    // 
-
-    // Камень
-    const gems = new Set();
-    CatalogueStore.catalogueCashe.forEach(result => {
         gems.add(result.characteristics.gem);
     });
+    const productTypeArray = Array.from(productTypes);
+    const materialsArray = Array.from(materials);
+    const gemTypesArray = Array.from(gemTypes);
+    const coatingArray = Array.from(coatings);
+    const wireTypesArray = Array.from(wireTypes);
     const gemsArray = Array.from(gems);
-    // 
 
-    let maxOriginal = -Infinity;
 
-    CatalogueStore.catalogueCashe.forEach(result => {
-        if (result.price.original > maxOriginal) {
-            maxOriginal = result.price.original;
-        }
-    });
-    console.log(maxOriginal);
+
+
 
     if (CatalogueStore.catalogueCashe === undefined) {
         return <Loader />
@@ -170,19 +160,43 @@ const CatalogueSidebar = observer(() => {
             <div className="two-inputs">
                 <div className="from">
                     <p>от</p>
-                    <input type="text" value={priceRange[0]} />
+                    <input type="number" value={minPriceRange} 
+                    onChange={(e) => {
+                        if (maxPrice <= e.target.value) {
+                            setMinPriceRange(maxPrice)
+                        } else {
+                            setMinPriceRange(e.target.value)
+                        }
+
+                    }} 
+
+                    />
                 </div>
                 <div className="to">
                     <p>от</p>
-                    <input type="text" value={priceRange[1]} />
+                    <input type="number" value={maxPriceRange}
+                        onChange={(e) => {
+                            if (maxPrice <= e.target.value) {
+                                setMaxPriceRange(maxPrice)
+                            } else {
+                                setMaxPriceRange(e.target.value)
+                            }
+
+                        }} />
                 </div>
             </div>
 
             <MuySlider
-                value={priceRange}
-                onChange={e => setPriceRange(e.target.value)}
+                value={[minPriceRange, maxPriceRange]}
+                onChange={e => {
+                    setMinPriceRange(e.target.value[0]);
+                    setMaxPriceRange(e.target.value[1]);
+                }}
                 color="secondary"
                 disableSwap
+
+                min={minPrice}
+                max={maxPrice}
             />
             <div className="product-type">
 

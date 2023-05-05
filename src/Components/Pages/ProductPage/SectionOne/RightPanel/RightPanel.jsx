@@ -12,8 +12,9 @@ import CorpSpinPanel from '../../../BasketPage/BasketPanel/BasketCard/Components
 
 const RightPanel = ({ productInfo, rating, userInfo }) => {
     const [productRating, setProductRating] = useState(3);
-    const sizeArr = sizeConverter(productInfo.price.sizesWeightsPrices);
-    const [currentSize, setCurrentSize] = useState(sizeArr[0]);
+    console.log(productInfo.price.sizesWeightsPrices);
+    const sizeArr = productInfo.price.sizesWeightsPrices;
+    const [currentSize, setCurrentSize] = useState(sizeArr[0].size);
 
 
     function characteristicsRender(characteristic) {
@@ -22,17 +23,17 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
         else return ""
     }
 
-    function sizeConverter(sizesObj) {
-        let sizeArr = [];
-        for (const key in sizesObj) {
-            sizeArr = sizeArr.concat([[
-                key,
-                ...sizesObj[key]
-            ]]);
-        }
-        return sizeArr;
-        console.log(sizeArr)
-    }
+    // function sizeConverter(sizesObj) {
+    //     let sizeArr = [];
+    //     for (const key in sizesObj) {
+    //         sizeArr = sizeArr.concat([[
+    //             key,
+    //             ...sizesObj[key]
+    //         ]]);
+    //     }
+    //     return sizeArr;
+    //     console.log(sizeArr)
+    // }
 
     useEffect(() => {
         document.title = `${productInfo.name}`;
@@ -66,8 +67,8 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
             </div>
             <p className="percantage">-{productInfo.price.discount}%</p>
             <div className="discount">
-                <p className="price-now">{currentSize[3]} р</p>
-                <p className="price-then">{currentSize[2]} р</p>
+                {/* <p className="price-now">{currentSize[3]} р</p>
+                <p className="price-then">{currentSize[2]} р</p> */}
             </div>
 
             <div className="add-buy">
@@ -87,7 +88,8 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     :
                     <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
                 } */}
-                    <CorpSpinPanel sizes={sizeArr}/>
+                    {/* <CorpSpinPanel sizes={sizeArr}/> */}
+                    <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
             </div>
 
             <p className="choose-size">
@@ -115,7 +117,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     Вставка ................................. <span>{productInfo.characteristics.gemType}</span>
                 </p>
                 <p>
-                    Вес изделия: ..................... <span>{currentSize[1]} г</span>
+                    {/* Вес изделия: ..................... <span>{currentSize[1]} г</span> */}
                 </p>
             </div>
             <h2 className='description'>Описание</h2>

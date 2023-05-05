@@ -34,7 +34,8 @@ const ProductPage = () => {
     fetchProduct
     ,
     []);
-    
+  
+   
 
   if (images && productInfo && rating )
 

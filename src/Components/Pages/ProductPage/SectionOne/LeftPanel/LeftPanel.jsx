@@ -1,9 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
+import {
+  GlassMagnifier,
+  MOUSE_ACTIVATION,
+  TOUCH_ACTIVATION
+} from "react-image-magnifiers";
 import './leftPanel.css'
 
 const LeftPanel = ({ images }) => {
-
+  
   const [currentImage, setCurrentImage] = useState(images[0])
 
   //const otherImages = images.filter(el => el != currentImage);
@@ -13,53 +18,55 @@ const LeftPanel = ({ images }) => {
     } return `${images.length - 3}`
   }
 
-  function imageZoom(imgId, resultId) {
-    let img, lens, result, cx, cy;
-    img = document.getElementById(imgId);
-    result = document.getElementById(resultId);
+  
 
-    lens = document.createElement('DIV');
-    lens.setAttribute("class", "productImgZoomLens");
+  // function imageZoom(imgId, resultId) {
+  //   let img, lens, result, cx, cy;
+  //   img = document.getElementById(imgId);
+  //   result = document.getElementById(resultId);
 
-    img.parentElement.insertBefore(lens, img);
+  //   lens = document.createElement('DIV');
+  //   lens.setAttribute("class", "productImgZoomLens");
 
-    cx = result.offsetWidth / lens.offsetWidth;
-    cy = result.offsetHeight / lens.offsetHeight;
+  //   img.parentElement.insertBefore(lens, img);
 
-    result.style.backgroundImage = "url('" + img.src + "')";
-    result.style.backgroundSize = (img.width * cx) + 'px' + (img.height * cy) + 'px';
+  //   cx = result.offsetWidth / lens.offsetWidth;
+  //   cy = result.offsetHeight / lens.offsetHeight;
 
-    lens.addEventListener("mousemove", moveLens);
-    img.addEventListener("mousemove", moveLens);
+  //   result.style.backgroundImage = "url('" + img.src + "')";
+  //   result.style.backgroundSize = (img.width * cx) + 'px' + (img.height * cy) + 'px';
 
-    lens.addEventListener("touchmove", moveLens);
-    img.addEventListener("touchmove", moveLens);
+  //   lens.addEventListener("mousemove", moveLens);
+  //   img.addEventListener("mousemove", moveLens);
 
-    function moveLens(e) {
-      let pos, x, y;
-      pos = getCursorPos(e);
-      x = pos.x - (lens.offsetWidth / 2);
-      y = pos.y - (lens.offsetHeight / 2);
-      if (x > img.width - lens.offsetWidth) { x = (img.width - lens.offsetWidth); }
-      if (x < 0) { x = 0 ;}
-      if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
-      if (y < 0 ) { y = 0 ;}
-      lens.style.left = x + 'px';
-      lens.style.top = y + 'px';
-      result.style.backgroundPosition = "-" + (x * cx) + 'px -' + (y * cy) + 'px'; 
-    }
-    function getCursorPos(e) {
-      let a, x = 0, y = 0;
-      e = e || window.event;
-      a = img.getBoundingClientRect();
-      x = e.pageX - a.left;
-      y = e.pageY - a.top;
-      x = x - window.pageXOffset;
-      y = y - window.pageYOffset;
-      return { x : x , y : y };
-    }
-  }
-  imageZoom('productImage', 'productImgZoomed');
+  //   lens.addEventListener("touchmove", moveLens);
+  //   img.addEventListener("touchmove", moveLens);
+
+  //   function moveLens(e) {
+  //     let pos, x, y;
+  //     pos = getCursorPos(e);
+  //     x = pos.x - (lens.offsetWidth / 2);
+  //     y = pos.y - (lens.offsetHeight / 2);
+  //     if (x > img.width - lens.offsetWidth) { x = (img.width - lens.offsetWidth); }
+  //     if (x < 0) { x = 0 ;}
+  //     if (y > img.height - lens.offsetHeight) { y = img.height - lens.offsetHeight; }
+  //     if (y < 0 ) { y = 0 ;}
+  //     lens.style.left = x + 'px';
+  //     lens.style.top = y + 'px';
+  //     result.style.backgroundPosition = "-" + (x * cx) + 'px -' + (y * cy) + 'px'; 
+  //   }
+  //   function getCursorPos(e) {
+  //     let a, x = 0, y = 0;
+  //     e = e || window.event;
+  //     a = img.getBoundingClientRect();
+  //     x = e.pageX - a.left;
+  //     y = e.pageY - a.top;
+  //     x = x - window.pageXOffset;
+  //     y = y - window.pageYOffset;
+  //     return { x : x , y : y };
+  //   }
+  // }
+  // imageZoom('productImage', 'productImgZoomed');
 
 
   return (
@@ -70,9 +77,13 @@ const LeftPanel = ({ images }) => {
         )}
         <a className="else" href="#">Еще {imageQuantity()}</a>
       </div>
-      <div className="product-big">
-        <img id='productImage' className='productImage' src={currentImage} alt="" />
-        <div id='productImgZoomed' className="productImgZoomed"></div>
+      <div id='parentImage' className="product-big">
+        <GlassMagnifier
+          imageSrc={currentImage}
+
+        />
+        {/* <img id='productImage' className='productImage' src={currentImage} alt="" /> */}
+
       </div>
     </div>
   )
