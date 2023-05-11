@@ -8,27 +8,27 @@ const Article = () => {
                     <div className="article-left">
                         <nav>
                             <ul>
-                                <img src="src/threedots.svg" alt="" />
+                                <img src="/src/threedots.svg" alt="" />
                                 <li>
                                     <a href="#"> Женщинам</a>
                                 </li>
-                                <img src="src/angle.svg" alt="" />
+                                <img src="/src/angle.svg" alt="" />
                                 <li>
                                     <a href="#"> Цепи</a>
                                 </li>
-                                <img src="src/angle.svg" alt="" />
+                                <img src="/rc/angle.svg" alt="" />
                                 <li>
                                     <a href="#">Серебро</a>
                                 </li>
-                                <img src="src/angle.svg" alt="" />
+                                <img src="/src/angle.svg" alt="" />
                                 <li>
                                     <a href="#">Мужчинам</a>
                                 </li>
-                                <img src="src/angle.svg" alt="" />
+                                <img src="/src/angle.svg" alt="" />
                                 <li>
                                     <a href="#"> Изумруд</a>
                                 </li>
-                                <img src="src/angle.svg" alt="" />
+                                <img src="/src/angle.svg" alt="" />
                             </ul>
                         </nav>
                     </div>

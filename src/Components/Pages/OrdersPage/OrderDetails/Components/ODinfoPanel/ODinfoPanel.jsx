@@ -10,7 +10,7 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
         <div className='ODinfoPanel'>
             <div className="ODinfoPanelLeft">
                 <div className="ODIitem alignStart">
-                    <img src="src/guideSection/Profile.svg" alt="" />
+                    <img src="/src/guideSection/Profile.svg" alt="" />
                     <div className="ODinfoPanelText">
                         <p className='ODinfoPanelHeaderP'>Получатель</p>
                         <p className="ODInfoPanelP">{recieverName}</p>
@@ -18,14 +18,14 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
                     </div>
                 </div>
                 <div className="ODIitem">
-                    <img src="src/guideSection/Orders.svg" alt="" />
+                    <img src="/src/guideSection/Orders.svg" alt="" />
                     <div>
                         <p className='ODinfoPanelHeaderP'>Доставка</p>
                         <p className='ODInfoPanelP'>0 р</p>
                     </div>
                 </div>
                 <div className="ODIitem">
-                    <img src="src/guideSection/CubeIcon.svg" alt="" />
+                    <img src="/src/guideSection/CubeIcon.svg" alt="" />
                     <div>
                         <p className='ODinfoPanelHeaderP'>Товары</p>
                         <p className='ODInfoPanelP'>{userStore.ordersInfo.count} шт</p>
@@ -35,7 +35,7 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
 
             <div className="ODinfoPanelRight">
                 <div className="ODIitem alignStart">
-                    <img src="src/LocationBlue.svg" alt="" />
+                    <img src="/src/LocationBlue.svg" alt="" />
 
                     <div className="ODinfoPanelText">
                         <p className='ODinfoPanelHeaderP'>Пункт выдачи</p>
@@ -43,7 +43,7 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
                     </div>
                 </div>
                 <div className="ODIitem">
-                    <img src="src/guideSection/ClockIcon.svg" alt="" />
+                    <img src="/src/guideSection/ClockIcon.svg" alt="" />
                     <div className="workingHours">
                         <div>
                             <p className='ODinfoPanelHeaderP'>Пн-Пт</p>
@@ -57,7 +57,7 @@ const ODinfoPanel = ({recieverName, recieverEmail, recieverPhone, shippingAddres
 
                 </div>
                 <div className="ODIitem">
-                    <img src="src/guideSection/CalendarIcon.svg" alt="" />
+                    <img src="/src/guideSection/CalendarIcon.svg" alt="" />
                     <div>
                         <p className='ODinfoPanelHeaderP'>Срок хранения заказа</p>
                         <p className='ODInfoPanelP'>5 дней</p>

@@ -64,7 +64,7 @@ const ProfileMyCards = observer(({ children }) => {
         </div>
         <div className="outerContainer">
 
-          <img className={`outerContainerLeft-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="src/mainarrow-left.svg" alt=""
+          <img className={`outerContainerLeft-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="/src/mainarrow-left.svg" alt=""
             onClick={inc}
           />
 
@@ -75,14 +75,14 @@ const ProfileMyCards = observer(({ children }) => {
           </div>
 
 
-          <img className={`outerContainerRight-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="src/mainarrow-right.svg" alt=""
+          <img className={`outerContainerRight-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="/src/mainarrow-right.svg" alt=""
             onClick={dec}
           />
 
         </div>
       </div>
       <div className="personalDisclaimer disclaimerLessWidth">
-        <img src="src/LockGray.svg" alt="" />
+        <img src="/src/LockGray.svg" alt="" />
         <p>Информация, которую вы укажете в этом разделе, публичная. Она указывается рядом с отзывами и видна другим пользователям сети Интернет. </p>
       </div>
     </div>

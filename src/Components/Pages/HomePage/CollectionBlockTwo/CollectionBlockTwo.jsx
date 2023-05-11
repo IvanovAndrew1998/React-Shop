@@ -18,7 +18,7 @@ const CollectionBlockTwo = () => {
           </div>
           <div className="sec3-img2">
             <div className="sec3-absolute">
-              <img className="arrow-lateral" src="src/arrow-lateral.png" alt="" />
+              <img className="arrow-lateral" src="/src/arrow-lateral.png" alt="" />
               <p>Свадьба</p>
               <div className="sec3main-elements">
                 <a href="#">Невесте</a>

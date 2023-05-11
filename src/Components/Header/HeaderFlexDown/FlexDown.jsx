@@ -75,7 +75,7 @@ const FlexDown = observer(() => {
                 <div className={filled ? " " : styles.unfilled}
 
                 >
-                    <img className={"arrow" + " " + rotated + " " + styles.animation} src="src/arrow.svg" alt="" onClick={slide} />
+                    <img className={"arrow" + " " + rotated + " " + styles.animation} src="/src/arrow.svg" alt="" onClick={slide} />
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { YMaps, Map, Placemark } from 'react-yandex-map'
+import { YMaps, Map, Placemark, ObjectManager } from 'react-yandex-map'
 import { getLocationByAddress } from '../../../Api'
 import { userStore } from '../../../Store/UserStore';
 import Loader from '../../Pages/ProductPage/Loader/Loader';
@@ -32,20 +32,36 @@ const AddressMap = () => {
   return (
     <div className='modalContentType'>
       <div className="MapContent">
-        <MapSidebar/>
-        <MapSearchbar/>
+        <MapSidebar />
+        <MapSearchbar />
         <YMaps className='mapContainer'>
-          <Map className='mapInner' defaultState={{
 
-            center: [55.75, 37.57],
-            zoom: 9,
-            controls: ['zoomControl']
-          }} modules={['control.ZoomControl']}>
+          <Map className='mapInner'
+            defaultState={{
+
+              center: [55.75, 37.57],
+              zoom: 9,
+              controls: ['zoomControl']
+            }}
+            modules={['control.ZoomControl']}>
+
             {
               coords.map(coord =>
-                <Placemark modules={['geoObject.addon.balloon']} defaultGeometry={coord} properties={{
-
-                }} />
+                <Placemark
+                  modules={['geoObject.addon.balloon']}
+                  defaultGeometry={coord}
+                  properties={{
+                    iconContent: 'iconContent',
+                    baloonContent: 'baloonContent',
+                    hintContent: 'hintContent'
+                  }}
+                  options={{
+                    iconLayout: 'default#image',
+                    iconImageHref: 'src/Placemark.svg',
+                    iconOffset:[-10, 10],
+                    controls: []
+                  }}
+                />
               )
             }
 

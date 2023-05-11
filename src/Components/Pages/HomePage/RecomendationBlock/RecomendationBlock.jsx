@@ -101,20 +101,20 @@ const RecomendationBlock = ({ id, children }) => {
             <h2>Похожие изделия</h2>
             <div className="watch-all">
               <a href="#">Смотерть все</a>
-              <img src="src/arrow-side.svg" alt="" />
+              <img src="/src/arrow-side.svg" alt="" />
             </div>
           </div>
         </div>
       </div>
       <article className="article-2 main-version">
         <div className="inner relativePosition">
-          <img className="left-arrow" src="src/mainarrow-left.svg" alt=""
+          <img className="left-arrow" src="/src/mainarrow-left.svg" alt=""
           onClick={inc} 
           />
           <div className="article2-flexbox profile" id={id} ref={ref}>
             {children}
           </div>
-          <img className="right-arrow" src="src/mainarrow-right.svg" alt=""
+          <img className="right-arrow" src="/src/mainarrow-right.svg" alt=""
           onClick={dec} 
           />
         </div>

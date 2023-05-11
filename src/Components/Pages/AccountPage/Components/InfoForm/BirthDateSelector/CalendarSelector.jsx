@@ -59,7 +59,7 @@ const CalendarSelector = () => {
               </option>)
             }
           </select>
-          <img src="src/selectorIcon.svg" alt="" />
+          <img src="/src/selectorIcon.svg" alt="" />
         </div>
         <div className="selectorContainer">
 
@@ -70,7 +70,7 @@ const CalendarSelector = () => {
               </option>)
             }
           </select>
-          <img src="src/selectorIcon.svg" alt="" />
+          <img src="/src/selectorIcon.svg" alt="" />
 
         </div>
 
@@ -83,7 +83,7 @@ const CalendarSelector = () => {
 
 
           </select>
-          <img src="src/selectorIcon.svg" alt="" />
+          <img src="/src/selectorIcon.svg" alt="" />
         </div>
       </div>
     </div>

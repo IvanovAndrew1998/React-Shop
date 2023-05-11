@@ -20,7 +20,7 @@ const BasketCard = observer(({brandName, productName, rating, reviewQuantity, si
     <div className="basketCard">
       <div className="top">
         <div className="titleBlock">
-          <img src="src/basketImage.svg" alt="" />
+          <img src="/src/basketImage.svg" alt="" />
           <div className="infoBlock">
             <p className='brandName'>{brandName}</p>
             <p className='productName'>{productName}</p>

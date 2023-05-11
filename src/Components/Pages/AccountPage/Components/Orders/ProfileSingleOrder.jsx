@@ -64,7 +64,7 @@ const ProfileSingleOrder = ({ singleOrder }) => {
             <div className="orderCardSingleLeft">
                 <div className="orderVendoreCode">
                     <p>Заказ № {singleOrder.id}</p>
-                    <img src="src/CopyButton.svg" alt="" />
+                    <img src="/src/CopyButton.svg" alt="" />
                 </div>
                 <div className="orderName">
                     Ювелирный мир
@@ -84,7 +84,7 @@ const ProfileSingleOrder = ({ singleOrder }) => {
                     {orderStatusPretty(singleOrder.order_status)}
                 </div>
                 <button className={"orderButtonReadyToGet" + " " + `${buttonColor}`}>
-                    <img src="src/GiftIconWhite.svg" alt="" />
+                    <img src="/src/GiftIconWhite.svg" alt="" />
                     <p>{singleOrder.order_status}</p>
                 </button>
             </div>
@@ -95,7 +95,7 @@ const ProfileSingleOrder = ({ singleOrder }) => {
                     <button>Чек</button>
                 </div>
             </div>
-            <img className='orderAbsolute' src="src/arrow-sideBold.svg" alt="" />
+            <img className='orderAbsolute' src="/src/arrow-sideBold.svg" alt="" />
         </div>
     )
 }

@@ -9,7 +9,7 @@ const MWGetCode = ({setContentType, setActive}) => {
                     <p>Вход или регистрация</p>
                 </div>
                 <div className="selectionPanel">
-                    <img src="src/greyArrowLeft.svg" alt="" onClick={() => setContentType("login")} />
+                    <img src="/src/greyArrowLeft.svg" alt="" onClick={() => setContentType("login")} />
                     <p>Введите код из SMS</p>
                 </div>
             </div>

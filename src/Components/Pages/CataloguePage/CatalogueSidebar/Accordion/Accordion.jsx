@@ -21,8 +21,8 @@ const Accordion = observer(({ children, title, category }) => {
         <div className="">
             <div className={"h2-arrow"} >
                 <h2 className="card-h2">{title}</h2>
-                <img className={`animation ${opened ? "" : " " + 'rotated'}`} src="src/arrow-gray.png" alt="" onClick={() => setOpened(!opened)}/>
-                <img className='clearCategoryTagsButton' src="src/X.svg" alt="" onClick={() => CatalogueStore.clearCategoryCashe(category)}/>
+                <img className={`animation ${opened ? "" : " " + 'rotated'}`} src="/src/arrow-gray.png" alt="" onClick={() => setOpened(!opened)}/>
+                <img className='clearCategoryTagsButton' src="/src/X.svg" alt="" onClick={() => CatalogueStore.clearCategoryCashe(category)}/>
             </div>
             <div 
                 

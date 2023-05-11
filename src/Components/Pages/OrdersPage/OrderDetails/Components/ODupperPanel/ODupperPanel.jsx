@@ -73,7 +73,7 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
                 <div className="orderCardSingleLeft">
                     <div className="orderVendoreCode">
                         <p>Заказ № {orderID}</p>
-                        <img src="src/CopyButton.svg" alt="" />
+                        <img src="/src/CopyButton.svg" alt="" />
                     </div>
                     <div className="orderName">
                         Ювелирный мир
@@ -93,7 +93,7 @@ const ODupperPanel = ({ id, orderID, products, shipmentType, orderStatus, orderS
                         {orderStatusPretty(orderStatus)}
                     </div>
                     <button className={"orderButtonReadyToGet" + " " + `${buttonColor}`}>
-                        <img src="src/GiftIconWhite.svg" alt="" />
+                        <img src="/src/GiftIconWhite.svg" alt="" />
                         <p>{orderStatus}</p>
                     </button>
                 </div>

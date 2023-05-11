@@ -39,9 +39,9 @@ function App() {
             <BrowserRouter>
             <Header />
                 <Routes>
-                    <Route path="product/" element={<ProductPage />}/>
+                    <Route path="product/:productId" element={<ProductPage/>} />
                     <Route path='corpOrder/' element={<CorpOrder/>}/>
-                    <Route path='catalogue/' element={<Catalogue />} />
+                    <Route path='catalogue/' element={<Catalogue/>} />
                     <Route path='*' element={<HomePage />} />
                     <Route path='basket/' element={<BasketPage />} />
                     <Route path='profile' element={<AccountPage />} />

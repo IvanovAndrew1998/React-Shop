@@ -43,15 +43,15 @@ const ModalChangeSize = ({ modalSizeActive, setModalSizeActive, count, setCount,
                     <div className="MCSChoose">
                         <div className="chooseHeader">Выберите размер изделия</div>
                         <div className="chooseHowTo pointer">
-                            <img src="src/question.svg" alt="" />
+                            <img src="/src/question.svg" alt="" />
                             <p>Как узнать размер?</p>
                         </div>
                     </div>
                     <div className="MCSBottom">
                         <div className="MCSquantity">
-                            <img src="src/Minus.svg" alt="" onClick={() => decr()}/>
+                            <img src="/src/Minus.svg" alt="" onClick={() => decr()}/>
                             <p>{count}</p>
-                            <img src="src/Plus.svg" alt="" onClick={() => setCount(count + 1)}/>
+                            <img src="/src/Plus.svg" alt="" onClick={() => setCount(count + 1)}/>
                         </div>
                         <button className="MCSready" onClick={() => setModalSizeActive(false)}>Готово</button>
                     </div>

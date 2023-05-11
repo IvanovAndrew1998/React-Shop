@@ -8,7 +8,7 @@ const AtricleTwo = () => {
                     <h2>Похожие изделия</h2>
                     <div className="watch-all">
                         <a href="#">Смотерть все</a>
-                        <img src="src/arrow-side.svg" alt="" />
+                        <img src="/src/arrow-side.svg" alt="" />
                     </div>
                 </div>
             </div>

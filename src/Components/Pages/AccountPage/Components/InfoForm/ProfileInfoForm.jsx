@@ -96,7 +96,7 @@ const ProfileInfoForm = observer(() => {
                 </div>
             </div>
             <div className="personalDisclaimer">
-                <img src="src/exclamationMarkGray.svg" alt="" />
+                <img src="/src/exclamationMarkGray.svg" alt="" />
                 <p>Указанное в этом разделе имя является публичной информацией. Оно указывается рядом с вашими отзывами и видимо для других пользователей сети Интернет. </p>
             </div>
         </div>

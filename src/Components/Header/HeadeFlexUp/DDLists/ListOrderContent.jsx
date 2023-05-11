@@ -22,7 +22,7 @@ const ListOrderContent = observer(() => {
                     :
                     <div className='EmptyList'>
                         <div className="EmptyListIcon">
-                            <img src="src/guideSection/DiscountsBlue.svg" alt="" />
+                            <img src="/src/guideSection/DiscountsBlue.svg" alt="" />
                         </div>
                         <h2>У вас пока нет заказов</h2>
                         <p>Найдите то, что вам нравится в каталоге или вопользуйтесь поиском</p>

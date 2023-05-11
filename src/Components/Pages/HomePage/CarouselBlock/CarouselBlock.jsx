@@ -31,24 +31,24 @@ const CarouselBlock = () => {
                         }
                         >
                         <div>
-                            <img className="sales-img" src="src/sales.png" alt="" />
+                            <img className="sales-img" src="/src/sales.png" alt="" />
                             <p className="legend">Legend 1</p>
                         </div>
                         <div>
-                            <img className="sales-img" src="src/sales.png" alt="" />
+                            <img className="sales-img" src="/src/sales.png" alt="" />
                             <p className="legend">Legend 2</p>
                         </div>
                         <div>
-                            <img className="sales-img" src="src/sales.png" alt="" />
+                            <img className="sales-img" src="/src/sales.png" alt="" />
                             <p className="legend">Legend 3</p>
                         </div>
                     </Carousel>
                     {/* <div>
-                        <img className="sales-img" src="src/sales.png" alt="" />
-                        <img className="mainimg-hidden" src="src/mainimg-hidden.png" alt="" />
+                        <img className="sales-img" src="/src/sales.png" alt="" />
+                        <img className="mainimg-hidden" src="/src/mainimg-hidden.png" alt="" />
                     </div>
                     
-                    <img className="mainarrow-right" src="src/mainarrow-right.svg" alt="" /> */}
+                    <img className="mainarrow-right" src="/src/mainarrow-right.svg" alt="" /> */}
                 </div>
 
             </section>

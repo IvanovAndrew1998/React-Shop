@@ -20,15 +20,15 @@ const RegSpin = () => {
         <div className="size-quantity">
             <div className="sizeButton" onClick={() => setModalSizeActive(true)}>
 
-                <img src="src/Pencil.svg" alt="" />
+                <img src="/src/Pencil.svg" alt="" />
                 <p>75.5 Размер</p>
 
             </div>
             <div className="quantityButton">
 
-                <img src="src/Minus.svg" alt="" onClick={() => decr()}/>
+                <img src="/src/Minus.svg" alt="" onClick={() => decr()}/>
                 <p>{count}</p>
-                <img src="src/Plus.svg" alt="" onClick={() => setCount(count + 1)}/>
+                <img src="/src/Plus.svg" alt="" onClick={() => setCount(count + 1)}/>
 
             </div>
             <ModalChangeSize modalSizeActive={modalSizeActive} setModalSizeActive={setModalSizeActive} count={count} setCount={setCount} decr={decr}/>

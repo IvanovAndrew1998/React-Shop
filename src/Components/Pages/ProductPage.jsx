@@ -7,9 +7,13 @@ import SectionTwo from "./ProductPage/SectionTwo/SectionTwo";
 import SectionOne from './ProductPage/SectionOne/SectionOne';
 import { getProductData } from '../../Api';
 import Loader from './ProductPage/Loader/Loader';
-
+import { useParams } from 'react-router-dom';
 
 const ProductPage = () => {
+
+  let { productId } = useParams();
+
+
 
   const [images, setImages] = useState();
   const [productInfo, setProductInfo] = useState();
@@ -18,7 +22,7 @@ const ProductPage = () => {
   const [rating, setRating] = useState();
 
   function fetchProduct() {
-    getProductData(1).then(res => {
+    getProductData(productId).then(res => {
       const { images, similarProducts, recommendations, rating, ...productInfo } = res;
       setRating(rating)
       setProductInfo(productInfo);

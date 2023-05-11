@@ -17,7 +17,7 @@ const DDdiscount = ({result}) => {
                     <p className='DDOsingleOriginal'>{result.originalPrice} р</p>
                 </div>
                 <p>Можно забрать</p>
-                <img className='x' src="src/Xicon.svg" alt=""  onClick={() => userStore.deleteHeaderDiscount(result.id)}/>
+                <img className='x' src="/src/Xicon.svg" alt=""  onClick={() => userStore.deleteHeaderDiscount(result.id)}/>
             </div>
         </li>
     )

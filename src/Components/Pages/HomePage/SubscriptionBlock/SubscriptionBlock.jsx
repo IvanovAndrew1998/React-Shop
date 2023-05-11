@@ -7,7 +7,7 @@ const SubscriptionBlock = () => {
         <div className="inner">
           <div className="sec2main-flexbox">
             <div className="sec2main-left">
-              <img src="src/letter-gift.png" alt="" />
+              <img src="/src/letter-gift.png" alt="" />
             </div>
             <div className="sec2main-right">
               <p className="spam-subscribe">

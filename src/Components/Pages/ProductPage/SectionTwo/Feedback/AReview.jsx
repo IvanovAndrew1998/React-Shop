@@ -38,7 +38,7 @@ const AReview = ({ review }) => {
     return (
         <div className="feedback-up">
             <div className="reviewHeader">
-                <img src="src/guy.svg" alt="" />
+                <img src="/src/guy.svg" alt="" />
                 <div className="reviewHeaderRight">
                     <p className="feedback-name">{review.user.name}</p>
                     <p className="reviewerPostQuantity">{review.user.reviewCount}</p>
@@ -70,8 +70,8 @@ const AReview = ({ review }) => {
                     {review.images}
                 </div>
                 <div className="feedbackphoto-right">
-                    <img src="src/feedphoto-up.png" alt="" />
-                    <img src="src/feedphoto-up.png" alt="" />
+                    <img src="/src/feedphoto-up.png" alt="" />
+                    <img src="/src/feedphoto-up.png" alt="" />
                     <p className="else">Еще 1</p>
                 </div>
             </div> */}
@@ -79,13 +79,13 @@ const AReview = ({ review }) => {
                 <div className="date-report">
                     <p className="date">{review.last_updated}</p>
                     <div className="report">
-                        <img src="src/reportIcon.svg" alt="" />
+                        <img src="/src/reportIcon.svg" alt="" />
                         <p className='date' onClick={() => setModalActive(true)}>Пожаловаться</p>
                     </div>
                 </div>
                 <div className="like-dislike">
                     <div className="like" >
-                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={e => likePressed(e)}/>
+                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="/src/like.svg" alt="" onClick={e => likePressed(e)}/>
                         <p className="likes">{like}</p>
                     </div>
                 </div>

@@ -59,9 +59,9 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     <Ratings.Widget />
                     <Ratings.Widget />
                 </Ratings>
-                {/* <a href="#"><img src="src/stars.svg" alt="" /></a> */}
+                {/* <a href="#"><img src="/src/stars.svg" alt="" /></a> */}
                 <a href="#feedbackLink">{rating.quantity} отзывов</a>
-                <a href="#feedbackLink"><img src="src/arrow-down.svg" alt="" /></a>
+                <a href="#feedbackLink"><img src="/src/arrow-down.svg" alt="" /></a>
                 <p className='quantity'>118 шт</p>
 
             </div>
@@ -77,7 +77,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                 <HeartButton />
             </div>
             <div className="clock-click">
-                <img src="src/clock-click.svg" alt="" />
+                <img src="/src/clock-click.svg" alt="" />
                 <a className="drop-price" href="#">Узнать о снижении цены</a>
             </div>
             <div className="">
@@ -88,15 +88,15 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     :
                     <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
                 } */}
-                    {/* <CorpSpinPanel sizes={sizeArr}/> */}
-                    <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
+                    <CorpSpinPanel sizes={sizeArr}/>
+                    {/* <Sizes sizeArr={sizeArr} setSize={setCurrentSize} /> */}
             </div>
 
             <p className="choose-size">
                 Выберите размер изделия
             </p>
             <div className="learn-size">
-                <img src="src/question.svg" alt="" />
+                <img src="/src/question.svg" alt="" />
                 <a href="#">Как узнать размер?</a>
             </div>
             <p className="description">Характеристики</p>

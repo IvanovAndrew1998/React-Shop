@@ -6,10 +6,10 @@ const SingleCreditCard = ({paymentSystem, setModalCardDeleteActive, modalAppear}
             <p className='profileSingleCardBankName'>*Имя банка?</p>
             <p></p>
             <div className="profileSingleCardBottom">
-                <img src="src/guideSection/Wallet.svg" alt="" />
+                <img src="/src/guideSection/Wallet.svg" alt="" />
                 <p>{paymentSystem}</p>
             </div>
-            <img className='profileSingleCardButton' src="src/deleteProfile.svg" alt="" onClick={ modalAppear }/>
+            <img className='profileSingleCardButton' src="/src/deleteProfile.svg" alt="" onClick={ modalAppear }/>
         </div>
     )
 }

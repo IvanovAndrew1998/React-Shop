@@ -55,7 +55,7 @@ const AccountSettings = observer(() => {
                 )}
                 <div className="profileSingleCard pointer">
                     <p className='profileSingleCardBankName'>Добавить карту</p>
-                    <img className='profileSingleCardButton' src="src/Plus.svg" alt="" />
+                    <img className='profileSingleCardButton' src="/src/Plus.svg" alt="" />
 
                 </div>
             </ProfileMyCards>
@@ -82,7 +82,7 @@ const AccountSettings = observer(() => {
                 )}
                 <div className="addNewAddress pointer">
                     <p>Добавить адрес</p>
-                    <img className='profileSingleCardButton' src="src/Plus.svg" alt="" />
+                    <img className='profileSingleCardButton' src="/src/Plus.svg" alt="" />
                 </div>
 
             </ProfileMyAddresses>

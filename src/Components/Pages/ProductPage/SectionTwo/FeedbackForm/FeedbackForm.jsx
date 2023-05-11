@@ -19,7 +19,7 @@ const FeedbackForm = () => {
                     <h2>Оставьте отзыв</h2>
                     <div className={style.element + " what-towrite"}>
                         <a href="#">Что написать</a>
-                        <img src="src/question.svg" alt=""
+                        <img src="/src/question.svg" alt=""
 
                         />
                         <span className={style.tooltip}>что-то</span>
@@ -62,7 +62,7 @@ const FeedbackForm = () => {
                         </textarea>
                         <div className="figure">
                             <a href="">Изображение</a>
-                            <img src="src/figure.svg" alt="" />
+                            <img src="/src/figure.svg" alt="" />
                         </div>
                     </div>
                     <div className="two-buttons">

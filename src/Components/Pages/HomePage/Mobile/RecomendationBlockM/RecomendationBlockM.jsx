@@ -7,7 +7,7 @@ const RecomendationBlockM = () => {
         <div className="inner">
           <div className="article2-flexbox profile hidden">
             <div className="productsim-card one">
-              <img className="jew" src="src/main-ring.png" alt="" />
+              <img className="jew" src="/src/main-ring.png" alt="" />
               <div className="discount-number">
                 <p className="discount-prc">
                   -15%
@@ -30,8 +30,8 @@ const RecomendationBlockM = () => {
               </div>
             </div>
             <div className="productsim-card">
-              <img className="heart-card" src="src/heart1.svg" alt="" />
-              <img className="jew" src="src/main-ring.png" alt="" />
+              <img className="heart-card" src="/src/heart1.svg" alt="" />
+              <img className="jew" src="/src/main-ring.png" alt="" />
               <div className="discount-number">
                 <p className="discount-prc">
                   -15%
@@ -54,8 +54,8 @@ const RecomendationBlockM = () => {
               </div>
             </div>
             <div className="productsim-card">
-              <img className="heart-card" src="src/heart1.svg" alt="" />
-              <img className="jew" src="src/main-ring.png" alt="" />
+              <img className="heart-card" src="/src/heart1.svg" alt="" />
+              <img className="jew" src="/src/main-ring.png" alt="" />
               <div className="discount-number">
                 <p className="discount-prc">
                   -15%
@@ -78,8 +78,8 @@ const RecomendationBlockM = () => {
               </div>
             </div>
             <div className="productsim-card">
-              <img className="heart-card" src="src/heart1.svg" alt="" />
-              <img className="jew" src="src/main-ring.png" alt="" />
+              <img className="heart-card" src="/src/heart1.svg" alt="" />
+              <img className="jew" src="/src/main-ring.png" alt="" />
               <div className="discount-number">
                 <p className="discount-prc">
                   -15%

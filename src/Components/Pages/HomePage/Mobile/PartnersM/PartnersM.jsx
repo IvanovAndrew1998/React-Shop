@@ -11,16 +11,16 @@ const PartnersM = () => {
                 <h2>Производители </h2>
                 <div className="watch-all">
                   <a href="#">Смотерть все</a>
-                  <img src="src/arrow-side.svg" alt="" />
+                  <img src="/src/arrow-side.svg" alt="" />
                 </div>
               </div>
             </div>
           </div>
           <div className="partnersflex-hidden">
-            <img src="src/parnter1.png" alt="" />
-            <img src="src/partner2.png" alt="" />
-            <img src="src/partner3.png" alt="" />
-            <img src="src/partner4.png" alt="" />
+            <img src="/src/parnter1.png" alt="" />
+            <img src="/src/partner2.png" alt="" />
+            <img src="/src/partner3.png" alt="" />
+            <img src="/src/partner4.png" alt="" />
           </div>
         </div>
       </section>

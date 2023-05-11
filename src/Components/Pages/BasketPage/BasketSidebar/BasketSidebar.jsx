@@ -10,7 +10,6 @@ const BasketSidebar = observer(({basket, corpClient}) => {
   const navigate = useNavigate();
 
   const handleOrder = () => {
-    console.log(basket)
     navigate('/corpOrder', { state: { data: {overAllPrice: basket.overAllPrice, basketCard: JSON.parse(JSON.stringify(basket.basket)) } }});
  
   }
@@ -19,7 +18,7 @@ const BasketSidebar = observer(({basket, corpClient}) => {
     <div>
       <div className="sidebarHeader">
         <p>В избранное</p>
-        <img src="src/arrow-sideBold.svg" alt="" />
+        <img src="/src/arrow-sideBold.svg" alt="" />
       </div>
       <div className="summaryBlock">
         <div className="total">

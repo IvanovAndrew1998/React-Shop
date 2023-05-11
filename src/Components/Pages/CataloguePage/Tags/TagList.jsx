@@ -13,12 +13,12 @@ const TagList = () => {
                     {CatalogueStore.tags.map((value, id) =>
                         <div className="sugg" key={value}>
                             <a>{value}</a>
-                            <img src="src/out.svg" alt="" onClick={() => CatalogueStore.toggleTag(value)} />
+                            <img src="/src/out.svg" alt="" onClick={() => CatalogueStore.toggleTag(value)} />
                         </div>
                     )}
 
                     <div className="tagClearButton">
-                        <img src="src/out.svg" alt="" onClick={() => CatalogueStore.clearCatalogueCashe(CatalogueStore.tags)}/>
+                        <img src="/src/out.svg" alt="" onClick={() => CatalogueStore.clearCatalogueCashe(CatalogueStore.tags)}/>
                     </div>
                 </div>
             </div>

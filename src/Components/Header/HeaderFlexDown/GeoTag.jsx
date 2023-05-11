@@ -32,7 +32,7 @@ const GeoTag = () => {
 
     return (
         <div className="flexdown-left">
-            <img src="src/location.svg" alt="" />
+            <img src="/src/location.svg" alt="" />
             <p>{city}</p>
         </div>
     )

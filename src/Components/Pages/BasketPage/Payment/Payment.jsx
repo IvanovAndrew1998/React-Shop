@@ -24,7 +24,7 @@ const Payment = () => {
                     <p>Способ оплаты</p>
                 </div>
                 <div className="right">
-                    <img src="src/successfulIcon.svg" alt="" />
+                    <img src="/src/successfulIcon.svg" alt="" />
                 </div>
             </div>
             <div className="paymentSelection">
@@ -34,7 +34,7 @@ const Payment = () => {
                 </div>
                 <div className="paymentCard">
                     <p className='paymentName'>Добавить карту</p>
-                    <img className='paymentAddImg' src="src/Plus.svg" alt="" />
+                    <img className='paymentAddImg' src="/src/Plus.svg" alt="" />
                 </div>
             </div>
             <div className="registrationForm">
@@ -43,7 +43,7 @@ const Payment = () => {
                         <p>Укажите данные</p>
                     </div>
                     <div className="right">
-                        <img src="src/unsuccessfulIcon.svg" alt="" />
+                        <img src="/src/unsuccessfulIcon.svg" alt="" />
                     </div>
                 </div>
                 <div className="panelSelection">

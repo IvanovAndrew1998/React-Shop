@@ -74,9 +74,9 @@ const FlexUp = observer(() => {
     return (
 
         <div className="header-flexup">
-            <img className="instead-logo" src="src/insteadof-logo.svg" alt=""></img>
+            <img className="instead-logo" src="/src/insteadof-logo.svg" alt=""></img>
             <Link to='/'>
-                <img src="src/LogoHeader.svg" className="logo" alt="#" />
+                <img src="/src/LogoHeader.svg" className="logo" alt="#" />
             </Link>
             <div className="flexup-middle">
                 <Link className="catalogue-link" to='/catalogue'>
@@ -110,19 +110,19 @@ const FlexUp = observer(() => {
                                 <ul>
                                     <li>
                                         <Link to='/profile' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/Profile.svg" alt="" />
+                                            <img src="/src/guideSection/Profile.svg" alt="" />
                                             <a href="">Профиль</a>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to='/orders' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/Orders.svg" alt="" />
+                                            <img src="/src/guideSection/Orders.svg" alt="" />
                                             <a href="">Заказы</a>
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to='/basket' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/heartGray.svg" alt="" />
+                                            <img src="/src/guideSection/heartGray.svg" alt="" />
                                             <a href="">Избранное</a>
                                             <div className="notificationQuantity">
                                                 <p>13</p>
@@ -131,7 +131,7 @@ const FlexUp = observer(() => {
                                     </li>
                                     <li>
                                         <Link to='/basket' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/Basket.svg" alt="" />
+                                            <img src="/src/guideSection/Basket.svg" alt="" />
                                             <a href="">Корзина</a>
                                             <div className="notificationQuantity">
                                                 <p>6</p>
@@ -140,7 +140,7 @@ const FlexUp = observer(() => {
                                     </li>
                                     <li>
                                         <Link to='/basket' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/Discounts.svg" alt="" />
+                                            <img src="/src/guideSection/Discounts.svg" alt="" />
                                             <a href="">Скидки</a>
                                             <div className="notificationQuantity">
                                                 <p>322</p>
@@ -149,13 +149,13 @@ const FlexUp = observer(() => {
                                     </li>
                                     <li>
                                         <Link to='/profile' className='dropdownMenuLink'>
-                                            <img src="src/guideSection/Reviews.svg" alt="" />
+                                            <img src="/src/guideSection/Reviews.svg" alt="" />
                                             <a href="">Комментарии</a>
                                         </Link>
                                     </li>
                                     <li onClick={() => userStore.logOut()}>
                                         <div className="dropdownMenuLink">
-                                            <img src="src/guideSection/Logout.svg" alt="" />
+                                            <img src="/src/guideSection/Logout.svg" alt="" />
                                             <a href="">Выйти</a>
                                         </div>
                                     </li>
@@ -163,7 +163,7 @@ const FlexUp = observer(() => {
                             </div>
                         </div>
                             <div className="notificationContainer" ref={ordersRef}>
-                                <img src="src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
+                                <img src="/src/clock.svg" alt="" onClick={() => { setDDOrdersOpen(!DDOrdersOpen) }} />
                                 <NotificationNumber />
                                 <div className={`dropdownOrders ${DDOrdersOpen ? 'active' : 'inactive'}`}>
                                     <div className="DDOheaderPanel">
@@ -186,10 +186,10 @@ const FlexUp = observer(() => {
                                     </div>
                                 </div>
                             </div>
-                            <img src="src/heart-filled.svg" alt="" />
+                            <img src="/src/heart-filled.svg" alt="" />
                             <div className="backet">
                                 <Link to='/basket'>
-                                    <img src="src/basket.svg" alt="" />
+                                    <img src="/src/basket.svg" alt="" />
                                 </Link>
                                 <BasketNumber />
                             </div></>

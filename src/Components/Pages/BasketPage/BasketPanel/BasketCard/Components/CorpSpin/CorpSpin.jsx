@@ -60,9 +60,9 @@ const CorpSpin = ({size, initCount, originalPrice, discountedPrice, basket, id})
       
       <div className={`sizeCounter ${openCounter ? 'active' : 'inactive'}`} >
 
-        <img src="src/MinusWhite.svg" alt="" onClick={handleDecrement} />
+        <img src="/src/MinusWhite.svg" alt="" onClick={handleDecrement} />
         <input type='number' onChange={handleInputChange} value={count}></input>
-        <img src="src/PlusWhite.svg" alt="" onClick={handleIncrement} />
+        <img src="/src/PlusWhite.svg" alt="" onClick={handleIncrement} />
 
       </div>
     </div>

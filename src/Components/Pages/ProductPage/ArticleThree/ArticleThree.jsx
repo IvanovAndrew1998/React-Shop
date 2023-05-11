@@ -4,11 +4,11 @@ import Ratings from 'react-ratings-declarative';
 const ArticleThree = ({ recommendation }) => {
     return (
         <div className="article-3">
-            <a href="#navbar"><img className="arrow-up" src="src/arrow-up.svg" alt="" /></a>
+            <a href="#navbar"><img className="arrow-up" src="/src/arrow-up.svg" alt="" /></a>
             <div className="inner">
                 <div className="article3-flex">
                     <div className="art3flex-left">
-                        <img className="art3-img" src="src/feed-photo.png" alt="" />
+                        <img className="art3-img" src="/src/feed-photo.png" alt="" />
                         <div>
                             <p className="gold">{recommendation.name}</p>
                             <p className="length">45 см</p>
@@ -39,7 +39,7 @@ const ArticleThree = ({ recommendation }) => {
                             <button className="backet-btn">
                                 В корзину
                             </button>
-                            <img src="src/heart.svg" alt="" />
+                            <img src="/src/heart.svg" alt="" />
                         </div>
                     </div>
                 </div>

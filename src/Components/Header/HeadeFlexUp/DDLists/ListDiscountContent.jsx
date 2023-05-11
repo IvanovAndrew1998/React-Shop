@@ -21,7 +21,7 @@ const ListDiscount = observer(() => {
                     :
                     <div className='EmptyList'>
                         <div className="EmptyListIcon">
-                            <img src="src/guideSection/DiscountsBlue.svg" alt="" />
+                            <img src="/src/guideSection/DiscountsBlue.svg" alt="" />
                         </div>
                         <h2>Узнать о снижении цены</h2>
                         <p className='EmptyListMargin'>Эту функцию можно найти на странице товара</p>

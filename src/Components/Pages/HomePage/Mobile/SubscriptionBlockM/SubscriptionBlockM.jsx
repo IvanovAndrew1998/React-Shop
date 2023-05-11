@@ -16,7 +16,7 @@ const SubscriptionBlockM = () => {
                                         Узнавайте о новых скидках и акциях первыми!
                                     </h2>
                                 </div>
-                                <img src="src/gift.png" alt="" />
+                                <img src="/src/gift.png" alt="" />
                             </div>
                             <div className="sec2main-input hidden">
                                 <input type="text" placeholder="Введите почту" />

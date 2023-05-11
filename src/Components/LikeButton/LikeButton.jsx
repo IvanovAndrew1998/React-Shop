@@ -26,7 +26,7 @@ const LikeButton = ({likes, isLiked}) => {
 
     return (
         <div className="like">
-            <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="src/like.svg" alt="" onClick={() => likePressed()} />
+            <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="/src/like.svg" alt="" onClick={() => likePressed()} />
             <p className="likes">{likeCount}</p>
         </div>
     )

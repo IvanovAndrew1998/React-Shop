@@ -62,7 +62,7 @@ const ProfileMyAddresses = observer(({ children, modalDeleteActive, setModalDele
 
                 <div className="AccordeonPosition">
 
-                    <img className={`AddressOuterContainerLeft-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="src/mainarrow-left.svg" alt=""
+                    <img className={`AddressOuterContainerLeft-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="/src/mainarrow-left.svg" alt=""
                         onClick={inc}
                     />
 
@@ -72,7 +72,7 @@ const ProfileMyAddresses = observer(({ children, modalDeleteActive, setModalDele
 
                     </div>
 
-                    <img className={`AddressOuterContainerRight-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="src/mainarrow-right.svg" alt=""
+                    <img className={`AddressOuterContainerRight-arrow` + ` ${isScrollable(children) ? 'pointer' : 'unScrollable'}`} src="/src/mainarrow-right.svg" alt=""
                         onClick={dec}
                     />
 
@@ -80,7 +80,7 @@ const ProfileMyAddresses = observer(({ children, modalDeleteActive, setModalDele
             </div>
 
             <div className="personalDisclaimer">
-                <img src="src/exclamationMarkGray.svg" alt="" />
+                <img src="/src/exclamationMarkGray.svg" alt="" />
                 <p>Информация, которую вы укажете в этом разделе, публичная. Она указывается рядом с отзывами и видна другим пользователям сети Интернет.   </p>
             </div>
             

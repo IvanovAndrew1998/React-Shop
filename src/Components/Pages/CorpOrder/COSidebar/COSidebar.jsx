@@ -9,7 +9,7 @@ const COSidebar = ({overAllPrice}) => {
     <div>
       <div className="sidebarHeader">
         <p>В избранное</p>
-        <img src="src/arrow-sideBold.svg" alt="" />
+        <img src="/src/arrow-sideBold.svg" alt="" />
       </div>
       <div className="summaryBlock">
         <div className="total">

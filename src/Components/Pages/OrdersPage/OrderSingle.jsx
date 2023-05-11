@@ -14,7 +14,7 @@ const OrderSingle = ({ result }) => {
     return (
         <div className="orderContainer">
             <div className='orderAccordionButton'>
-                <img className={`AccordionArrow ${opened ? " " + 'rotated' : ""}`} src="src/arrow-d.svg" alt="" onClick={() => setOpened(!opened)} />
+                <img className={`AccordionArrow ${opened ? " " + 'rotated' : ""}`} src="/src/arrow-d.svg" alt="" onClick={() => setOpened(!opened)} />
             </div>
             <div className="OrderDetails">
                 <ODupperPanel id='orderedProducts'

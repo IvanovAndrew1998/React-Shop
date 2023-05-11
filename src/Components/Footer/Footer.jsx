@@ -16,9 +16,9 @@ const Footer = () => {
                         <a href="tel:88 800 250 33 44">8 800 250 33 44</a>
                     </div>
                     <div className='social-media'>
-                        <a href="#"><img src="src/TEL.svg" alt=""/></a>
-                        <a href="#"><img src="src/whats.svg" alt=""/></a>
-                        <a href="#"><img src="src/vk.svg" alt=""/></a>
+                        <a href="#"><img src="/src/TEL.svg" alt=""/></a>
+                        <a href="#"><img src="/src/whats.svg" alt=""/></a>
+                        <a href="#"><img src="/src/vk.svg" alt=""/></a>
                     </div>
                 </div>
                 <div className='email'>
@@ -63,10 +63,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className='footer-bottom'>
-                <img src="src/Logo.svg" className="logo" alt="#"/>
+                <img src="/src/Logo.svg" className="logo" alt="#"/>
                 <small>2012 – 2022, © Ювелирная сеть Ювелирный мир. Все права защищены. Информация, размещенная на данной странице, не является публичной офертой.</small>
                 <div className='to-start'>
-                    <a href="#"><img src="src/up.svg" alt="" /></a>
+                    <a href="#"><img src="/src/up.svg" alt="" /></a>
                     <a href="#">Наверх</a>
                 </div>
             </div>

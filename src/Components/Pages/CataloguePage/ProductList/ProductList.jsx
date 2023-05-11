@@ -23,8 +23,8 @@ const ProductList = () => {
                     <a href="#">Скидки</a>
                 </div>
                 <div className="popular-right">
-                    <img src="src/up-orange.svg" alt="" />
-                    <img src="src/down-orange.svg" alt="" />
+                    <img src="/src/up-orange.svg" alt="" />
+                    <img src="/src/down-orange.svg" alt="" />
                 </div>
             </div>
             <article className="article-2 gap">
@@ -32,6 +32,7 @@ const ProductList = () => {
                     {CatalogueStore.catalogueCashe.map(result =>
                         <ProductCard
                             key={result.id}
+                            id={result.id}
                             name={result.name}
                             discount={result.price.discount}
                             ratingValue={result.rating}

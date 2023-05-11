@@ -1,6 +1,7 @@
 import React from 'react'
 import Ratings from 'react-ratings-declarative';
 import '../../../PRODUCTCARD/ProductCard.css'
+import HeartButton from '../../../../HeartButton/HeartButton';
 
 const SimilarProductCard = ({ recommendations }) => {
 
@@ -8,8 +9,10 @@ const SimilarProductCard = ({ recommendations }) => {
 
         <div className='cardPosition'>
             <div className="productsim-card">
-                <img className="heart-card" src="src/heart1.svg" alt="" />
-                <img className="jew" src="src/main-ring.png" alt="" />
+                <div className="heart-card">
+                    <HeartButton />
+                </div>
+                <img className="productCardImage" src={recommendations.image} alt="" />
                 <div className="discount-number">
                     <p className="discount-prc">
                         -{recommendations.price.discount}%

@@ -11,7 +11,7 @@ const ProfileSingleReview = ({ review }) => {
         <div className="profileSingleReviewCard">
             <div className="profileSingleReviewCardTop">
                 <div className="singleReviewCardHeader">
-                    <img src="src/guy.svg" alt="" />
+                    <img src="/src/guy.svg" alt="" />
                     <div className="name-num">
                         <p className="feedback-name">{review.user.name}</p>
                         <p className="singleReviewQuantity ">{review.user.reviewCount}</p>
@@ -46,7 +46,7 @@ const ProfileSingleReview = ({ review }) => {
                 </div>
             </div>
             <div className="profileSingleReviewCardMiddle">
-                <img src="src/reviewProductImage.svg" alt="" />
+                <img src="/src/reviewProductImage.svg" alt="" />
                 <div className="reviewProductInfo">
                     <div className='reviewProductInfoPrice'>
                         <p className='reviewProductInfoPriceDiscounted'>12 450 р</p>
@@ -77,11 +77,11 @@ const ProfileSingleReview = ({ review }) => {
             <div className="profileSingleReviewCardBottom">
                 <div className="profileSingleReviewCardBottomLeft">
                     <div className="reviewEdit">
-                        <img src="src/Pencil.svg" alt="" />
+                        <img src="/src/Pencil.svg" alt="" />
                         <p>Редактировать</p>
                     </div>
                     <div className="reviewEdit">
-                        <img src="src/deleteProfile.svg" alt="" />
+                        <img src="/src/deleteProfile.svg" alt="" />
                         <p>Удалить</p>
                     </div>
 

@@ -44,7 +44,7 @@ const LittleProductCarouselImage = ({ id, products }) => {
     return (
 
         <div className="littleProductCarousel">
-            <span className='littleProductCarouselLeft' src="src/mainarrow-left.svg" alt="" onClick={inc} />
+            <span className='littleProductCarouselLeft' src="/src/mainarrow-left.svg" alt="" onClick={inc} />
             <div className="littleProductCarouselTrack" id={id} ref={ref}>
                 {products.map(product =>
                     <div className="littleProductCarouselImage">
@@ -55,7 +55,7 @@ const LittleProductCarouselImage = ({ id, products }) => {
                     </div>
                 )}
             </div>
-            <span className='littleProductCarouselRight' src="src/mainarrow-right.svg" alt="" onClick={dec} />
+            <span className='littleProductCarouselRight' src="/src/mainarrow-right.svg" alt="" onClick={dec} />
         </div>
     )
 }

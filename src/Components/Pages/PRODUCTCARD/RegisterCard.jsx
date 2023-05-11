@@ -12,10 +12,10 @@ const RegisterCard = () => {
     <div className='cardPosition'>
       <div className="productsim-card main-last">
 
-        <img className="heart-card" src="src/X.svg" alt="" />
+        <img className="heart-card" src="/src/X.svg" alt="" />
         <div className="presentImage">
 
-          <img className="jew" src="src/gift-main.png" alt="" />
+          <img className="jew" src="/src/gift-main.png" alt="" />
         </div>
         <h2>
           Получите подарок за регистрацию
@@ -34,7 +34,7 @@ const RegisterCard = () => {
           </button>
         </form>
         <div className="code-again">
-          <img src="src/again.svg" alt="" />
+          <img src="/src/again.svg" alt="" />
           <p>
             Отправить код повторно
           </p>

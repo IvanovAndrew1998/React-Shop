@@ -46,7 +46,7 @@ const BirthDateSelector = (date_of_birth) => {
                     <select name="" id="" value={day} onChange={handleDayChange}>
                         {generateDays()}
                     </select>
-                    <img src="src/selectorIcon.svg" alt="" />
+                    <img src="/src/selectorIcon.svg" alt="" />
                 </div>
                 <div className="selectorContainer">
 
@@ -64,7 +64,7 @@ const BirthDateSelector = (date_of_birth) => {
                         <option value="10">Ноя</option>
                         <option value="11">Дек</option>
                     </select>
-                    <img src="src/selectorIcon.svg" alt="" />
+                    <img src="/src/selectorIcon.svg" alt="" />
 
                 </div>
 
@@ -77,7 +77,7 @@ const BirthDateSelector = (date_of_birth) => {
                         <option value={2022}>2022</option>
 
                     </select>
-                    <img src="src/selectorIcon.svg" alt="" />
+                    <img src="/src/selectorIcon.svg" alt="" />
                 </div>
             </div>
         </div>

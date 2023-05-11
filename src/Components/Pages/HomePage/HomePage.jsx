@@ -32,15 +32,15 @@ const HomePage = () => {
       <RecomendationBlockM />
       <section className="small-banner hidden">
         <div className="inner">
-          <img src="src/small-bnner.png" alt="" />
+          <img src="/src/small-bnner.png" alt="" />
         </div>
       </section>
       <FilterLinks />
       <RecomendationBlockM />
       <section className="gridsection-hidden">
         <div className="inner">
-          <img src="src/grid-1.png" alt="" />
-          <img src="src/grid-2.png" alt="" />
+          <img src="/src/grid-1.png" alt="" />
+          <img src="/src/grid-2.png" alt="" />
         </div>
       </section>
 

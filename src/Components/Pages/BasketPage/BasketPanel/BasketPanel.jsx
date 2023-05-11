@@ -17,7 +17,7 @@ const BasketPanel = observer(({basket}) => {
         </div>
         <div className="right">
           {/* <p className='orangeHeader'>Очистить корзину</p>
-          <img src="src/orange-cross.svg" alt="" /> */}
+          <img src="/src/orange-cross.svg" alt="" /> */}
         </div>
       </div>
       <div className="basket-flexbox">

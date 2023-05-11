@@ -8,7 +8,7 @@ const SingleAddress = ({ address, modalAppear }) => {
     return (
         <div className="profileSingleAddress">
             <div className="singleAddressHeader">
-                <img src="src/LocationBlue.svg" alt="" />
+                <img src="/src/LocationBlue.svg" alt="" />
                 <p>Мой адрес 1</p>
             </div>
             <div className="addressInfo">
@@ -16,10 +16,10 @@ const SingleAddress = ({ address, modalAppear }) => {
             </div>
             <div className="singleAddressBottom">
                 <div className="addressEdit">
-                    <img src="src/Pencil.svg" alt="" />
+                    <img src="/src/Pencil.svg" alt="" />
                     <p>Редактировать</p>
                 </div>
-                <img className='pointer' src="src/deleteProfile.svg" alt="" onClick={ modalAppear }/>
+                <img className='pointer' src="/src/deleteProfile.svg" alt="" onClick={ modalAppear }/>
             </div>
            
         </div>

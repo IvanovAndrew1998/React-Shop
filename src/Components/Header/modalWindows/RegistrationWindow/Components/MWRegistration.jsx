@@ -56,7 +56,7 @@ const MWRegistration = ({setContentType}) => {
                     <p>Вход или регистрация</p>
                 </div>
                 <div className="selectionPanel">
-                    <img src="src/greyArrowLeft.svg" alt="" onClick={() => setContentType("login")}/>
+                    <img src="/src/greyArrowLeft.svg" alt="" onClick={() => setContentType("login")}/>
                     <p>Введите данные</p>
                 </div>
                 <div className="inputForm">

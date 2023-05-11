@@ -27,27 +27,27 @@ const CategoriesM = () => {
                 <div className="mainhidden-catalogue">
                     <div className="inner">
                         <div className="hidden-div">
-                            <img src="src/ring-hidden.png" alt="" />
+                            <img src="/src/ring-hidden.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                         <div className="hidden-div">
-                            <img src="src/earings-hidden.png" alt="" />
+                            <img src="/src/earings-hidden.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                         <div className="hidden-div">
-                            <img src="src/neclace-hidden.png" alt="" />
+                            <img src="/src/neclace-hidden.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                         <div className="hidden-div">
-                            <img src="src/hanging-hidden.png" alt="" />
+                            <img src="/src/hanging-hidden.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                         <div className="hidden-div">
-                            <img src="src/jew-hiddeb.png" alt="" />
+                            <img src="/src/jew-hiddeb.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                         <div className="hidden-div">
-                            <img src="src/christs-hidden.png" alt="" />
+                            <img src="/src/christs-hidden.png" alt="" />
                             <a href="#">Кольца</a>
                         </div>
                     </div>

@@ -34,7 +34,7 @@ const RatingScore = ({ rating }) => {
                     Написать свой отзыв
                 </button>
                 <div className="feedback-rules">
-                    <img src="src/question.svg" alt="" />
+                    <img src="/src/question.svg" alt="" />
                     <p>Перед отправкой отзыва, пожалуйста, ознакомьтесь с <a className="rules" href="#">правилами</a></p>
                 </div>
             </div>

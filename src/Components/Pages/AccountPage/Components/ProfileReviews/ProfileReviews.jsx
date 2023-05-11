@@ -26,7 +26,7 @@ const ProfileReviews = observer(() => {
                     <p>Цена</p>
                     <p>Скидки</p>
                 </div>
-                <img src="src/SortListButton.svg" className='pointer' alt="" />
+                <img src="/src/SortListButton.svg" className='pointer' alt="" />
 
             </div>
             <div className="profileReviewsContainer">

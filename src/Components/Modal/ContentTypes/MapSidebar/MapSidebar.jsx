@@ -12,7 +12,7 @@ const MapSidebar = () => {
         <div className="MSPointName">
 
           <p>Ювелирный мир</p>
-          <img className='pointer' src="src/Xicon.svg" alt="" />
+          <img className='pointer' src="/src/Xicon.svg" alt="" />
 
         </div>
         <div className="MSPriceBlock">
@@ -29,7 +29,7 @@ const MapSidebar = () => {
             <div className="MSAddressBlock">
 
               <div className="MSAddressHeader">
-                <img src="src/LocationBlue.svg" alt="" />
+                <img src="/src/LocationBlue.svg" alt="" />
                 <p>Адрес</p>
               </div>
               <p>Россия, Республика Марий Эл, Йошкар-Ола, Ленинский проспект, 41</p>
@@ -38,7 +38,7 @@ const MapSidebar = () => {
 
             <div className="MSHoursBlock">
 
-              <img src="src/guideSection/ClockIcon.svg" alt="" />
+              <img src="/src/guideSection/ClockIcon.svg" alt="" />
               <div className="MSHours">
                 <div className="MSdays">
                   <p className='MSInterval'>Пн-Пт</p>
@@ -58,7 +58,7 @@ const MapSidebar = () => {
 
             <div className="MSStoragePeriod">
 
-              <img src="src/guideSection/CalendarIcon.svg" alt="" />
+              <img src="/src/guideSection/CalendarIcon.svg" alt="" />
               <div className="MSStoragePeriodText">
 
                 <div className="StoragePeriodTop">
