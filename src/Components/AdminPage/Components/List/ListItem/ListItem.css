@@ -1,0 +1,162 @@
+.ListItem {
+    padding: 11px 16px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ListItem:hover {
+    background: rgba(23, 209, 250, 0.2);
+}
+
+.LIInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.itemImage {
+    width: 68px;
+    height: 68px;
+    filter: drop-shadow(0px 0px 22px rgba(20, 0, 52, 0.08));
+    border-radius: 15px;
+}
+
+.LIInfoPanelTop {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    color: var(--black-1);
+}
+
+.LIInfoPanelBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    color: #808080;
+}
+
+.LIInfoPanel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+.LILeft {
+    display: flex;
+    flex-direction: row;
+    gap: 140px;
+}
+
+.BrandDiscount {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.BrandDiscountTop {
+    color: var(--black-1);
+}
+
+.BrandDiscountBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    color: #808080;
+}
+
+.LIRight {
+    display: flex;
+    flex-direction: row;
+    gap: 46px;
+}
+
+.LIPriceTime {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+}
+
+.LITime {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    align-items: center;
+    color: #808080;
+}
+
+.LISlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.css-53tbrc-MuiSlider-root {
+    width: 70px !important;
+    color: var(--black-1) !important;
+}
+
+.css-14gf62f-MuiSlider-thumb {
+    width: 8px;
+    height: 8px;
+}
+
+.MuiSlider-thumb:hover {
+    box-shadow: none !important;
+}
+
+.Mui-focusVisible {
+    box-shadow: none !important;
+}
+
+.sliderInput {
+    background: var(--black-1);
+    color: #FFFFFF;
+    border: none;
+    width: 30px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.sliderValue {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--black-1);
+    border-radius: 25px;
+    color: #FFFFFF;
+    width: 72px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    text-align: center;
+}
+
+.sliderInput:focus {
+    outline: none;
+}

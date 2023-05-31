@@ -1,0 +1,29 @@
+.adminSearchWide {
+    color: var(--black-1);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    width: 100%;
+
+    border-radius: 15px;
+    height: 45px;
+    border: 1px solid #808080;
+    padding: 20px 60px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.adminSearchbarWide {
+    width: 100%;
+    position: relative;
+}
+
+.searchIconWide {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    display: block;
+    left: 20px;
+    cursor: pointer;
+}

@@ -95,6 +95,12 @@ export async function getBasket(access_token) {
     return basketInfo;
 }
 
+// export async function addToBasket(access_token) {
+//     await axios.post('http://uv-mir.ru/profile/basket/' {
+
+//     })
+// }
+
 export async function postLike(access_token, id) {
 
     await axios.post(`http://uv-mir.ru/reviews/feedback/?reviews=${id}`, {

@@ -14,6 +14,7 @@ import AccountPage from './Components/Pages/AccountPage/AccountPage';
 import { userStore } from './Store/UserStore.js';
 import OrdersPage from './Components/Pages/OrdersPage/OrdersPage';
 import CorpOrder from './Components/Pages/CorpOrder/CorpOrder';
+import AdminPage from './Components/AdminPage/AdminPage';
 
 const accessTokenRefreshTime = 1000 * 60 * 5;
 
@@ -46,6 +47,8 @@ function App() {
                     <Route path='basket/' element={<BasketPage />} />
                     <Route path='profile' element={<AccountPage />} />
                     <Route path='orders/' element={<OrdersPage />} />
+
+                    <Route path='admin/' element={<AdminPage/>}/>
                 </Routes>
             <Footer />
             </BrowserRouter>

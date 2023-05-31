@@ -1,0 +1,34 @@
+.SortingbarOrders {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 72px;
+    color: #808080;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.SortingbarOrdersLeft {}
+
+.SortingbarOrdersRight {
+    display: flex;
+    flex-direction: row;
+}
+
+.sortingbarOrdersOption {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    align-items: center;
+    margin-right: 90px;
+}
+
+.ml-15 {
+    margin-left: 21px;
+}
+
+.pGray {
+    color: #808080 !important;
+}

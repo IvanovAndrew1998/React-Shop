@@ -1,0 +1,357 @@
+.PEinner {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1208px;
+}
+
+.ProductEditContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.PEDescriprion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 24px 24px;
+    background: #FFFFFF;
+
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.08);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.PEheader {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #302827;
+}
+
+.PEDImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    height: 308px;
+}
+
+.PEDImage img {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.PEDImagePanel {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.imagePanelAddOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+}
+
+.imagePanelOption img {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+}
+
+.imagePanelOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+}
+
+.imagePanelOption:hover {
+    border: 1px solid var(--black-1);
+}
+
+.PEDescriprion textarea {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    padding: 10px 10px 12px;
+    resize: none;
+    border: 1px solid #808080;
+    border-radius: 15px;
+}
+
+.PEDescriprion input {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    padding: 10px 10px 12px;
+    resize: none;
+    border: 1px solid #808080;
+    border-radius: 15px;
+}
+
+.PEDProductDescription {
+    min-height: 120px;
+}
+
+.PEDButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.PEDButtons button {
+    padding: 14px 30px;
+    border-radius: 15px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid #808080;
+}
+
+.createBTN {
+    color: white;
+    background: var(--black-1);
+    border-color: var(--black-1);
+}
+
+.cancelBTN {
+    background: white;
+}
+
+.PEInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 24px 24px;
+    background: #FFFFFF;
+
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.08);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.PEItop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.PESelectorContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.PESelectorContainer select {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    background: white;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black-1);
+    min-width: 300px;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+
+.PEIbottom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tagInput {
+    position: relative;
+    width: 100%;
+}
+
+.tagInput input {
+    width: 100%;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.plusImageHovered {
+    position: absolute;
+    cursor: pointer;
+    right: 8px;
+    top: 9px;
+    width: 24px;
+    height: 24px;
+    background-image: url("../../../../../public/src/adminPage/addGray.svg");
+}
+
+.plusImageHovered:hover {
+    background-image: url("../../../../../public/src/adminPage/Xblack.svg");
+}
+
+.tagList {
+    width: 100%;
+    max-width: 308px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tagSingle {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 8px;
+    background: #F5F5F5;
+    border-radius: 15px;
+    cursor: default;
+    gap: 2px;
+
+}
+
+.tagSingle p {
+    margin-top: 2px;
+}
+
+.tagX {
+    width: 24px;
+    height: 24px;
+    background-image: url("../../../../../public/src/adminPage/Xdark.svg");
+
+    cursor: pointer;
+}
+
+.tagSingle:hover :last-child {
+    background-image: url("../../../../../public/src/adminPage/Xwhite.svg");
+}
+
+.tagSingle:hover {
+    background: var(--black-1);
+    color: #F5F5F5;
+}
+
+.PESizes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 24px 24px;
+    background: #FFFFFF;
+
+    border: 1px solid #F5F5F5;
+    box-shadow: 0px 0px 22px rgba(20, 0, 52, 0.08);
+    border-radius: 15px;
+}
+
+.PESizePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.SizePanelTop {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.SizePanelTop input {
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    max-width: 86px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.isInStock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.SizePanelBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.SizePanelBottom img {
+    cursor: pointer;
+}
+
+.SizePanelBottom input {
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    width: 70%;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.PESizesAdd {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black-1);
+    border: 1px solid #808080;
+    border-radius: 15px;
+    background: white;
+    padding: 10px;
+}

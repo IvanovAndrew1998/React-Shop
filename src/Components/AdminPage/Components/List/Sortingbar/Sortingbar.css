@@ -1,0 +1,80 @@
+.Sortingbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 1px;
+    color: #808080;
+    margin-bottom: 18px;
+}
+
+.sortingbarLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+}
+
+.sortingbarLeft img {
+    cursor: pointer;
+}
+
+.sortingbarLeft p {
+    margin-top: 1px;
+}
+
+.selectAll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.sortingbarQuantity {
+    color: var(--black-1) !important;
+}
+
+.sortingbarRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.sortingbarRight p {
+    margin-top: 1px;
+}
+
+.SROption {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+}
+
+.SROcancelButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 8px;
+    border: 1px solid #808080;
+    border-radius: 25px;
+    color: var(--black-1);
+}
+
+.SROacceptButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 8px;
+    background: #302827;
+    border-radius: 25px;
+    color: white;
+}

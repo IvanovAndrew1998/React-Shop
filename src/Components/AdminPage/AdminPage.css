@@ -1,0 +1,76 @@
+.adminPage {
+    margin-bottom: 20px;
+}
+
+.ACTopbar {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    align-items: center;
+
+}
+
+
+
+.ATPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 12px;
+    border: 1px solid #808080;
+    border-radius: 15px;
+    background: transparent;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    height: 46px;
+
+    color: var(--black-1);
+
+}
+
+.refreshButton {
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.adminFind-button {
+    width: 108px;
+    height: 45px;
+    border: none;
+    border-radius: 15px;
+    background: var(--black-1);
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+}
+
+.adminSearchbar {
+    position: relative;
+}
+
+.adminSearch {
+    color: var(--black-1);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    width: 100%;
+    width: 530px;
+    border-radius: 15px;
+    height: 45px;
+    border: 1px solid #808080;
+    padding: 20px 60px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.searchIcon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    display: block;
+    right: 490px;
+    cursor: pointer;
+}
