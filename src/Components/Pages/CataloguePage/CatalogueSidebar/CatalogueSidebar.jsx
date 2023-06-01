@@ -36,9 +36,6 @@ const CatalogueSidebar = observer(() => {
 
     useEffect(() => {
         let maxOriginal = 0;
-        // kal
-       console.log(CatalogueStore.catalogueTags)
-        // kal
         CatalogueStore.catalogueCashe.forEach(result => {
             if (result.price.original > maxOriginal) {
                 maxOriginal = result.price.original;

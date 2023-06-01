@@ -77,31 +77,6 @@ export async function dropRefreshToken(refresh_token) {
     await axios.post("http://uv-mir.ru/api/token/blacklist/", {refresh: refresh_token});
 }
 
-// export async function getFullCatalogue() {
-//     const catalogue = await axios.get('http://uv-mir.ru/catalogue/');
-//     return catalogue.data;
-// }
-
-
-export async function getCatalogue(tags) {
-    let catalogue;
-    if (tags.length === 0) {
-        catalogue = await axios.get('http://uv-mir.ru/catalogue/')
-    } else {
-        catalogue = await axios.get(`http://uv-mir.ru/catalogue/?tags__name__in=${
-        tags.join("&tags__name__in=")
-    }`);
-    }
-
-    
-    return catalogue.data;
-}
-
-export async function getCatalogueTags() {
-    const catalogueTags = await axios.get('http://uv-mir.ru/catalogue/?attributes=true')
-    return catalogueTags;
-}
-
 export async function getBasket(access_token) {
     const basketInfo = await axios.get('http://uv-mir.ru/profile/basket/', {
         headers: {

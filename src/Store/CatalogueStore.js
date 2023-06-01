@@ -1,5 +1,5 @@
 import {makeAutoObservable} from "mobx"
-import { getCatalogue, getCatalogueTags } from "../Api"
+import { CatalogueApi } from "../Api/CatalogueApi.ts"
 
 class CatalogueStore {
     tags
@@ -12,6 +12,8 @@ class CatalogueStore {
         this.catalogueCashe = []
         this.catalogueTags = {}
         makeAutoObservable(this)
+
+        // this.loadCatalogueTags();
     }
 
     toggleTag(name) {
@@ -22,16 +24,15 @@ class CatalogueStore {
         this.updCatalogueCashe()
     }
     
-    catalogueTags() {
-        getCatalogueTags().then(res => {
-            const { results } = res;
-            this.catalogueTags = results;
-            
+    loadCatalogueTags() {
+        CatalogueApi.getCatalogueTags().then(res => {
+            this.catalogueTags = res;
+            console.log(this.catalogueTags);
         })
     }
 
     updCatalogueCashe() {
-        getCatalogue(this.tags).then(res => {
+        (new CatalogueApi()).getCatalogue(this.tags).then(res => {
             const { count, next, previous, results } = res;
             this.catalogueCashe = results
         })
