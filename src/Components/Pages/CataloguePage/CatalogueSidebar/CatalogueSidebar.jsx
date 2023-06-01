@@ -7,6 +7,7 @@ import EmptyCheck from './Images/EmptyCheck';
 import { observer } from 'mobx-react-lite';
 import Loader from '../../ProductPage/Loader/Loader';
 
+
 const MuySlider = styled(Slider)({
     color: '#FF8B66',
     '& .MuiSlider-thumb': {
@@ -35,12 +36,15 @@ const CatalogueSidebar = observer(() => {
 
     useEffect(() => {
         let maxOriginal = 0;
-
+        // kal
+       console.log(CatalogueStore.catalogueTags)
+        // kal
         CatalogueStore.catalogueCashe.forEach(result => {
             if (result.price.original > maxOriginal) {
                 maxOriginal = result.price.original;
             }
         });
+
         setMaxPrice(maxOriginal);
 
         setMaxPriceRange(maxOriginal)
@@ -52,6 +56,8 @@ const CatalogueSidebar = observer(() => {
     function toggleChange(tagValue) {
         CatalogueStore.toggleTag(tagValue)
     }
+
+    
 
     const productTypes = new Set();
     const materials = new Set();

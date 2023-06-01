@@ -1,13 +1,16 @@
 import {makeAutoObservable} from "mobx"
-import { getCatalogue } from "../Api"
+import { getCatalogue, getCatalogueTags } from "../Api"
 
 class CatalogueStore {
     tags
     catalogueCashe
+
+    catalogueTags
     
     constructor() {
-        this.tags = ["Цепи","Оргия","Свадьба","Похороны"]
+        this.tags = []
         this.catalogueCashe = []
+        this.catalogueTags = {}
         makeAutoObservable(this)
     }
 
@@ -19,7 +22,13 @@ class CatalogueStore {
         this.updCatalogueCashe()
     }
     
-
+    catalogueTags() {
+        getCatalogueTags().then(res => {
+            const { results } = res;
+            this.catalogueTags = results;
+            
+        })
+    }
 
     updCatalogueCashe() {
         getCatalogue(this.tags).then(res => {

@@ -6,6 +6,7 @@ import './rightPanel.css'
 import HeartButton from '../../../../HeartButton/HeartButton';
 import { userStore } from '../../../../../Store/UserStore';
 import CorpSpinPanel from '../../../BasketPage/BasketPanel/BasketCard/Components/CorpSpin/CorpSpinPanel';
+import ProductCorpSizePanel from './CorpSizePanel/ProductCorpSizePanel';
 
 
 
@@ -38,7 +39,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
     useEffect(() => {
         document.title = `${productInfo.name}`;
     }, []);
-
+    console.log(sizeArr);
     return (
         <div className="sec1-right">
             <p className="article-num">Артикул: {productInfo.vendorCode}</p>
@@ -88,7 +89,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     :
                     <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
                 } */}
-                    <CorpSpinPanel sizes={sizeArr}/>
+                    <ProductCorpSizePanel sizeArr={sizeArr}/>
                     {/* <Sizes sizeArr={sizeArr} setSize={setCurrentSize} /> */}
             </div>
 
