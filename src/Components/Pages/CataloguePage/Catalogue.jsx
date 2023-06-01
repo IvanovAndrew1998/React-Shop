@@ -3,12 +3,12 @@ import CatalogueSidebar from './CatalogueSidebar/CatalogueSidebar'
 import ProductList from './ProductList/ProductList'
 import TagList from './Tags/TagList'
 import './Catalogue.css'
-import { getCatalogue } from '../../../Api'
 import CatalogueStore from '../../../Store/CatalogueStore'
 
 
 const Catalogue = () => {
   
+
 
     useEffect(
         () => CatalogueStore.updCatalogueCashe()
@@ -19,7 +19,6 @@ const Catalogue = () => {
     useEffect(() => {
         document.title = 'Каталог';
       }, []);
-
 
     return (
         

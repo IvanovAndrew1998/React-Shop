@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 const YANDEX_API_KEY = 'c5c2b2fc-35f1-4beb-970d-41b78b512f00';
 
 export function getSizeList( /*  Product ID */
@@ -75,16 +76,6 @@ export async function getAccessToken(refresh_token) {
 export async function dropRefreshToken(refresh_token) {
     await axios.post("http://uv-mir.ru/api/token/blacklist/", {refresh: refresh_token});
 }
-
-
-
-export async function getCatalogue(tags) {
-    const catalogue = await axios.get(`http://uv-mir.ru/catalogue/?tags=${
-        tags.join(",")
-    }`);
-    return catalogue.data;
-}
-
 
 export async function getBasket(access_token) {
     const basketInfo = await axios.get('http://uv-mir.ru/profile/basket/', {
