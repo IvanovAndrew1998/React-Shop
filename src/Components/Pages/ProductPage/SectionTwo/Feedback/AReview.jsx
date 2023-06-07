@@ -27,14 +27,19 @@ const AReview = ({ review }) => {
         } else {
             setLikeActive(true)
             setLike(like + 1)
-            
+
         };
         e.target.style.pointerEvents = "none";
-        setTimeout(() => e.target.style.pointerEvents =  "initial" , 1000)
+        setTimeout(() => e.target.style.pointerEvents = "initial", 1000)
         // вставить пост запрос когда будут айдишники ревьюшек
     }
 
- 
+    function imageQuantity() {
+        if (review.images.length < 3) {
+          return '0'
+        } return `${review.images.length - 3}`
+      }
+
     return (
         <div className="feedback-up">
             <div className="reviewHeader">
@@ -65,16 +70,17 @@ const AReview = ({ review }) => {
             <p className="conmment" >
                 {review.reviewText}
             </p>
-            {/* <div className={"feedback-flexbox" + " " + imageRender(review.images)}>
+            <div className={"feedback-flexbox" + " " + imageRender(review.images)}>
                 <div className="feedbackphoto-left ">
-                    {review.images}
+                    <img src={review.images[0]} alt="" />
                 </div>
                 <div className="feedbackphoto-right">
-                    <img src="/src/feedphoto-up.png" alt="" />
-                    <img src="/src/feedphoto-up.png" alt="" />
-                    <p className="else">Еще 1</p>
+                    {review.images.map(reviewImage => 
+                        <img src={reviewImage} />
+                        )}
+                    <p className="else">Еще {imageQuantity()}</p>
                 </div>
-            </div> */}
+            </div>
             <div className="date-like">
                 <div className="date-report">
                     <p className="date">{review.last_updated}</p>
@@ -85,12 +91,12 @@ const AReview = ({ review }) => {
                 </div>
                 <div className="like-dislike">
                     <div className="like" >
-                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="/src/like.svg" alt="" onClick={e => likePressed(e)}/>
+                        <span className={`likeButton ${likeActive ? 'liked' : ''}`} src="/src/like.svg" alt="" onClick={e => likePressed(e)} />
                         <p className="likes">{like}</p>
                     </div>
                 </div>
             </div>
-            <ReportModal active={modalActive} setActive={setModalActive}/>
+            <ReportModal active={modalActive} setActive={setModalActive} />
         </div>
     )
 }

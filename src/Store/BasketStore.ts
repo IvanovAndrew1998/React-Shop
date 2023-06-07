@@ -1,9 +1,7 @@
 import {makeAutoObservable, autorun} from "mobx"
-import placeholder from '../BasketPlaceholder.json'
 import {deepObserve} from 'mobx-utils'
 import { getBasket } from "../Api";
-import { userStore } from './UserStore';
-import { access } from "fs";
+
 
 
 

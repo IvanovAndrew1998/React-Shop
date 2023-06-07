@@ -13,7 +13,7 @@ import ProductCorpSizePanel from './CorpSizePanel/ProductCorpSizePanel';
 
 const RightPanel = ({ productInfo, rating, userInfo }) => {
     const [productRating, setProductRating] = useState(3);
-    console.log(productInfo.price.sizesWeightsPrices);
+   
     const sizeArr = productInfo.price.sizesWeightsPrices;
     const [currentSize, setCurrentSize] = useState(sizeArr[0].size);
 
@@ -35,11 +35,10 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
     //     return sizeArr;
     //     console.log(sizeArr)
     // }
-
     useEffect(() => {
         document.title = `${productInfo.name}`;
     }, []);
-    console.log(sizeArr);
+    
     return (
         <div className="sec1-right">
             <p className="article-num">Артикул: {productInfo.vendorCode}</p>
@@ -89,7 +88,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
                     :
                     <Sizes sizeArr={sizeArr} setSize={setCurrentSize} />
                 } */}
-                    <ProductCorpSizePanel sizeArr={sizeArr}/>
+                    <ProductCorpSizePanel sizeArr={sizeArr} id={productInfo.id}/>
                     {/* <Sizes sizeArr={sizeArr} setSize={setCurrentSize} /> */}
             </div>
 

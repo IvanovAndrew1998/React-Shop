@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ProductCorpSize = ({size, originalPrice, discountedPrice}) => {
+const ProductCorpSize = ({size, originalPrice, discountedPrice, id}) => {
 
     const [count, setCount] = useState(0);
 

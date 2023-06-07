@@ -41,3 +41,9 @@
         line-height: 20px;
         color: #808080;
 }
+
+.feedbackphoto-right img {
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+}

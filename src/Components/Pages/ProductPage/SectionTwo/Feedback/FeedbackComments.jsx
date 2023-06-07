@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 import Loader from '../../Loader/Loader';
 import AReview from './AReview'
 
-const FeedbackComments = () => {
+const FeedbackComments = ({productId}) => {
     const [reviews, setReviews] = useState()
 
 
     function fetchProduct() {
-        getProductReviews(1).then(res =>
+        getProductReviews(productId).then(res =>
             setReviews(res))
     }
     useEffect(

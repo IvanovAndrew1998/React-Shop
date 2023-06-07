@@ -33,7 +33,7 @@ const ProductPage = () => {
       
     });
   }
- 
+  
   useEffect(
     fetchProduct
     ,
@@ -43,14 +43,14 @@ const ProductPage = () => {
 
   if (images && productInfo && rating )
 
-
+    
     return <div>
       <Article />
       <SectionOne productInfo={productInfo} images={images} rating={rating} />
       {/* <ArticleThree recommendation={recommendation[0]} /> */}
       <AtricleTwo />
       <ArticleTwoProductCards recommendations={recommendations} />
-      <SectionTwo rating={rating} />
+      <SectionTwo rating={rating} productId={productId}/>
     </div>
   else return <Loader />
 }
