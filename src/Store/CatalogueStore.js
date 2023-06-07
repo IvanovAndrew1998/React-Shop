@@ -32,10 +32,10 @@ class CatalogueStore {
     }
 
     updCatalogueCashe() {
-        (new CatalogueApi()).getCatalogue(this.tags).then(res => {
-            const { count, next, previous, results } = res;
-            this.catalogueCashe = results
-        })
+        // (new CatalogueApi()).getCatalogue(this.tags).then(res => {
+        //     const { count, next, previous, results } = res;
+        //     this.catalogueCashe = results
+        // })
     }
 
     clearCatalogueCashe() {
