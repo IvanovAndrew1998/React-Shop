@@ -16,7 +16,7 @@ const RightPanel = ({ productInfo, rating, userInfo }) => {
    
     const sizeArr = productInfo.price.sizesWeightsPrices;
     const [currentSize, setCurrentSize] = useState(sizeArr[0].size);
-
+    
 
     function characteristicsRender(characteristic) {
         if (characteristic.slice(0, 3) === "NO_")
