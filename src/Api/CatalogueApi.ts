@@ -1,8 +1,9 @@
+import { IAttributeCategory } from "../Store/Entities.ts";
 import { BaseApi } from "./BaseApi.ts";
 
 export class CatalogueApi extends BaseApi {
-    async getCatalogueTags() {
-        return this.get(
+    async getCatalogueTags(): Promise<IAttributeCategory[]> {
+        const result = this.get(
             'catalogue/', 
             [
                 {
@@ -11,6 +12,7 @@ export class CatalogueApi extends BaseApi {
                 }
             ]
         )
+        return result as unknown as IAttributeCategory[];
     }
 
     async getCatalogue(tags: any, min_price: number, max_price: number, order_by: '+rating' | '-rating') {

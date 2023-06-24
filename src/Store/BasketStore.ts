@@ -1,30 +1,9 @@
 import {makeAutoObservable, autorun} from "mobx"
 import {deepObserve} from 'mobx-utils'
 import { getBasket } from "../Api";
+import { IProduct } from "./Entities";
 
 
-
-
-interface ISizeCount {
-    size: string;
-    count: number;
-    original_price: number;
-    discounted_price: number;
-}
-
-
-interface IProduct {
-
-    sizes: ISizeCount[];
-    id: number;
-
-    brandName: string;
-    productName: string;
-    image: string;
-    rating: number;
-    reviewQuantity: string;
-    discount: number;
-}
 
 class BasketStore {
     basket : IProduct[];

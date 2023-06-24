@@ -1,26 +1,16 @@
 import { makeAutoObservable } from 'mobx';
 import { CatalogueApi } from "../../../../Api/CatalogueApi"
-
-interface IAttributeCategory {
-    name: String,
-    displayName: String
-    items: IAttributeItem[],
-}
-
-interface IAttributeItem {
-    name: String,
-    displayName: String,
-}
+import { IAttributeCategory } from '../../../../Store/Entities';
 
 
-export class CatalogueSidebarStore {
-    isLoading = true;
+export class CatalogueSidebarModel {
+    isLoading: boolean;
     attributes: IAttributeCategory[];
 
     constructor() {
+        this.isLoading = true;
         this.attributes = [];
         makeAutoObservable(this);
-
         this.loadAttributes();
     }
 
@@ -28,9 +18,7 @@ export class CatalogueSidebarStore {
     async loadAttributes() {
         const result = await (new CatalogueApi()).getCatalogueTags();
 
-        console.log(result);
-        console.log(result as IAttributeCategory[]);
-        this.attributes = result as IAttributeCategory[];
+        this.attributes = result;
 
         this.isLoading = false;
     }

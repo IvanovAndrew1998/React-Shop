@@ -1,3 +1,4 @@
+import { ISizeCount } from './Entities';
 import {makeAutoObservable, autorun} from "mobx"
 import {deepObserve} from 'mobx-utils'
 import { getBasket } from "../Api";
@@ -5,24 +6,33 @@ import { getBasket } from "../Api";
 import { makeObservable, observable, action } from 'mobx';
 
 class ProductStore {
-  products = [];
+  sizes: ISizeCount[] = [];
+  id: number = 0;
 
   constructor() {
     makeObservable(this, {
-      products: observable,
-      addProduct: action,
+      sizes: observable,
+      addSize: action,
       updateProductSize: action,
+      changeProduct: action,
     });
   }
 
-  addProduct(id) {
-    this.products.push({ id, sizes: {} });
+  changeProduct(id: number) {
+    if (id != this.id) {
+      this.id = id;
+      this.sizes = [];
+    }
   }
 
-  updateProductSize(id, size, count) {
-    const product = this.products.find((p) => p.id === id);
-    if (product) {
-      product.sizes[size] = count;
+  addSize(size: ISizeCount) {
+    this.sizes.push(size);
+  }
+
+  updateProductSize(size: string , count: number) {
+    const sizeobj = this.sizes.find((p) => p.size === size);
+    if (sizeobj) {
+      sizeobj.count = count;
     }
   }
 }

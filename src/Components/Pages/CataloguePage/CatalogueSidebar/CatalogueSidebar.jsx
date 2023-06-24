@@ -1,12 +1,10 @@
 import { Checkbox, FormControlLabel, Slider, styled } from '@mui/material'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import CatalogueStore from '../../../../Store/CatalogueStore';
-import { CatalogueSidebarStore } from './CatalogueSidebarStore.ts'
 import Accordion from './Accordion/Accordion';
 import Checked from './Images/Checked';
 import EmptyCheck from './Images/EmptyCheck';
 import { observer } from 'mobx-react-lite';
-import Loader from '../../ProductPage/Loader/Loader';
 
 
 const MuySlider = styled(Slider)({
@@ -25,17 +23,7 @@ const MuySlider = styled(Slider)({
 
 
 
-const CatalogueSidebar = observer(() => {
-    const _store = useRef(undefined);
-    const store = _store.current;
-
-    useEffect(
-        () => { 
-            _store.current = new CatalogueSidebarStore();
-            console.log(store);
-        }
-        , []
-    );
+const CatalogueSidebar = observer(({model}) => {
 
 
     const [priceRange, setPriceRange] = useState([0, 0]);
@@ -50,21 +38,17 @@ const CatalogueSidebar = observer(() => {
         CatalogueStore.toggleTag(tagValue)
     }
 
-
-    if (!_store.current) {
-        return <Loader />
-    }
-
     return (
         <div className="cardflex-left">
             {
-                store.attributes.map(
+                model.attributes.map(
                     attributeCategory => (
-                        <Accordion title={attributeCategory.displayName}>
-                            {attributeCategory.items.map(attributeItem =>
+                        <Accordion title={attributeCategory.display_name} key={attributeCategory.name}>
+                            {(attributeCategory.items ?? []).map(attributeItem =>
                                 <FormControlLabel
+                                key={attributeItem.name}
                                     control={
-                                        <Checkbox label={attributeItem.displayName}
+                                        <Checkbox label={attributeItem.display_name}
                                             icon={<EmptyCheck />}
                                             checkedIcon={<Checked />}
                                             sx={{
@@ -83,11 +67,11 @@ const CatalogueSidebar = observer(() => {
 
                                                 }
                                             }}
-                                            onChange={e => toggleChange(attributeItem.name)}
-                                            checked={CatalogueStore.tags.includes(attributeItem.name)}
+                                            onChange={e => toggleChange(attributeItem.display_name)}
+                                            checked={CatalogueStore.tags.includes(attributeItem.display_name)}
                                         />
                                     }
-                                    label={attributeItem.displayName}
+                                    label={attributeItem.display_name}
                                 />
 
 

@@ -7,13 +7,13 @@ type KeyValuePair = {
 
 export class BaseApi {
     baseUrl = "http://uv-mir.ru/"
+
     formatUrl(relativeUrl: string, params: KeyValuePair[]): string {
         
         let paramsString;
 
-        console.log(params);
         if (params) {
-            paramsString = params.map(
+            paramsString = "?" + params.map(
                 (pair: KeyValuePair) => `${pair.key}=${pair.value}`
                 ).join('&') ?? "";
             }
@@ -22,13 +22,13 @@ export class BaseApi {
         }
             
             
-        console.log(this.baseUrl + relativeUrl + paramsString);
         return this.baseUrl + relativeUrl + paramsString
     }
-
-    async get(relativeUrl: string, params: KeyValuePair[]) {
-        console.log(this.formatUrl(relativeUrl, params));
-        return (await axios.get(this.formatUrl(relativeUrl, params))).data;
+    
+    async get(relativeUrl: string, params: KeyValuePair[]) {        
+        const url = this.formatUrl(relativeUrl, params);
+        console.log(`GET on ${url}`);
+        return (await axios.get(url)).data;
     }
 }
 
