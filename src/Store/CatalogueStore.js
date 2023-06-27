@@ -13,7 +13,7 @@ class CatalogueStore {
         this.catalogueTags = {}
         makeAutoObservable(this)
 
-        // this.loadCatalogueTags();
+        this.loadCatalogueTags();
     }
 
     toggleTag(name) {
@@ -25,17 +25,16 @@ class CatalogueStore {
     }
     
     loadCatalogueTags() {
-        CatalogueApi.getCatalogueTags().then(res => {
+        (new CatalogueApi()).getCatalogueTags().then(res => {
             this.catalogueTags = res;
-            console.log(this.catalogueTags);
         })
     }
 
     updCatalogueCashe() {
-        // (new CatalogueApi()).getCatalogue(this.tags).then(res => {
-        //     const { count, next, previous, results } = res;
-        //     this.catalogueCashe = results
-        // })
+        (new CatalogueApi()).getCatalogue(this.tags).then(res => {
+            const { count, next, previous, results } = res;
+            this.catalogueCashe = results
+        })
     }
 
     clearCatalogueCashe() {

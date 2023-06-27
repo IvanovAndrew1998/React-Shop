@@ -1,13 +1,13 @@
-import { IAttributeCategory } from "../Store/Entities.ts";
+import { IAttributeCategory, IAttributeItem } from "../Store/Entities.ts";
 import { BaseApi } from "./BaseApi.ts";
 
 export class CatalogueApi extends BaseApi {
     async getCatalogueTags(): Promise<IAttributeCategory[]> {
         const result = this.get(
-            'catalogue/', 
+            'catalogue/',
             [
                 {
-                    key: 'attributes', 
+                    key: 'attributes',
                     value: 'true'
                 }
             ]
@@ -15,27 +15,39 @@ export class CatalogueApi extends BaseApi {
         return result as unknown as IAttributeCategory[];
     }
 
-    async getCatalogue(tags: any, min_price: number, max_price: number, order_by: '+rating' | '-rating') {
-        let params = Object.keys(tags).length ? null : tags;
-        if (max_price)
-        {
-            params = params + [
+    async getCatalogue(tags: string[], min_price: number, max_price: number, order_by: '+rating' | '-rating') {
+
+        var params = 
+            tags.map(tag => {
+                return {
+                    key: 'tags__name_in',
+                    value: tag,
+                };
+            }
+            );
+
+
+        if (max_price) {
+            params.push(
                 {
                     key: 'sizes_weights_prices__0__discounted_price__lt',
-                    value: max_price
+                    value: max_price.toString()
                 }
-            ];
+            );
         }
-        if (params)
-        {
-            params = params + [
+
+        if (params) {
+            params.push(
                 {
                     key: 'order_by',
                     value: order_by
                 }
-            ];
+            );
+            
         }
-        
-        return this.get('catalogue/', null);
+
+        console.log(params);
+
+        return this.get('catalogue/', params);
     }
 }
