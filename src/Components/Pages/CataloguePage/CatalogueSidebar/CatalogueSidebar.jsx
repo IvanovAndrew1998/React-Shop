@@ -125,33 +125,7 @@ const CatalogueSidebar = observer(({model}) => {
                 min={minPrice}
                 max={maxPrice}
             />
-            <div className="product-type">
-            </div>
-            <div className="show-more">
-                <a href="#">Показать еще</a>
-                <img src="/src/arrow-orange.svg" alt="" />
-            </div>
-            <div className="h2-arrow">
-                <h2 className="material">Количество
-                    камней</h2>
-                <img src="/src/arrow-d.svg" alt="" />
-            </div>
-            <div className="h2-arrow">
-                <h2 >Бренд</h2>
-                <img src="/src/arrow-d.svg" alt="" />
-            </div>
-            <div className="h2-arrow">
-                <h2 >Бренд</h2>
-                <img src="/src/arrow-d.svg" alt="" />
-            </div>
-            <div className="h2-arrow">
-                <h2 >Тип огранки</h2>
-                <img src="/src/arrow-d.svg" alt="" />
-            </div>
-            <div className="h2-arrow">
-                <h2 >Проба</h2>
-                <img src="/src/arrow-d.svg" alt="" />
-            </div>
+    
         </div>
     )
 })

@@ -18,7 +18,7 @@ const Accordion = observer(({ children, title, category }) => {
 
 
     return (
-        <div className="">
+        <div className="sidebarAccordion">
             <div className={"h2-arrow"} >
                 <h2 className="card-h2">{title}</h2>
                 <img className={`animation ${opened ? "" : " " + 'rotated'}`} src="/src/arrow-gray.png" alt="" onClick={() => setOpened(!opened)}/>

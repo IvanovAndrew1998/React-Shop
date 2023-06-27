@@ -2,6 +2,7 @@ import {useState} from 'react';
 import sizeStore from '../../../../../../Store/ProductPageStore';
 
 const ProductCorpSize = ({ size, originalPrice, discountedPrice, id }) => {
+    
     const [count, setCount] = useState(0);
     const [openCounter, setOpenCounter] = useState(false)
 
@@ -13,9 +14,11 @@ const ProductCorpSize = ({ size, originalPrice, discountedPrice, id }) => {
     const handleDecrement = () => {
         if (count > 0) {
             sizeStore.updateProductSize(size, count - 1);
+
             setCount(count - 1);
         }
     };
+
 
     return (
         <div className="singleSizeContainer">

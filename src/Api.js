@@ -63,7 +63,7 @@ export async function getLoginTokens(username, password) {
         username: username,
         password: password
     });
-    
+
     return tokens;
     // обработать случай неправильного инпута (не правильный логин ИЛИ пароль и  бан по причине многораз) => капча или отказ от сервера
     // обработать случаи для неответа сервера
@@ -123,7 +123,7 @@ export async function patchProfileInfo(first_name, last_name, date_of_birth, ema
         DateOfBirth: date_of_birth,
         Email: email,
         Gender: gender
-    },{
+    }, {
         headers: {
             'Authorization': ` Bearer ${access_token}`
 
@@ -131,15 +131,29 @@ export async function patchProfileInfo(first_name, last_name, date_of_birth, ema
     })
 }
 
+// Добавить в корзину
+
+export async function addToBasket(access_token) {
+    await axios.post("http://uv-mir.ru/profile/basket/", {
+        headers: {
+            'Authorization': ` Bearer ${access_token}`
+        },
+        body: {
+            
+        }
+    })
+}
+
+//
+
 
 // GEo
 
 export async function getAddressByLocation(latitude, longitude) {
-   return await axios.get(`https://geocode-maps.yandex.ru/1.x/?format=json&kind=locality&apikey=${YANDEX_API_KEY}&geocode=${longitude},${latitude}`)
-    
+    return await axios.get(`https://geocode-maps.yandex.ru/1.x/?format=json&kind=locality&apikey=${YANDEX_API_KEY}&geocode=${longitude},${latitude}`)
+
 }
 
-export async function getLocationByAddress(settlement, street, builiding){
+export async function getLocationByAddress(settlement, street, builiding) {
     return await axios.get(`https://geocode-maps.yandex.ru/1.x/?apikey=${YANDEX_API_KEY}&kind=house&geocode=${settlement}+${street}+${builiding}&format=json`)
 }
-
