@@ -2,7 +2,7 @@ import {useState} from 'react';
 import sizeStore from '../../../../../../Store/ProductPageStore';
 
 const ProductCorpSize = ({ size, originalPrice, discountedPrice, id }) => {
-    
+
     const [count, setCount] = useState(0);
     const [openCounter, setOpenCounter] = useState(false)
 
@@ -19,7 +19,7 @@ const ProductCorpSize = ({ size, originalPrice, discountedPrice, id }) => {
         }
     };
 
-
+    console.log(sizeStore)
     return (
         <div className="singleSizeContainer">
             <div className="quantityWholesale">

@@ -1,4 +1,5 @@
 import axios from "axios"
+import sizeStore from './Store/ProductPageStore';
 
 
 const YANDEX_API_KEY = 'c5c2b2fc-35f1-4beb-970d-41b78b512f00';
@@ -133,14 +134,24 @@ export async function patchProfileInfo(first_name, last_name, date_of_birth, ema
 
 // Добавить в корзину
 
-export async function addToBasket(access_token) {
+export async function addToBasket(access_token, sizeStore, id) {
     await axios.post("http://uv-mir.ru/profile/basket/", {
         headers: {
             'Authorization': ` Bearer ${access_token}`
         },
-        body: {
-            
-        }
+        body: JSON.stringify([
+            sizeStore.sizes.map(size => {
+                if (size.count != 0) {
+                    return {
+                        'id': id,
+                        "size": {
+                            
+                        }
+                    }
+                } 
+            })
+        ])
+        
     })
 }
 
