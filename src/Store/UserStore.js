@@ -65,7 +65,7 @@ class UserData {
                 this.fetchHeaderData();
                 Cookies.set('UM:REFRESHTOKEN' , tokens.data.refresh)
 
-            }).catch(() => {alert('Сервер временно не доступен')});
+            })
             
         }
         else {

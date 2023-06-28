@@ -15,7 +15,7 @@ import BasketNumber from './BasketNumber/BasketNumber';
 import NotificationNumber from './NotificationNumber/NotificationNumber';
 
 
-const FlexUp = observer(() => {
+const FlexUp = () => {
 
 
 
@@ -44,20 +44,20 @@ const FlexUp = observer(() => {
             document.removeEventListener("mousedown", handler);
         }
     });
-    useEffect(() => {
-        let handler = (e) => {
-            if (!ordersRef.current.contains(e.target)) {
-                setDDOrdersOpen(false);
-            }
+    // useEffect(() => {
+    //     let handler = (e) => {
+    //         if (!ordersRef.current.contains(e.target)) {
+    //             setDDOrdersOpen(false);
+    //         }
 
-        }
+    //     }
 
-        document.addEventListener('mousedown', handler);
+    //     document.addEventListener('mousedown', handler);
 
-        return () => {
-            document.removeEventListener("mousedown", handler);
-        }
-    });
+    //     return () => {
+    //         document.removeEventListener("mousedown", handler);
+    //     }
+    // });
 
     const toggleFunc = (index) => {
         setTabToggle(index)
@@ -78,7 +78,7 @@ const FlexUp = observer(() => {
             <Link to='/'>
                 <img src="/src/LogoHeader.svg" className="logo" alt="#" />
             </Link>
-            <div className="flexup-middle">
+            {/* <div className="flexup-middle">
                 <Link className="catalogue-link" to='/catalogue'>
                     <button className='catalogue-button'>
                         <p className="catalogue-link">
@@ -196,12 +196,12 @@ const FlexUp = observer(() => {
                             
                         : <button className='signIn' onClick={() => setModalActive(true)} >Войти</button>
                 }
-            </div>
-            <RegistrationWindow active={modalActive} setActive={setModalActive} />
+            </div> */}
+            {/* <RegistrationWindow active={modalActive} setActive={setModalActive} /> */}
             {/* <SuccessWindow active={modalSuccessActive} setModalActive={setModalSuccessActive}/> */}
 
         </div>
     )
-})
+}
 
 export default FlexUp

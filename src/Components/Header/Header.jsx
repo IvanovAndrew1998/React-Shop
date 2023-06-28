@@ -13,7 +13,7 @@ const Header = () => {
     <header className="header">
       <div className="inner">
         <FlexUp />
-        <FlexDown />
+        {/* <FlexDown /> */}
 
       </div>
     </header >
